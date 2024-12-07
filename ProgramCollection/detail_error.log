@@ -1,0 +1,41 @@
+Program: reshaped_programs/test_input_Float_div_bad.c
+Error: test_input_Float_div_bad: :16: int main(): Assertion `x == 0' failed.
+ 
+
+Program: reshaped_programs/test_input_digits_bad_for.c
+Error: test_input_digits_bad_for: :11: void verifier_assert(int): Assertion `0' failed.
+ 
+
+Program: reshaped_programs/test_input_digits_bad_while.c
+Error: test_input_digits_bad_while: :6: void reach_error(): Assertion `0 && "reach_error"' failed.
+ 
+
+Program: reshaped_programs/test_input_Double_div_bad.i.p+cfa-reducer.c
+Error: test_input_Double_div_bad.i.p+cfa-reducer: :14: int main(): Assertion `x == 0' failed.
+ 
+
+Program: reshaped_programs/test_input_float_req_bl_1232b.c
+Error: test_input_float_req_bl_1232b: :58: int main(): Assertion `res == -0.0f && __signbit_float(res) == 1' failed.
+ 
+
+Program: reshaped_programs/test_input_double_req_bl_0680b.c
+Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :138:14 in 
+
+Program: reshaped_programs/test_input_double_req_bl_1210.c
+Error: test_input_double_req_bl_1210: :87: int main(): Assertion `!(isnan_double(iptr) && !isnan_double(res))' failed.
+ 
+#############################################################
+
+Program: reshaped_programs/test_input_float_req_bl_1252b.c
+Error: test_input_float_req_bl_1252b: :64: int main(): Assertion `0 && "Error: Expected result to be +0"' failed.
+
+
+
+Program: reshaped_programs/test_input_float_req_bl_0833.c
+Error:  
+
+Program: reshaped_programs/test_input_double_req_bl_1252b.c
+Error:  
+
+Program: reshaped_programs/test_input_double_req_bl_0680a.c
+Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :168:12 in 

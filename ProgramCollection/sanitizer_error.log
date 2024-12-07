@@ -1,3 +1,24 @@
-Program: reshaped_programs/test_input_float_req_bl_0877.c
-Error: False 
+Program: reshaped_programs/test_input_double_req_bl_0680b.c
+Error: Undefined Behavior Sanitizer 
+#############################################################
+
+
+Program: reshaped_programs/test_input_double_req_bl_0680a.c
+Error: Undefined Behavior Sanitizer 
+
+
+Program: /home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_double_req_bl_0680a.c
+Error: Undefined Behavior Sanitizer 
+
+Program: /home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_double_req_bl_0680a.c
+Error: Undefined Behavior Sanitizer 
+
+Program: /home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_double_req_bl_0680a.c
+Error: Undefined Behavior Sanitizer 
+
+Program: /home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_double_req_bl_0680a.c
+Error: Undefined Behavior Sanitizer 
+
+Program: /home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_double_req_bl_0680a.c
+Error: Undefined Behavior Sanitizer 
 

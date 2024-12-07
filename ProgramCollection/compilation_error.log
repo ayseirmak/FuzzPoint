@@ -1,30 +1,1096 @@
-Program: reshaped_programs/test_input_double_req_bl_0686a.c
+Program: reshaped_programs/test_input_newton_2_2.c
+Error: :12:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:12:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_1_1.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_1271a.c
+Program: reshaped_programs/test_input_square_2.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_0876.c
+Program: reshaped_programs/test_input_newton_3_3.c
+Error: :18:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:18:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_sine_8.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_0490a.c
+Program: reshaped_programs/test_input_sine_5.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_3_1.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_3_4.c
+Error: :35:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:35:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_1_3.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sine_4.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_2_6.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_2_1.c
+Error: :11:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:11:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_2_4.c
+Error: :14:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort(); 
+    ^
+:14:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_square_5.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_3_7.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_square_8.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sine_7.c
+Error: :32:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:32:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_square_3.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_3_5.c
+Error: :11:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:11:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_1_8.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sine_1.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_3_8.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_1_4.c
+Error: :37:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:37:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_square_1.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_2_5.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_square_4.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_1_6.c
+Error: :50:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:50:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_3_2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sine_3.c
+Error: :32:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:32:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_1_2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_square_7.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_2_3.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_1_5.c
+Error: :35:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:35:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_3_6.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_square_6.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sine_6.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_2_7.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sine_2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_1_7.c
+Error: :9:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:9:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_2_8.c
+Error: :32:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:32:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_Float_div_bad.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_digits_bad_for.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_fmod3.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Float_div.i.p+cfa-reducer.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Double_div.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_digits_for.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Double_div.i.p+cfa-reducer.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_digits_while.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Float_div_bad.i.p+cfa-reducer.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_fmod2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Double_div_bad.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_digits_bad_while.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Float_div.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Double_div_bad.i.p+cfa-reducer.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0681a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0874.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1131b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1012b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0870a.c
+Error: :43:17: warning: implicit declaration of function '__ieee754_powf' is invalid in C99 [-Wimplicit-function-declaration]
+    float res = __ieee754_powf(x, y);
+                ^
+:46:10: warning: implicit declaration of function 'isnan_float' is invalid in C99 [-Wimplicit-function-declaration]
+    if (!isnan_float(res)) {
+         ^
+2 warnings generated.
+/usr/bin/ld: /tmp/test_input_float_req_bl_0870a-e610c0.o: in function `main':
+test_input_float_req_bl_0870a.c:(.text+0x4a8): undefined reference to `__ieee754_powf'
+/usr/bin/ld: test_input_float_req_bl_0870a.c:(.text+0x4ac): undefined reference to `__ieee754_powf'
+/usr/bin/ld: test_input_float_req_bl_0870a.c:(.text+0x4b0): undefined reference to `isnan_float'
+/usr/bin/ld: test_input_float_req_bl_0870a.c:(.text+0x4b4): undefined reference to `isnan_float'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_float_req_bl_1232b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0680b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0970b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0685a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1010.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1072c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0730b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1230.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0730c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1092c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0710.c
+Error: :32:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:32:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:32:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_1211a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1210.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1092d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0250a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0883.c
+Error: :373:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        sf_u.word = ix;
+        ^~~~
+        gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:374:14: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        ax = sf_u.value;
+             ^~~~
+             gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:381:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        sf_u.word = is & 0xfffff000;
+        ^~~~
+        gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:382:15: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        s_h = sf_u.value;
+              ^~~~
+              gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:383:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        sf_u.word = (((ix >> 1) | 0x20000000) + 0x0040000 + (k << 21));
+        ^~~~
+        gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:384:15: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        t_h = sf_u.value;
+              ^~~~
+              gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:397:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        sf_u.word = is & 0xfffff000;
+        ^~~~
+        gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:398:15: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        t_h = sf_u.value;
+              ^~~~
+              gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:405:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        sf_u.word = is & 0xfffff000;
+        ^~~~
+        gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:406:15: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        p_h = sf_u.value;
+              ^~~~
+              gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:415:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        sf_u.word = is & 0xfffff000;
+        ^~~~
+        gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:416:14: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        t1 = sf_u.value;
+             ^~~~
+             gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:424:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    sf_u.word = is & 0xfffff000;
+    ^~~~
+    gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:425:10: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    y1 = sf_u.value;
+         ^~~~
+         gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:451:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        sf_u.word = n & ~(0x007fffff >> k);
+        ^~~~
+        gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:452:13: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        t = sf_u.value;
+            ^~~~
+            gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:461:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    sf_u.word = is & 0xfffff000;
+    ^~~~
+    gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:462:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    t = sf_u.value;
+        ^~~~
+        gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+:477:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+        sf_u.word = j;
+        ^~~~
+        gf_u
+:268:27: note: 'gf_u' declared here
+    ieee_float_shape_type gf_u;
+                          ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0661b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1052a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0971.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1031.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1122b.c
+Compiled successfully
+
+#############################################################
+
+Program: reshaped_programs/test_input_float_req_bl_0832b.c
+Error: :39:15: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if (((hx) == 0x7f800000L))
+         ~~~~~^~~~~~~~~~~~~~
+:39:15: note: remove extraneous parentheses around the comparison to silence this warning
+    if (((hx) == 0x7f800000L))
+        ~     ^             ~
+:39:15: note: use '=' to turn this equality comparison into an assignment
+    if (((hx) == 0x7f800000L))
+              ^~
+              =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0832a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1052b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0740.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0220b.c
+Error: :93:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:93:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:93:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+:148:12: warning: implicit declaration of function '__kernel_sinf' is invalid in C99 [-Wimplicit-function-declaration]
+    return __kernel_sinf(x, z, 0);
+           ^
+:154:9: warning: implicit declaration of function '__ieee754_rem_pio2f' is invalid in C99 [-Wimplicit-function-declaration]
+    n = __ieee754_rem_pio2f(x, y);
+        ^
+:159:14: warning: implicit declaration of function '__kernel_cosf' is invalid in C99 [-Wimplicit-function-declaration]
+      return __kernel_cosf(y[0], y[1]);
+             ^
+4 warnings generated.
+/usr/bin/ld: /tmp/test_input_float_req_bl_0220b-fd8c92.o: in function `sin_float':
+test_input_float_req_bl_0220b.c:(.text+0x1454): undefined reference to `__ieee754_rem_pio2f'
+/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x1458): undefined reference to `__ieee754_rem_pio2f'
+/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x145c): undefined reference to `__kernel_sinf'
+/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x1460): undefined reference to `__kernel_sinf'
+/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x1464): undefined reference to `__kernel_cosf'
+/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x1468): undefined reference to `__kernel_cosf'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_float_req_bl_1271b.c
+Error: :34:15: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if (((hx) == 0))
+         ~~~~~^~~~
+:34:15: note: remove extraneous parentheses around the comparison to silence this warning
+    if (((hx) == 0))
+        ~     ^   ~
+:34:15: note: use '=' to turn this equality comparison into an assignment
+    if (((hx) == 0))
+              ^~
+              =
+:130:23: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+            if (((ha) == 0x7f800000L))
+                 ~~~~~^~~~~~~~~~~~~~
+:130:23: note: remove extraneous parentheses around the comparison to silence this warning
+            if (((ha) == 0x7f800000L))
+                ~     ^             ~
+:130:23: note: use '=' to turn this equality comparison into an assignment
+            if (((ha) == 0x7f800000L))
+                      ^~
+                      =
+:132:23: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+            if (((hb) == 0x7f800000L))
+                 ~~~~~^~~~~~~~~~~~~~
+:132:23: note: remove extraneous parentheses around the comparison to silence this warning
+            if (((hb) == 0x7f800000L))
+                ~     ^             ~
+:132:23: note: use '=' to turn this equality comparison into an assignment
+            if (((hb) == 0x7f800000L))
+                      ^~
+                      =
+:152:19: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+        if (((hb) == 0)) {
+             ~~~~~^~~~
+:152:19: note: remove extraneous parentheses around the comparison to silence this warning
+        if (((hb) == 0)) {
+            ~     ^   ~
+:152:19: note: use '=' to turn this equality comparison into an assignment
+        if (((hb) == 0)) {
+                  ^~
+                  =
+4 warnings generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0520.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0260.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1252b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0620b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0240b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1011b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0960a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0872b.c
+Error: :381:28: error: redefinition of 'sh_u'
+    ieee_double_shape_type sh_u;
+                           ^
+:366:28: note: previous definition is here
+    ieee_double_shape_type sh_u;
+                           ^
+:396:28: error: redefinition of 'sl_u'
+    ieee_double_shape_type sl_u;
+                           ^
+:375:28: note: previous definition is here
+    ieee_double_shape_type sl_u;
+                           ^
+:406:28: error: redefinition of 'sl_u'
+    ieee_double_shape_type sl_u;
+                           ^
+:375:28: note: previous definition is here
+    ieee_double_shape_type sl_u;
+                           ^
+:416:28: error: redefinition of 'sl_u'
+    ieee_double_shape_type sl_u;
+                           ^
+:375:28: note: previous definition is here
+    ieee_double_shape_type sl_u;
+                           ^
+:435:26: error: redefinition of 'ew_u'
+  ieee_double_shape_type ew_u;
+                         ^
+:238:26: note: previous definition is here
+  ieee_double_shape_type ew_u;
+                         ^
+:472:26: error: redefinition of 'sl_u'
+  ieee_double_shape_type sl_u;
+                         ^
+:428:26: note: previous definition is here
+  ieee_double_shape_type sl_u;
+                         ^
+6 errors generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0270a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0685b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1251b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0270b.c
+Error: :51:14: error: use of undeclared identifier 'i'
+        m -= i - 1;
+             ^
+1 error generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0210.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1032b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0663a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0872a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1122b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1032d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0663b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1252a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0550b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0320b.c
+Error: :90:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:90:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:90:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0530a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1092b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1071.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0620a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0281.c
+Error: :32:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:32:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:32:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_1122a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0930.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0330b.c
+Error: :100:16: warning: implicit declaration of function 'cos_double' is invalid in C99 [-Wimplicit-function-declaration]
+  double res = cos_double(x);
+               ^
+1 warning generated.
+/usr/bin/ld: /tmp/test_input_double_req_bl_0330b-2de1aa.o: in function `main':
+test_input_double_req_bl_0330b.c:(.text+0x9e4): undefined reference to `cos_double'
+/usr/bin/ld: test_input_double_req_bl_0330b.c:(.text+0x9e8): undefined reference to `cos_double'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_double_req_bl_0920b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1032a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0620a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0490a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0682a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0661b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1231b.c
 Compiled successfully
 
 Program: reshaped_programs/test_input_float_req_bl_0833.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_1232a.c
+Program: reshaped_programs/test_input_float_req_bl_1072a.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_0480.c
+Program: reshaped_programs/test_input_float_req_bl_0685a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1051.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0682b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1381.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1092a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0260.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0330b.c
+Error: :88:33: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    k = (ix & 0x7f800000) >> 23 - 25;
+                          ~~ ~~~^~~~
+:88:33: note: place parentheses around the '-' expression to silence this warning
+    k = (ix & 0x7f800000) >> 23 - 25;
+                                ^
+                             (      )
+:88:27: warning: shift count is negative [-Wshift-count-negative]
+    k = (ix & 0x7f800000) >> 23 - 25;
+                          ^  ~~~~~~~
+:140:32: warning: implicit declaration of function '__kernel_cosf' is invalid in C99 [-Wimplicit-function-declaration]
+  if (ix <= 0x3f490fd8) return __kernel_cosf(x, z);
+                               ^
+:143:9: warning: implicit declaration of function '__ieee754_rem_pio2f' is invalid in C99 [-Wimplicit-function-declaration]
+    n = __ieee754_rem_pio2f(x, y);
+        ^
+:146:23: warning: implicit declaration of function '__kernel_sinf' is invalid in C99 [-Wimplicit-function-declaration]
+      case 1: return -__kernel_sinf(y[0], y[1], 1);
+                      ^
+5 warnings generated.
+/usr/bin/ld: /tmp/test_input_float_req_bl_0330b-485e4f.o: in function `cos_float':
+test_input_float_req_bl_0330b.c:(.text+0x1234): undefined reference to `__ieee754_rem_pio2f'
+/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x1238): undefined reference to `__ieee754_rem_pio2f'
+/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x123c): undefined reference to `__kernel_cosf'
+/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x1240): undefined reference to `__kernel_cosf'
+/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x1244): undefined reference to `__kernel_sinf'
+/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x1248): undefined reference to `__kernel_sinf'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_double_req_bl_0921.c
+Error: :99:24: warning: | has lower precedence than >; > will be evaluated first [-Wparentheses]
+    if ((hx - 0x6147a) | (0x6b851 - hx) > 0) {
+                       ^~~~~~~~~~~~~~~~~~~~
+:99:24: note: place parentheses around the '>' expression to silence this warning
+    if ((hx - 0x6147a) | (0x6b851 - hx) > 0) {
+                       ^
+                         (                 )
+:99:24: note: place parentheses around the | expression to evaluate it first
+    if ((hx - 0x6147a) | (0x6b851 - hx) > 0) {
+                       ^
+        (                              )
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0681a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0470.c
+Error: :33:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:33:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:33:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0530b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0220a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0330a.c
+Error: :209:13: error: use of undeclared identifier 'INFINITY'
+  float x = INFINITY; // Use standard representation of infinity
+            ^
+1 error generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0684b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0270a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1130a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1121b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0684b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1252b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0876.c
+Error: :335:36: warning: | has lower precedence than ==; == will be evaluated first [-Wparentheses]
+  if ((((__uint32_t)hx >> 31) - 1) | yisint == 0) {
+                                   ^~~~~~~~~~~~~
+:335:36: note: place parentheses around the '==' expression to silence this warning
+  if ((((__uint32_t)hx >> 31) - 1) | yisint == 0) {
+                                   ^
+                                     (          )
+:335:36: note: place parentheses around the | expression to evaluate it first
+  if ((((__uint32_t)hx >> 31) - 1) | yisint == 0) {
+                                   ^
+      (                                    )
+:449:25: error: redefinition of 'gf_u1'
+  ieee_float_shape_type gf_u1;
+                        ^
+:269:25: note: previous definition is here
+  ieee_float_shape_type gf_u1;
+                        ^
+:512:25: error: redefinition of 'gf_u'
+  ieee_float_shape_type gf_u;
+                        ^
+:461:25: note: previous definition is here
+  ieee_float_shape_type gf_u;
+                        ^
+1 warning and 2 errors generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0686b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0610.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0250a.c
 Compiled successfully
 
 Program: reshaped_programs/test_input_float_req_bl_0684a.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_0877.c
+Program: reshaped_programs/test_input_double_req_bl_1121b.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_0832.c
+Program: reshaped_programs/test_input_float_req_bl_0681b.c
 Compiled successfully
 
+Program: reshaped_programs/test_input_double_req_bl_0931.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1072b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0960b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0685b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1072c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0670.c
+Error: :130:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((iy) == 0)) {
+       ~~~~~^~~~
+:130:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((iy) == 0)) {
+      ~     ^   ~
+:130:13: note: use '=' to turn this equality comparison into an assignment
+  if (((iy) == 0)) {
+            ^~
+            =
+:142:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((ix) == 0))
+       ~~~~~^~~~
+:142:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((ix) == 0))
+      ~     ^   ~
+:142:13: note: use '=' to turn this equality comparison into an assignment
+  if (((ix) == 0))
+            ^~
+            =
+:145:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((ix) == 0x7f800000L)) {
+       ~~~~~^~~~~~~~~~~~~~
+:145:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((ix) == 0x7f800000L)) {
+      ~     ^             ~
+:145:13: note: use '=' to turn this equality comparison into an assignment
+  if (((ix) == 0x7f800000L)) {
+            ^~
+            =
+:146:15: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if (((iy) == 0x7f800000L)) {
+         ~~~~~^~~~~~~~~~~~~~
+:146:15: note: remove extraneous parentheses around the comparison to silence this warning
+    if (((iy) == 0x7f800000L)) {
+        ~     ^             ~
+:146:15: note: use '=' to turn this equality comparison into an assignment
+    if (((iy) == 0x7f800000L)) {
+              ^~
+              =
+:171:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((iy) == 0x7f800000L))
+       ~~~~~^~~~~~~~~~~~~~
+:171:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((iy) == 0x7f800000L))
+      ~     ^             ~
+:171:13: note: use '=' to turn this equality comparison into an assignment
+  if (((iy) == 0x7f800000L))
+            ^~
+            =
+5 warnings generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0683a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0662a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1011a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0910a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0730c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0680a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0660a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0460.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0682b.c
+Error: :147:25: error: use of undeclared identifier 'tiny_atan2'
+            return pi + tiny_atan2;
+                        ^
+:149:26: error: use of undeclared identifier 'tiny_atan2'
+            return -pi - tiny_atan2;
+                         ^
+:154:37: error: use of undeclared identifier 'tiny_atan2'
+        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
+                                    ^
+:154:59: error: use of undeclared identifier 'tiny_atan2'
+        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
+                                                          ^
+:160:33: error: use of undeclared identifier 'tiny_atan2'
+                return pi_o_4 + tiny_atan2;
+                                ^
+:162:34: error: use of undeclared identifier 'tiny_atan2'
+                return -pi_o_4 - tiny_atan2;
+                                 ^
+:164:39: error: use of undeclared identifier 'tiny_atan2'
+                return 3.0 * pi_o_4 + tiny_atan2;
+                                      ^
+:166:40: error: use of undeclared identifier 'tiny_atan2'
+                return -3.0 * pi_o_4 - tiny_atan2;
+                                       ^
+:171:24: error: use of undeclared identifier 'zero_atan2'; did you mean '__atan2'?
+                return zero_atan2;
+                       ^~~~~~~~~~
+                       __atan2
+/usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:1: note: '__atan2' declared here
+__MATHCALL (atan2,, (_Mdouble_ __y, _Mdouble_ __x));
+^
+/usr/include/math.h:273:3: note: expanded from macro '__MATHCALL'
+  __MATHDECL (_Mdouble_,function,suffix, args)
+  ^
+/usr/include/math.h:276:22: note: expanded from macro '__MATHDECL'
+  __MATHDECL_1(type, __CONCAT(__,function),suffix, args)
+                     ^
+/usr/include/aarch64-linux-gnu/sys/cdefs.h:105:23: note: expanded from macro '__CONCAT'
+#define __CONCAT(x,y)   x ## y
+                        ^
+<scratch space>:52:1: note: expanded from here
+__atan2
+^
+:171:24: error: returning 'double (double, double)' from a function with incompatible result type 'double'
+                return zero_atan2;
+                       ^~~~~~~~~~
+:173:25: error: use of undeclared identifier 'zero_atan2'
+                return -zero_atan2;
+                        ^
+:175:29: error: use of undeclared identifier 'tiny_atan2'
+                return pi + tiny_atan2;
+                            ^
+:177:30: error: use of undeclared identifier 'tiny_atan2'
+                return -pi - tiny_atan2;
+                             ^
+:183:37: error: use of undeclared identifier 'tiny_atan2'
+        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
+                                    ^
+:183:59: error: use of undeclared identifier 'tiny_atan2'
+        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
+                                                          ^
+:187:28: error: use of undeclared identifier 'pi_lo_atan2'
+        z = pi_o_2 + 0.5 * pi_lo_atan2;
+                           ^
+:208:26: error: use of undeclared identifier 'pi_lo_atan2'
+        return pi - (z - pi_lo_atan2);
+                         ^
+:210:21: error: use of undeclared identifier 'pi_lo_atan2'
+        return (z - pi_lo_atan2) - pi;
+                    ^
+18 errors generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_1121a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0910a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1071.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0921.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0621b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0683a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1251.c
+Compiled successfully
