@@ -107,7 +107,7 @@ class GPTProgramGenerator:
             #print(program_content)
             
             query = """
-            Can you covert this program to the normal program.  
+            Can you covert this program to the normal program and add necessary includes.  
             Here is the code :
             """
             prompt = f"{query}\n\n{program_content}"

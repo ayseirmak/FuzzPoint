@@ -216,10 +216,12 @@ def main():
         c_files = file.readlines()
     c_files = [line.strip() for line in c_files]
     
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    #os.makedirs(OUTPUT_DIR, exist_ok=True)
+    #os.makedirs(CLEAR_DIR, exist_ok=True)
+
     
     # Reshaping with gpt
-    load_dotenv(dotenv_path = ".env")
+    # load_dotenv(dotenv_path = ".env")
     key = "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"
     #key = os.getenv("OPENAI_API_KEY")
     print("Key: ", key)
@@ -230,7 +232,7 @@ def main():
     
     gpt = GPTProgramGenerator(OpenAI(api_key=key))
     
-    for c_file in c_files[0:300]:
+    for c_file in c_files[500:]:
         reshaped_file = reshape_file(gpt, c_file, OUTPUT_DIR)
         print(f"Reshaped file saved to {reshaped_file}")
         if compile_and_test(reshaped_file):
@@ -254,6 +256,7 @@ def main():
 if __name__ == "__main__":
     #path = '/home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_double_req_bl_1252b.c'
     #compile_and_test(path)
+    
     main()
 
     '''

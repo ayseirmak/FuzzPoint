@@ -1,8 +1,8 @@
 import os
 
 # Paths
-text_file_path = '/home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/compilation_error.log'
-folder_x_path = '/home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/clear_programs'
+text_file_path = '/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/detail_error.log'
+folder_x_path = '/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/clear_programs'
 
 # Read the text file
 with open(text_file_path, 'r') as file:
@@ -22,8 +22,20 @@ for line in lines:
 # Check if these programs exist in folder X
 found_programs = []
 for program in error_programs:
-    if not os.path.exists(os.path.join(folder_x_path, program)):
+    if os.path.exists(os.path.join(folder_x_path, program)):
         found_programs.append(program)
 
 print(found_programs)
 print(len(found_programs))
+
+# List all files in the directory
+folder_path = "/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/clear_programs"
+folder_path2 = "/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs"
+num_files = len([f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))])
+
+print(f"Number of files: {num_files}")
+
+# List all files in the directory
+num_files = len([f for f in os.listdir(folder_path2) if os.path.isfile(os.path.join(folder_path2, f))])
+
+print(f"Number of files: {num_files}")

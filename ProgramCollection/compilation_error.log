@@ -1,105 +1,12 @@
-Program: reshaped_programs/test_input_newton_2_2.c
-Error: :12:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+Program: reshaped_programs/test_input_square_3.c
+Error: :33:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
         abort();
         ^
-:12:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+:33:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
 1 warning generated.
 
-
-Program: reshaped_programs/test_input_newton_1_1.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_square_2.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_newton_3_3.c
-Error: :18:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
-    abort();
-    ^
-:18:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_sine_8.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_sine_5.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_newton_3_1.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_newton_3_4.c
-Error: :35:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
-    abort();
-    ^
-:35:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_newton_1_3.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_sine_4.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_newton_2_6.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_newton_2_1.c
-Error: :11:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
-        abort();
-        ^
-:11:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_newton_2_4.c
-Error: :14:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
-    abort(); 
-    ^
-:14:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_square_5.c
-Compiled successfully
 
 Program: reshaped_programs/test_input_newton_3_7.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_square_8.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_sine_7.c
-Error: :32:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
-        abort();
-        ^
-:32:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_square_3.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_newton_3_5.c
-Error: :11:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
-        abort();
-        ^
-:11:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_newton_1_8.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_sine_1.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_newton_3_8.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_newton_1_4.c
 Error: :37:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
         abort();
         ^
@@ -107,44 +14,158 @@ Error: :37:9: warning: implicitly declaring library function 'abort' with type '
 1 warning generated.
 
 
-Program: reshaped_programs/test_input_square_1.c
+Program: reshaped_programs/test_input_newton_1_8.c
+Error: :35:3: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+  abort();
+  ^
+:35:3: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_sine_5.c
+Error: :35:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:35:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_3_5.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_newton_2_5.c
+Program: reshaped_programs/test_input_newton_1_1.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_square_4.c
+Program: reshaped_programs/test_input_newton_3_8.c
 Compiled successfully
 
 Program: reshaped_programs/test_input_newton_1_6.c
-Error: :50:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
-        abort();
-        ^
-:50:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_newton_3_2.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_sine_3.c
-Error: :32:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
-        abort();
-        ^
-:32:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_newton_1_2.c
+Program: reshaped_programs/test_input_newton_3_3.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_square_7.c
+Program: reshaped_programs/test_input_sine_2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_1_4.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_2_8.c
 Compiled successfully
 
 Program: reshaped_programs/test_input_newton_2_3.c
 Compiled successfully
 
+Program: reshaped_programs/test_input_sine_3.c
+Error: :35:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:35:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_square_6.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_square_2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_1_3.c
+Error: :10:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:10:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_sine_8.c
+Error: :29:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:29:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_square_8.c
+Error: :35:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort(); 
+        ^
+:35:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_3_6.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_square_4.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_3_1.c
+Error: :13:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:13:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_sine_6.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_square_7.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_1_2.c
+Error: :12:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:12:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_square_1.c
+Error: :28:18: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    if (!cond) { abort(); }
+                 ^
+:28:18: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_2_2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sine_1.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sine_7.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sine_4.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_2_7.c
+Error: :11:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:11:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
 Program: reshaped_programs/test_input_newton_1_5.c
+Error: :33:18: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    if (!cond) { abort(); }
+                 ^
+:33:18: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_2_4.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_square_5.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_3_2.c
 Error: :35:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
     abort();
     ^
@@ -152,22 +173,266 @@ Error: :35:5: warning: implicitly declaring library function 'abort' with type '
 1 warning generated.
 
 
-Program: reshaped_programs/test_input_newton_3_6.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_square_6.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_sine_6.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_newton_2_7.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_sine_2.c
-Compiled successfully
-
 Program: reshaped_programs/test_input_newton_1_7.c
+Error: :32:16: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+  if (!cond) { abort(); }
+               ^
+:32:16: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_newton_2_6.c
+Error: :59:9: warning: implicit declaration of function 'reach_error' is invalid in C99 [-Wimplicit-function-declaration]
+        reach_error();
+        ^
+1 warning generated.
+/usr/bin/ld: /tmp/test_input_newton_2_6-469d91.o: in function `main':
+test_input_newton_2_6.c:(.text+0x249): undefined reference to `reach_error'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_newton_2_5.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_2_1.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_newton_3_4.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_loop1-1.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_loop4.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_loop3.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_loop2-1.c
+Error: :13:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:13:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_loop1-2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_loop5.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_loop2-2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Double_div.i.p+cfa-reducer.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Double_div_bad.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_fmod2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_digits_bad_for.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Float_div_bad.i.p+cfa-reducer.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Float_div.i.p+cfa-reducer.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Float_div_bad.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_digits_bad_while.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Double_div.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_digits_while.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Float_div.c
+Error: :14:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:14:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_digits_for.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_Double_div_bad.i.p+cfa-reducer.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_fmod3.c
+Error: :13:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:13:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_recursified_freire1.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_recursified_freire2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_implicitfloatconversion.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_memsetNonZero2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_memsetNonZero.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_memsetNonZero_-write.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_memset2.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_memsetNonZero3.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_memset3.c
+Error: :6:25: error: typedef redefinition with different types ('__kernel_size_t' (aka 'unsigned int') vs 'unsigned long')
+typedef __kernel_size_t size_t;
+                        ^
+/usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:23: note: previous definition is here
+typedef __SIZE_TYPE__ size_t;
+                      ^
+1 error generated.
+
+
+Program: reshaped_programs/test_input_memsetNonZero3_-write.c
+Error: :6:25: error: typedef redefinition with different types ('__kernel_size_t' (aka 'unsigned int') vs 'unsigned long')
+typedef __kernel_size_t size_t;
+                        ^
+/usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:23: note: previous definition is here
+typedef __SIZE_TYPE__ size_t;
+                      ^
+1 error generated.
+
+
+Program: reshaped_programs/test_input_memset2_-write.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_memset.c
+Error: :5:22: error: typedef redefinition with different types ('unsigned int' vs 'unsigned long')
+typedef unsigned int size_t;
+                     ^
+/usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:23: note: previous definition is here
+typedef __SIZE_TYPE__ size_t;
+                      ^
+1 error generated.
+
+
+Program: reshaped_programs/test_input_memset3_-write.c
+Error: :5:25: error: typedef redefinition with different types ('__kernel_size_t' (aka 'unsigned int') vs 'unsigned long')
+typedef __kernel_size_t size_t;
+                        ^
+/usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:23: note: previous definition is here
+typedef __SIZE_TYPE__ size_t;
+                      ^
+1 error generated.
+
+
+Program: reshaped_programs/test_input_memset_-write.c
+Error: :5:25: error: typedef redefinition with different types ('__kernel_size_t' (aka 'unsigned int') vs 'unsigned long')
+typedef __kernel_size_t size_t;
+                        ^
+/usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:23: note: previous definition is here
+typedef __SIZE_TYPE__ size_t;
+                      ^
+1 error generated.
+
+
+Program: reshaped_programs/test_input_memsetNonZero2_-write.c
+Error: :7:25: error: typedef redefinition with different types ('__kernel_size_t' (aka 'unsigned int') vs 'unsigned long')
+typedef __kernel_size_t size_t;
+                        ^
+/usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:23: note: previous definition is here
+typedef __SIZE_TYPE__ size_t;
+                      ^
+1 error generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0930.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1122b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0663b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0460.c
+Error: :44:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((hx == 0))
+         ~~~^~~~
+:44:13: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((hx == 0))
+        ~   ^   ~
+:44:13: note: use '=' to turn this equality comparison into an assignment
+    if ((hx == 0))
+            ^~
+            =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0981.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1232b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0730b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1250.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0981.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1252b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1071.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0684b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0480.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0490b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0931.c
+Error: :121:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:121:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0663a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0730c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0681a.c
 Error: :9:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
     abort();
     ^
@@ -175,922 +440,3085 @@ Error: :9:5: warning: implicitly declaring library function 'abort' with type 'v
 1 warning generated.
 
 
-Program: reshaped_programs/test_input_newton_2_8.c
-Error: :32:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
-    abort();
-    ^
-:32:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_Float_div_bad.c
+Program: reshaped_programs/test_input_double_req_bl_1032c.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_digits_bad_for.c
+Program: reshaped_programs/test_input_double_req_bl_0970a.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_fmod3.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_Float_div.i.p+cfa-reducer.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_Double_div.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_digits_for.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_Double_div.i.p+cfa-reducer.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_digits_while.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_Float_div_bad.i.p+cfa-reducer.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_fmod2.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_Double_div_bad.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_digits_bad_while.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_Float_div.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_Double_div_bad.i.p+cfa-reducer.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0681a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0874.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1131b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1012b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0870a.c
-Error: :43:17: warning: implicit declaration of function '__ieee754_powf' is invalid in C99 [-Wimplicit-function-declaration]
-    float res = __ieee754_powf(x, y);
-                ^
-:46:10: warning: implicit declaration of function 'isnan_float' is invalid in C99 [-Wimplicit-function-declaration]
-    if (!isnan_float(res)) {
-         ^
-2 warnings generated.
-/usr/bin/ld: /tmp/test_input_float_req_bl_0870a-e610c0.o: in function `main':
-test_input_float_req_bl_0870a.c:(.text+0x4a8): undefined reference to `__ieee754_powf'
-/usr/bin/ld: test_input_float_req_bl_0870a.c:(.text+0x4ac): undefined reference to `__ieee754_powf'
-/usr/bin/ld: test_input_float_req_bl_0870a.c:(.text+0x4b0): undefined reference to `isnan_float'
-/usr/bin/ld: test_input_float_req_bl_0870a.c:(.text+0x4b4): undefined reference to `isnan_float'
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-
-
-Program: reshaped_programs/test_input_float_req_bl_1232b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0680b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0970b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0685a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1010.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1072c.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0730b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1230.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0730c.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1092c.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0710.c
-Error: :32:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-  if (((hx) == 0))
-       ~~~~~^~~~
-:32:13: note: remove extraneous parentheses around the comparison to silence this warning
-  if (((hx) == 0))
-      ~     ^   ~
-:32:13: note: use '=' to turn this equality comparison into an assignment
-  if (((hx) == 0))
-            ^~
-            =
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_double_req_bl_1211a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1210.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1092d.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0250a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0883.c
-Error: :373:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        sf_u.word = ix;
-        ^~~~
-        gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:374:14: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        ax = sf_u.value;
-             ^~~~
-             gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:381:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        sf_u.word = is & 0xfffff000;
-        ^~~~
-        gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:382:15: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        s_h = sf_u.value;
-              ^~~~
-              gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:383:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        sf_u.word = (((ix >> 1) | 0x20000000) + 0x0040000 + (k << 21));
-        ^~~~
-        gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:384:15: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        t_h = sf_u.value;
-              ^~~~
-              gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:397:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        sf_u.word = is & 0xfffff000;
-        ^~~~
-        gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:398:15: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        t_h = sf_u.value;
-              ^~~~
-              gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:405:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        sf_u.word = is & 0xfffff000;
-        ^~~~
-        gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:406:15: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        p_h = sf_u.value;
-              ^~~~
-              gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:415:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        sf_u.word = is & 0xfffff000;
-        ^~~~
-        gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:416:14: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        t1 = sf_u.value;
-             ^~~~
-             gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:424:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-    sf_u.word = is & 0xfffff000;
-    ^~~~
-    gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:425:10: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-    y1 = sf_u.value;
-         ^~~~
-         gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:451:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        sf_u.word = n & ~(0x007fffff >> k);
-        ^~~~
-        gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:452:13: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        t = sf_u.value;
-            ^~~~
-            gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:461:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-    sf_u.word = is & 0xfffff000;
-    ^~~~
-    gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:462:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-    t = sf_u.value;
-        ^~~~
-        gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-:477:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
-        sf_u.word = j;
-        ^~~~
-        gf_u
-:268:27: note: 'gf_u' declared here
-    ieee_float_shape_type gf_u;
-                          ^
-fatal error: too many errors emitted, stopping now [-ferror-limit=]
-20 errors generated.
-
-
-Program: reshaped_programs/test_input_double_req_bl_0661b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1052a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0971.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1031.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1122b.c
-Compiled successfully
-
-#############################################################
-
-Program: reshaped_programs/test_input_float_req_bl_0832b.c
-Error: :39:15: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-    if (((hx) == 0x7f800000L))
-         ~~~~~^~~~~~~~~~~~~~
-:39:15: note: remove extraneous parentheses around the comparison to silence this warning
-    if (((hx) == 0x7f800000L))
-        ~     ^             ~
-:39:15: note: use '=' to turn this equality comparison into an assignment
-    if (((hx) == 0x7f800000L))
-              ^~
-              =
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_float_req_bl_0832a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1052b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0740.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0220b.c
-Error: :93:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-  if (((hx) == 0))
-       ~~~~~^~~~
-:93:13: note: remove extraneous parentheses around the comparison to silence this warning
-  if (((hx) == 0))
-      ~     ^   ~
-:93:13: note: use '=' to turn this equality comparison into an assignment
-  if (((hx) == 0))
-            ^~
-            =
-:148:12: warning: implicit declaration of function '__kernel_sinf' is invalid in C99 [-Wimplicit-function-declaration]
-    return __kernel_sinf(x, z, 0);
-           ^
-:154:9: warning: implicit declaration of function '__ieee754_rem_pio2f' is invalid in C99 [-Wimplicit-function-declaration]
+Program: reshaped_programs/test_input_float_req_bl_0320a.c
+Error: :232:9: warning: implicit declaration of function '__ieee754_rem_pio2f' is invalid in C99 [-Wimplicit-function-declaration]
     n = __ieee754_rem_pio2f(x, y);
         ^
-:159:14: warning: implicit declaration of function '__kernel_cosf' is invalid in C99 [-Wimplicit-function-declaration]
-      return __kernel_cosf(y[0], y[1]);
-             ^
-4 warnings generated.
-/usr/bin/ld: /tmp/test_input_float_req_bl_0220b-fd8c92.o: in function `sin_float':
-test_input_float_req_bl_0220b.c:(.text+0x1454): undefined reference to `__ieee754_rem_pio2f'
-/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x1458): undefined reference to `__ieee754_rem_pio2f'
-/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x145c): undefined reference to `__kernel_sinf'
-/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x1460): undefined reference to `__kernel_sinf'
-/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x1464): undefined reference to `__kernel_cosf'
-/usr/bin/ld: test_input_float_req_bl_0220b.c:(.text+0x1468): undefined reference to `__kernel_cosf'
+1 warning generated.
+/usr/bin/ld: /tmp/test_input_float_req_bl_0320a-b1caa0.o: in function `cos_float':
+test_input_float_req_bl_0320a.c:(.text+0x1cfb): undefined reference to `__ieee754_rem_pio2f'
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 
-Program: reshaped_programs/test_input_float_req_bl_1271b.c
-Error: :34:15: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-    if (((hx) == 0))
-         ~~~~~^~~~
-:34:15: note: remove extraneous parentheses around the comparison to silence this warning
-    if (((hx) == 0))
-        ~     ^   ~
-:34:15: note: use '=' to turn this equality comparison into an assignment
-    if (((hx) == 0))
-              ^~
-              =
-:130:23: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-            if (((ha) == 0x7f800000L))
-                 ~~~~~^~~~~~~~~~~~~~
-:130:23: note: remove extraneous parentheses around the comparison to silence this warning
-            if (((ha) == 0x7f800000L))
-                ~     ^             ~
-:130:23: note: use '=' to turn this equality comparison into an assignment
-            if (((ha) == 0x7f800000L))
-                      ^~
-                      =
-:132:23: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-            if (((hb) == 0x7f800000L))
-                 ~~~~~^~~~~~~~~~~~~~
-:132:23: note: remove extraneous parentheses around the comparison to silence this warning
-            if (((hb) == 0x7f800000L))
-                ~     ^             ~
-:132:23: note: use '=' to turn this equality comparison into an assignment
-            if (((hb) == 0x7f800000L))
-                      ^~
-                      =
-:152:19: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-        if (((hb) == 0)) {
-             ~~~~~^~~~
-:152:19: note: remove extraneous parentheses around the comparison to silence this warning
-        if (((hb) == 0)) {
-            ~     ^   ~
-:152:19: note: use '=' to turn this equality comparison into an assignment
-        if (((hb) == 0)) {
-                  ^~
-                  =
-4 warnings generated.
-
-
-Program: reshaped_programs/test_input_double_req_bl_0520.c
+Program: reshaped_programs/test_input_double_req_bl_1012a.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_0260.c
+Program: reshaped_programs/test_input_double_req_bl_1300.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_1252b.c
+Program: reshaped_programs/test_input_float_req_bl_1072b.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_0620b.c
+Program: reshaped_programs/test_input_float_req_bl_1052b.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_0240b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1011b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0960a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0872b.c
-Error: :381:28: error: redefinition of 'sh_u'
-    ieee_double_shape_type sh_u;
-                           ^
-:366:28: note: previous definition is here
-    ieee_double_shape_type sh_u;
-                           ^
-:396:28: error: redefinition of 'sl_u'
-    ieee_double_shape_type sl_u;
-                           ^
-:375:28: note: previous definition is here
-    ieee_double_shape_type sl_u;
-                           ^
-:406:28: error: redefinition of 'sl_u'
-    ieee_double_shape_type sl_u;
-                           ^
-:375:28: note: previous definition is here
-    ieee_double_shape_type sl_u;
-                           ^
-:416:28: error: redefinition of 'sl_u'
-    ieee_double_shape_type sl_u;
-                           ^
-:375:28: note: previous definition is here
-    ieee_double_shape_type sl_u;
-                           ^
-:435:26: error: redefinition of 'ew_u'
-  ieee_double_shape_type ew_u;
-                         ^
-:238:26: note: previous definition is here
-  ieee_double_shape_type ew_u;
-                         ^
-:472:26: error: redefinition of 'sl_u'
-  ieee_double_shape_type sl_u;
-                         ^
-:428:26: note: previous definition is here
-  ieee_double_shape_type sl_u;
-                         ^
-6 errors generated.
-
-
-Program: reshaped_programs/test_input_float_req_bl_0270a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0685b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1251b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0270b.c
-Error: :51:14: error: use of undeclared identifier 'i'
-        m -= i - 1;
-             ^
-1 error generated.
-
-
-Program: reshaped_programs/test_input_double_req_bl_0210.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1032b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0663a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0872a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1122b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1032d.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0663b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1252a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0550b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0320b.c
-Error: :90:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-  if (((hx) == 0))
-       ~~~~~^~~~
-:90:13: note: remove extraneous parentheses around the comparison to silence this warning
-  if (((hx) == 0))
-      ~     ^   ~
-:90:13: note: use '=' to turn this equality comparison into an assignment
-  if (((hx) == 0))
-            ^~
-            =
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_float_req_bl_0530a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1092b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1071.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0620a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0281.c
-Error: :32:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-  if (((hx) == 0))
-       ~~~~~^~~~
-:32:13: note: remove extraneous parentheses around the comparison to silence this warning
-  if (((hx) == 0))
-      ~     ^   ~
-:32:13: note: use '=' to turn this equality comparison into an assignment
-  if (((hx) == 0))
-            ^~
-            =
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_float_req_bl_1122a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0930.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0330b.c
-Error: :100:16: warning: implicit declaration of function 'cos_double' is invalid in C99 [-Wimplicit-function-declaration]
-  double res = cos_double(x);
+Program: reshaped_programs/test_input_double_req_bl_0240a.c
+Error: :162:16: warning: implicit declaration of function 'sin_double' is invalid in C99 [-Wimplicit-function-declaration]
+  double res = sin_double(x);
                ^
 1 warning generated.
-/usr/bin/ld: /tmp/test_input_double_req_bl_0330b-2de1aa.o: in function `main':
-test_input_double_req_bl_0330b.c:(.text+0x9e4): undefined reference to `cos_double'
-/usr/bin/ld: test_input_double_req_bl_0330b.c:(.text+0x9e8): undefined reference to `cos_double'
+/usr/bin/ld: /tmp/test_input_double_req_bl_0240a-cf06de.o: in function `main':
+test_input_double_req_bl_0240a.c:(.text+0x1204): undefined reference to `sin_double'
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 
-Program: reshaped_programs/test_input_double_req_bl_0920b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1032a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0620a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0490a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0682a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0661b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1231b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0833.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1072a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0685a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1051.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0682b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1381.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1092a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0260.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0330b.c
-Error: :88:33: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
-    k = (ix & 0x7f800000) >> 23 - 25;
-                          ~~ ~~~^~~~
-:88:33: note: place parentheses around the '-' expression to silence this warning
-    k = (ix & 0x7f800000) >> 23 - 25;
-                                ^
-                             (      )
-:88:27: warning: shift count is negative [-Wshift-count-negative]
-    k = (ix & 0x7f800000) >> 23 - 25;
-                          ^  ~~~~~~~
-:140:32: warning: implicit declaration of function '__kernel_cosf' is invalid in C99 [-Wimplicit-function-declaration]
-  if (ix <= 0x3f490fd8) return __kernel_cosf(x, z);
+Program: reshaped_programs/test_input_float_req_bl_0870a.c
+Error: :381:27: error: redefinition of 'gf_u'
+    ieee_float_shape_type gf_u;
+                          ^
+:367:27: note: previous definition is here
+    ieee_float_shape_type gf_u;
+                          ^
+:390:27: error: redefinition of 'gf_u'
+    ieee_float_shape_type gf_u;
+                          ^
+:367:27: note: previous definition is here
+    ieee_float_shape_type gf_u;
+                          ^
+:400:27: error: redefinition of 'gf_u'
+    ieee_float_shape_type gf_u;
+                          ^
+:367:27: note: previous definition is here
+    ieee_float_shape_type gf_u;
+                          ^
+:419:25: error: redefinition of 'gf_u'
+  ieee_float_shape_type gf_u;
+                        ^
+:410:25: note: previous definition is here
+  ieee_float_shape_type gf_u;
+                        ^
+:441:32: warning: operator '>>' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    k = (n & 0x7fffffff) >> 23 - 0x7f;
+                         ~~ ~~~^~~~~~
+:441:32: note: place parentheses around the '-' expression to silence this warning
+    k = (n & 0x7fffffff) >> 23 - 0x7f;
                                ^
-:143:9: warning: implicit declaration of function '__ieee754_rem_pio2f' is invalid in C99 [-Wimplicit-function-declaration]
-    n = __ieee754_rem_pio2f(x, y);
-        ^
-:146:23: warning: implicit declaration of function '__kernel_sinf' is invalid in C99 [-Wimplicit-function-declaration]
-      case 1: return -__kernel_sinf(y[0], y[1], 1);
-                      ^
-5 warnings generated.
-/usr/bin/ld: /tmp/test_input_float_req_bl_0330b-485e4f.o: in function `cos_float':
-test_input_float_req_bl_0330b.c:(.text+0x1234): undefined reference to `__ieee754_rem_pio2f'
-/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x1238): undefined reference to `__ieee754_rem_pio2f'
-/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x123c): undefined reference to `__kernel_cosf'
-/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x1240): undefined reference to `__kernel_cosf'
-/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x1244): undefined reference to `__kernel_sinf'
-/usr/bin/ld: test_input_float_req_bl_0330b.c:(.text+0x1248): undefined reference to `__kernel_sinf'
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-
-
-Program: reshaped_programs/test_input_double_req_bl_0921.c
-Error: :99:24: warning: | has lower precedence than >; > will be evaluated first [-Wparentheses]
-    if ((hx - 0x6147a) | (0x6b851 - hx) > 0) {
-                       ^~~~~~~~~~~~~~~~~~~~
-:99:24: note: place parentheses around the '>' expression to silence this warning
-    if ((hx - 0x6147a) | (0x6b851 - hx) > 0) {
-                       ^
-                         (                 )
-:99:24: note: place parentheses around the | expression to evaluate it first
-    if ((hx - 0x6147a) | (0x6b851 - hx) > 0) {
-                       ^
-        (                              )
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_float_req_bl_0681a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0470.c
-Error: :33:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-  if (((hx) == 0))
-       ~~~~~^~~~
-:33:13: note: remove extraneous parentheses around the comparison to silence this warning
-  if (((hx) == 0))
-      ~     ^   ~
-:33:13: note: use '=' to turn this equality comparison into an assignment
-  if (((hx) == 0))
-            ^~
-            =
-1 warning generated.
-
-
-Program: reshaped_programs/test_input_float_req_bl_0530b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0220a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0330a.c
-Error: :209:13: error: use of undeclared identifier 'INFINITY'
-  float x = INFINITY; // Use standard representation of infinity
-            ^
-1 error generated.
-
-
-Program: reshaped_programs/test_input_double_req_bl_0684b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0270a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1130a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1121b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0684b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1252b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0876.c
-Error: :335:36: warning: | has lower precedence than ==; == will be evaluated first [-Wparentheses]
-  if ((((__uint32_t)hx >> 31) - 1) | yisint == 0) {
-                                   ^~~~~~~~~~~~~
-:335:36: note: place parentheses around the '==' expression to silence this warning
-  if ((((__uint32_t)hx >> 31) - 1) | yisint == 0) {
-                                   ^
-                                     (          )
-:335:36: note: place parentheses around the | expression to evaluate it first
-  if ((((__uint32_t)hx >> 31) - 1) | yisint == 0) {
-                                   ^
-      (                                    )
-:449:25: error: redefinition of 'gf_u1'
-  ieee_float_shape_type gf_u1;
-                        ^
-:269:25: note: previous definition is here
-  ieee_float_shape_type gf_u1;
-                        ^
-:512:25: error: redefinition of 'gf_u'
+                            (        )
+:451:25: error: redefinition of 'gf_u'
   ieee_float_shape_type gf_u;
                         ^
-:461:25: note: previous definition is here
+:410:25: note: previous definition is here
   ieee_float_shape_type gf_u;
                         ^
-1 warning and 2 errors generated.
+:454:25: error: redefinition of 'sf_u'
+  ieee_float_shape_type sf_u;
+                        ^
+:413:25: note: previous definition is here
+  ieee_float_shape_type sf_u;
+                        ^
+:465:25: error: redefinition of 'gf_u'
+  ieee_float_shape_type gf_u;
+                        ^
+:410:25: note: previous definition is here
+  ieee_float_shape_type gf_u;
+                        ^
+:441:26: warning: shift count is negative [-Wshift-count-negative]
+    k = (n & 0x7fffffff) >> 23 - 0x7f;
+                         ^  ~~~~~~~~~
+2 warnings and 7 errors generated.
 
 
-Program: reshaped_programs/test_input_float_req_bl_0686b.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0610.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0250a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0684a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_1121b.c
+Program: reshaped_programs/test_input_double_req_bl_0873b.c
 Compiled successfully
 
 Program: reshaped_programs/test_input_float_req_bl_0681b.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_0931.c
+Program: reshaped_programs/test_input_float_req_bl_0920a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1270a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0834.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0740.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0520.c
+Error: :159:18: warning: implicit declaration of function 'tan_double' is invalid in C99 [-Wimplicit-function-declaration]
+    double res = tan_double(x);
+                 ^
+1 warning generated.
+/usr/bin/ld: /tmp/test_input_double_req_bl_0520-e23d54.o: in function `main':
+test_input_double_req_bl_0520.c:(.text+0x14e4): undefined reference to `tan_double'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_double_req_bl_0662b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1092c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0682b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1251b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0870b.c
+Error: :312:48: error: expected expression
+    if ((((__uint32_t)hx >> 31) - 1) | yisint) == 0)
+                                               ^
+:364:31: error: redefinition of 'sf_u'
+        ieee_float_shape_type sf_u;
+                              ^
+:354:31: note: previous definition is here
+        ieee_float_shape_type sf_u;
+                              ^
+:367:31: error: redefinition of 'sf_u'
+        ieee_float_shape_type sf_u;
+                              ^
+:354:31: note: previous definition is here
+        ieee_float_shape_type sf_u;
+                              ^
+:380:31: error: redefinition of 'gf_u'
+        ieee_float_shape_type gf_u;
+                              ^
+:361:31: note: previous definition is here
+        ieee_float_shape_type gf_u;
+                              ^
+:383:31: error: redefinition of 'sf_u'
+        ieee_float_shape_type sf_u;
+                              ^
+:354:31: note: previous definition is here
+        ieee_float_shape_type sf_u;
+                              ^
+:390:31: error: redefinition of 'gf_u'
+        ieee_float_shape_type gf_u;
+                              ^
+:361:31: note: previous definition is here
+        ieee_float_shape_type gf_u;
+                              ^
+:393:31: error: redefinition of 'sf_u'
+        ieee_float_shape_type sf_u;
+                              ^
+:354:31: note: previous definition is here
+        ieee_float_shape_type sf_u;
+                              ^
+:402:31: error: redefinition of 'gf_u'
+        ieee_float_shape_type gf_u;
+                              ^
+:361:31: note: previous definition is here
+        ieee_float_shape_type gf_u;
+                              ^
+:405:31: error: redefinition of 'sf_u'
+        ieee_float_shape_type sf_u;
+                              ^
+:354:31: note: previous definition is here
+        ieee_float_shape_type sf_u;
+                              ^
+:411:54: error: expected expression
+    if ((((__uint32_t)hx >> 31) - 1) | (yisint - 1)) == 0) s = -one_pow;
+                                                     ^
+:412:27: error: redefinition of 'gf_u'
+    ieee_float_shape_type gf_u;
+                          ^
+:258:27: note: previous definition is here
+    ieee_float_shape_type gf_u;
+                          ^
+11 errors generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0281.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0670.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1210.c
+Error: :74:9: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        abort();
+        ^
+:74:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0621b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0720.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0930.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0661a.c
+Error: :121:11: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if ((iy == 0)) {
+       ~~~^~~~
+:121:11: note: remove extraneous parentheses around the comparison to silence this warning
+  if ((iy == 0)) {
+      ~   ^   ~
+:121:11: note: use '=' to turn this equality comparison into an assignment
+  if ((iy == 0)) {
+          ^~
+          =
+:133:11: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if ((ix == 0))
+       ~~~^~~~
+:133:11: note: remove extraneous parentheses around the comparison to silence this warning
+  if ((ix == 0))
+      ~   ^   ~
+:133:11: note: use '=' to turn this equality comparison into an assignment
+  if ((ix == 0))
+          ^~
+          =
+:136:11: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if ((ix == 0x7f800000)) {
+       ~~~^~~~~~~~~~~~~
+:136:11: note: remove extraneous parentheses around the comparison to silence this warning
+  if ((ix == 0x7f800000)) {
+      ~   ^            ~
+:136:11: note: use '=' to turn this equality comparison into an assignment
+  if ((ix == 0x7f800000)) {
+          ^~
+          =
+:137:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((iy == 0x7f800000)) {
+         ~~~^~~~~~~~~~~~~
+:137:13: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((iy == 0x7f800000)) {
+        ~   ^            ~
+:137:13: note: use '=' to turn this equality comparison into an assignment
+    if ((iy == 0x7f800000)) {
+            ^~
+            =
+:162:11: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if ((iy == 0x7f800000))
+       ~~~^~~~~~~~~~~~~
+:162:11: note: remove extraneous parentheses around the comparison to silence this warning
+  if ((iy == 0x7f800000))
+      ~   ^            ~
+:162:11: note: use '=' to turn this equality comparison into an assignment
+  if ((iy == 0x7f800000))
+          ^~
+          =
+5 warnings generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_1072d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0872a.c
+Error: :165:19: error: use of undeclared identifier 'tiny_sqrt'
+        z = 1.0 - tiny_sqrt;
+                  ^
+:167:23: error: use of undeclared identifier 'tiny_sqrt'
+            z = 1.0 + tiny_sqrt;
+                      ^
+:286:53: error: use of undeclared identifier 'huge_pow'
+            if (ix <= 0x3fefffff) return (hy < 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                    ^
+:286:64: error: use of undeclared identifier 'huge_pow'
+            if (ix <= 0x3fefffff) return (hy < 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                               ^
+:286:75: error: use of undeclared identifier 'tiny_pow'
+            if (ix <= 0x3fefffff) return (hy < 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                                          ^
+:286:86: error: use of undeclared identifier 'tiny_pow'
+            if (ix <= 0x3fefffff) return (hy < 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                                                     ^
+:287:53: error: use of undeclared identifier 'huge_pow'
+            if (ix >= 0x3ff00000) return (hy > 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                    ^
+:287:64: error: use of undeclared identifier 'huge_pow'
+            if (ix >= 0x3ff00000) return (hy > 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                               ^
+:287:75: error: use of undeclared identifier 'tiny_pow'
+            if (ix >= 0x3ff00000) return (hy > 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                                          ^
+:287:86: error: use of undeclared identifier 'tiny_pow'
+            if (ix >= 0x3ff00000) return (hy > 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                                                     ^
+:290:48: error: use of undeclared identifier 'huge_pow'
+        if (ix < 0x3fefffff) return (hy < 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                               ^
+:290:59: error: use of undeclared identifier 'huge_pow'
+        if (ix < 0x3fefffff) return (hy < 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                          ^
+:290:70: error: use of undeclared identifier 'tiny_pow'
+        if (ix < 0x3fefffff) return (hy < 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                                     ^
+:290:81: error: use of undeclared identifier 'tiny_pow'
+        if (ix < 0x3fefffff) return (hy < 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                                                ^
+:291:48: error: use of undeclared identifier 'huge_pow'
+        if (ix > 0x3ff00000) return (hy > 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                               ^
+:291:59: error: use of undeclared identifier 'huge_pow'
+        if (ix > 0x3ff00000) return (hy > 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                          ^
+:291:70: error: use of undeclared identifier 'tiny_pow'
+        if (ix > 0x3ff00000) return (hy > 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                                     ^
+:291:81: error: use of undeclared identifier 'tiny_pow'
+        if (ix > 0x3ff00000) return (hy > 0) ? huge_pow * huge_pow : tiny_pow * tiny_pow;
+                                                                                ^
+:295:13: error: use of undeclared identifier 'ivln2_h_pow'
+        u = ivln2_h_pow * t;
+            ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0685b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1092a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0530b.c
+Error: :281:26: error: expected ';' in 'for' statement specifier
+            for (fw = 0.0, int i = jz; i >= 2; i--)
+                         ^
+:281:26: error: expected expression
+:281:40: error: use of undeclared identifier 'i'
+            for (fw = 0.0, int i = jz; i >= 2; i--)
+                                       ^
+:281:46: error: expected ')'
+            for (fw = 0.0, int i = jz; i >= 2; i--)
+                                             ^
+:281:17: note: to match this '('
+            for (fw = 0.0, int i = jz; i >= 2; i--)
+                ^
+:281:48: error: use of undeclared identifier 'i'
+            for (fw = 0.0, int i = jz; i >= 2; i--)
+                                               ^
+:344:29: error: use of undeclared identifier 'npio2_hw_rempio'
+        if (n < 32 && ix != npio2_hw_rempio[n - 1]) {
+                            ^
+:352:28: error: invalid operands to binary expression ('double' and 'int')
+            i = j - ((high >> 20) & 0x7ff);
+                      ~~~~ ^  ~~
+:361:32: error: invalid operands to binary expression ('double' and 'int')
+                i = j - ((high >> 20) & 0x7ff);
+                          ~~~~ ^  ~~
+:408:45: error: use of undeclared identifier 'two_over_pi_rempio'
+    n = __kernel_rem_pio2(tx, y, e0, nx, 2, two_over_pi_rempio);
+                                            ^
+9 errors generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0460.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0681b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0873a.c
+Error: :377:28: error: redefinition of 'sh_u'
+    ieee_double_shape_type sh_u;
+                           ^
+:362:28: note: previous definition is here
+    ieee_double_shape_type sh_u;
+                           ^
+:392:28: error: redefinition of 'sl_u'
+    ieee_double_shape_type sl_u;
+                           ^
+:371:28: note: previous definition is here
+    ieee_double_shape_type sl_u;
+                           ^
+:402:28: error: redefinition of 'sl_u'
+    ieee_double_shape_type sl_u;
+                           ^
+:371:28: note: previous definition is here
+    ieee_double_shape_type sl_u;
+                           ^
+:412:28: error: redefinition of 'sl_u'
+    ieee_double_shape_type sl_u;
+                           ^
+:371:28: note: previous definition is here
+    ieee_double_shape_type sl_u;
+                           ^
+:431:26: error: redefinition of 'ew_u'
+  ieee_double_shape_type ew_u;
+                         ^
+:234:26: note: previous definition is here
+  ieee_double_shape_type ew_u;
+                         ^
+:468:26: error: redefinition of 'sl_u'
+  ieee_double_shape_type sl_u;
+                         ^
+:424:26: note: previous definition is here
+  ieee_double_shape_type sl_u;
+                         ^
+6 errors generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_1232a.c
+Error: :14:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:14:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0921.c
 Compiled successfully
 
 Program: reshaped_programs/test_input_double_req_bl_1072b.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_0960b.c
+Program: reshaped_programs/test_input_float_req_bl_0873a.c
+Error: :113:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:113:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:113:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+:190:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:190:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:190:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+:266:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((iy) == 0))
+       ~~~~~^~~~
+:266:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((iy) == 0))
+      ~     ^   ~
+:266:13: note: use '=' to turn this equality comparison into an assignment
+  if (((iy) == 0))
+            ^~
+            =
+:287:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((iy) == 0x7f800000L)) {
+       ~~~~~^~~~~~~~~~~~~~
+:287:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((iy) == 0x7f800000L)) {
+      ~     ^             ~
+:287:13: note: use '=' to turn this equality comparison into an assignment
+  if (((iy) == 0x7f800000L)) {
+            ^~
+            =
+4 warnings generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_1270c.c
 Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1032d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0662a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0834.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0874.c
+Error: :23:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+:29:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+:33:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+:39:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+:70:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+5 warnings generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0882.c
+Error: :218:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_1210.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0682a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1071.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1092d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0240b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1232b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1131b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0330a.c
+Error: :90:27: error: use of undeclared identifier 'FLT_MAX'
+    return copysign_float(FLT_MAX, x);
+                          ^
+:100:29: error: use of undeclared identifier 'FLT_MAX'
+      return copysign_float(FLT_MAX, x);
+                            ^
+:102:14: error: use of undeclared identifier 'tiny_val'
+      return tiny_val * copysign_float(tiny_val, x);
+             ^
+:102:40: error: use of undeclared identifier 'tiny_val'
+      return tiny_val * copysign_float(tiny_val, x);
+                                       ^
+:108:14: error: use of undeclared identifier 'twom25_scalbn'
+  return x * twom25_scalbn;
+             ^
+:137:52: error: use of undeclared identifier 'S5_ksin'
+  r = S2_ksin + z * (S3_ksin + z * (S4_ksin + z * (S5_ksin + z * S6_ksin)));
+                                                   ^
+:137:66: error: use of undeclared identifier 'S6_ksin'
+  r = S2_ksin + z * (S3_ksin + z * (S4_ksin + z * (S5_ksin + z * S6_ksin)));
+                                                                 ^
+:137:37: error: use of undeclared identifier 'S4_ksin'
+  r = S2_ksin + z * (S3_ksin + z * (S4_ksin + z * (S5_ksin + z * S6_ksin)));
+                                    ^
+:137:22: error: use of undeclared identifier 'S3_ksin'
+  r = S2_ksin + z * (S3_ksin + z * (S4_ksin + z * (S5_ksin + z * S6_ksin)));
+                     ^
+:137:7: error: use of undeclared identifier 'S2_ksin'
+  r = S2_ksin + z * (S3_ksin + z * (S4_ksin + z * (S5_ksin + z * S6_ksin)));
+      ^
+:139:21: error: use of undeclared identifier 'S1_ksin'
+    return x + v * (S1_ksin + z * r);
+                    ^
+:141:23: error: use of undeclared identifier 'half_ksin'
+    return x - ((z * (half_ksin * y - v * r) - y) - v * S1_ksin);
+                      ^
+:141:57: error: use of undeclared identifier 'S1_ksin'
+    return x - ((z * (half_ksin * y - v * r) - y) - v * S1_ksin);
+                                                        ^
+:153:12: warning: implicit declaration of function '__kernel_cosf' is invalid in C99 [-Wimplicit-function-declaration]
+    return __kernel_cosf(x, z);
+           ^
+:159:9: warning: implicit declaration of function '__ieee754_rem_pio2f' is invalid in C99 [-Wimplicit-function-declaration]
+    n = __ieee754_rem_pio2f(x, y);
+        ^
+2 warnings and 13 errors generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0470.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0730a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1230.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1051.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1091.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0960b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0281.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0220b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1211b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0877.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1381.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1211b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0610.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0680b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0320b.c
+Error: :99:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:99:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:99:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0260.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0872a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0250b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0250a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1052a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0740.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0220a.c
+Error: :146:12: warning: implicit declaration of function '__kernel_sinf' is invalid in C99 [-Wimplicit-function-declaration]
+    return __kernel_sinf(x, z, 0);
+           ^
+:150:9: warning: implicit declaration of function '__ieee754_rem_pio2f' is invalid in C99 [-Wimplicit-function-declaration]
+    n = __ieee754_rem_pio2f(x, y);
+        ^
+:155:14: warning: implicit declaration of function '__kernel_cosf' is invalid in C99 [-Wimplicit-function-declaration]
+      return __kernel_cosf(y[0], y[1]);
+             ^
+3 warnings generated.
+/usr/bin/ld: /tmp/test_input_float_req_bl_0220a-aa9bdd.o: in function `sin_float':
+test_input_float_req_bl_0220a.c:(.text+0x15f7): undefined reference to `__kernel_sinf'
+/usr/bin/ld: test_input_float_req_bl_0220a.c:(.text+0x1666): undefined reference to `__ieee754_rem_pio2f'
+/usr/bin/ld: test_input_float_req_bl_0220a.c:(.text+0x1755): undefined reference to `__kernel_sinf'
+/usr/bin/ld: test_input_float_req_bl_0220a.c:(.text+0x181b): undefined reference to `__kernel_cosf'
+/usr/bin/ld: test_input_float_req_bl_0220a.c:(.text+0x18e6): undefined reference to `__kernel_sinf'
+/usr/bin/ld: test_input_float_req_bl_0220a.c:(.text+0x19b2): undefined reference to `__kernel_cosf'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_float_req_bl_0970b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0660b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0270a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1072d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0684a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1032b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0530a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0685a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0931.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0660a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0831.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0661a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1051.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0833.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0530a.c
+Error: :94:11: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if ((hx == 0))
+       ~~~^~~~
+:94:11: note: remove extraneous parentheses around the comparison to silence this warning
+  if ((hx == 0))
+      ~   ^   ~
+:94:11: note: use '=' to turn this equality comparison into an assignment
+  if ((hx == 0))
+          ^~
+          =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0662a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0660b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1012b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0970b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0620b.c
+Error: :8:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:8:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_1052c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0872b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0832.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0876.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0910a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1121b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0970a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1211a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0621a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0686a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1252a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0550b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0684b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0660a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0680b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0480.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0240b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1122a.c
+Error: :8:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:8:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0874.c
+Error: :377:32: error: redefinition of 'sh_u'
+        ieee_double_shape_type sh_u;
+                               ^
+:362:32: note: previous definition is here
+        ieee_double_shape_type sh_u;
+                               ^
+:392:32: error: redefinition of 'sl_u'
+        ieee_double_shape_type sl_u;
+                               ^
+:371:32: note: previous definition is here
+        ieee_double_shape_type sl_u;
+                               ^
+:402:32: error: redefinition of 'sl_u'
+        ieee_double_shape_type sl_u;
+                               ^
+:371:32: note: previous definition is here
+        ieee_double_shape_type sl_u;
+                               ^
+:412:32: error: redefinition of 'sl_u'
+        ieee_double_shape_type sl_u;
+                               ^
+:371:32: note: previous definition is here
+        ieee_double_shape_type sl_u;
+                               ^
+:431:28: error: redefinition of 'ew_u'
+    ieee_double_shape_type ew_u;
+                           ^
+:234:28: note: previous definition is here
+    ieee_double_shape_type ew_u;
+                           ^
+:466:28: error: redefinition of 'sl_u'
+    ieee_double_shape_type sl_u;
+                           ^
+:424:28: note: previous definition is here
+    ieee_double_shape_type sl_u;
+                           ^
+6 errors generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0663b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0730c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1131a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1052a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1230.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0832a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1011a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0686b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1121b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1052b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0621b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0620a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0320.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0662b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0873b.c
+Error: :284:48: error: expected expression
+    if ((((__uint32_t)hx >> 31) - 1) | yisint) == 0) return (x - x) / (x - x); 
+                                               ^
+:364:54: error: expected expression
+    if ((((__uint32_t)hx >> 31) - 1) | (yisint - 1)) == 0) s = -one_pow;
+                                                     ^
+2 errors generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_1031.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0670.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0910b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0270a.c
+Error: :38:15: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if (((hx) == 0))
+         ~~~~~^~~~
+:38:15: note: remove extraneous parentheses around the comparison to silence this warning
+    if (((hx) == 0))
+        ~     ^   ~
+:38:15: note: use '=' to turn this equality comparison into an assignment
+    if (((hx) == 0))
+              ^~
+              =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0872b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0620b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0661b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0270b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0880.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0720.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0260.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0833.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1231.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1072c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0920b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1011b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0910a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0680a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1032c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1252a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0870a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0210.c
+Error: :173:16: warning: implicit declaration of function '__kernel_sin' is invalid in C99 [-Wimplicit-function-declaration]
+        return __kernel_sin(x, z, 0);
+               ^
+:177:13: warning: implicit declaration of function '__ieee754_rem_pio2' is invalid in C99 [-Wimplicit-function-declaration]
+        n = __ieee754_rem_pio2(x, y);
+            ^
+:180:24: warning: implicit declaration of function '__kernel_sin' is invalid in C99 [-Wimplicit-function-declaration]
+                return __kernel_sin(y[0], y[1], 1);
+                       ^
+:182:24: warning: implicit declaration of function '__kernel_cos' is invalid in C99 [-Wimplicit-function-declaration]
+                return __kernel_cos(y[0], y[1]);
+                       ^
+4 warnings generated.
+/usr/bin/ld: /tmp/test_input_double_req_bl_0210-57c7b5.o: in function `sin_double':
+test_input_double_req_bl_0210.c:(.text+0x169c): undefined reference to `__kernel_sin'
+/usr/bin/ld: test_input_double_req_bl_0210.c:(.text+0x1704): undefined reference to `__ieee754_rem_pio2'
+/usr/bin/ld: test_input_double_req_bl_0210.c:(.text+0x17b2): undefined reference to `__kernel_sin'
+/usr/bin/ld: test_input_double_req_bl_0210.c:(.text+0x1837): undefined reference to `__kernel_cos'
+/usr/bin/ld: test_input_double_req_bl_0210.c:(.text+0x18c1): undefined reference to `__kernel_sin'
+/usr/bin/ld: test_input_double_req_bl_0210.c:(.text+0x194c): undefined reference to `__kernel_cos'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_double_req_bl_0490b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1032d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1072a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0870b.c
+Error: :462:42: error: expected ';' after expression
+        n = (n & 0x000fffff) | 0x00100000) >> (20 - k);
+                                         ^
+                                         ;
+:462:42: error: expected expression
+2 errors generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0686a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1271b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0330b.c
+Error: :82:31: error: expected ')'
+void get_float_word(__uint32_t& i, float f) {
+                              ^
+:82:20: note: to match this '('
+void get_float_word(__uint32_t& i, float f) {
+                   ^
+:82:31: warning: omitting the parameter name in a function definition is a C2x extension [-Wc2x-extensions]
+void get_float_word(__uint32_t& i, float f) {
+                              ^
+:84:18: error: use of undeclared identifier 'f'
+    temp.value = f;
+                 ^
+:85:5: error: use of undeclared identifier 'i'
+    i = temp.word;
+    ^
+:89:26: error: expected ')'
+void set_float_word(float& f, __uint32_t i) {
+                         ^
+:89:20: note: to match this '('
+void set_float_word(float& f, __uint32_t i) {
+                   ^
+:89:26: warning: omitting the parameter name in a function definition is a C2x extension [-Wc2x-extensions]
+void set_float_word(float& f, __uint32_t i) {
+                         ^
+:91:17: error: use of undeclared identifier 'i'
+    temp.word = i;
+                ^
+:92:5: error: use of undeclared identifier 'f'
+    f = temp.value;
+    ^
+:98:24: error: too many arguments to function call, expected 1, have 2
+    get_float_word(i0, x);
+    ~~~~~~~~~~~~~~     ^
+:82:6: note: 'get_float_word' declared here
+void get_float_word(__uint32_t& i, float f) {
+     ^
+:124:23: error: too many arguments to function call, expected 1, have 2
+    set_float_word(x, i0);
+    ~~~~~~~~~~~~~~    ^~
+:89:6: note: 'set_float_word' declared here
+void set_float_word(float& f, __uint32_t i) {
+     ^
+:134:24: error: too many arguments to function call, expected 1, have 2
+    get_float_word(ix, x);
+    ~~~~~~~~~~~~~~     ^
+:82:6: note: 'get_float_word' declared here
+void get_float_word(__uint32_t& i, float f) {
+     ^
+:135:24: error: too many arguments to function call, expected 1, have 2
+    get_float_word(iy, y);
+    ~~~~~~~~~~~~~~     ^
+:82:6: note: 'get_float_word' declared here
+void get_float_word(__uint32_t& i, float f) {
+     ^
+:136:23: error: too many arguments to function call, expected 1, have 2
+    set_float_word(x, (ix & 0x7fffffff) | (iy & 0x80000000));
+    ~~~~~~~~~~~~~~    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:89:6: note: 'set_float_word' declared here
+void set_float_word(float& f, __uint32_t i) {
+     ^
+:143:24: error: too many arguments to function call, expected 1, have 2
+    get_float_word(ix, x);
+    ~~~~~~~~~~~~~~     ^
+:82:6: note: 'get_float_word' declared here
+void get_float_word(__uint32_t& i, float f) {
+     ^
+:150:28: error: too many arguments to function call, expected 1, have 2
+        get_float_word(ix, x);
+        ~~~~~~~~~~~~~~     ^
+:82:6: note: 'get_float_word' declared here
+void get_float_word(__uint32_t& i, float f) {
+     ^
+:157:27: error: too many arguments to function call, expected 1, have 2
+        set_float_word(x, (ix & 0x807fffff) | (k << 23));
+        ~~~~~~~~~~~~~~    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:89:6: note: 'set_float_word' declared here
+void set_float_word(float& f, __uint32_t i) {
+     ^
+:167:23: error: too many arguments to function call, expected 1, have 2
+    set_float_word(x, (ix & 0x807fffff) | (k << 23));
+    ~~~~~~~~~~~~~~    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:89:6: note: 'set_float_word' declared here
+void set_float_word(float& f, __uint32_t i) {
+     ^
+:173:24: error: too many arguments to function call, expected 1, have 2
+    get_float_word(ix, x);
+    ~~~~~~~~~~~~~~     ^
+:82:6: note: 'get_float_word' declared here
+void get_float_word(__uint32_t& i, float f) {
+     ^
+:174:23: error: too many arguments to function call, expected 1, have 2
+    set_float_word(x, ix & 0x7fffffff);
+    ~~~~~~~~~~~~~~    ^~~~~~~~~~~~~~~
+:89:6: note: 'set_float_word' declared here
+void set_float_word(float& f, __uint32_t i) {
+     ^
+:184:17: warning: implicit declaration of function 'cos_float' is invalid in C99 [-Wimplicit-function-declaration]
+    float res = cos_float(x_neg_inf);
+                ^
+3 warnings and 17 errors generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0910b.c
+Error: :95:29: warning: | has lower precedence than >; > will be evaluated first [-Wparentheses]
+  if ((ix - (0x6147a << 3)) | ((0x6b851 << 3) - ix) > 0) {
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+:95:29: note: place parentheses around the '>' expression to silence this warning
+  if ((ix - (0x6147a << 3)) | ((0x6b851 << 3) - ix) > 0) {
+                            ^
+                              (                        )
+:95:29: note: place parentheses around the | expression to evaluate it first
+  if ((ix - (0x6147a << 3)) | ((0x6b851 << 3) - ix) > 0) {
+                            ^
+      (                                            )
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0550a.c
+Error: :193:12: warning: implicit declaration of function '__kernel_tan' is invalid in C99 [-Wimplicit-function-declaration]
+    return __kernel_tan(x, z, 1);
+           ^
+:199:9: warning: implicit declaration of function '__ieee754_rem_pio2' is invalid in C99 [-Wimplicit-function-declaration]
+    n = __ieee754_rem_pio2(x, y);
+        ^
+2 warnings generated.
+/usr/bin/ld: /tmp/test_input_double_req_bl_0550a-e015c3.o: in function `tan_double':
+test_input_double_req_bl_0550a.c:(.text+0x1711): undefined reference to `__kernel_tan'
+/usr/bin/ld: test_input_double_req_bl_0550a.c:(.text+0x1776): undefined reference to `__ieee754_rem_pio2'
+/usr/bin/ld: test_input_double_req_bl_0550a.c:(.text+0x17f2): undefined reference to `__kernel_tan'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_float_req_bl_1011b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0620a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0960a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1092b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1122b.c
+Error: :19:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();
+    ^
+:19:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0270b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0685a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0681a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1092c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1121a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0250a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0330a.c
+Error: :243:13: warning: implicit declaration of function '__ieee754_rem_pio2' is invalid in C99 [-Wimplicit-function-declaration]
+        n = __ieee754_rem_pio2(x, y);
+            ^
+1 warning generated.
+/usr/bin/ld: /tmp/test_input_double_req_bl_0330a-7f0f9b.o: in function `cos_double':
+test_input_double_req_bl_0330a.c:(.text+0x202c): undefined reference to `__ieee754_rem_pio2'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_double_req_bl_1092d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1131a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0550b.c
+Error: :177:12: warning: implicit declaration of function '__kernel_tanf' is invalid in C99 [-Wimplicit-function-declaration]
+    return __kernel_tanf(x, z, 1);
+           ^
+:181:9: warning: implicit declaration of function '__ieee754_rem_pio2f' is invalid in C99 [-Wimplicit-function-declaration]
+    n = __ieee754_rem_pio2f(x, y);
+        ^
+:182:12: warning: implicit declaration of function '__kernel_tanf' is invalid in C99 [-Wimplicit-function-declaration]
+    return __kernel_tanf(y[0], y[1], 1 - ((n & 1) << 1));
+           ^
+3 warnings generated.
+/usr/bin/ld: /tmp/test_input_float_req_bl_0550b-3fb37a.o: in function `tan_float':
+test_input_float_req_bl_0550b.c:(.text+0x15ec): undefined reference to `__kernel_tanf'
+/usr/bin/ld: test_input_float_req_bl_0550b.c:(.text+0x1658): undefined reference to `__ieee754_rem_pio2f'
+/usr/bin/ld: test_input_float_req_bl_0550b.c:(.text+0x1712): undefined reference to `__kernel_tanf'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
 
 Program: reshaped_programs/test_input_double_req_bl_0685b.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_1072c.c
+Program: reshaped_programs/test_input_double_req_bl_1130a.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_0670.c
-Error: :130:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+Program: reshaped_programs/test_input_double_req_bl_0680a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1270d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0876.c
+Error: :74:9: error: use of undeclared identifier 'ee'
+        ee Double : dhpe_
+        ^
+1 error generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_1252b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1052d.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0710.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1130b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1131b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0881.c
+Error: :37:21: warning: implicit declaration of function '__ieee754_powf' is invalid in C99 [-Wimplicit-function-declaration]
+        float res = __ieee754_powf(x, y);
+                    ^
+:135:5: error: use of undeclared identifier 'hx'
+    hx = ix & 0x7fffffff;
+    ^
+:137:11: error: use of undeclared identifier 'hx'
+    if (!(hx < 0x7f800000L))
+          ^
+:139:9: error: use of undeclared identifier 'hx'
+    if (hx == 0)
+        ^
+:145:9: error: use of undeclared identifier 'hx'
+    if (hx < 0x00800000L) {
+        ^
+:259:7: error: conflicting types for '__ieee754_powf'
+float __ieee754_powf(float x, float y) {
+      ^
+:37:21: note: previous implicit declaration is here
+        float res = __ieee754_powf(x, y);
+                    ^
+1 warning and 5 errors generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0550a.c
+Error: :167:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+:179:16: warning: implicit declaration of function '__kernel_tanf' is invalid in C99 [-Wimplicit-function-declaration]
+        return __kernel_tanf(x, z, 1);
+               ^
+2 warnings generated.
+/usr/bin/ld: /tmp/test_input_float_req_bl_0550a-83b6c5.o: in function `tan_float':
+test_input_float_req_bl_0550a.c:(.text+0x15bc): undefined reference to `__kernel_tanf'
+/usr/bin/ld: test_input_float_req_bl_0550a.c:(.text+0x16dc): undefined reference to `__kernel_tanf'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_float_req_bl_0832b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0883.c
+Error: :379:36: warning: | has lower precedence than ==; == will be evaluated first [-Wparentheses]
+  if ((((__uint32_t)hx >> 31) - 1) | yisint == 0)
+                                   ^~~~~~~~~~~~~
+:379:36: note: place parentheses around the '==' expression to silence this warning
+  if ((((__uint32_t)hx >> 31) - 1) | yisint == 0)
+                                   ^
+                                     (          )
+:379:36: note: place parentheses around the | expression to evaluate it first
+  if ((((__uint32_t)hx >> 31) - 1) | yisint == 0)
+                                   ^
+      (                                    )
+:394:21: error: invalid operands to binary expression ('float' and 'unsigned int')
+    sf_u.word = (t1 & 0xfffff000);
+                 ~~ ^ ~~~~~~~~~~
+:422:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    sf_u.word = (ix);
+    ^~~~
+    gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:423:10: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    ax = sf_u.value;
+         ^~~~
+         gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:430:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    sf_u.word = (is & 0xfffff000);
+    ^~~~
+    gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:431:11: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    s_h = sf_u.value;
+          ^~~~
+          gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:432:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    sf_u.word = (((ix >> 1) | 0x20000000) + 0x0040000 + (k << 21));
+    ^~~~
+    gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:433:11: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    t_h = sf_u.value;
+          ^~~~
+          gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:444:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    sf_u.word = (is & 0xfffff000);
+    ^~~~
+    gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:445:11: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    t_h = sf_u.value;
+          ^~~~
+          gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:452:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    sf_u.word = (is & 0xfffff000);
+    ^~~~
+    gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:453:11: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    p_h = sf_u.value;
+          ^~~~
+          gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:462:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    sf_u.word = (is & 0xfffff000);
+    ^~~~
+    gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:463:10: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    t1 = sf_u.value;
+         ^~~~
+         gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:469:36: warning: | has lower precedence than ==; == will be evaluated first [-Wparentheses]
+  if ((((__uint32_t)hx >> 31) - 1) | (yisint - 1) == 0)
+                                   ^~~~~~~~~~~~~~~~~~~
+:469:36: note: place parentheses around the '==' expression to silence this warning
+  if ((((__uint32_t)hx >> 31) - 1) | (yisint - 1) == 0)
+                                   ^
+                                     (                )
+:469:36: note: place parentheses around the | expression to evaluate it first
+  if ((((__uint32_t)hx >> 31) - 1) | (yisint - 1) == 0)
+                                   ^
+      (                                          )
+:474:3: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+  sf_u.word = (is & 0xfffff000);
+  ^~~~
+  gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:475:8: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+  y1 = sf_u.value;
+       ^~~~
+       gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:506:5: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    sf_u.word = (n & ~(0x007fffff >> k));
+    ^~~~
+    gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:507:9: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+    t = sf_u.value;
+        ^~~~
+        gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:518:3: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+  sf_u.word = (is & 0xfffff000);
+  ^~~~
+  gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+:519:7: error: use of undeclared identifier 'sf_u'; did you mean 'gf_u'?
+  t = sf_u.value;
+      ^~~~
+      gf_u
+:307:25: note: 'gf_u' declared here
+  ieee_float_shape_type gf_u;
+                        ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+2 warnings and 20 errors generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0960b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1121a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1122a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0530b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0661b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1032a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1012a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0883.c
+Error: :442:3: error: use of undeclared identifier 'sl_u'
+  sl_u.value = y1;
+  ^
+:443:3: error: use of undeclared identifier 'sl_u'
+  sl_u.parts.lsw = 0;
+  ^
+:444:8: error: use of undeclared identifier 'sl_u'; did you mean 'ew_u'?
+  y1 = sl_u.value;
+       ^~~~
+       ew_u
+:249:26: note: 'ew_u' declared here
+  ieee_double_shape_type ew_u;
+                         ^
+:449:26: error: redefinition of 'ew_u'
+  ieee_double_shape_type ew_u;
+                         ^
+:249:26: note: previous definition is here
+  ieee_double_shape_type ew_u;
+                         ^
+:477:5: error: use of undeclared identifier 'sh_u'
+    sh_u.value = t;
+    ^
+:478:5: error: use of undeclared identifier 'sh_u'
+    sh_u.parts.msw = (n & ~(0x000fffff >> k));
+    ^
+:479:9: error: use of undeclared identifier 'sh_u'; did you mean 'ew_u'?
+    t = sh_u.value;
+        ^~~~
+        ew_u
+:249:26: note: 'ew_u' declared here
+  ieee_double_shape_type ew_u;
+                         ^
+:487:3: error: use of undeclared identifier 'sl_u'
+  sl_u.value = t;
+  ^
+:488:3: error: use of undeclared identifier 'sl_u'
+  sl_u.parts.lsw = 0;
+  ^
+:489:7: error: use of undeclared identifier 'sl_u'; did you mean 'ew_u'?
+  t = sl_u.value;
+      ^~~~
+      ew_u
+:249:26: note: 'ew_u' declared here
+  ieee_double_shape_type ew_u;
+                         ^
+:507:5: error: use of undeclared identifier 'sh_u'; did you mean 'gh_u'?
+    sh_u.value = z;
+    ^~~~
+    gh_u
+:500:26: note: 'gh_u' declared here
+  ieee_double_shape_type gh_u;
+                         ^
+:508:5: error: use of undeclared identifier 'sh_u'; did you mean 'gh_u'?
+    sh_u.parts.msw = j;
+    ^~~~
+    gh_u
+:500:26: note: 'gh_u' declared here
+  ieee_double_shape_type gh_u;
+                         ^
+:509:9: error: use of undeclared identifier 'sh_u'; did you mean 'gh_u'?
+    z = sh_u.value;
+        ^~~~
+        gh_u
+:500:26: note: 'gh_u' declared here
+  ieee_double_shape_type gh_u;
+                         ^
+13 errors generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_1012b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0220b.c
+Error: /usr/bin/ld: /tmp/test_input_float_req_bl_0220b-fbe798.o: in function `main':
+test_input_float_req_bl_0220b.c:(.text+0x10f2): undefined reference to `sin_float'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_double_req_bl_0220a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1052c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0971.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0490a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0490a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1270b.c
+Error: :28:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:28:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:28:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+:123:17: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+      if (((ha) == 0x7f800000L))
+           ~~~~~^~~~~~~~~~~~~~
+:123:17: note: remove extraneous parentheses around the comparison to silence this warning
+      if (((ha) == 0x7f800000L))
+          ~     ^             ~
+:123:17: note: use '=' to turn this equality comparison into an assignment
+      if (((ha) == 0x7f800000L))
+                ^~
+                =
+:125:17: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+      if (((hb) == 0x7f800000L))
+           ~~~~~^~~~~~~~~~~~~~
+:125:17: note: remove extraneous parentheses around the comparison to silence this warning
+      if (((hb) == 0x7f800000L))
+          ~     ^             ~
+:125:17: note: use '=' to turn this equality comparison into an assignment
+      if (((hb) == 0x7f800000L))
+                ^~
+                =
+:145:15: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if (((hb) == 0)) {
+         ~~~~~^~~~
+:145:15: note: remove extraneous parentheses around the comparison to silence this warning
+    if (((hb) == 0)) {
+        ~     ^   ~
+:145:15: note: use '=' to turn this equality comparison into an assignment
+    if (((hb) == 0)) {
+              ^~
+              =
+4 warnings generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_0683a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1211a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0470.c
+Error: :32:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:32:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:32:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0663a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1010.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0310.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0683b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1251.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0684a.c
+Error: :140:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
   if (((iy) == 0)) {
        ~~~~~^~~~
-:130:13: note: remove extraneous parentheses around the comparison to silence this warning
+:140:13: note: remove extraneous parentheses around the comparison to silence this warning
   if (((iy) == 0)) {
       ~     ^   ~
-:130:13: note: use '=' to turn this equality comparison into an assignment
+:140:13: note: use '=' to turn this equality comparison into an assignment
   if (((iy) == 0)) {
             ^~
             =
-:142:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+:152:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
   if (((ix) == 0))
        ~~~~~^~~~
-:142:13: note: remove extraneous parentheses around the comparison to silence this warning
+:152:13: note: remove extraneous parentheses around the comparison to silence this warning
   if (((ix) == 0))
       ~     ^   ~
-:142:13: note: use '=' to turn this equality comparison into an assignment
+:152:13: note: use '=' to turn this equality comparison into an assignment
   if (((ix) == 0))
             ^~
             =
-:145:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+:155:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
   if (((ix) == 0x7f800000L)) {
        ~~~~~^~~~~~~~~~~~~~
-:145:13: note: remove extraneous parentheses around the comparison to silence this warning
+:155:13: note: remove extraneous parentheses around the comparison to silence this warning
   if (((ix) == 0x7f800000L)) {
       ~     ^             ~
-:145:13: note: use '=' to turn this equality comparison into an assignment
+:155:13: note: use '=' to turn this equality comparison into an assignment
   if (((ix) == 0x7f800000L)) {
             ^~
             =
-:146:15: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+:156:15: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
     if (((iy) == 0x7f800000L)) {
          ~~~~~^~~~~~~~~~~~~~
-:146:15: note: remove extraneous parentheses around the comparison to silence this warning
+:156:15: note: remove extraneous parentheses around the comparison to silence this warning
     if (((iy) == 0x7f800000L)) {
         ~     ^             ~
-:146:15: note: use '=' to turn this equality comparison into an assignment
+:156:15: note: use '=' to turn this equality comparison into an assignment
     if (((iy) == 0x7f800000L)) {
               ^~
               =
-:171:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+:181:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
   if (((iy) == 0x7f800000L))
        ~~~~~^~~~~~~~~~~~~~
-:171:13: note: remove extraneous parentheses around the comparison to silence this warning
+:181:13: note: remove extraneous parentheses around the comparison to silence this warning
   if (((iy) == 0x7f800000L))
       ~     ^             ~
-:171:13: note: use '=' to turn this equality comparison into an assignment
+:181:13: note: use '=' to turn this equality comparison into an assignment
   if (((iy) == 0x7f800000L))
             ^~
             =
 5 warnings generated.
 
 
-Program: reshaped_programs/test_input_float_req_bl_0683a.c
+Program: reshaped_programs/test_input_double_req_bl_0730b.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_0662a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_1011a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0910a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_float_req_bl_0730c.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0680a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0660a.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0460.c
-Compiled successfully
-
-Program: reshaped_programs/test_input_double_req_bl_0682b.c
-Error: :147:25: error: use of undeclared identifier 'tiny_atan2'
-            return pi + tiny_atan2;
-                        ^
-:149:26: error: use of undeclared identifier 'tiny_atan2'
-            return -pi - tiny_atan2;
-                         ^
-:154:37: error: use of undeclared identifier 'tiny_atan2'
-        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
-                                    ^
-:154:59: error: use of undeclared identifier 'tiny_atan2'
-        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
-                                                          ^
-:160:33: error: use of undeclared identifier 'tiny_atan2'
-                return pi_o_4 + tiny_atan2;
-                                ^
-:162:34: error: use of undeclared identifier 'tiny_atan2'
-                return -pi_o_4 - tiny_atan2;
-                                 ^
-:164:39: error: use of undeclared identifier 'tiny_atan2'
-                return 3.0 * pi_o_4 + tiny_atan2;
-                                      ^
-:166:40: error: use of undeclared identifier 'tiny_atan2'
-                return -3.0 * pi_o_4 - tiny_atan2;
-                                       ^
-:171:24: error: use of undeclared identifier 'zero_atan2'; did you mean '__atan2'?
-                return zero_atan2;
-                       ^~~~~~~~~~
-                       __atan2
-/usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:1: note: '__atan2' declared here
-__MATHCALL (atan2,, (_Mdouble_ __y, _Mdouble_ __x));
+Program: reshaped_programs/test_input_float_req_bl_0310.c
+Error: :39:1: warning: non-void function does not return a value [-Wreturn-type]
+}
 ^
-/usr/include/math.h:273:3: note: expanded from macro '__MATHCALL'
-  __MATHDECL (_Mdouble_,function,suffix, args)
-  ^
-/usr/include/math.h:276:22: note: expanded from macro '__MATHDECL'
-  __MATHDECL_1(type, __CONCAT(__,function),suffix, args)
-                     ^
-/usr/include/aarch64-linux-gnu/sys/cdefs.h:105:23: note: expanded from macro '__CONCAT'
-#define __CONCAT(x,y)   x ## y
-                        ^
-<scratch space>:52:1: note: expanded from here
-__atan2
+:44:1: warning: non-void function does not return a value [-Wreturn-type]
+}
 ^
-:171:24: error: returning 'double (double, double)' from a function with incompatible result type 'double'
-                return zero_atan2;
-                       ^~~~~~~~~~
-:173:25: error: use of undeclared identifier 'zero_atan2'
-                return -zero_atan2;
-                        ^
-:175:29: error: use of undeclared identifier 'tiny_atan2'
-                return pi + tiny_atan2;
-                            ^
-:177:30: error: use of undeclared identifier 'tiny_atan2'
-                return -pi - tiny_atan2;
-                             ^
-:183:37: error: use of undeclared identifier 'tiny_atan2'
-        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
-                                    ^
-:183:59: error: use of undeclared identifier 'tiny_atan2'
-        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
-                                                          ^
-:187:28: error: use of undeclared identifier 'pi_lo_atan2'
-        z = pi_o_2 + 0.5 * pi_lo_atan2;
-                           ^
-:208:26: error: use of undeclared identifier 'pi_lo_atan2'
-        return pi - (z - pi_lo_atan2);
-                         ^
-:210:21: error: use of undeclared identifier 'pi_lo_atan2'
-        return (z - pi_lo_atan2) - pi;
-                    ^
-18 errors generated.
+2 warnings generated.
+/usr/bin/ld: /tmp/test_input_float_req_bl_0310-849596.o: in function `cos_float':
+test_input_float_req_bl_0310.c:(.text+0x267): undefined reference to `__kernel_cosf'
+/usr/bin/ld: test_input_float_req_bl_0310.c:(.text+0x2c9): undefined reference to `__ieee754_rem_pio2f'
+/usr/bin/ld: test_input_float_req_bl_0310.c:(.text+0x39d): undefined reference to `__kernel_cosf'
+/usr/bin/ld: test_input_float_req_bl_0310.c:(.text+0x44e): undefined reference to `__kernel_sinf'
+/usr/bin/ld: test_input_float_req_bl_0310.c:(.text+0x507): undefined reference to `__kernel_cosf'
+/usr/bin/ld: test_input_float_req_bl_0310.c:(.text+0x5c5): undefined reference to `__kernel_sinf'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 
-Program: reshaped_programs/test_input_float_req_bl_1121a.c
+Program: reshaped_programs/test_input_double_req_bl_0971.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_double_req_bl_0910a.c
+Program: reshaped_programs/test_input_float_req_bl_1052d.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_1071.c
+Program: reshaped_programs/test_input_double_req_bl_0920b.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_0921.c
+Program: reshaped_programs/test_input_float_req_bl_1250.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_0621b.c
+Program: reshaped_programs/test_input_float_req_bl_0682b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1092b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0250b.c
+Error: :79:13: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if (((hx) == 0))
+       ~~~~~^~~~
+:79:13: note: remove extraneous parentheses around the comparison to silence this warning
+  if (((hx) == 0))
+      ~     ^   ~
+:79:13: note: use '=' to turn this equality comparison into an assignment
+  if (((hx) == 0))
+            ^~
+            =
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_0921.c
 Compiled successfully
 
 Program: reshaped_programs/test_input_double_req_bl_0683a.c
 Compiled successfully
 
-Program: reshaped_programs/test_input_float_req_bl_1251.c
+Program: reshaped_programs/test_input_double_req_bl_1091.c
 Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0683b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1092a.c
+Error: :7:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+    abort();  // Using standard abort to terminate the program if an error is reached
+    ^
+:7:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_float_req_bl_1032a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0240a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1130a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1231b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1072c.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0730a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0920a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1232a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0682a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0330b.c
+Error: :506:25: warning: operator '<<' has lower precedence than '-'; '-' will be evaluated first [-Wshift-op-parentheses]
+    sh_u.parts.msw = ix - (int)e0 << 20;
+                     ~~~^~~~~~~~~ ~~
+:506:25: note: place parentheses around the '-' expression to silence this warning
+    sh_u.parts.msw = ix - (int)e0 << 20;
+                        ^
+                     (           )
+1 warning generated.
+
+
+Program: reshaped_programs/test_input_double_req_bl_1011a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1031.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0686b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_0621a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_0875.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_double_req_bl_1032b.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1271a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_float_req_bl_1072a.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_18_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_sin_6_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_softplus_2_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_2_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_2_unsafe-81e39c.o: in function `main':
+test_input_lunarlander_2_unsafe.c-amalgamation.c:(.text+0x3f9): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_poly_32_32_32_thresh_3_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_cartpole_98_safe.c-amalgamation.c
+Error: :124:33: error: variable has incomplete type 'union tensor_union_0'
+    static union tensor_union_0 tu0;
+                                ^
+:124:18: note: forward declaration of 'union tensor_union_0'
+    static union tensor_union_0 tu0;
+                 ^
+:125:33: error: variable has incomplete type 'union tensor_union_1'
+    static union tensor_union_1 tu1;
+                                ^
+:125:18: note: forward declaration of 'union tensor_union_1'
+    static union tensor_union_1 tu1;
+                 ^
+:128:31: error: use of undeclared identifier 'tensor_q_net_0_weight'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                              ^
+:128:54: error: use of undeclared identifier 'tensor_q_net_0_bias'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                                                     ^
+:130:31: error: use of undeclared identifier 'tensor_q_net_2_weight'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                              ^
+:130:54: error: use of undeclared identifier 'tensor_q_net_2_bias'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                                                     ^
+:132:32: error: use of undeclared identifier 'tensor_q_net_4_weight'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                               ^
+:132:55: error: use of undeclared identifier 'tensor_q_net_4_bias'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                                                      ^
+8 errors generated.
+
+
+Program: reshaped_programs/test_input_cartpole_26_safe.c-amalgamation.c
+Error: :36:10: error: use of undeclared identifier 'uint32_t'
+    for( uint32_t i=0; i<4; i++ )
+         ^
+:36:24: error: use of undeclared identifier 'i'
+    for( uint32_t i=0; i<4; i++ )
+                       ^
+:36:29: error: use of undeclared identifier 'i'
+    for( uint32_t i=0; i<4; i++ )
+                            ^
+:37:16: error: use of undeclared identifier 'i'
+        output[i] = input[i];
+               ^
+:37:27: error: use of undeclared identifier 'i'
+        output[i] = input[i];
+                          ^
+5 errors generated.
+
+
+Program: reshaped_programs/test_input_poly_8_8_8_8_thresh_1_safe.c-amalgamation.c
+Error: :8:16: error: unknown type name 'k2c_tensor'
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, k2c_activationType* activation, float* fwork);
+               ^
+:8:42: error: unknown type name 'k2c_tensor'
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, k2c_activationType* activation, float* fwork);
+                                         ^
+:8:67: error: unknown type name 'k2c_tensor'
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, k2c_activationType* activation, float* fwork);
+                                                                  ^
+:8:93: error: unknown type name 'k2c_tensor'
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, k2c_activationType* activation, float* fwork);
+                                                                                            ^
+4 errors generated.
+
+
+Program: reshaped_programs/test_input_poly_32_32_32_32_thresh_1_safe.c-amalgamation.c
+Error: :5:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h> 
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_cartpole_79_safe.c-amalgamation.c
+Error: :36:10: error: use of undeclared identifier 'uint32_t'
+    for (uint32_t i = 0; i < 4; i++) {
+         ^
+:36:26: error: use of undeclared identifier 'i'
+    for (uint32_t i = 0; i < 4; i++) {
+                         ^
+:36:33: error: use of undeclared identifier 'i'
+    for (uint32_t i = 0; i < 4; i++) {
+                                ^
+:37:21: error: use of undeclared identifier 'i'
+        tensor_7[0][i] = tensor_input[0][i];
+                    ^
+:37:42: error: use of undeclared identifier 'i'
+        tensor_7[0][i] = tensor_input[0][i];
+                                         ^
+:46:10: error: use of undeclared identifier 'uint32_t'
+    for (uint32_t r = 0; r < M; r++)
+         ^
+:46:26: error: use of undeclared identifier 'r'
+    for (uint32_t r = 0; r < M; r++)
+                         ^
+:46:33: error: use of undeclared identifier 'r'
+    for (uint32_t r = 0; r < M; r++)
+                                ^
+:47:14: error: use of undeclared identifier 'uint32_t'
+        for (uint32_t c = 0; c < N; c++) {
+             ^
+:47:30: error: use of undeclared identifier 'c'
+        for (uint32_t c = 0; c < N; c++) {
+                             ^
+:47:37: error: use of undeclared identifier 'c'
+        for (uint32_t c = 0; c < N; c++) {
+                                    ^
+:49:18: error: use of undeclared identifier 'uint32_t'
+            for (uint32_t i = 0; i < K; i++) {
+                 ^
+:49:34: error: use of undeclared identifier 'i'
+            for (uint32_t i = 0; i < K; i++) {
+                                 ^
+:49:41: error: use of undeclared identifier 'i'
+            for (uint32_t i = 0; i < K; i++) {
+                                        ^
+:50:49: error: use of undeclared identifier 'c'
+                float B = tensor_q_net_0_weight[c][i];
+                                                ^
+:50:52: error: use of undeclared identifier 'i'
+                float B = tensor_q_net_0_weight[c][i];
+                                                   ^
+:51:34: error: use of undeclared identifier 'r'
+                ABrc += tensor_7[r][i] * B;
+                                 ^
+:51:37: error: use of undeclared identifier 'i'
+                ABrc += tensor_7[r][i] * B;
+                                    ^
+:54:40: error: use of undeclared identifier 'c'
+            tmp += tensor_q_net_0_bias[c];
+                                       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+
+Program: reshaped_programs/test_input_cartpole_84_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_softsign_w4_r4_case_0_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_softmax_12_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_90_safe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_cartpole_90_safe-25d004.o: in function `main':
+test_input_cartpole_90_safe.c-amalgamation.c:(.text+0x240): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_lunarlander_33_unsafe.c-amalgamation.c
+Error: :108:34: error: use of undeclared identifier 'tu0'
+    node_Flatten_0(tensor_input, tu0.tensor_7);
+                                 ^
+:109:17: error: use of undeclared identifier 'tu0'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                ^
+:109:31: error: use of undeclared identifier 'tensor_q_net_0_weight'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                              ^
+:109:54: error: use of undeclared identifier 'tensor_q_net_0_bias'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                                                     ^
+:109:75: error: use of undeclared identifier 'tu1'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                                                                          ^
+:110:17: error: use of undeclared identifier 'tu1'
+    node_Relu_2(tu1.tensor_8, tu0.tensor_9);
+                ^
+:110:31: error: use of undeclared identifier 'tu0'
+    node_Relu_2(tu1.tensor_8, tu0.tensor_9);
+                              ^
+:111:17: error: use of undeclared identifier 'tu0'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                ^
+:111:31: error: use of undeclared identifier 'tensor_q_net_2_weight'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                              ^
+:111:54: error: use of undeclared identifier 'tensor_q_net_2_bias'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                                                     ^
+:111:75: error: use of undeclared identifier 'tu1'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                                                                          ^
+:112:17: error: use of undeclared identifier 'tu1'
+    node_Relu_4(tu1.tensor_10, tu0.tensor_11);
+                ^
+:112:32: error: use of undeclared identifier 'tu0'
+    node_Relu_4(tu1.tensor_10, tu0.tensor_11);
+                               ^
+:113:17: error: use of undeclared identifier 'tu0'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                ^
+:113:32: error: use of undeclared identifier 'tensor_q_net_4_weight'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                               ^
+:113:55: error: use of undeclared identifier 'tensor_q_net_4_bias'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                                                      ^
+16 errors generated.
+
+
+Program: reshaped_programs/test_input_cartpole_68_safe.c-amalgamation.c
+Error: /usr/bin/ld: /lib/x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_tanh_w32_r1_case_0_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include "keras2c/k2c_include.h" // Ensure this is the correct path to your headers
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_cartpole_3_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_64_safe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_cartpole_64_safe-5d4cf0.o: in function `main':
+test_input_cartpole_64_safe.c-amalgamation.c:(.text+0x10a): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_erf_0_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_tanh_w32_r2_case_1_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_softsign_w32_r3_case_0_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_tanh_w64_r4_case_1_safe.c-amalgamation.c
+Error: /usr/bin/ld: /lib/x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_cartpole_0_safe.c-amalgamation.c
+Error: :51:27: error: use of undeclared identifier 'tensor_q_net_0_weight'
+    node_Gemm_1(tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tensor_8);
+                          ^
+:51:50: error: use of undeclared identifier 'tensor_q_net_0_bias'
+    node_Gemm_1(tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tensor_8);
+                                                 ^
+:53:27: error: use of undeclared identifier 'tensor_q_net_2_weight'
+    node_Gemm_3(tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tensor_10);
+                          ^
+:53:50: error: use of undeclared identifier 'tensor_q_net_2_bias'
+    node_Gemm_3(tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tensor_10);
+                                                 ^
+:55:28: error: use of undeclared identifier 'tensor_q_net_4_weight'
+    node_Gemm_5(tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                           ^
+:55:51: error: use of undeclared identifier 'tensor_q_net_4_bias'
+    node_Gemm_5(tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                                                  ^
+6 errors generated.
+
+
+Program: reshaped_programs/test_input_tanh_w16_r2_case_0_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_29_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_69_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_69_unsafe-f594c9.o: in function `main':
+test_input_lunarlander_69_unsafe.c-amalgamation.c:(.text+0x124): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_softmax_2_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_87_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_87_unsafe-4eb9be.o: in function `main':
+test_input_lunarlander_87_unsafe.c-amalgamation.c:(.text+0x8ef): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_gelu_1_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_87_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_softsign_w8_r2_case_0_safe.c-amalgamation.c
+Error: :3:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_elu_1_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_softmax_9_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_92_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_8_8_8_thresh_3_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_poly_32_32_32_32_thresh_0_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_softplus_0_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_8_8_8_8_thresh_2_safe.c-amalgamation.c
+Error: :5:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_48_unsafe.c-amalgamation.c
+Error: :111:31: error: use of undeclared identifier 'tensor_q_net_0_weight'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                              ^
+:111:54: error: use of undeclared identifier 'tensor_q_net_0_bias'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                                                     ^
+:113:31: error: use of undeclared identifier 'tensor_q_net_2_weight'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                              ^
+:113:54: error: use of undeclared identifier 'tensor_q_net_2_bias'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                                                     ^
+:115:32: error: use of undeclared identifier 'tensor_q_net_4_weight'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                               ^
+:115:55: error: use of undeclared identifier 'tensor_q_net_4_bias'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                                                      ^
+6 errors generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_4_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_4_unsafe-070dc1.o: in function `main':
+test_input_lunarlander_4_unsafe.c-amalgamation.c:(.text+0x13b): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_cartpole_30_safe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_cartpole_30_safe-d7075e.o: in function `main':
+test_input_cartpole_30_safe.c-amalgamation.c:(.text+0x10a): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_softplus_5_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_88_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_27_safe.c-amalgamation.c
+Error: :49:31: error: use of undeclared identifier 'tensor_q_net_0_weight'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                              ^
+:49:54: error: use of undeclared identifier 'tensor_q_net_0_bias'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                                                     ^
+:51:31: error: use of undeclared identifier 'tensor_q_net_2_weight'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                              ^
+:51:54: error: use of undeclared identifier 'tensor_q_net_2_bias'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                                                     ^
+:53:32: error: use of undeclared identifier 'tensor_q_net_4_weight'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                               ^
+:53:55: error: use of undeclared identifier 'tensor_q_net_4_bias'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                                                      ^
+6 errors generated.
+
+
+Program: reshaped_programs/test_input_cos_3_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_60_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_60_unsafe-f75bbb.o: in function `main':
+test_input_lunarlander_60_unsafe.c-amalgamation.c:(.text+0x3da): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_lunarlander_61_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_61_unsafe-cb1ee5.o: in function `main':
+test_input_lunarlander_61_unsafe.c-amalgamation.c:(.text+0x8de): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_cartpole_12_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_gelu_2_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_42_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_42_unsafe-ea0652.o: in function `main':
+test_input_lunarlander_42_unsafe.c-amalgamation.c:(.text+0xbf1): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_cartpole_44_unsafe.c-amalgamation.c
+Error: :20:2: error: expected '}'
+};
+ ^
+:17:52: note: to match this '{'
+static const float tensor_q_net_2_weight[64][64] = {
+                                                   ^
+:29:2: error: expected '}'
+};
+ ^
+:26:51: note: to match this '{'
+static const float tensor_q_net_4_weight[2][64] = {
+                                                  ^
+2 errors generated.
+
+
+Program: reshaped_programs/test_input_poly_16_16_thresh_0_safe.c-amalgamation.c
+Error: :5:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_softmax_0_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_52_safe.c-amalgamation.c
+Error: :24:2: error: expected '}'
+};
+ ^
+:21:52: note: to match this '{'
+static const float tensor_q_net_2_weight[64][64] = {
+                                                   ^
+:34:2: error: expected '}'
+};
+ ^
+:31:51: note: to match this '{'
+static const float tensor_q_net_4_weight[4][64] = {
+                                                  ^
+2 errors generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_75_safe.c-amalgamation.c
+Error: :23:2: error: expected '}'
+};
+ ^
+:20:52: note: to match this '{'
+static const float tensor_q_net_2_weight[64][64] = {
+                                                   ^
+:31:2: error: expected '}'
+};
+ ^
+:28:51: note: to match this '{'
+static const float tensor_q_net_4_weight[4][64] = {
+                                                  ^
+:53:42: warning: sizeof on array function parameter will return size of 'float (*)[8]' instead of 'float[1][8]' [-Wsizeof-array-argument]
+    memcpy(tensor_7, tensor_input, sizeof(tensor_7));
+                                         ^
+:52:73: note: declared here
+static inline void node_Flatten_0(const float tensor_input[1][8], float tensor_7[1][8]){
+                                                                        ^
+:53:43: warning: 'memcpy' call operates on objects of type 'float[8]' while the size is based on a different type 'float (*)[8]' [-Wsizeof-pointer-memaccess]
+    memcpy(tensor_7, tensor_input, sizeof(tensor_7));
+           ~~~~~~~~                       ^~~~~~~~
+:53:43: note: did you mean to dereference the argument to 'sizeof' (and multiply it by the number of elements)?
+    memcpy(tensor_7, tensor_input, sizeof(tensor_7));
+                                          ^~~~~~~~
+2 warnings and 2 errors generated.
+
+
+Program: reshaped_programs/test_input_tanh_w8_r1_case_1_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_gcas_5_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_erf_2_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_60_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_softsign_w8_r3_case_1_unsafe.c-amalgamation.c
+Error: :5:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_46_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_46_unsafe-84edad.o: in function `main':
+test_input_lunarlander_46_unsafe.c-amalgamation.c:(.text+0x14e): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_poly_8_8_8_8_thresh_5_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include "keras2c/k2c_include.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_softsign_4_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_0_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_logistic_0_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_19_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_16_16_thresh_4_unsafe.c-amalgamation.c
+Error: :6:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_poly_128_thresh_1_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_16_16_16_thresh_4_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_cartpole_56_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_53_safe.c-amalgamation.c
+Error: :23:2: error: expected '}'
+};
+ ^
+:20:52: note: to match this '{'
+static const float tensor_q_net_2_weight[64][64] = {
+                                                   ^
+:31:2: error: expected '}'
+};
+ ^
+:28:51: note: to match this '{'
+static const float tensor_q_net_4_weight[2][64] = {
+                                                  ^
+2 errors generated.
+
+
+Program: reshaped_programs/test_input_tanh_w8_r4_case_0_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_80_safe.c-amalgamation.c
+Error: :53:5: warning: implicit declaration of function 'node_Flatten_0' is invalid in C99 [-Wimplicit-function-declaration]
+    node_Flatten_0(tensor_input, tu0.tensor_7);
+    ^
+:54:5: warning: implicit declaration of function 'node_Gemm_1' is invalid in C99 [-Wimplicit-function-declaration]
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+    ^
+:54:31: error: use of undeclared identifier 'tensor_q_net_0_weight'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                              ^
+:54:54: error: use of undeclared identifier 'tensor_q_net_0_bias'
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+                                                     ^
+:55:5: warning: implicit declaration of function 'node_Relu_2' is invalid in C99 [-Wimplicit-function-declaration]
+    node_Relu_2(tu1.tensor_8, tu0.tensor_9);
+    ^
+:56:5: warning: implicit declaration of function 'node_Gemm_3' is invalid in C99 [-Wimplicit-function-declaration]
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+    ^
+:56:31: error: use of undeclared identifier 'tensor_q_net_2_weight'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                              ^
+:56:54: error: use of undeclared identifier 'tensor_q_net_2_bias'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                                                     ^
+:57:5: warning: implicit declaration of function 'node_Relu_4' is invalid in C99 [-Wimplicit-function-declaration]
+    node_Relu_4(tu1.tensor_10, tu0.tensor_11);
+    ^
+:58:5: warning: implicit declaration of function 'node_Gemm_5' is invalid in C99 [-Wimplicit-function-declaration]
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+    ^
+:58:32: error: use of undeclared identifier 'tensor_q_net_4_weight'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                               ^
+:58:55: error: use of undeclared identifier 'tensor_q_net_4_bias'
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                                                      ^
+6 warnings and 6 errors generated.
+
+
+Program: reshaped_programs/test_input_poly_8_8_8_thresh_4_unsafe.c-amalgamation.c
+Error: :6:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_log_3_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_erf_3_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_softsign_w64_r3_case_1_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /lib/x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_cartpole_86_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_64_64_thresh_1_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_cartpole_40_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_softmax_4_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_21_safe.c-amalgamation.c
+Error: :13:4: error: expected expression
+  {...} // omitting the matrix elements for brevity
+   ^
+:17:4: error: expected expression
+  {...}
+   ^
+:21:4: error: expected expression
+  {...}
+   ^
+:25:4: error: expected expression
+  {...}
+   ^
+:29:4: error: expected expression
+  {...}
+   ^
+:33:4: error: expected expression
+  {...}
+   ^
+:52:10: error: use of undeclared identifier 'uint32_t'
+    for (uint32_t i = 0; i < 4; i++)
+         ^
+:52:26: error: use of undeclared identifier 'i'
+    for (uint32_t i = 0; i < 4; i++)
+                         ^
+:52:33: error: use of undeclared identifier 'i'
+    for (uint32_t i = 0; i < 4; i++)
+                                ^
+:53:16: error: use of undeclared identifier 'i'
+        output[i] = input[i];
+               ^
+:53:27: error: use of undeclared identifier 'i'
+        output[i] = input[i];
+                          ^
+:65:10: error: use of undeclared identifier 'uint32_t'
+    for (uint32_t r = 0; r < M; r++) {
+         ^
+:65:26: error: use of undeclared identifier 'r'
+    for (uint32_t r = 0; r < M; r++) {
+                         ^
+:65:33: error: use of undeclared identifier 'r'
+    for (uint32_t r = 0; r < M; r++) {
+                                ^
+:66:14: error: use of undeclared identifier 'uint32_t'
+        for (uint32_t c = 0; c < N; c++) {
+             ^
+:66:30: error: use of undeclared identifier 'c'
+        for (uint32_t c = 0; c < N; c++) {
+                             ^
+:66:37: error: use of undeclared identifier 'c'
+        for (uint32_t c = 0; c < N; c++) {
+                                    ^
+:68:18: error: use of undeclared identifier 'uint32_t'
+            for (uint32_t i = 0; i < K; i++) {
+                 ^
+:68:34: error: use of undeclared identifier 'i'
+            for (uint32_t i = 0; i < K; i++) {
+                                 ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+
+Program: reshaped_programs/test_input_cos_6_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_8_8_8_8_thresh_3_unsafe.c-amalgamation.c
+Error: :9:16: error: unknown type name 'k2c_tensor'
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, void (*activation)(float*, const size_t), float* fwork);
+               ^
+:9:42: error: unknown type name 'k2c_tensor'
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, void (*activation)(float*, const size_t), float* fwork);
+                                         ^
+:9:67: error: unknown type name 'k2c_tensor'
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, void (*activation)(float*, const size_t), float* fwork);
+                                                                  ^
+:9:93: error: unknown type name 'k2c_tensor'
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, void (*activation)(float*, const size_t), float* fwork);
+                                                                                            ^
+:10:19: error: unknown type name 'k2c_tensor'
+void poly_8_8_8_8(k2c_tensor* input, k2c_tensor* output);
+                  ^
+:10:38: error: unknown type name 'k2c_tensor'
+void poly_8_8_8_8(k2c_tensor* input, k2c_tensor* output);
+                                     ^
+6 errors generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_25_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_tanh_w16_r4_case_1_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_gcas_1_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_logistic_3_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_94_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_tanh_w32_r4_case_0_safe.c-amalgamation.c
+Error: :5:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_sqrt_7_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_18_safe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_cartpole_18_safe-b31b7c.o: in function `main':
+test_input_cartpole_18_safe.c-amalgamation.c:(.text+0x10a): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_tanh_w8_r2_case_1_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_cartpole_42_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_cartpole_42_unsafe-6a698b.o: in function `main':
+test_input_cartpole_42_unsafe.c-amalgamation.c:(.text+0x107): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_softsign_w4_r2_case_1_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_sin_1_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_17_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_11_unsafe.c-amalgamation.c
+Error: :23:2: error: expected '}'
+};
+ ^
+:20:52: note: to match this '{'
+static const float tensor_q_net_2_weight[64][64] = {
+                                                   ^
+:33:2: error: expected '}'
+};
+ ^
+:30:51: note: to match this '{'
+static const float tensor_q_net_4_weight[4][64] = {
+                                                  ^
+2 errors generated.
+
+
+Program: reshaped_programs/test_input_poly_16_16_16_16_thresh_5_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_poly_256_thresh_3_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_logistic_2_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_elu_3_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_31_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_softsign_0_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_256_thresh_0_safe.c-amalgamation.c
+Error: :8:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_poly_4_4_4_4_thresh_4_unsafe.c-amalgamation.c
+Error: :3:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_poly_32_32_thresh_5_unsafe.c-amalgamation.c
+Error: :8:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_poly_128_128_thresh_4_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /lib/x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_gelu_5_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_16_16_thresh_1_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_cartpole_8_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_tanh_w64_r3_case_1_safe.c-amalgamation.c
+Error: /usr/bin/ld: /lib/x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_poly_512_thresh_4_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_softsign_w64_r4_case_1_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /lib/x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_lunarlander_68_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_4_safe.c-amalgamation.c
+Error: :25:2: error: expected '}'
+};
+ ^
+:23:1: note: to match this '{'
+{
+^
+:35:2: error: expected '}'
+};
+ ^
+:33:1: note: to match this '{'
+{
+^
+2 errors generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_74_safe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_74_safe-4b05b4.o: in function `main':
+test_input_lunarlander_74_safe.c-amalgamation.c:(.text+0xe1): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_poly_16_16_16_16_thresh_2_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_vdp_11_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_relu_0_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_exp_2_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_tanh_w16_r3_case_1_safe.c-amalgamation.c
+Error: :5:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_tanh_w64_r3_case_0_safe.c-amalgamation.c
+Error: /usr/bin/ld: /lib/x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_poly_32_32_thresh_3_unsafe.c-amalgamation.c
+Error: :6:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_88_unsafe.c-amalgamation.c
+Error: :24:2: error: expected '}'
+};
+ ^
+:22:52: note: to match this '{'
+static const float tensor_q_net_2_weight[64][64] = {
+                                                   ^
+:32:2: error: expected '}'
+};
+ ^
+:30:51: note: to match this '{'
+static const float tensor_q_net_4_weight[4][64] = {
+                                                  ^
+2 errors generated.
+
+
+Program: reshaped_programs/test_input_tanh_w4_r1_case_1_safe.c-amalgamation.c
+Error: :5:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_lunarlander_28_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_lunarlander_28_unsafe-9f6e2d.o: in function `main':
+test_input_lunarlander_28_unsafe.c-amalgamation.c:(.text+0x114): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_poly_16_16_16_thresh_0_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_cartpole_41_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_71_safe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_cartpole_71_safe-186526.o: in function `main':
+test_input_cartpole_71_safe.c-amalgamation.c:(.text+0x10a): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_poly_32_32_32_32_thresh_4_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_softsign_w32_r4_case_1_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_log_0_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_tanh_w8_r1_case_0_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_tanh_5_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_log_1_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_61_safe.c-amalgamation.c
+Error: :102:31: error: use of undeclared identifier 'tensor_q_net_2_weight'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                              ^
+:102:54: error: use of undeclared identifier 'tensor_q_net_2_bias'
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+                                                     ^
+:104:32: error: use of undeclared identifier 'tensor_q_net_4_weight'; did you mean 'tensor_q_net_0_weight'?
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+                               ^~~~~~~~~~~~~~~~~~~~~
+                               tensor_q_net_0_weight
+:7:20: note: 'tensor_q_net_0_weight' declared here
+static const float tensor_q_net_0_weight[64][4] = {
+                   ^
+3 errors generated.
+
+
+Program: reshaped_programs/test_input_cartpole_75_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_77_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_4_4_4_4_thresh_1_safe.c-amalgamation.c
+Error: :5:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_tanh_w8_r4_case_1_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_robot_5_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_softmax_1_unsafe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_poly_1024_thresh_3_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h> // Assumed inclusion for keras2c library functions
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_tanh_1_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_12_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_19_safe.c-amalgamation.c
+Error: :94:5: warning: implicit declaration of function 'node_Gemm_3' is invalid in C99 [-Wimplicit-function-declaration]
+    node_Gemm_3( tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+    ^
+:95:5: warning: implicit declaration of function 'node_Relu_4' is invalid in C99 [-Wimplicit-function-declaration]
+    node_Relu_4( tu1.tensor_10, tu0.tensor_11);
+    ^
+:96:5: warning: implicit declaration of function 'node_Gemm_5' is invalid in C99 [-Wimplicit-function-declaration]
+    node_Gemm_5( tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+    ^
+3 warnings generated.
+/usr/bin/ld: /tmp/test_input_cartpole_19_safe-a48c59.o: in function `entry':
+test_input_cartpole_19_safe.c-amalgamation.c:(.text+0x73): undefined reference to `node_Gemm_3'
+/usr/bin/ld: test_input_cartpole_19_safe.c-amalgamation.c:(.text+0x88): undefined reference to `node_Relu_4'
+/usr/bin/ld: test_input_cartpole_19_safe.c-amalgamation.c:(.text+0xa8): undefined reference to `node_Gemm_5'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_tanh_w64_r1_case_0_unsafe.c-amalgamation.c
+Error: /usr/bin/ld: /lib/x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_poly_32_32_thresh_2_safe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_vdp_2_safe.c-amalgamation.c
+Error: :23:2: error: expected '}'
+};
+ ^
+:21:58: note: to match this '{'
+static const float tensor_linear_list_1_weight[32][32] = {
+                                                         ^
+:31:2: error: expected '}'
+};
+ ^
+:29:57: note: to match this '{'
+static const float tensor_linear_list_2_weight[3][32] = {
+                                                        ^
+2 errors generated.
+
+
+Program: reshaped_programs/test_input_cartpole_46_safe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_cartpole_46_safe-df1feb.o: in function `entry':
+test_input_cartpole_46_safe.c-amalgamation.c:(.text+0x26a): undefined reference to `tensor_q_net_0_weight'
+/usr/bin/ld: test_input_cartpole_46_safe.c-amalgamation.c:(.text+0x271): undefined reference to `tensor_q_net_0_bias'
+/usr/bin/ld: test_input_cartpole_46_safe.c-amalgamation.c:(.text+0x29e): undefined reference to `tensor_q_net_2_weight'
+/usr/bin/ld: test_input_cartpole_46_safe.c-amalgamation.c:(.text+0x2a5): undefined reference to `tensor_q_net_2_bias'
+/usr/bin/ld: test_input_cartpole_46_safe.c-amalgamation.c:(.text+0x2d6): undefined reference to `tensor_q_net_4_weight'
+/usr/bin/ld: test_input_cartpole_46_safe.c-amalgamation.c:(.text+0x2dd): undefined reference to `tensor_q_net_4_bias'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_cartpole_24_safe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_cartpole_24_safe-e94f51.o: in function `main':
+test_input_cartpole_24_safe.c-amalgamation.c:(.text+0x240): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_softsign_w8_r4_case_0_safe.c-amalgamation.c
+Error: :3:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_softsign_w4_r4_case_1_unsafe.c-amalgamation.c
+Error: :4:10: fatal error: 'keras2c/k2c_include.h' file not found
+#include <keras2c/k2c_include.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+
+Program: reshaped_programs/test_input_cartpole_59_safe.c-amalgamation.c
+Error: /usr/bin/ld: /tmp/test_input_cartpole_59_safe-378a2e.o: in function `main':
+test_input_cartpole_59_safe.c-amalgamation.c:(.text+0x10a): undefined reference to `entry'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Program: reshaped_programs/test_input_poly_32_32_32_thresh_1_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_lunarlander_92_safe.c-amalgamation.c
+Compiled successfully
+
+Program: reshaped_programs/test_input_cartpole_34_safe.c-amalgamation.c
+Compiled successfully
+

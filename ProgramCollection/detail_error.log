@@ -1,41 +1,156 @@
-Program: reshaped_programs/test_input_Float_div_bad.c
-Error: test_input_Float_div_bad: :16: int main(): Assertion `x == 0' failed.
- 
-
 Program: reshaped_programs/test_input_digits_bad_for.c
-Error: test_input_digits_bad_for: :11: void verifier_assert(int): Assertion `0' failed.
+Error:  
+
+Program: reshaped_programs/test_input_Float_div_bad.i.p+cfa-reducer.c
+Error: test_input_Float_div_bad.i.p+cfa-reducer: :16: int main(): Assertion `main_x == 0' failed.
  
 
 Program: reshaped_programs/test_input_digits_bad_while.c
-Error: test_input_digits_bad_while: :6: void reach_error(): Assertion `0 && "reach_error"' failed.
+Error: test_input_digits_bad_while: :33: int main(): Assertion `res > 67050' failed.
+ 
+
+Program: reshaped_programs/test_input_digits_while.c
+Error: Assertion failed: reach_error
  
 
 Program: reshaped_programs/test_input_Double_div_bad.i.p+cfa-reducer.c
-Error: test_input_Double_div_bad.i.p+cfa-reducer: :14: int main(): Assertion `x == 0' failed.
+Error: test_input_Double_div_bad.i.p+cfa-reducer: :21: int main(): Assertion `0' failed.
+ 
+
+Program: reshaped_programs/test_input_implicitfloatconversion.c
+Error: test_input_implicitfloatconversion: :6: void reach_error(): Assertion `0 && "reach_error"' failed.
+ 
+
+Program: reshaped_programs/test_input_double_req_bl_1232b.c
+Error: test_input_double_req_bl_1232b: :72: int main(): Assertion `0 && "Error: Result is not -0 with the correct sign bit."' failed.
+ 
+
+Program: reshaped_programs/test_input_double_req_bl_1252b.c
+Error: test_input_double_req_bl_1252b: :65: int main(): Assertion `0 && "Error: fmax result is not +0 as expected"' failed.
  
 
 Program: reshaped_programs/test_input_float_req_bl_1232b.c
-Error: test_input_float_req_bl_1232b: :58: int main(): Assertion `res == -0.0f && __signbit_float(res) == 1' failed.
+Error: test_input_float_req_bl_1232b: :54: int main(): Assertion `res == -0.0f && __signbit_float(res) == 1' failed.
  
 
 Program: reshaped_programs/test_input_double_req_bl_0680b.c
-Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :138:14 in 
+Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :147:12 in 
 
-Program: reshaped_programs/test_input_double_req_bl_1210.c
-Error: test_input_double_req_bl_1210: :87: int main(): Assertion `!(isnan_double(iptr) && !isnan_double(res))' failed.
+Program: reshaped_programs/test_input_double_req_bl_0662a.c
+Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :153:12 in 
+
+Program: reshaped_programs/test_input_double_req_bl_0870a.c
+Error: , SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :91:10 in 
+
+Program: reshaped_programs/test_input_double_req_bl_1092c.c
+Error: test_input_double_req_bl_1092c: :102: int main(): Assertion `isinf_double(res)' failed.
  
-#############################################################
-
-Program: reshaped_programs/test_input_float_req_bl_1252b.c
-Error: test_input_float_req_bl_1252b: :64: int main(): Assertion `0 && "Error: Expected result to be +0"' failed.
-
-
-
-Program: reshaped_programs/test_input_float_req_bl_0833.c
-Error:  
-
-Program: reshaped_programs/test_input_double_req_bl_1252b.c
-Error:  
 
 Program: reshaped_programs/test_input_double_req_bl_0680a.c
-Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :168:12 in 
+Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :140:14 in 
+
+Program: reshaped_programs/test_input_float_req_bl_1252b.c
+Error:  
+
+Program: reshaped_programs/test_input_double_req_bl_0490a.c
+Error: , SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :118:12 in 
+
+Program: reshaped_programs/test_input_double_req_bl_0663a.c
+Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :149:14 in 
+
+Program: reshaped_programs/test_input_lunarlander_18_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_18_unsafe-amalgamation: :81: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_84_safe.c-amalgamation.c
+Error: test_input_cartpole_84_safe-amalgamation: :112: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_3_safe.c-amalgamation.c
+Error: test_input_cartpole_3_safe-amalgamation: :30: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_29_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_29_unsafe-amalgamation: :123: int main(): Assertion `tensor_output[0][2] > tensor_output[0][3]' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_87_safe.c-amalgamation.c
+Error: test_input_cartpole_87_safe-amalgamation: :133: int main(): Assertion `!(tensor_output[0][1] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_92_safe.c-amalgamation.c
+Error: test_input_cartpole_92_safe-amalgamation: :38: int main(): Assertion `!(tensor_output[0][1] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_cos_3_unsafe.c-amalgamation.c
+Error: test_input_cos_3_unsafe-amalgamation: :31: int main(): Assertion `islessequal(error, COS_CHECK_ERROR)' failed.
+ 
+
+Program: reshaped_programs/test_input_gcas_5_safe.c-amalgamation.c
+Error: SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_gcas_5_safe-amalgamation+0xa43ae) (BuildId: 9b291c536e9c10ec1da19deb4a0b26d3453fbc49) in main 
+
+Program: reshaped_programs/test_input_cartpole_60_safe.c-amalgamation.c
+Error: test_input_cartpole_60_safe-amalgamation: :24: int main(): Assertion `tensor_output[0][1] > tensor_output[0][0]' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_0_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_0_unsafe-amalgamation: :135: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_19_safe.c-amalgamation.c
+Error: test_input_lunarlander_19_safe-amalgamation: :155: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][2])' failed.
+ 
+
+Program: reshaped_programs/test_input_poly_128_thresh_1_safe.c-amalgamation.c
+Error:  
+
+Program: reshaped_programs/test_input_cartpole_56_safe.c-amalgamation.c
+Error: test_input_cartpole_56_safe-amalgamation: :161: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_log_3_unsafe.c-amalgamation.c
+Error: test_input_log_3_unsafe-amalgamation: :22: int main(): Assertion `isgreaterequal(derivative, d1)' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_86_safe.c-amalgamation.c
+Error: test_input_cartpole_86_safe-amalgamation: :23: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_94_safe.c-amalgamation.c
+Error: test_input_cartpole_94_safe-amalgamation: :50: int main(): Assertion `!(tensor_output[0][1] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_17_safe.c-amalgamation.c
+Error: test_input_lunarlander_17_safe-amalgamation: :115: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_8_safe.c-amalgamation.c
+Error: test_input_cartpole_8_safe-amalgamation: :111: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_68_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_68_unsafe-amalgamation: :95: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_41_safe.c-amalgamation.c
+Error: test_input_cartpole_41_safe-amalgamation: :23: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+, SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_cartpole_41_safe-amalgamation+0xa43a0) (BuildId: 08ad842255961f74929165d537436305ea71f472) in main 
+
+Program: reshaped_programs/test_input_cartpole_75_safe.c-amalgamation.c
+Error: SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_cartpole_75_safe-amalgamation+0xa43a0) (BuildId: fc6204de20c7aac9f37b399b09609b7340e99874) in main, test_input_cartpole_75_safe-amalgamation: :26: int main(): Assertion `!(tensor_output[0][1] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_robot_5_safe.c-amalgamation.c
+Error: SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_robot_5_safe-amalgamation+0xa48e4) (BuildId: 659be0662f4014979fcfdcd44b675a6ad68e6d34) in main 
+
+Program: reshaped_programs/test_input_lunarlander_12_safe.c-amalgamation.c
+Error: test_input_lunarlander_12_safe-amalgamation: :101: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_poly_32_32_32_thresh_1_safe.c-amalgamation.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-overflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_poly_32_32_32_thresh_1_safe-amalgamation+0xdc389) (BuildId: 2025d02e2393fd96e80843c6df57e7e06cde817d) in k2c_dense, SUMMARY: MemorySanitizer: SEGV (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_poly_32_32_32_thresh_1_safe-amalgamation+0xa515a) (BuildId: a4ec3ac4711d2c2bf239a492b9f68fb64bad4380) in k2c_dense, SUMMARY: UndefinedBehaviorSanitizer: SEGV (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_poly_32_32_32_thresh_1_safe-amalgamation+0x2e89f) (BuildId: 23d758da18e10a8dfa8a819c4ddcc5b96655a79e) in k2c_dense 
+
+Program: reshaped_programs/test_input_lunarlander_92_safe.c-amalgamation.c
+Error: test_input_lunarlander_92_safe-amalgamation: :28: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][2])' failed.
+ 
+
