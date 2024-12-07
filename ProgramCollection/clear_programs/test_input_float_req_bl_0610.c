@@ -1,67 +1,72 @@
 #include <stdio.h>
-#include <math.h>
+#include <assert.h>
 
-// NaN check for floats
-int isnan_float(float x) {
-    return x != x;
-}
-
+typedef int __int32_t;
 typedef unsigned int __uint32_t;
 
-// Union to manipulate the bit representation of a float
 typedef union {
     float value;
     __uint32_t word;
 } ieee_float_shape_type;
 
-static const float huge_atan = 1.0e30;
-static const float one_atan = 1.0;
+static const float huge_floor = 1.0e30f;
+
+// Check if a float is NaN
+int isnan_float(float x) { return x != x; }
 
 float fabs_float(float x) {
     __uint32_t ix;
     ieee_float_shape_type gf_u;
     gf_u.value = x;
     ix = gf_u.word;
-    gf_u.word = ix & 0x7fffffff;
-    x = gf_u.value;
+    ieee_float_shape_type sf_u;
+    sf_u.word = ix & 0x7fffffff;
+    x = sf_u.value;
     return x;
 }
 
 static const float atanhi_atan[] = {
-    4.6364760399e-01,
-    7.8539812565e-01,
-    9.8279368877e-01,
-    1.5707962513e+00,
+    4.6364760399e-01f,
+    7.8539812565e-01f,
+    9.8279368877e-01f,
+    1.5707962513e+00f,
 };
 
 static const float atanlo_atan[] = {
-    5.0121582440e-09,
-    3.7748947079e-08,
-    3.4473217170e-08,
-    7.5497894159e-08,
+    5.0121582440e-09f,
+    3.7748947079e-08f,
+    3.4473217170e-08f,
+    7.5497894159e-08f,
 };
 
 static const float aT_atan[] = {
-    3.3333334327e-01, -2.0000000298e-01, 1.4285714924e-01, -1.1111110449e-01,
-    9.0908870101e-02, -7.6918758452e-02, 6.6610731184e-02, -5.8335702866e-02,
-    4.9768779427e-02, -3.6531571299e-02, 1.6285819933e-02,
+    3.3333334327e-01f, -2.0000000298e-01f, 1.4285714924e-01f, -1.1111110449e-01f,
+    9.0908870101e-02f, -7.6918758452e-02f, 6.6610731184e-02f, -5.8335702866e-02f,
+    4.9768779427e-02f, -3.6531571299e-02f, 1.6285819933e-02f,
 };
+
+static const float one_atan = 1.0f, huge_atan = 1.0e30f,
+                   pi_o_4 = 7.8539818525e-01f, pi_o_2 = 1.5707963705e+00f,
+                   pi = 3.1415927410e+00f;
 
 float atan_float(float x) {
     float w, s1, s2, z;
-    int hx, ix, id;
+    __int32_t ix, hx, id;
+
     ieee_float_shape_type gf_u;
     gf_u.value = x;
     hx = gf_u.word;
     ix = hx & 0x7fffffff;
+
     if (ix >= 0x50800000) {
-        if (ix > 0x7f800000)
+        if (ix > 0x7f800000L)
             return x + x;
         if (hx > 0)
             return atanhi_atan[3] + atanlo_atan[3];
         else
             return -atanhi_atan[3] - atanlo_atan[3];
     }
+
     if (ix < 0x3ee00000) {
         if (ix < 0x31000000) {
             if (huge_atan + x > one_atan)
@@ -73,7 +78,7 @@ float atan_float(float x) {
         if (ix < 0x3f980000) {
             if (ix < 0x3f300000) {
                 id = 0;
-                x = ((float)2.0 * x - one_atan) / ((float)2.0 + x);
+                x = (2.0f * x - one_atan) / (2.0f + x);
             } else {
                 id = 1;
                 x = (x - one_atan) / (x + one_atan);
@@ -81,10 +86,10 @@ float atan_float(float x) {
         } else {
             if (ix < 0x401c0000) {
                 id = 2;
-                x = (x - (float)1.5) / (one_atan + (float)1.5 * x);
+                x = (x - 1.5f) / (one_atan + 1.5f * x);
             } else {
                 id = 3;
-                x = -(float)1.0 / x;
+                x = -1.0f / x;
             }
         }
     }
@@ -96,28 +101,25 @@ float atan_float(float x) {
               w * (aT_atan[2] +
                    w * (aT_atan[4] +
                         w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
-    s2 =
-        w * (aT_atan[1] +
-             w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
-    if (id < 0)
+    s2 = w * (aT_atan[1] +
+              w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
+    if (id < 0) {
         return x - x * (s1 + s2);
-    else {
+    } else {
         z = atanhi_atan[id] - ((x * (s1 + s2) - atanlo_atan[id]) - x);
         return (hx < 0) ? -z : z;
     }
 }
 
 int main() {
-    // Defining deterministic input: NaN value
-    float x = 0.0f / 0.0f; // NaN
+    // Deterministic input: NaN for validation based on REQ-BL-0610 requirement.
+    float x = 0.0f / 0.0f;  // NaN
     float res = atan_float(x);
 
-    // Check if the result is NaN as expected
-    if (!isnan_float(res)) {
-        printf("Error: Expected NaN, got %f\n", res);
-        return 1;
-    }
+    // Assert if the result is not NaN, meaning the check fails.
+    assert(isnan_float(res) && "The result should be NaN for NaN input.");
 
-    printf("Test passed: Result is NaN as expected.\n");
+    printf("Program executed successfully.\n");
+    
     return 0;
 }

@@ -1,7 +1,8 @@
+#include <stdio.h>
 #include <assert.h>
+#include <stdlib.h>
 
 #define HALFPI 1.57079632679f
-
 #define NR 2
 
 #if NR == 1
@@ -22,18 +23,27 @@
 #define VAL 2.0f
 #endif
 
+void reach_error() { 
+    assert(0); 
+}
+
+void assume_abort_if_not(int cond) {
+    if (!cond) {
+        abort();
+    }
+}
+
 int main() {
-    // Use a deterministic value for IN
-    float IN = 0.5f; // Ensure this is within the range (-HALFPI, HALFPI)
-    
-    // Since IN is fixed and within range, we skip assume_abort_if_not
+    // Using a fixed deterministic input value for IN
+    float IN = 0.5f;  // Example fixed input value within the specified range
+    assume_abort_if_not(IN > -HALFPI && IN < HALFPI);
 
     float x = IN;
-    
     float result = x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
 
-    // Use standard assertion
-    assert(result <= VAL && result >= -VAL);
-  
+    if (!(result <= VAL && result >= -VAL)) {
+        reach_error();
+    }
+
     return 0;
 }

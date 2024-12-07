@@ -1,43 +1,39 @@
 #include <stdio.h>
 #include <math.h>
-#include <float.h>
+#include <stdbool.h>
+#include <stdint.h>
 
-typedef int __int32_t;
-typedef unsigned int __uint32_t;
-
+// Define union for IEEE float shape
 typedef union {
   float value;
-  __uint32_t word;
+  uint32_t word;
 } ieee_float_shape_type;
 
-// Function to check if a float is NaN
+// IEEE 754 isnan
 int isnan_float(float x) { return x != x; }
 
-// Constants for square root calculations
 static const float one_sqrt = 1.0f, tiny_sqrt = 1.0e-30f;
 
-// Implementing the sqrt function
 float __ieee754_sqrtf(float x) {
   float z;
-  __uint32_t r, hx;
-  __int32_t ix, s, q, m, t, i;
+  uint32_t r, hx;
+  int32_t ix, s, q, m, t, i;
 
   ieee_float_shape_type gf_u;
-  gf_u.value = (x);
+  gf_u.value = x;
   ix = gf_u.word;
-
   hx = ix & 0x7fffffff;
 
   if (!(hx < 0x7f800000L))
-    return x * x + x;
+    return x * x + x; // NaN or infinity check
 
   if (hx == 0)
-    return x;
+    return x; // zero
   if (ix < 0)
-    return (x - x) / (x - x);
+    return (x - x) / (x - x); // negative number
 
   m = (ix >> 23);
-  if (hx < 0x00800000L) {
+  if (hx < 0x00800000L) { // subnormal number
     for (i = 0; (ix & 0x00800000L) == 0; i++)
       ix <<= 1;
     m -= i - 1;
@@ -75,15 +71,16 @@ float __ieee754_sqrtf(float x) {
   }
   ix = (q >> 1) + 0x3f000000L;
   ix += (m << 23);
+
   ieee_float_shape_type sf_u;
-  sf_u.word = (ix);
+  sf_u.word = ix;
   z = sf_u.value;
+
   return z;
 }
 
-// Constants for acos calculations
-static const float one_acos = 1.0000000000e+00f, pi = 3.1415925026e+00f,
-                   pio2_hi_acos = 1.5707962513e+00f,
+static const float one_acos = 1.0f, pi = 3.1415925026f,
+                   pio2_hi_acos = 1.5707962513f,
                    pio2_lo_acos = 7.5497894159e-08f, pS0_acos = 1.6666667163e-01f,
                    pS1_acos = -3.2556581497e-01f, pS2_acos = 2.0121252537e-01f,
                    pS3_acos = -4.0055535734e-02f, pS4_acos = 7.9153501429e-04f,
@@ -91,12 +88,12 @@ static const float one_acos = 1.0000000000e+00f, pi = 3.1415925026e+00f,
                    qS2_acos = 2.0209457874e+00f, qS3_acos = -6.8828397989e-01f,
                    qS4_acos = 7.7038154006e-02f;
 
-// Implementing the acos function
 float __ieee754_acosf(float x) {
   float z, p, q, r, w, s, c, df;
-  __int32_t hx, ix;
+  int32_t hx, ix;
+
   ieee_float_shape_type gf_u;
-  gf_u.value = (x);
+  gf_u.value = x;
   hx = gf_u.word;
 
   ix = hx & 0x7fffffff;
@@ -104,7 +101,7 @@ float __ieee754_acosf(float x) {
     if (hx > 0)
       return 0.0f;
     else
-      return pi + (float)2.0f * pio2_lo_acos;
+      return pi + 2.0f * pio2_lo_acos;
   } else if (ix > 0x3f800000) {
     return (x - x) / (x - x);
   }
@@ -133,16 +130,18 @@ float __ieee754_acosf(float x) {
     w = r * s - pio2_lo_acos;
     return pi - 2.0f * (s + w);
   } else {
-    __int32_t idf;
     z = (one_acos - x) * 0.5f;
     s = __ieee754_sqrtf(z);
     df = s;
+    int32_t idf;
     ieee_float_shape_type df_u;
-    df_u.value = (df);
+    df_u.value = df;
     idf = df_u.word;
+
     ieee_float_shape_type sf_u;
     sf_u.word = (idf & 0xfffff000);
     df = sf_u.value;
+
     c = (z - df * df) / (s + df);
     p = z *
         (pS0_acos +
@@ -157,18 +156,19 @@ float __ieee754_acosf(float x) {
 }
 
 int main() {
-  
-  // Fixed value representing positive infinity for float
+
+  // REQ-BL-0480: The acos and acosf procedures shall return NAN, if the argument x is +-inf
+
+  // Set a fixed input of inf (using float infinity)
   float x = INFINITY; 
   float res = __ieee754_acosf(x);
 
-  // Validate if the result is NaN
+  // x is +inf, the result shall be NAN
   if (!isnan_float(res)) {
-    printf("Error: Expected NaN but got a number.\n");
+    printf("Error: Result is not NAN as it should be.\n");
     return 1;
-  } else {
-    printf("Success: Correctly returned NaN for infinite input.\n");
   }
 
+  printf("The result is NAN as expected for +inf input.\n");
   return 0;
 }

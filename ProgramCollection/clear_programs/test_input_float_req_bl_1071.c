@@ -1,29 +1,30 @@
 #include <stdio.h>
+#include <stdint.h>
+#include <math.h>
 #include <assert.h>
 
-// Typedefs
-typedef int __int32_t;
-typedef unsigned int __uint32_t;
-
-// Union for floating point manipulation
+// Custom union to manipulate float bits
 typedef union {
   float value;
-  __uint32_t word;
+  uint32_t word;
 } ieee_float_shape_type;
 
-// Function to truncate float
+// Function to truncate float values
 float trunc_float(float x) {
-  __int32_t signbit, w, exponent_less_127;
+  int32_t signbit, w, exponent_less_127;
   
+  // Get the bit representation of the float
   ieee_float_shape_type gf_u;
-  gf_u.value = (x);
+  gf_u.value = x;
   w = gf_u.word;
-
+  
   signbit = w & 0x80000000;
-  exponent_less_127 = ((w & 0x7f800000) >> 23) - 127;
-
+  exponent_less_127 = (w & 0x7f800000) >> 23; // Extract exponent bits
+  exponent_less_127 -= 127; // Adjust exponent
+  
   if (exponent_less_127 < 23) {
-    if (exponent_less_127 < 0) {
+    if (exponent_less_127 < 0) { 
+      // If the exponent suggests the number is between -1 and 1
       ieee_float_shape_type sf_u;
       sf_u.word = signbit;
       x = sf_u.value;
@@ -34,28 +35,27 @@ float trunc_float(float x) {
     }
   } else {
     if (exponent_less_127 == 255)
-      return x + x;
+      return x + x; // If exponent is all 1s, it might be INF/NAN
   }
   
   return x;
 }
 
-// Function to check if float is NaN
+// Function to check if a float is NaN
 int isnan_float(float x) {
   return x != x;
 }
 
-// Main function
 int main() {
-  // Set a deterministic value to x as NaN
+  // Test case for trunc_float with NaN
   float x = 0.0f / 0.0f; // NaN
   float res = trunc_float(x);
 
-  // Assert that the result of truncating NaN is NaN
+  // Verify that result of trunc_float on NaN is still NaN
   assert(isnan_float(res));
 
-  // Output some information for confirmation
-  printf("If no assertion failed, the behavior is correct.\n");
+  // For visual confirmation if needed (Remove in production)
+  printf("Test Passed: Result is NaN as expected\n");
 
   return 0;
 }

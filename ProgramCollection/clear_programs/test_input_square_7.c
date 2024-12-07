@@ -1,39 +1,55 @@
-#include <assert.h>
 #include <stdio.h>
+#include <assert.h>
 
-// Function to simulate an approximate square root calculation (1 + x approximation)
-float calculate_sqrt_approx(float x) {
-    return 1.0f + 0.5f * x - 0.125f * x * x + 0.0625f * x * x * x - 0.0390625f * x * x * x * x;
-}
+// Replacing the nondeterministic input from __VERIFIER_nondet_float() with a fixed determinist value
+#define FIXED_INPUT 0.5f
 
-// Error function to be called when a condition fails
-void reach_error() {
-    assert(0);
-}
+// APPROXIMATES sqroot(1+x)
 
-// Main function
-int main() {
-    // Initialize input with a fixed, deterministic value
-    float IN = 0.5f;
-    
-    // Constant value determined by the preprocessor directive in the original code
-    const float VAL = 1.4f;
+#define NR 7
 
-    // Assert that the input conforms to the required range
-    if (!(IN >= 0.0f && IN < 1.0f)) {
-        return 1; // Terminate the program if input is out of range
+#if NR == 1
+#define VAL 1.39f
+#elif NR == 2
+#define VAL 1.398f
+#elif NR == 3
+#define VAL 1.39843f
+#elif NR == 4
+#define VAL 1.39844f
+#elif NR == 5
+#define VAL 1.3985f
+#elif NR == 6
+#define VAL 1.399f
+#elif NR == 7
+#define VAL 1.4f
+#elif NR == 8
+#define VAL 1.5f
+#endif
+
+void assume_abort_if_not(int cond) {
+    if (!cond) {
+        // Using assert to simulate "abort()" in this controlled compilation environment
+        assert(0);
     }
+}
 
-    // Calculate the approximate square root value
-    float result = calculate_sqrt_approx(IN);
+void reach_error() { 
+    // Using assert to simulate "reach_error()" function, here it halts execution if called
+    assert(0); 
+}
 
-    // Check if the result is within the expected range
+int main() {
+    // Fixed deterministic input
+    float IN = FIXED_INPUT;
+    assume_abort_if_not(IN >= 0.0f && IN < 1.0f);
+
+    float x = IN;
+    float result = 1.0f + 0.5f * x - 0.125f * x * x + 0.0625f * x * x * x - 0.0390625f * x * x * x * x;
+
     if (!(result >= 0.0f && result < VAL)) {
         reach_error();
     }
 
-    // Output the result
-    printf("The result of the approximation is: %f\n", result);
-
+    printf("Computation completed successfully with result: %.6f\n", result);
     return 0;
 }

@@ -1,7 +1,24 @@
 #include <stdio.h>
+#include <stdint.h>
+#include <math.h>
+#include <assert.h>
 
-typedef int __int32_t;
-typedef unsigned int __uint32_t;
+// Helper macros to manipulate float word representations
+#define EXTRACT_WORD(w,x) do {           \
+    ieee_float_shape_type gf_u;          \
+    gf_u.value = (x);                    \
+    (w) = gf_u.word;                     \
+  } while (0)
+
+#define GET_FLOAT_WORD(w, x) EXTRACT_WORD(w,x)
+#define SET_FLOAT_WORD(x, w) do {        \
+    ieee_float_shape_type sf_u;          \
+    sf_u.word = (w);                     \
+    (x) = sf_u.value;                    \
+  } while (0)
+
+typedef uint32_t __uint32_t;
+typedef int32_t __int32_t;
 
 typedef union {
   float value;
@@ -10,12 +27,8 @@ typedef union {
 
 float fabs_float(float x) {
   __uint32_t ix;
-  ieee_float_shape_type gf_u;
-  gf_u.value = x;
-  ix = gf_u.word;
-  ieee_float_shape_type sf_u;
-  sf_u.word = ix & 0x7fffffff;
-  x = sf_u.value;
+  GET_FLOAT_WORD(ix, x);
+  SET_FLOAT_WORD(x, ix & 0x7fffffff);
   return x;
 }
 
@@ -47,10 +60,7 @@ float atan_float(float x) {
   float w, s1, s2, z;
   __int32_t ix, hx, id;
 
-  ieee_float_shape_type gf_u;
-  gf_u.value = x;
-  hx = gf_u.word;
-  
+  GET_FLOAT_WORD(hx, x);
   ix = hx & 0x7fffffff;
   if (ix >= 0x50800000) {
     if (ix > 0x7f800000L)
@@ -90,14 +100,8 @@ float atan_float(float x) {
   z = x * x;
   w = z * z;
 
-  s1 = z * (aT_atan[0] +
-            w * (aT_atan[2] +
-                 w * (aT_atan[4] +
-                      w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
-  s2 =
-      w *
-      (aT_atan[1] +
-       w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
+  s1 = z * (aT_atan[0] + w * (aT_atan[2] + w * (aT_atan[4] + w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
+  s2 = w * (aT_atan[1] + w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
   if (id < 0)
     return x - x * (s1 + s2);
   else {
@@ -113,15 +117,11 @@ float __ieee754_atan2f(float y, float x) {
   float z;
   __int32_t k, m, hx, hy, ix, iy;
 
-  ieee_float_shape_type gf_u;
-  gf_u.value = x;
-  hx = gf_u.word;
+  GET_FLOAT_WORD(hx, x);
   ix = hx & 0x7fffffff;
-  gf_u.value = y;
-  hy = gf_u.word;
+  GET_FLOAT_WORD(hy, y);
   iy = hy & 0x7fffffff;
-  
-  if (ix > 0x7f800000L || iy > 0x7f800000L)
+  if ((ix > 0x7f800000L) || (iy > 0x7f800000L))
     return x + y;
   if (hx == 0x3f800000)
     return atan_float(y);
@@ -178,18 +178,13 @@ float __ieee754_atan2f(float y, float x) {
     z = 0.0;
   else
     z = atan_float(fabs_float(y / x));
-  
   switch (m) {
   case 0:
     return z;
   case 1: {
     __uint32_t zh;
-    ieee_float_shape_type gf_u;
-    gf_u.value = z;
-    zh = gf_u.word;
-    ieee_float_shape_type sf_u;
-    sf_u.word = zh ^ 0x80000000;
-    z = sf_u.value;
+    GET_FLOAT_WORD(zh, z);
+    SET_FLOAT_WORD(z, zh ^ 0x80000000);
   }
     return z;
   case 2:
@@ -203,13 +198,10 @@ int main() {
   float x = -0.0f;
   float y = -1.0f;  // Fixed deterministic input
 
-  // REQ-BL-0662: The atan2 and atan2f procedures shall return -pi/2 , if the argument y is < 0 and the argument x is +-0.
-
   if (y < 0.0f) {
     float res = __ieee754_atan2f(y, x);
-    // x is +-0, y is < 0, the result shall be -pi/2
     if (res != -pi_o_2) {
-      printf("Error: Expected -pi/2, got %f\n", res);
+      printf("Error: expected -pi/2, got %f\n", res);
       return 1;
     }
   }

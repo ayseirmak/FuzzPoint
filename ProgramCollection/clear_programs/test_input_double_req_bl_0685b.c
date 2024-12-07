@@ -1,19 +1,15 @@
 #include <stdio.h>
+#include <math.h>
+#include <float.h>
 
-// Define math constants
-#define ONE_ATAN 1.0
-#define PI_O_4 7.8539816339744827900E-01
-#define PI_O_2 1.5707963267948965580E+00
-#define PI 3.1415926535897931160E+00
-#define HUGE_ATAN 1.0e300
-#define TINY_ATAN2 1.0e-300
-#define ZERO_ATAN2 0.0
-#define PI_LO_ATAN2 1.2246467991473531772E-16
+void reach_error() {
+    printf("Error: Reached an unexpected condition.\n");
+}
 
-typedef unsigned int __uint32_t;
 typedef int __int32_t;
+typedef unsigned int __uint32_t;
 
-// A union which permits us to convert between a double and two 32 bit ints.
+/* A union which permits us to convert between a double and two 32 bit ints. */
 typedef union {
     double value;
     struct {
@@ -22,6 +18,21 @@ typedef union {
     } parts;
 } ieee_double_shape_type;
 
+double fabs_double(double x) {
+    __uint32_t high;
+    ieee_double_shape_type gh_u;
+    gh_u.value = x;
+    high = gh_u.parts.msw;
+
+    ieee_double_shape_type sh_u;
+    sh_u.value = x;
+    sh_u.parts.msw = (high & 0x7fffffff);
+    x = sh_u.value;
+
+    return x;
+}
+
+/* Precomputed constants */
 static const double atanhi_atan[] = {
     4.63647609000806093515e-01,
     7.85398163397448278999e-01,
@@ -45,13 +56,9 @@ static const double aT_atan[] = {
     1.62858201153657823623e-02,
 };
 
-double fabs_double(double x) {
-    ieee_double_shape_type gh_u;
-    gh_u.value = x;
-    __uint32_t high = gh_u.parts.msw;
-    gh_u.parts.msw = high & 0x7fffffff;
-    return gh_u.value;
-}
+static const double one_atan = 1.0, pi_o_4 = 7.8539816339744827900E-01,
+                    pi_o_2 = 1.5707963267948965580E+00,
+                    pi = 3.1415926535897931160E+00, huge_atan = 1.0e300;
 
 double atan_double(double x) {
     double w, s1, s2, z;
@@ -62,30 +69,39 @@ double atan_double(double x) {
     hx = gh_u.parts.msw;
     ix = hx & 0x7fffffff;
 
-    if (ix >= 0x44100000) {  // if |x| >= 2^66
-        __uint32_t low = gh_u.parts.lsw;
-        if (ix > 0x7ff00000 || (ix == 0x7ff00000 && low != 0))
-            return x + x;  // NaN
-        return (hx > 0) ? atanhi_atan[3] + atanlo_atan[3] : -atanhi_atan[3] - atanlo_atan[3];
+    if (ix >= 0x44100000) {
+        __uint32_t low;
+        ieee_double_shape_type gl_u;
+        gl_u.value = x;
+        low = gl_u.parts.lsw;
+
+        if (ix > 0x7ff00000 || (ix == 0x7ff00000 && (low != 0)))
+            return x + x;
+        if (hx > 0)
+            return atanhi_atan[3] + atanlo_atan[3];
+        else
+            return -atanhi_atan[3] - atanlo_atan[3];
     }
-    if (ix < 0x3fdc0000) {  // |x| < 0.4375
-        if (ix < 0x3e200000 && HUGE_ATAN + x > ONE_ATAN)
-            return x;  // Raise inexact
+    if (ix < 0x3fdc0000) {
+        if (ix < 0x3e200000) {
+            if (huge_atan + x > one_atan)
+                return x;
+        }
         id = -1;
     } else {
         x = fabs_double(x);
-        if (ix < 0x3ff30000) {  // |x| < 1.1875
+        if (ix < 0x3ff30000) {
             if (ix < 0x3fe60000) {
                 id = 0;
-                x = (2.0 * x - ONE_ATAN) / (2.0 + x);
+                x = (2.0 * x - one_atan) / (2.0 + x);
             } else {
                 id = 1;
-                x = (x - ONE_ATAN) / (x + ONE_ATAN);
+                x = (x - one_atan) / (x + one_atan);
             }
         } else {
-            if (ix < 0x40038000) {  // 1.1875 <= |x| < 2.4375
+            if (ix < 0x40038000) {
                 id = 2;
-                x = (x - 1.5) / (ONE_ATAN + 1.5 * x);
+                x = (x - 1.5) / (one_atan + 1.5 * x);
             } else {
                 id = 3;
                 x = -1.0 / x;
@@ -96,15 +112,24 @@ double atan_double(double x) {
     z = x * x;
     w = z * z;
 
-    s1 = z * (aT_atan[0] + w * (aT_atan[2] + w * (aT_atan[4] + w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
-    s2 = w * (aT_atan[1] + w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
-    
-    if (id < 0) 
+    s1 = z * (aT_atan[0] +
+              w * (aT_atan[2] +
+                   w * (aT_atan[4] +
+                        w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
+    s2 =
+        w *
+        (aT_atan[1] +
+         w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
+    if (id < 0)
         return x - x * (s1 + s2);
-    
-    z = atanhi_atan[id] - ((x * (s1 + s2) - atanlo_atan[id]) - x);
-    return (hx < 0) ? -z : z;
+    else {
+        z = atanhi_atan[id] - ((x * (s1 + s2) - atanlo_atan[id]) - x);
+        return (hx < 0) ? -z : z;
+    }
 }
+
+static const double tiny_atan2 = 1.0e-300, zero_atan2 = 0.0,
+                    pi_lo_atan2 = 1.2246467991473531772E-16;
 
 double __ieee754_atan2(double y, double x) {
     double z;
@@ -122,12 +147,11 @@ double __ieee754_atan2(double y, double x) {
     ly = ew_u.parts.lsw;
     iy = hy & 0x7fffffff;
 
-    if (((ix | ((lx | -lx) >> 31)) > 0x7ff00000) || ((iy | ((ly | -ly) >> 31)) > 0x7ff00000))
-        return x + y; // NaN
-
+    if (((ix | ((lx | -lx) >> 31)) > 0x7ff00000) ||
+        ((iy | ((ly | -ly) >> 31)) > 0x7ff00000))
+        return x + y;
     if (((hx - 0x3ff00000) | lx) == 0)
         return atan_double(y);
-
     m = ((hy >> 31) & 1) | ((hx >> 30) & 2);
 
     if ((iy | ly) == 0) {
@@ -136,47 +160,47 @@ double __ieee754_atan2(double y, double x) {
             case 1:
                 return y;
             case 2:
-                return PI + TINY_ATAN2;
+                return pi + tiny_atan2;
             case 3:
-                return -PI - TINY_ATAN2;
+                return -pi - tiny_atan2;
         }
     }
 
     if ((ix | lx) == 0)
-        return (hy < 0) ? -PI_O_2 - TINY_ATAN2 : PI_O_2 + TINY_ATAN2;
+        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
 
     if (ix == 0x7ff00000) {
         if (iy == 0x7ff00000) {
             switch (m) {
                 case 0:
-                    return PI_O_4 + TINY_ATAN2;
+                    return pi_o_4 + tiny_atan2;
                 case 1:
-                    return -PI_O_4 - TINY_ATAN2;
+                    return -pi_o_4 - tiny_atan2;
                 case 2:
-                    return 3.0 * PI_O_4 + TINY_ATAN2;
+                    return 3.0 * pi_o_4 + tiny_atan2;
                 case 3:
-                    return -3.0 * PI_O_4 - TINY_ATAN2;
+                    return -3.0 * pi_o_4 - tiny_atan2;
             }
         } else {
             switch (m) {
                 case 0:
-                    return ZERO_ATAN2;
+                    return zero_atan2;
                 case 1:
-                    return -ZERO_ATAN2;
+                    return -zero_atan2;
                 case 2:
-                    return PI + TINY_ATAN2;
+                    return pi + tiny_atan2;
                 case 3:
-                    return -PI - TINY_ATAN2;
+                    return -pi - tiny_atan2;
             }
         }
     }
 
     if (iy == 0x7ff00000)
-        return (hy < 0) ? -PI_O_2 - TINY_ATAN2 : PI_O_2 + TINY_ATAN2;
+        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
 
     k = (iy - ix) >> 20;
     if (k > 60)
-        z = PI_O_2 + 0.5 * PI_LO_ATAN2;
+        z = pi_o_2 + 0.5 * pi_lo_atan2;
     else if (hx < 0 && k < -60)
         z = 0.0;
     else
@@ -186,28 +210,41 @@ double __ieee754_atan2(double y, double x) {
         case 0:
             return z;
         case 1: {
-            ieee_double_shape_type zh_u;
-            zh_u.value = z;
-            zh_u.parts.msw ^= 0x80000000;
-            return zh_u.value;
+            __uint32_t zh;
+            ieee_double_shape_type gh_u;
+            gh_u.value = z;
+            zh = gh_u.parts.msw;
+
+            ieee_double_shape_type sh_u;
+            sh_u.value = z;
+            sh_u.parts.msw = (zh ^ 0x80000000);
+            z = sh_u.value;
         }
+            return z;
         case 2:
-            return PI - (z - PI_LO_ATAN2);
+            return pi - (z - pi_lo_atan2);
         default:
-            return (z - PI_LO_ATAN2) - PI;
+            return (z - pi_lo_atan2) - pi;
     }
 }
 
 int main() {
-    double x = -1.0 / 0.0; // -inf
-    double y = -1.0 / 0.0; // inf
+
+    /* REQ-BL-0685:
+     * The atan2 and atan2f procedures shall return +- 3pi/4 ,
+     * if the argument y is +-Inf and the argument x is -inf
+     */
+
+    double x = -INFINITY; // -INF
+    double y = -INFINITY; // INF
 
     double res = __ieee754_atan2(y, x);
 
-    if (res != -3 * PI_O_4) {
-        printf("Error: Expected -3pi/4, got %f\n", res);
+    // x is -inf, y is -inf, the result shall be -3pi/4
+    if (res != -3 * pi_o_4) {
+        reach_error();
         return 1;
     }
-    printf("Result is -3pi/4, as expected.\n");
+    printf("Test passed.\n");
     return 0;
 }

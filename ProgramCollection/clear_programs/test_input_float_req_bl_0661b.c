@@ -1,25 +1,31 @@
 #include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 #include <assert.h>
 
+// Typedefs
 typedef int __int32_t;
 typedef unsigned int __uint32_t;
 
+// Union for handling IEEE float representation
 typedef union {
   float value;
   __uint32_t word;
 } ieee_float_shape_type;
 
+// Function to compute absolute value of a float
 float fabs_float(float x) {
   __uint32_t ix;
   ieee_float_shape_type gf_u;
   gf_u.value = x;
   ix = gf_u.word;
-  
   ieee_float_shape_type sf_u;
   sf_u.word = ix & 0x7fffffff;
-  return sf_u.value;
+  x = sf_u.value;
+  return x;
 }
 
+// Predefined constants
 static const float atanhi_atan[] = {
     4.6364760399e-01,
     7.8539812565e-01,
@@ -40,10 +46,11 @@ static const float aT_atan[] = {
     4.9768779427e-02, -3.6531571299e-02, 1.6285819933e-02,
 };
 
-static const float one_atan = 1.0, huge_atan = 1.0e30,
-                   pi_o_4 = 7.8539818525e-01, pi_o_2 = 1.5707963705e+00,
-                   pi = 3.1415927410e+00;
+static const float one_atan = 1.0f, huge_atan = 1.0e30f,
+                   pi_o_4 = 7.8539818525e-01f, pi_o_2 = 1.5707963705e+00f,
+                   pi = 3.1415927410e+00f;
 
+// atan calculation
 float atan_float(float x) {
   float w, s1, s2, z;
   __int32_t ix, hx, id;
@@ -51,8 +58,8 @@ float atan_float(float x) {
   ieee_float_shape_type gf_u;
   gf_u.value = x;
   hx = gf_u.word;
-  
   ix = hx & 0x7fffffff;
+
   if (ix >= 0x50800000) {
     if (ix > 0x7f800000L)
       return x + x;
@@ -61,6 +68,7 @@ float atan_float(float x) {
     else
       return -atanhi_atan[3] - atanlo_atan[3];
   }
+
   if (ix < 0x3ee00000) {
     if (ix < 0x31000000) {
       if (huge_atan + x > one_atan)
@@ -90,26 +98,26 @@ float atan_float(float x) {
 
   z = x * x;
   w = z * z;
-
   s1 = z * (aT_atan[0] +
             w * (aT_atan[2] +
                  w * (aT_atan[4] +
                       w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
-  s2 =
-      w *
-      (aT_atan[1] +
-       w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
-  if (id < 0)
+  s2 = w * (aT_atan[1] +
+            w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
+
+  if (id < 0) {
     return x - x * (s1 + s2);
-  else {
+  } else {
     z = atanhi_atan[id] - ((x * (s1 + s2) - atanlo_atan[id]) - x);
     return (hx < 0) ? -z : z;
   }
 }
 
-static const float tiny_atan2 = 1.0e-30, zero_atan2 = 0.0,
-                   pi_lo_atan2 = -8.7422776573e-08;
+// Additional constants
+static const float tiny_atan2 = 1.0e-30f, zero_atan2 = 0.0f,
+                   pi_lo_atan2 = -8.7422776573e-08f;
 
+// atan2 calculation
 float __ieee754_atan2f(float y, float x) {
   float z;
   __int32_t k, m, hx, hy, ix, iy;
@@ -118,23 +126,27 @@ float __ieee754_atan2f(float y, float x) {
   gf_u.value = x;
   hx = gf_u.word;
   ix = hx & 0x7fffffff;
-  
+
   gf_u.value = y;
   hy = gf_u.word;
   iy = hy & 0x7fffffff;
-  
+
   if (ix > 0x7f800000L || iy > 0x7f800000L)
     return x + y;
   if (hx == 0x3f800000)
     return atan_float(y);
+
   m = ((hy >> 31) & 1) | ((hx >> 30) & 2);
 
   if (iy == 0) {
     switch (m) {
       case 0:
-      case 1: return y;
-      case 2: return pi + tiny_atan2;
-      case 3: return -pi - tiny_atan2;
+      case 1:
+        return y;
+      case 2:
+        return pi + tiny_atan2;
+      case 3:
+        return -pi - tiny_atan2;
     }
   }
 
@@ -144,17 +156,25 @@ float __ieee754_atan2f(float y, float x) {
   if (ix == 0x7f800000L) {
     if (iy == 0x7f800000L) {
       switch (m) {
-        case 0: return pi_o_4 + tiny_atan2;
-        case 1: return -pi_o_4 - tiny_atan2;
-        case 2: return 3.0f * pi_o_4 + tiny_atan2;
-        case 3: return -3.0f * pi_o_4 - tiny_atan2;
+        case 0:
+          return pi_o_4 + tiny_atan2;
+        case 1:
+          return -pi_o_4 - tiny_atan2;
+        case 2:
+          return 3.0f * pi_o_4 + tiny_atan2;
+        case 3:
+          return -3.0f * pi_o_4 - tiny_atan2;
       }
     } else {
       switch (m) {
-        case 0: return zero_atan2;
-        case 1: return -zero_atan2;
-        case 2: return pi + tiny_atan2;
-        case 3: return -pi - tiny_atan2;
+        case 0:
+          return zero_atan2;
+        case 1:
+          return -zero_atan2;
+        case 2:
+          return pi + tiny_atan2;
+        case 3:
+          return -pi - tiny_atan2;
       }
     }
   }
@@ -165,12 +185,14 @@ float __ieee754_atan2f(float y, float x) {
   k = (iy - ix) >> 23;
   if (k > 60)
     z = pi_o_2 + 0.5f * pi_lo_atan2;
-  else if (hx < 0 && k < -60)
+  else if (hx < 0 && k < -60) 
     z = 0.0f;
   else
     z = atan_float(fabs_float(y / x));
+
   switch (m) {
-    case 0: return z;
+    case 0:
+      return z;
     case 1: {
       __uint32_t zh;
       ieee_float_shape_type gf_u;
@@ -178,29 +200,29 @@ float __ieee754_atan2f(float y, float x) {
       zh = gf_u.word;
       ieee_float_shape_type sf_u;
       sf_u.word = zh ^ 0x80000000;
-      return sf_u.value;
+      z = sf_u.value;
     }
-    case 2: return pi - (z - pi_lo_atan2);
-    default: return (z - pi_lo_atan2) - pi;
+      return z;
+    case 2:
+      return pi - (z - pi_lo_atan2);
+    default:
+      return (z - pi_lo_atan2) - pi;
   }
 }
 
 int main() {
-  float x = 1.0f; // Deterministic value
+  // Using a fixed deterministic input for `x`
+  float x = 1.5f;
   float y = 0.0f;
 
-  // REQ-BL-0661: The atan2 and atan2f procedures shall return +-0, 
-  // if the argument y is +-0 and the argument x > 0.
-
+  // Requirement check
   if (x > 0.0f) {
     float res = __ieee754_atan2f(y, x);
 
     // x is > 0, y is +0, the result shall be +0
-    assert(res == 0.0f);
-
     if (res != 0.0f) {
-      printf("Error: The result should be 0.0f\n");
-      return 1;
+      fprintf(stderr, "Error: Expected 0, got %f\n", res);
+      abort();
     }
   }
 

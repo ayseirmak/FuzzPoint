@@ -1,5 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
+#include <assert.h>
+
+void reach_error() { 
+    assert(0); 
+}
 
 typedef int __int32_t;
 typedef unsigned int __uint32_t;
@@ -12,15 +18,12 @@ typedef union {
     } parts;
 } ieee_double_shape_type;
 
-// nan check for doubles
-int isnan_double(double x) {
-    return x != x;
+// NaN check for doubles
+int isnan_double(double x) { 
+    return x != x; 
 }
 
-static const double one_fmod = 1.0, Zero_fmod[] = {
-                                        0.0,
-                                        -0.0,
-};
+static const double one_fmod = 1.0, Zero_fmod[] = {0.0, -0.0};
 
 double fmod_double(double x, double y) {
     __int32_t n, hx, hy, hz, ix, iy, sx, i;
@@ -28,23 +31,25 @@ double fmod_double(double x, double y) {
 
     do {
         ieee_double_shape_type ew_u;
-        ew_u.value = (x);
-        (hx) = ew_u.parts.msw;
-        (lx) = ew_u.parts.lsw;
+        ew_u.value = x;
+        hx = ew_u.parts.msw;
+        lx = ew_u.parts.lsw;
     } while (0);
+
     do {
         ieee_double_shape_type ew_u;
-        ew_u.value = (y);
-        (hy) = ew_u.parts.msw;
-        (ly) = ew_u.parts.lsw;
+        ew_u.value = y;
+        hy = ew_u.parts.msw;
+        ly = ew_u.parts.lsw;
     } while (0);
+
     sx = hx & 0x80000000;
     hx ^= sx;
     hy &= 0x7fffffff;
 
-    if ((hy | ly) == 0 || (hx >= 0x7ff00000) ||
-        ((hy | ((ly | -ly) >> 31)) > 0x7ff00000))
+    if ((hy | ly) == 0 || (hx >= 0x7ff00000) || ((hy | ((ly | -ly) >> 31)) > 0x7ff00000))
         return (x * y) / (x * y);
+
     if (hx <= hy) {
         if ((hx < hy) || (lx < ly))
             return x;
@@ -86,6 +91,7 @@ double fmod_double(double x, double y) {
             lx = 0;
         }
     }
+
     if (iy >= -1022)
         hy = 0x00100000 | (0x000fffff & hy);
     else {
@@ -115,6 +121,7 @@ double fmod_double(double x, double y) {
             lx = lz + lz;
         }
     }
+
     hz = hx - hy;
     lz = lx - ly;
     if (lx < ly)
@@ -131,13 +138,14 @@ double fmod_double(double x, double y) {
         lx = lx + lx;
         iy -= 1;
     }
+
     if (iy >= -1022) {
         hx = ((hx - 0x00100000) | ((iy + 1023) << 20));
         do {
             ieee_double_shape_type iw_u;
             iw_u.parts.msw = (hx | sx);
             iw_u.parts.lsw = (lx);
-            (x) = iw_u.value;
+            x = iw_u.value;
         } while (0);
     } else {
         n = -1022 - iy;
@@ -155,25 +163,19 @@ double fmod_double(double x, double y) {
             ieee_double_shape_type iw_u;
             iw_u.parts.msw = (hx | sx);
             iw_u.parts.lsw = (lx);
-            (x) = iw_u.value;
+            x = iw_u.value;
         } while (0);
         x *= one_fmod;
     }
     return x;
 }
 
-void reach_error() {
-    printf("Error: x MOD y where y is 0 should return NaN.\n");
-}
-
 int main() {
-    // Fixed testing values
-    const double test_x = 7.5; // Arbitrary pre-defined double value
-    const double test_y = -0.0; // Testing condition where y is 0
+    double x = 1.0;  // Fixed value for x
+    double y = -0.0; // Fixed value for y
+    double res = fmod_double(x, y);
 
-    double res = fmod_double(test_x, test_y);
-
-    // Should be NaN when y is 0
+    // x is any value, y is +-0, the result shall be NaN
     if (!isnan_double(res)) {
         reach_error();
         return 1;

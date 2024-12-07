@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-// APPROXIMATES sqroot(1+x)
-
+// Define constants
 #define NR 5
 
 #if NR == 1
@@ -24,31 +23,35 @@
 #endif
 
 void reach_error() {
-    printf("Error: Assertion failed.\n");
+    // This function will be triggered if an error condition is met
     assert(0);
 }
 
-int main() {
-    // Use a fixed value for IN instead of a non-deterministic float
-    float IN = 0.5f; // A sample value within the specified range [0.0, 1.0)
-
-    // Check the precondition
-    if (!(IN >= 0.0f && IN < 1.0f)) {
-        printf("Fixed input value is out of expected range [0.0, 1.0).\n");
-        return 1; // Exit if the selected IN is not valid
+void assume_abort_if_not(int cond) {
+    if (!cond) {
+        // Simulate abort behavior
+        printf("Abort assumption violated\n");
+        // Emulating abort() behavior
+        while (1) {}
     }
+}
+
+int main() {
+    // Preset deterministic input value
+    float IN = 0.5f; // A chosen fixed value for deterministic behavior
+    assume_abort_if_not(IN >= 0.0f && IN < 1.0f);
 
     float x = IN;
-  
-    // Calculate the result using the polynomial approximation
-    float result = 1.0f + 0.5f * x - 0.125f * x * x + 0.0625f * x * x * x - 0.0390625f * x * x * x * x;
 
-    // Assert that the result should be in the expected range
+    // Polynomial approximation of the square root function
+    float result = 
+        1.0f + 0.5f * x - 0.125f * x * x + 0.0625f * x * x * x - 0.0390625f * x * x * x * x;
+
+    // Check if result satisfies the expected conditions
     if (!(result >= 0.0f && result < VAL)) {
         reach_error();
     }
 
-    printf("Computation successful: result = %f, expected result < %f\n", result, VAL);
-
+    printf("Computation finished successfully.\n");
     return 0;
 }

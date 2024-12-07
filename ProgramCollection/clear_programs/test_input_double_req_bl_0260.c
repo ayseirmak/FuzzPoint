@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <math.h>
-#include <assert.h>
+#include <stdint.h>
 
-typedef int __int32_t;
-typedef unsigned int __uint32_t;
+// Handle reach_error function with standard assert
+void reach_error() {
+    fprintf(stderr, "Error: Reach error reached in line %d\n", __LINE__);
+}
 
-/* A union which permits us to convert between a double and two 32 bit
-   ints.  */
+typedef int32_t __int32_t;
+typedef uint32_t __uint32_t;
+
 typedef union {
     double value;
     struct {
@@ -15,7 +18,7 @@ typedef union {
     } parts;
 } ieee_double_shape_type;
 
-// nan check for doubles
+// Check for NaN
 int isnan_double(double x) {
     return x != x;
 }
@@ -28,22 +31,18 @@ double __ieee754_sqrt(double x) {
     __uint32_t r, t1, s1, ix1, q1;
     __int32_t ix0, s0, q, m, t, i;
 
-    do {
-        ieee_double_shape_type ew_u;
-        ew_u.value = (x);
-        (ix0) = ew_u.parts.msw;
-        (ix1) = ew_u.parts.lsw;
-    } while (0);
+    ieee_double_shape_type ew_u;
+    ew_u.value = x;
+    ix0 = ew_u.parts.msw;
+    ix1 = ew_u.parts.lsw;
 
     if ((ix0 & 0x7ff00000) == 0x7ff00000) {
         return x * x + x;
     }
 
     if (ix0 <= 0) {
-        if (((ix0 & (~sign)) | ix1) == 0)
-            return x;
-        else if (ix0 < 0)
-            return (x - x) / (x - x);
+        if (((ix0 & (~sign)) | ix1) == 0) return x;
+        else if (ix0 < 0) return (x - x) / (x - x);
     }
 
     m = (ix0 >> 20);
@@ -53,14 +52,14 @@ double __ieee754_sqrt(double x) {
             ix0 |= (ix1 >> 11);
             ix1 <<= 21;
         }
-        for (i = 0; (ix0 & 0x00100000) == 0; i++)
-            ix0 <<= 1;
+        for (i = 0; (ix0 & 0x00100000) == 0; i++) ix0 <<= 1;
         m -= i - 1;
         ix0 |= (ix1 >> (32 - i));
         ix1 <<= i;
     }
     m -= 1023;
     ix0 = (ix0 & 0x000fffff) | 0x00100000;
+
     if (m & 1) {
         ix0 += ix0 + ((ix1 & sign) >> 31);
         ix1 += ix1;
@@ -69,6 +68,7 @@ double __ieee754_sqrt(double x) {
 
     ix0 += ix0 + ((ix1 & sign) >> 31);
     ix1 += ix1;
+
     q = q1 = s0 = s1 = 0;
     r = 0x00200000;
 
@@ -90,11 +90,9 @@ double __ieee754_sqrt(double x) {
         t = s0;
         if ((t < ix0) || ((t == ix0) && (t1 <= ix1))) {
             s1 = t1 + r;
-            if (((t1 & sign) == sign) && (s1 & sign) == 0)
-                s0 += 1;
+            if (((t1 & sign) == sign) && (s1 & sign) == 0) s0 += 1;
             ix0 -= t;
-            if (ix1 < t1)
-                ix0 -= 1;
+            if (ix1 < t1) ix0 -= 1;
             ix1 -= t1;
             q1 += r;
         }
@@ -111,45 +109,40 @@ double __ieee754_sqrt(double x) {
                 q1 = 0;
                 q += 1;
             } else if (z > one_sqrt) {
-                if (q1 == (__uint32_t)0xfffffffe)
-                    q += 1;
+                if (q1 == (__uint32_t)0xfffffffe) q += 1;
                 q1 += 2;
-            } else
-                q1 += (q1 & 1);
+            } else q1 += (q1 & 1);
         }
     }
     ix0 = (q >> 1) + 0x3fe00000;
     ix1 = q1 >> 1;
-    if ((q & 1) == 1)
-        ix1 |= sign;
+    if ((q & 1) == 1) ix1 |= sign;
     ix0 += (m << 20);
-    do {
-        ieee_double_shape_type iw_u;
-        iw_u.parts.msw = (ix0);
-        iw_u.parts.lsw = (ix1);
-        (z) = iw_u.value;
-    } while (0);
+
+    ieee_double_shape_type iw_u;
+    iw_u.parts.msw = ix0;
+    iw_u.parts.lsw = ix1;
+    z = iw_u.value;
+
     return z;
 }
 
 double fabs_double(double x) {
     __uint32_t high;
-    do {
-        ieee_double_shape_type gh_u;
-        gh_u.value = (x);
-        (high) = gh_u.parts.msw;
-    } while (0);
-    do {
-        ieee_double_shape_type sh_u;
-        sh_u.value = (x);
-        sh_u.parts.msw = (high & 0x7fffffff);
-        (x) = sh_u.value;
-    } while (0);
+    ieee_double_shape_type gh_u;
+    gh_u.value = x;
+    high = gh_u.parts.msw;
+    
+    ieee_double_shape_type sh_u;
+    sh_u.value = x;
+    sh_u.parts.msw = (high & 0x7fffffff);
+    x = sh_u.value;
+
     return x;
 }
 
-static const double one_asin = 1.00000000000000000000e+00,
-                    huge_asin = 1.000e+300,
+static const double one_asin = 1.0,
+                    huge_asin = 1.0e+300,
                     pio2_hi_asin = 1.57079632679489655800e+00,
                     pio2_lo_asin = 6.12323399573676603587e-17,
                     pio4_hi_asin = 7.85398163397448278999e-01,
@@ -167,21 +160,21 @@ static const double one_asin = 1.00000000000000000000e+00,
 double __ieee754_asin(double x) {
     double t, w, p, q, c, r, s;
     __int32_t hx, ix;
-    do {
-        ieee_double_shape_type gh_u;
-        gh_u.value = (x);
-        (hx) = gh_u.parts.msw;
-    } while (0);
+
+    ieee_double_shape_type gh_u;
+    gh_u.value = x;
+    hx = gh_u.parts.msw;
     ix = hx & 0x7fffffff;
+
     if (ix >= 0x3ff00000) {
         __uint32_t lx;
-        do {
-            ieee_double_shape_type gl_u;
-            gl_u.value = (x);
-            (lx) = gl_u.parts.lsw;
-        } while (0);
-        if (((ix - 0x3ff00000) | lx) == 0)
+        ieee_double_shape_type gl_u;
+        gl_u.value = x;
+        lx = gl_u.parts.lsw;
+        
+        if (((ix - 0x3ff00000) | lx) == 0) {
             return x * pio2_hi_asin + x * pio2_lo_asin;
+        }
         return (x - x) / (x - x);
     } else if (ix < 0x3fe00000) {
         if (ix < 0x3e400000) {
@@ -214,12 +207,11 @@ double __ieee754_asin(double x) {
         t = pio2_hi_asin - (2.0 * (s + s * w) - pio2_lo_asin);
     } else {
         w = s;
-        do {
-            ieee_double_shape_type sl_u;
-            sl_u.value = (w);
-            sl_u.parts.lsw = (0);
-            (w) = sl_u.value;
-        } while (0);
+        ieee_double_shape_type sl_u;
+        sl_u.value = w;
+        sl_u.parts.lsw = 0;
+        w = sl_u.value;
+
         c = (t - w * w) / (s + w);
         r = p / q;
         p = 2.0 * s * r - (pio2_lo_asin - 2.0 * c);
@@ -233,11 +225,15 @@ double __ieee754_asin(double x) {
 }
 
 int main() {
-    double x = 0.0 / 0.0; // NAN
+    // Set NA as a constant
+    double x = NAN;
     double res = __ieee754_asin(x);
 
-    assert(isnan_double(res) && "Result should be NaN");
-    printf("Test passed.\n");
+    // x is NAN, the result shall be NAN
+    if (!isnan_double(res)) {
+        reach_error();
+        return 1;
+    }
 
     return 0;
 }

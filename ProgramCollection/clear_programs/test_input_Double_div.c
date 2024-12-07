@@ -1,25 +1,23 @@
 #include <stdio.h>
 #include <assert.h>
 
-// Define the constant X
 #define X 2.5
 
 int main() {
-    // Initialize variables
-    double x = 1.0;
-    double x1 = x / X;
+    double x = 1.0; // Initial value of x
+    double x1 = x/X; // Calculate initial x1
 
-    // Iterative process with a while loop
-    while (x1 != x) {
-        x = x1;
-        x1 = x / X;
+    // Loop to update x and x1 until they are equal
+    while(x1 != x) {
+        x = x1; // Update x to current x1
+        x1 = x/X; // Calculate new x1
     }
 
-    // Use standard assertion to verify the condition
+    // Assert that x is zero, this condition will obviously not hold
     assert(x == 0);
 
-    // Allow the program to output a success message for clarity
-    printf("Program finished without error, assertion holds.\n");
+    // Output the final value of x
+    printf("Final value of x: %f\n", x);
 
     return 0;
 }

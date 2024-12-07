@@ -1,33 +1,32 @@
-#include <stdio.h>
-#include <math.h>
+#include <stdio.h>     // For printf
+#include <math.h>      // For isnan, isinf, and INFINITY
 
-// Ensure fixed, deterministic inputs are used
-static const double static_input_val = -0.0;
+typedef int __int32_t;
+typedef unsigned int __uint32_t;
 
-// Union to handle conversion between a double and two 32-bit ints.
+/* A union which permits us to convert between a double and two 32 bit
+   ints.  */
 typedef union {
   double value;
   struct {
-    unsigned int lsw;
-    unsigned int msw;
+    __uint32_t lsw;
+    __uint32_t msw;
   } parts;
 } ieee_double_shape_type;
 
-// Infinity check for doubles
 int isinf_double(double x) {
-  int hx, lx;
+  __int32_t hx, lx;
   ieee_double_shape_type ew_u;
-  ew_u.value = x;
+  ew_u.value = (x);
   hx = ew_u.parts.msw;
   lx = ew_u.parts.lsw;
 
   hx &= 0x7fffffff;
-  hx |= (unsigned int)(lx | (-lx)) >> 31;
+  hx |= (__uint32_t)(lx | (-lx)) >> 31;
   hx = 0x7ff00000 - hx;
-  return 1 - (int)((unsigned int)(hx | (-hx)) >> 31);
+  return 1 - (int)((__uint32_t)(hx | (-hx)) >> 31);
 }
 
-// Static constants for the logarithm calculations
 static const double ln2_hi_log = 6.93147180369123816490e-01,
                     ln2_lo_log = 1.90821492927058770002e-10,
                     two54_log = 1.80143985094819840000e+16,
@@ -39,27 +38,29 @@ static const double ln2_hi_log = 6.93147180369123816490e-01,
                     Lg6_log = 1.531383769920937332e-01,
                     Lg7_log = 1.479819860511658591e-01;
 
-// Natural logarithm calculation
+static const double zero = 0.0;
+
 double __ieee754_log(double x) {
   double hfsq, f, s, z, R, w, t1, t2, dk;
-  int k, hx, i, j;
-  unsigned int lx;
+  __int32_t k, hx, i, j;
+  __uint32_t lx;
 
   ieee_double_shape_type ew_u;
-  ew_u.value = x;
+  ew_u.value = (x);
   hx = ew_u.parts.msw;
   lx = ew_u.parts.lsw;
 
   k = 0;
   if (hx < 0x00100000) {
     if (((hx & 0x7fffffff) | lx) == 0)
-      return -two54_log / 0.0;
+      return -two54_log / zero;
     if (hx < 0)
-      return (x - x) / 0.0;
+      return (x - x) / zero;
     k -= 54;
     x *= two54_log;
+    
     ieee_double_shape_type gh_u;
-    gh_u.value = x;
+    gh_u.value = (x);
     hx = gh_u.parts.msw;
   }
   if (hx >= 0x7ff00000)
@@ -67,16 +68,18 @@ double __ieee754_log(double x) {
   k += (hx >> 20) - 1023;
   hx &= 0x000fffff;
   i = (hx + 0x95f64) & 0x100000;
+  
   ieee_double_shape_type sh_u;
-  sh_u.value = x;
-  sh_u.parts.msw = hx | (i ^ 0x3ff00000);
+  sh_u.value = (x);
+  sh_u.parts.msw = (hx | (i ^ 0x3ff00000));
   x = sh_u.value;
+  
   k += (i >> 20);
   f = x - 1.0;
   if ((0x000fffff & (2 + hx)) < 3) {
-    if (f == 0.0) {
+    if (f == zero) {
       if (k == 0)
-        return 0.0;
+        return zero;
       else {
         dk = (double)k;
         return dk * ln2_hi_log + dk * ln2_lo_log;
@@ -105,8 +108,7 @@ double __ieee754_log(double x) {
     if (k == 0)
       return f - (hfsq - s * (hfsq + R));
     else
-      return dk * ln2_hi_log -
-             ((hfsq - (s * (hfsq + R) + dk * ln2_lo_log)) - f);
+      return dk * ln2_hi_log - ((hfsq - (s * (hfsq + R) + dk * ln2_lo_log)) - f);
   } else {
     if (k == 0)
       return f - s * (f - R);
@@ -115,59 +117,62 @@ double __ieee754_log(double x) {
   }
 }
 
-// Static constants for log10 calculations
 static const double two54_log10 = 1.80143985094819840000e+16,
                     ivln10_log10 = 4.34294481903251816668e-01,
                     log10_2hi_log10 = 3.01029995663611771306e-01,
                     log10_2lo_log10 = 3.69423907715893078616e-13;
 
-// Logarithm base 10 calculation
+static const double zero_log10 = 0.0;
+
 double __ieee754_log10(double x) {
   double y, z;
-  int i, k, hx;
-  unsigned int lx;
+  __int32_t i, k, hx;
+  __uint32_t lx;
 
   ieee_double_shape_type ew_u;
-  ew_u.value = x;
+  ew_u.value = (x);
   hx = ew_u.parts.msw;
   lx = ew_u.parts.lsw;
 
   k = 0;
   if (hx < 0x00100000) {
     if (((hx & 0x7fffffff) | lx) == 0)
-      return -two54_log10 / 0.0;
+      return -two54_log10 / zero_log10;
     if (hx < 0)
-      return (x - x) / 0.0;
+      return (x - x) / zero_log10;
     k -= 54;
     x *= two54_log10;
+    
     ieee_double_shape_type gh_u;
-    gh_u.value = x;
+    gh_u.value = (x);
     hx = gh_u.parts.msw;
   }
   if (hx >= 0x7ff00000)
     return x + x;
   k += (hx >> 20) - 1023;
-  i = (unsigned int)k & 0x80000000 >> 31;
+  i = ((__uint32_t)k & 0x80000000) >> 31;
   hx = (hx & 0x000fffff) | ((0x3ff - i) << 20);
   y = (double)(k + i);
+  
   ieee_double_shape_type sh_u;
-  sh_u.value = x;
-  sh_u.parts.msw = hx;
+  sh_u.value = (x);
+  sh_u.parts.msw = (hx);
   x = sh_u.value;
+  
   z = y * log10_2lo_log10 + ivln10_log10 * __ieee754_log(x);
   return z + y * log10_2hi_log10;
 }
 
 int main() {
-  double x = static_input_val;
+  double x = -0.0;
   double res = __ieee754_log10(x);
 
-  // x is -0, the result shall be -inf
   if (!isinf_double(res)) {
-    printf("Error: Expected -Inf, got %lf\n", res);
+    printf("Error: Expected result is -Inf\n");
     return 1;
+  } else {
+    printf("Test Passed: Log10 of -0.0 is -Inf\n");
   }
 
-  printf("Test passed: log10(%lf) = %lf\n", x, res);
   return 0;
 }
