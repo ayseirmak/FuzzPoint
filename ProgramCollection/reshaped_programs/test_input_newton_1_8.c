@@ -1,5 +1,8 @@
-#include <assert.h>
 #include <stdio.h>
+#include <assert.h>
+
+// Fixed value for deterministic input
+#define FIXED_INPUT_VALUE 1.5f
 
 #define NR 8
 
@@ -27,41 +30,45 @@
 #error Number of iterations must be between 1 and 3
 #endif 
 
-float f(float x) {
-    return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+void abort_program() {
+  printf("Program aborted due to bad condition.\n");
+  abort();
 }
 
-float fp(float x) {
-    return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
+void assume_abort_if_not(int cond) {
+  if (!cond) { abort_program(); }
 }
 
 void reach_error() {
-    printf("Error: The value of x is not less than 0.1\n");
-    assert(0);
+  assert(0); // This will cause the program to fail and terminate if reached
+}
+
+float f(float x) {
+  return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
+}
+
+float fp(float x) {
+  return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
 }
 
 int main() {
-    // Set a fixed deterministic input value within the range (-VAL, VAL)
-    // For demonstration, use a value in the middle of the range.
-    float IN = (VAL - (-VAL)) / 2.0f;
+  float IN = FIXED_INPUT_VALUE;
+  assume_abort_if_not(IN > -VAL && IN < VAL);
 
-    if (!(IN > -VAL && IN < VAL)) {
-        printf("Input value out of range.\n");
-        return 1;  // Exit if the condition is not satisfied
-    }
-
-    float x = IN - f(IN)/fp(IN);
-#if ITERATIONS > 1 
-    x = x - f(x)/fp(x);
+  float x = IN - f(IN) / fp(IN);
+#if ITERATIONS > 1
+  x = x - f(x) / fp(x);
 #if ITERATIONS > 2
-    x = x - f(x)/fp(x);
-#endif 
+  x = x - f(x) / fp(x);
+#endif
 #endif
 
-    if (!(x < 0.1)) {
-        reach_error();
-    }
-
-    printf("Program completed successfully with x = %f\n", x);
-    return 0;
+  if (!(x < 0.1)) {
+    reach_error();
+  }
+  
+  // Just a statement to indicate normal program ending if no error
+  printf("Program ended successfully.\n");
+  
+  return 0;
 }

@@ -1,18 +1,6 @@
-#include <assert.h>
 #include <stdio.h>
+#include <assert.h>
 
-// Error function to mimic reach_error from the verification task
-void reach_error() { assert(0); }
-
-// Custom implementation to mimic the assume_abort_if_not function
-void assume_abort_if_not(int cond) {
-    if (!cond) {
-        printf("Assumption failed!\n");
-        abort();
-    }
-}
-
-// Definitions based on NR value
 #define NR 5
 
 #if NR == 1
@@ -37,26 +25,34 @@ void assume_abort_if_not(int cond) {
 
 #if !(ITERATIONS >= 1 && ITERATIONS <= 3)
 #error Number of iterations must be between 1 and 3
-#endif
+#endif 
 
-// Function to evaluate f(x)
+// Helper function to reach error assertion
+void reach_error() {
+    assert(0);
+}
+
+// Function implementing the mathematical function f(x)
 float f(float x) {
     return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
 }
 
-// Function to evaluate f'(x)
+// Function implementing the derivative f'(x)
 float fp(float x) {
     return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
 }
 
 int main() {
-    // Fixed input value instead of __VERIFIER_nondet_float(), within the acceptable range for demonstration
-    float IN = 0.05f;
+    // Fixed deterministic input value that satisfies the condition
+    float IN = 0.5f; // You can choose any value between -VAL and VAL
 
-    // Skip unnecessary checks if outside the pre-defined range
-    assume_abort_if_not(IN > -VAL && IN < VAL);
+    // Ensure the input is within the valid range
+    if (IN <= -VAL || IN >= VAL) {
+        printf("Input out of expected range.\n");
+        return 1;
+    }
 
-    // Newton's method iterations
+    // Perform iterations for the Newton-Raphson method
     float x = IN - f(IN) / fp(IN);
 #if ITERATIONS > 1 
     x = x - f(x) / fp(x);
@@ -65,10 +61,11 @@ int main() {
 #endif 
 #endif
 
-    // Ensure x is within specified bounds; trigger error if not
+    // Check if the resulting x is within the required range
     if (!(x < 0.1)) {
         reach_error();
     }
 
+    printf("Computation successful, x = %.5f\n", x);
     return 0;
 }

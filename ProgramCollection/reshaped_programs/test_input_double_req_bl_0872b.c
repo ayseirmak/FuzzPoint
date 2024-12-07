@@ -6,8 +6,7 @@
 typedef int32_t __int32_t;
 typedef uint32_t __uint32_t;
 
-/* A union which permits us to convert between a double and two 32 bit
-   ints.  */
+/* A union which permits us to convert between a double and two 32 bit ints.  */
 typedef union {
   double value;
   struct {
@@ -18,15 +17,22 @@ typedef union {
 
 double copysign_double(double x, double y) {
   __uint32_t hx, hy;
-  ieee_double_shape_type gh_u;
-  gh_u.value = (x);
-  hx = gh_u.parts.msw;
-  gh_u.value = (y);
-  hy = gh_u.parts.msw;
-  ieee_double_shape_type sh_u;
-  sh_u.value = x;
-  sh_u.parts.msw = ((hx & 0x7fffffff) | (hy & 0x80000000));
-  x = sh_u.value;
+  do {
+    ieee_double_shape_type gh_u;
+    gh_u.value = (x);
+    (hx) = gh_u.parts.msw;
+  } while (0);
+  do {
+    ieee_double_shape_type gh_u;
+    gh_u.value = (y);
+    (hy) = gh_u.parts.msw;
+  } while (0);
+  do {
+    ieee_double_shape_type sh_u;
+    sh_u.value = (x);
+    sh_u.parts.msw = ((hx & 0x7fffffff) | (hy & 0x80000000));
+    (x) = sh_u.value;
+  } while (0);
   return x;
 }
 
@@ -36,18 +42,22 @@ static const double two54_scalbn = 1.80143985094819840000e+16,
 
 double scalbn_double(double x, int n) {
   __int32_t k, hx, lx;
-  ieee_double_shape_type ew_u;
-  ew_u.value = (x);
-  hx = ew_u.parts.msw;
-  lx = ew_u.parts.lsw;
+  do {
+    ieee_double_shape_type ew_u;
+    ew_u.value = (x);
+    (hx) = ew_u.parts.msw;
+    (lx) = ew_u.parts.lsw;
+  } while (0);
   k = (hx & 0x7ff00000) >> 20;
   if (k == 0) {
     if ((lx | (hx & 0x7fffffff)) == 0)
       return x;
     x *= two54_scalbn;
-    ieee_double_shape_type gh_u;
-    gh_u.value = (x);
-    hx = gh_u.parts.msw;
+    do {
+      ieee_double_shape_type gh_u;
+      gh_u.value = (x);
+      (hx) = gh_u.parts.msw;
+    } while (0);
     k = ((hx & 0x7ff00000) >> 20) - 54;
     if (n < -50000)
       return tiny_scalbn * x;
@@ -58,10 +68,12 @@ double scalbn_double(double x, int n) {
   if (k > 0x7fe)
     return huge_scalbn * copysign_double(huge_scalbn, x);
   if (k > 0) {
-    ieee_double_shape_type sh_u;
-    sh_u.value = x;
-    sh_u.parts.msw = ((hx & 0x800fffff) | (k << 20));
-    x = sh_u.value;
+    do {
+      ieee_double_shape_type sh_u;
+      sh_u.value = (x);
+      sh_u.parts.msw = ((hx & 0x800fffff) | (k << 20));
+      (x) = sh_u.value;
+    } while (0);
     return x;
   }
   if (k <= -54) {
@@ -71,10 +83,12 @@ double scalbn_double(double x, int n) {
       return tiny_scalbn * copysign_double(tiny_scalbn, x);
   }
   k += 54;
-  ieee_double_shape_type sh_u;
-  sh_u.value = x;
-  sh_u.parts.msw = ((hx & 0x800fffff) | (k << 20));
-  x = sh_u.value;
+  do {
+    ieee_double_shape_type sh_u;
+    sh_u.value = (x);
+    sh_u.parts.msw = ((hx & 0x800fffff) | (k << 20));
+    (x) = sh_u.value;
+  } while (0);
   return x * twom54_scalbn;
 }
 
@@ -86,10 +100,12 @@ double __ieee754_sqrt(double x) {
   __uint32_t r, t1, s1, ix1, q1;
   __int32_t ix0, s0, q, m, t, i;
 
-  ieee_double_shape_type ew_u;
-  ew_u.value = (x);
-  ix0 = ew_u.parts.msw;
-  ix1 = ew_u.parts.lsw;
+  do {
+    ieee_double_shape_type ew_u;
+    ew_u.value = (x);
+    (ix0) = ew_u.parts.msw;
+    (ix1) = ew_u.parts.lsw;
+  } while (0);
 
   if ((ix0 & 0x7ff00000) == 0x7ff00000) {
     return x * x + x;
@@ -179,54 +195,59 @@ double __ieee754_sqrt(double x) {
   if ((q & 1) == 1)
     ix1 |= sign;
   ix0 += (m << 20);
-  ieee_double_shape_type iw_u;
-  iw_u.parts.msw = ix0;
-  iw_u.parts.lsw = ix1;
-  z = iw_u.value;
+  do {
+    ieee_double_shape_type iw_u;
+    iw_u.parts.msw = (ix0);
+    iw_u.parts.lsw = (ix1);
+    (z) = iw_u.value;
+  } while (0);
   return z;
 }
 
 double fabs_double(double x) {
   __uint32_t high;
-  ieee_double_shape_type gh_u;
-  gh_u.value = x;
-  high = gh_u.parts.msw;
-  ieee_double_shape_type sh_u;
-  sh_u.value = x;
-  sh_u.parts.msw = (high & 0x7fffffff);
-  x = sh_u.value;
+  do {
+    ieee_double_shape_type gh_u;
+    gh_u.value = (x);
+    (high) = gh_u.parts.msw;
+  } while (0);
+  do {
+    ieee_double_shape_type sh_u;
+    sh_u.value = (x);
+    sh_u.parts.msw = (high & 0x7fffffff);
+    (x) = sh_u.value;
+  } while (0);
   return x;
 }
 
-/* The constants used in __ieee754_pow function */
-static const double bp_pow[] = {1.0, 1.5};
-static const double dp_h_pow[] = {0.0, 0.584962487220764160156e+1};
-static const double dp_l_pow[] = {0.0, 1.35003920212974897128e-8};
-static const double zero_pow = 0.0, one_pow = 1.0, two_pow = 2.0;
-static const double two53_pow = 9007199254740992.0;
-static const double huge_pow = 1.0e300;
-static const double tiny_pow = 1.0e-300;
-static const double L1_pow = 5.99999999999994648725e-01;
-static const double L2_pow = 4.28571428578550184252e-01;
-static const double L3_pow = 3.33333329818377432918e-01;
-static const double L4_pow = 2.72728123808534006489e-01;
-static const double L5_pow = 2.30660745775561754067e-01;
-static const double L6_pow = 2.06975017800338417784e-01;
-static const double P1_pow = 1.66666666666666019037e-01;
-static const double P2_pow = -2.77777777770155933842e-03;
-static const double P3_pow = 6.61375632143793436117e-05;
-static const double P4_pow = -1.65339022054652515390e-06;
-static const double P5_pow = 4.13813679705723846039e-08;
-static const double lg2_pow = 6.93147180559945286227e-01;
-static const double lg2_h_pow = 6.93147182464599609375e-01;
-static const double lg2_l_pow = -1.90465429995776804525e-09;
-static const double ovt_pow = 8.0085662595372944372e-0017;
-static const double cp_pow = 9.61796693925975554329e-01;
-static const double cp_h_pow = 9.61796700954437255859e-01;
-static const double cp_l_pow = -7.02846165095275826516e-09;
-static const double ivln2_pow = 1.44269504088896338700e+00;
-static const double ivln2_h_pow = 1.44269502162933349609e+00;
-static const double ivln2_l_pow = 1.92596299112661746887e-08;
+static const double bp_pow[] = {1.0, 1.5},
+                    dp_h_pow[] = {0.0, 5.84962487220764160156e-01},
+                    dp_l_pow[] = {0.0, 1.35003920212974897128e-08},
+                    zero_pow = 0.0, one_pow = 1.0, two_pow = 2.0,
+                    two53_pow = 9007199254740992.0, huge_pow = 1.0e300,
+                    tiny_pow = 1.0e-300,
+
+                    L1_pow = 5.99999999999994648725e-01,
+                    L2_pow = 4.28571428578550184252e-01,
+                    L3_pow = 3.33333329818377432918e-01,
+                    L4_pow = 2.72728123808534006489e-01,
+                    L5_pow = 2.30660745775561754067e-01,
+                    L6_pow = 2.06975017800338417784e-01,
+                    P1_pow = 1.66666666666666019037e-01,
+                    P2_pow = -2.77777777770155933842e-03,
+                    P3_pow = 6.61375632143793436117e-05,
+                    P4_pow = -1.65339022054652515390e-06,
+                    P5_pow = 4.13813679705723846039e-08,
+                    lg2_pow = 6.93147180559945286227e-01,
+                    lg2_h_pow = 6.93147182464599609375e-01,
+                    lg2_l_pow = -1.90465429995776804525e-09,
+                    ovt_pow = 8.0085662595372944372e-0017,
+                    cp_pow = 9.61796693925975554329e-01,
+                    cp_h_pow = 9.61796700954437255859e-01,
+                    cp_l_pow = -7.02846165095275826516e-09,
+                    ivln2_pow = 1.44269504088896338700e+00,
+                    ivln2_h_pow = 1.44269502162933349609e+00,
+                    ivln2_l_pow = 1.92596299112661746887e-08;
 
 double __ieee754_pow(double x, double y) {
   double z, ax, z_h, z_l, p_h, p_l;
@@ -235,13 +256,18 @@ double __ieee754_pow(double x, double y) {
   __int32_t hx, hy, ix, iy;
   __uint32_t lx, ly;
 
-  ieee_double_shape_type ew_u;
-  ew_u.value = x;
-  hx = ew_u.parts.msw;
-  lx = ew_u.parts.lsw;
-  ew_u.value = y;
-  hy = ew_u.parts.msw;
-  ly = ew_u.parts.lsw;
+  do {
+    ieee_double_shape_type ew_u;
+    ew_u.value = (x);
+    (hx) = ew_u.parts.msw;
+    (lx) = ew_u.parts.lsw;
+  } while (0);
+  do {
+    ieee_double_shape_type ew_u;
+    ew_u.value = (y);
+    (hy) = ew_u.parts.msw;
+    (ly) = ew_u.parts.lsw;
+  } while (0);
   ix = hx & 0x7fffffff;
   iy = hy & 0x7fffffff;
 
@@ -334,10 +360,12 @@ double __ieee754_pow(double x, double y) {
     u = ivln2_h_pow * t;
     v = t * ivln2_l_pow - w * ivln2_pow;
     t1 = u + v;
-    ieee_double_shape_type sl_u;
-    sl_u.value = t1;
-    sl_u.parts.lsw = 0;
-    t1 = sl_u.value;
+    do {
+      ieee_double_shape_type sl_u;
+      sl_u.value = (t1);
+      sl_u.parts.lsw = (0);
+      (t1) = sl_u.value;
+    } while (0);
     t2 = v - (t1 - u);
   } else {
     double s2, s_h, s_l, t_h, t_l;
@@ -346,9 +374,11 @@ double __ieee754_pow(double x, double y) {
     if (ix < 0x00100000) {
       ax *= two53_pow;
       n -= 53;
-      ieee_double_shape_type gh_u;
-      gh_u.value = ax;
-      ix = gh_u.parts.msw;
+      do {
+        ieee_double_shape_type gh_u;
+        gh_u.value = (ax);
+        (ix) = gh_u.parts.msw;
+      } while (0);
     }
     n += ((ix) >> 20) - 0x3ff;
     j = ix & 0x000fffff;
@@ -363,25 +393,31 @@ double __ieee754_pow(double x, double y) {
       n += 1;
       ix -= 0x00100000;
     }
-    ieee_double_shape_type sh_u;
-    sh_u.value = ax;
-    sh_u.parts.msw = ix;
-    ax = sh_u.value;
+    do {
+      ieee_double_shape_type sh_u;
+      sh_u.value = (ax);
+      sh_u.parts.msw = (ix);
+      (ax) = sh_u.value;
+    } while (0);
 
     u = ax - bp_pow[k];
-    v = 1.0 / (ax + bp_pow[k]);
+    v = one_pow / (ax + bp_pow[k]);
     s = u * v;
     s_h = s;
-    ieee_double_shape_type sl_u;
-    sl_u.value = s_h;
-    sl_u.parts.lsw = 0;
-    s_h = sl_u.value;
+    do {
+      ieee_double_shape_type sl_u;
+      sl_u.value = (s_h);
+      sl_u.parts.lsw = (0);
+      (s_h) = sl_u.value;
+    } while (0);
 
     t_h = zero_pow;
-    ieee_double_shape_type sh_u;
-    sh_u.value = t_h;
-    sh_u.parts.msw = ((ix >> 1) | 0x20000000) + 0x00080000 + (k << 18);
-    t_h = sh_u.value;
+    do {
+      ieee_double_shape_type sh_u;
+      sh_u.value = (t_h);
+      sh_u.parts.msw = (((ix >> 1) | 0x20000000) + 0x00080000 + (k << 18));
+      (t_h) = sh_u.value;
+    } while (0);
     t_l = ax - (t_h - bp_pow[k]);
     s_l = v * ((u - s_h * t_h) - s_h * t_l);
 
@@ -393,30 +429,36 @@ double __ieee754_pow(double x, double y) {
     r += s_l * (s_h + s);
     s2 = s_h * s_h;
     t_h = 3.0 + s2 + r;
-    ieee_double_shape_type sl_u;
-    sl_u.value = t_h;
-    sl_u.parts.lsw = 0;
-    t_h = sl_u.value;
+    do {
+      ieee_double_shape_type sl_u;
+      sl_u.value = (t_h);
+      sl_u.parts.lsw = (0);
+      (t_h) = sl_u.value;
+    } while (0);
     t_l = r - ((t_h - 3.0) - s2);
 
     u = s_h * t_h;
     v = s_l * t_h + t_l * s;
 
     p_h = u + v;
-    ieee_double_shape_type sl_u;
-    sl_u.value = p_h;
-    sl_u.parts.lsw = 0;
-    p_h = sl_u.value;
+    do {
+      ieee_double_shape_type sl_u;
+      sl_u.value = (p_h);
+      sl_u.parts.lsw = (0);
+      (p_h) = sl_u.value;
+    } while (0);
     p_l = v - (p_h - u);
     z_h = cp_h_pow * p_h;
     z_l = cp_l_pow * p_h + p_l * cp_pow + dp_l_pow[k];
 
-    t = n;
+    t = (double)n;
     t1 = (((z_h + z_l) + dp_h_pow[k]) + t);
-    ieee_double_shape_type sl_u;
-    sl_u.value = t1;
-    sl_u.parts.lsw = 0;
-    t1 = sl_u.value;
+    do {
+      ieee_double_shape_type sl_u;
+      sl_u.value = (t1);
+      sl_u.parts.lsw = (0);
+      (t1) = sl_u.value;
+    } while (0);
     t2 = z_l - (((t1 - t) - dp_h_pow[k]) - z_h);
   }
 
@@ -425,17 +467,21 @@ double __ieee754_pow(double x, double y) {
     s = -one_pow;
 
   y1 = y;
-  ieee_double_shape_type sl_u;
-  sl_u.value = y1;
-  sl_u.parts.lsw = 0;
-  y1 = sl_u.value;
+  do {
+    ieee_double_shape_type sl_u;
+    sl_u.value = (y1);
+    sl_u.parts.lsw = (0);
+    (y1) = sl_u.value;
+  } while (0);
   p_l = (y - y1) * t1 + y * t2;
   p_h = y1 * t1;
   z = p_l + p_h;
-  ieee_double_shape_type ew_u;
-  ew_u.value = z;
-  j = ew_u.parts.msw;
-  i = ew_u.parts.lsw;
+  do {
+    ieee_double_shape_type ew_u;
+    ew_u.value = (z);
+    (j) = ew_u.parts.msw;
+    (i) = ew_u.parts.lsw;
+  } while (0);
   if (j >= 0x40900000) {
     if (((j - 0x40900000) | i) != 0)
       return s * huge_pow * huge_pow;
@@ -459,20 +505,24 @@ double __ieee754_pow(double x, double y) {
     n = j + (0x00100000 >> (k + 1));
     k = ((n & 0x7fffffff) >> 20) - 0x3ff;
     t = zero_pow;
-    ieee_double_shape_type sh_u;
-    sh_u.value = t;
-    sh_u.parts.msw = (n & ~(0x000fffff >> k));
-    t = sh_u.value;
+    do {
+      ieee_double_shape_type sh_u;
+      sh_u.value = (t);
+      sh_u.parts.msw = (n & ~(0x000fffff >> k));
+      (t) = sh_u.value;
+    } while (0);
     n = ((n & 0x000fffff) | 0x00100000) >> (20 - k);
     if (j < 0)
       n = -n;
     p_h -= t;
   }
   t = p_l + p_h;
-  ieee_double_shape_type sl_u;
-  sl_u.value = t;
-  sl_u.parts.lsw = 0;
-  t = sl_u.value;
+  do {
+    ieee_double_shape_type sl_u;
+    sl_u.value = (t);
+    sl_u.parts.lsw = (0);
+    (t) = sl_u.value;
+  } while (0);
   u = t * lg2_h_pow;
   v = (p_l - (t - p_h)) * lg2_pow + t * lg2_l_pow;
   z = u + v;
@@ -482,31 +532,44 @@ double __ieee754_pow(double x, double y) {
        t * (P1_pow + t * (P2_pow + t * (P3_pow + t * (P4_pow + t * P5_pow))));
   r = (z * t1) / (t1 - two_pow) - (w + z * w);
   z = one_pow - (r - z);
-  ieee_double_shape_type gh_u;
-  gh_u.value = z;
-  j = gh_u.parts.msw;
+  do {
+    ieee_double_shape_type gh_u;
+    gh_u.value = (z);
+    (j) = gh_u.parts.msw;
+  } while (0);
   j += (n << 20);
   if ((j >> 20) <= 0)
-    z = scalbn_double(z, n);
-  else {
-    ieee_double_shape_type sh_u;
-    sh_u.value = z;
-    sh_u.parts.msw = j;
-    z = sh_u.value;
-  }
+    z = scalbn_double(z, (int)n);
+  else
+    do {
+      ieee_double_shape_type sh_u;
+      sh_u.value = (z);
+      sh_u.parts.msw = (j);
+      (z) = sh_u.value;
+    } while (0);
   return s * z;
 }
 
+void reach_error() {
+  printf("Error reached!\n");
+}
+
 int main() {
-  /* The deterministic test replaces nondeterministic inputs */
-  double x = 2.0; // Fixed value instead of nondeterministic input
+
+  /*
+   * REQ-BL-0872//GTD-TR-01-BL-0015, GTD-TR-01-BL-0026/T
+   * The pow and powf procedures shall return 1.0 if the argument y is ±0.
+   */
+
+  double x = 1.5; // Fixed deterministic value
   double y = -0.0;
   double res = __ieee754_pow(x, y);
 
   // result shall be 1.0
-  assert(res == 1.0);
-
-  printf("Test passed: __ieee754_pow(2.0, -0.0) == 1.0\n");
+  if (res != 1.0) {
+    reach_error();
+    return 1;
+  }
 
   return 0;
 }

@@ -2,58 +2,40 @@
 #include <math.h>
 #include <assert.h>
 
-typedef unsigned int __uint32_t;
-typedef int __int32_t;
-
 typedef union {
-  double value;
-  struct {
-    __uint32_t lsw;
-    __uint32_t msw;
-  } parts;
+    double value;
+    struct {
+        unsigned int lsw;
+        unsigned int msw;
+    } parts;
 } ieee_double_shape_type;
 
-// Infinity check for doubles
-int isinf_double(double x) {
-  __int32_t hx, lx;
-  
-  ieee_double_shape_type ew_u;
-  ew_u.value = x;
-  hx = ew_u.parts.msw;
-  lx = ew_u.parts.lsw;
-
-  hx &= 0x7fffffff;
-  hx |= (__uint32_t)(lx | (-lx)) >> 31;
-  hx = 0x7ff00000 - hx;
-  return 1 - (int)((__uint32_t)(hx | (-hx)) >> 31);
+// Modified fabs_double to use standard fabs
+double fabs_double(double x) {
+    return fabs(x);
 }
 
-double fabs_double(double x) {
-  __uint32_t high;
+// infinity check for doubles using standard functions
+int isinf_double(double x) {
+    return isinf(x);
+}
 
-  ieee_double_shape_type gh_u;
-  gh_u.value = x;
-  high = gh_u.parts.msw;
-
-  ieee_double_shape_type sh_u;
-  sh_u.value = x;
-  sh_u.parts.msw = (high & 0x7fffffff);
-  x = sh_u.value;
-
-  return x;
+void reach_error() {
+    printf("Error: Reach error function was called.\n");
 }
 
 int main() {
-  // Initialize variable x to negative infinity
-  double x = -1.0 / 0.0; // -Infinity
-  
-  // Calculate the absolute value
-  double res = fabs_double(x);
+    // Predefined deterministic input for testing -Inf
+    double x = -1.0 / 0.0; // Equivalent to -Inf
+    double res = fabs_double(x);
 
-  // Validate the result - it should be positive infinity
-  assert(isinf_double(res) && "fabs of -Inf did not return +Inf");
+    // Verify if the result is +Inf
+    if (!isinf_double(res)) {
+        reach_error();
+        return 1;
+    }
 
-  printf("fabs of -Inf correctly returned +Inf\n");
-  
-  return 0;
+    // Successful execution
+    printf("Test passed: fabs_double(-Inf) returned +Inf\n");
+    return 0;
 }

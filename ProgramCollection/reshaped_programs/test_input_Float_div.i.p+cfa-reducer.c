@@ -1,27 +1,23 @@
-#include <assert.h>
 #include <stdio.h>
+#include <assert.h>
 
-// Replacing reach_error() with a simple call to assert(0)
 void reach_error() {
-    assert(0);
+    assert(0 && "reach_error");
 }
 
 int main() {
-    float x = 1.0f;
-    float x1 = x / 2.5f;
+    float main__x = 1.0;
+    float main__x1 = main__x / 2.5;
 
-    while (x1 != x) {
-        x = x1;
-        x1 = x / 2.5f;
+    while (main__x1 != main__x) {
+        main__x = main__x1;
+        main__x1 = main__x / 2.5;
     }
 
-    // The assert replaces the custom verification
-    if (x != 0) {
+    int __tmp_1 = (main__x == 0);
+    if (!__tmp_1) {
         reach_error();
-        printf("Error: x is not zero.\n");
-        return 1;
     }
-    
-    printf("Success: The calculation reached zero.\n");
+
     return 0;
 }

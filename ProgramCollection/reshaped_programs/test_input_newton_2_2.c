@@ -1,18 +1,20 @@
-#include <assert.h>
 #include <stdio.h>
+#include <assert.h>
+#include <stdlib.h>
 
+// Error reaching function, will cause a program halt if triggered
 void reach_error() { 
-    printf("Error reached: Assertion failed\n"); 
     assert(0); 
 }
 
+// Custom function to simulate abort if condition is not met
 void assume_abort_if_not(int cond) {
-    if(!cond) {
-        printf("Program aborted due to failed assumption\n");
+    if (!cond) {
         abort();
     }
 }
 
+// Constants
 #define NR 2
 
 #if NR == 1
@@ -39,34 +41,40 @@ void assume_abort_if_not(int cond) {
 #error Number of iterations must be between 1 and 3
 #endif 
 
+// Function to compute a mathematical series approximation
 float f(float x) {
-    return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+    return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + 
+           (x * x * x * x * x * x * x) / 5040.0f;
 }
 
+// Derivative of the function
 float fp(float x) {
-    return 1.0f - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
+    return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
 }
 
 int main() {
-    // Fixed deterministic input value within the range (-VAL, VAL)
-    // e.g., halfway of the range for demonstration
-    float IN = 0.0f;  // A deterministic choice within the valid range (-0.4, 0.4)
+    // Deterministic input for IN to replace nondeterministic behavior
+    float IN = 0.3f;
 
+    // Check that the input satisfies the expected condition
     assume_abort_if_not(IN > -VAL && IN < VAL);
 
-    float x = IN - f(IN)/fp(IN);
+    // Perform Newton iteration to find a fixed point approximation
+    float x = IN - f(IN) / fp(IN);
 #if ITERATIONS > 1 
-    x = x - f(x)/fp(x);
+    x = x - f(x) / fp(x);
 #if ITERATIONS > 2
-    x = x - f(x)/fp(x);
+    x = x - f(x) / fp(x);
 #endif 
 #endif
 
-    if (!(x < 0.1f)) {
+    // Check result and possibly trigger error
+    if (!(x < 0.1)) {
         reach_error();
-    } else {
-        printf("x = %.5f: Outcome within acceptable range\n", x);
     }
+
+    // Output result for verification
+    printf("Final x value: %f\n", x);
     
     return 0;
 }

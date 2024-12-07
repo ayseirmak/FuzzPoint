@@ -1,19 +1,19 @@
 #include <stdio.h>
-#include <stdint.h>
 #include <assert.h>
+#include <stdint.h>
 
-typedef int int32_t;
-typedef unsigned int uint32_t;
+typedef int32_t __int32_t;
+typedef uint32_t __uint32_t;
 
 typedef union {
     float value;
-    uint32_t word;
+    __uint32_t word;
 } ieee_float_shape_type;
 
 static const float huge_floor = 1.0e30;
 
 float fabs_float(float x) {
-    uint32_t ix;
+    __uint32_t ix;
     ieee_float_shape_type gf_u;
     gf_u.value = x;
     ix = gf_u.word;
@@ -49,15 +49,14 @@ static const float one_atan = 1.0, huge_atan = 1.0e30,
 
 float atan_float(float x) {
     float w, s1, s2, z;
-    int32_t ix, hx, id;
-    
+    __int32_t ix, hx, id;
+
     ieee_float_shape_type gf_u;
     gf_u.value = x;
     hx = gf_u.word;
-    
     ix = hx & 0x7fffffff;
     if (ix >= 0x50800000) {
-        if (ix > 0x7f800000L)
+        if ((ix) > 0x7f800000L)
             return x + x;
         if (hx > 0)
             return atanhi_atan[3] + atanlo_atan[3];
@@ -75,7 +74,7 @@ float atan_float(float x) {
         if (ix < 0x3f980000) {
             if (ix < 0x3f300000) {
                 id = 0;
-                x = ((float)2.0 * x - one_atan) / ((float)2.0 + x);
+                x = (2.0f * x - one_atan) / (2.0f + x);
             } else {
                 id = 1;
                 x = (x - one_atan) / (x + one_atan);
@@ -83,10 +82,10 @@ float atan_float(float x) {
         } else {
             if (ix < 0x401c0000) {
                 id = 2;
-                x = (x - (float)1.5) / (one_atan + (float)1.5 * x);
+                x = (x - 1.5f) / (one_atan + 1.5f * x);
             } else {
                 id = 3;
-                x = -(float)1.0 / x;
+                x = -1.0f / x;
             }
         }
     }
@@ -94,8 +93,14 @@ float atan_float(float x) {
     z = x * x;
     w = z * z;
 
-    s1 = z * (aT_atan[0] + w * (aT_atan[2] + w * (aT_atan[4] + w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
-    s2 = w * (aT_atan[1] + w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
+    s1 = z * (aT_atan[0] +
+              w * (aT_atan[2] +
+                   w * (aT_atan[4] +
+                        w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
+
+    s2 = w * (aT_atan[1] +
+              w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
+
     if (id < 0)
         return x - x * (s1 + s2);
     else {
@@ -105,7 +110,7 @@ float atan_float(float x) {
 }
 
 int __signbit_float(float x) {
-    uint32_t w;
+    __uint32_t w;
     ieee_float_shape_type gf_u;
     gf_u.value = x;
     w = gf_u.word;
@@ -113,14 +118,12 @@ int __signbit_float(float x) {
 }
 
 int main() {
-
-    float x = -0.0f;
+    float x = -0.0f;  // Deterministic fixed input
     float res = atan_float(x);
 
-    // x is -0, the result should be -0
+    // Expectation: x is -0, result should be -0
     assert(res == -0.0f && __signbit_float(res) == 1);
-
-    printf("Test passed: atan(-0.0) = -0.0\n");
-
+    
+    printf("Assertion passed, result is -0.0f with the correct sign bit.\n");
     return 0;
 }

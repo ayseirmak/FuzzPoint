@@ -1,47 +1,68 @@
 #include <stdio.h>
 #include <assert.h>
+#include <stdlib.h>
 
 #define NR 4
 
+#if NR == 1
+#define VAL 0.2f
+#elif NR == 2
+#define VAL 0.4f
+#elif NR == 3
+#define VAL 0.6f
+#elif NR == 4
 #define VAL 0.8f
+#elif NR == 5
+#define VAL 1.0f
+#elif NR == 6
+#define VAL 1.2f
+#elif NR == 7
+#define VAL 1.4f
+#elif NR == 8
+#define VAL 2.0f
+#endif
 
 #define ITERATIONS 2
 
-void reach_error() { assert(0); }
+#if !(ITERATIONS >= 1 && ITERATIONS <= 3)
+#error Number of iterations must be between 1 and 3
+#endif 
+
+void reach_error() {
+    fprintf(stderr, "Error: x is not less than 0.1\n");
+    abort();
+}
+
 void assume_abort_if_not(int cond) {
-  if (!cond) { 
-    printf("Abort due to assumption failure\n");
-    abort(); 
-  }
+    if (!cond) {
+        abort();
+    }
 }
 
 float f(float x) {
-  return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
+    return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
 }
 
 float fp(float x) {
-  return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
+    return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
 }
 
 int main() {
-  // Fixed deterministic input, replacing nondeterministic input
-  float IN = 0.1f;
+    // Fixed deterministic input within the specified range -VAL < IN < VAL
+    float IN = 0.5f * VAL;  // Choosing a middle value as an example
+    assume_abort_if_not(IN > -VAL && IN < VAL);
 
-  // Assume IN is within the specified range
-  assume_abort_if_not(IN > -VAL && IN < VAL);
-
-  float x = IN - f(IN) / fp(IN);
-#if ITERATIONS > 1
-  x = x - f(x) / fp(x);
+    float x = IN - f(IN)/fp(IN);
+#if ITERATIONS > 1 
+    x = x - f(x)/fp(x);
 #if ITERATIONS > 2
-  x = x - f(x) / fp(x);
-#endif
+    x = x - f(x)/fp(x);
+#endif 
 #endif
 
-  // Check if the final value is within the required range
-  if (!(x < 0.1f)) {
-    reach_error();
-  }
+    if (!(x < 0.1)) {
+        reach_error();
+    }
 
-  return 0;
+    return 0;
 }

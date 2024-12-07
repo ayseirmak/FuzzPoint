@@ -10,20 +10,19 @@ typedef union {
 
 int __fpclassify_float(float x) {
   __uint32_t w;
-
   ieee_float_shape_type gf_u;
   gf_u.value = x;
   w = gf_u.word;
 
-  if (w == 0x00000000 || w == 0x80000000)
+  if (w == 0x00000000 || w == 0x80000000) // Zero or negative zero
     return 2; // zero
   else if ((w >= 0x00800000 && w <= 0x7f7fffff) ||
-           (w >= 0x80800000 && w <= 0xff7fffff))
+           (w >= 0x80800000 && w <= 0xff7fffff)) // Normalized floats
     return 4; // normal
   else if ((w >= 0x00000001 && w <= 0x007fffff) ||
-           (w >= 0x80000001 && w <= 0x807fffff))
+           (w >= 0x80000001 && w <= 0x807fffff)) // Subnormals
     return 3; // subnormal
-  else if (w == 0x7f800000 || w == 0xff800000)
+  else if (w == 0x7f800000 || w == 0xff800000) // Infinity
     return 1; // infinite
   else
     return 0; // NaN
@@ -40,24 +39,21 @@ float fmin_float(float x, float y) {
 
 int __signbit_float(float x) {
   __uint32_t w;
-
   ieee_float_shape_type gf_u;
   gf_u.value = x;
   w = gf_u.word;
-
-  return (w & 0x80000000) != 0;
+  return (w & 0x80000000) != 0; // Check sign bit
 }
 
 int main() {
-
   float x = -0.0f;
   float y = 0.0f;
   float res = fmin_float(x, y);
 
-  // Assert: x is -0 and y is +0, the result should be -0
+  // x is -0 and y is +0, the result shall be -0
   assert(res == -0.0f && __signbit_float(res) == 1);
 
-  printf("Test passed successfully: fmin(-0.0, 0.0) = -0.0\n");
+  printf("Test passed: res is -0.0 with correct sign.\n");
 
   return 0;
 }

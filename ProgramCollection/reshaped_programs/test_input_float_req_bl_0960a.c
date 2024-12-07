@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdint.h>
+#include <math.h>
 
 typedef int __int32_t;
 typedef unsigned int __uint32_t;
@@ -41,9 +41,8 @@ float __ieee754_logf(float x) {
     k += (ix >> 23) - 127;
     ix &= 0x007fffff;
     i = (ix + (0x95f64 << 3)) & 0x800000;
-    ieee_float_shape_type sf_u;
-    sf_u.word = (ix | (i ^ 0x3f800000));
-    (x) = sf_u.value;
+    gf_u.word = (ix | (i ^ 0x3f800000));
+    (x) = gf_u.value;
     k += (i >> 23);
     f = x - (float)1.0;
     if ((0x007fffff & (15 + ix)) < 16) {
@@ -78,7 +77,8 @@ float __ieee754_logf(float x) {
         if (k == 0)
             return f - (hfsq - s * (hfsq + R));
         else
-            return dk * ln2_hi_log - ((hfsq - (s * (hfsq + R) + dk * ln2_lo_log)) - f);
+            return dk * ln2_hi_log -
+                   ((hfsq - (s * (hfsq + R) + dk * ln2_lo_log)) - f);
     } else {
         if (k == 0)
             return f - s * (f - R);
@@ -136,20 +136,18 @@ int isinf_float(float x) {
     return ((ix) == 0x7f800000L);
 }
 
-void reach_error() {
-    printf("Assertion failed\n");
-}
-
 int main() {
+
     float x = 0.0f;
     float res = __ieee754_log10f(x);
 
     // x is +0, the result shall be -inf
     if (!isinf_float(res)) {
-        reach_error();
+        printf("Error: Expected -Inf.\n");
         return 1;
     }
 
-    printf("Test passed: log10f(0.0) = -inf as expected.\n");
+    printf("Success: Result is -Inf as expected.\n");
+
     return 0;
 }

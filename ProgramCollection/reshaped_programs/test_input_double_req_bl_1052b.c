@@ -1,28 +1,28 @@
 #include <stdio.h>
 #include <assert.h>
 
-typedef int __int32_t;
-typedef unsigned int __uint32_t;
-
+// Structure for representing double-precision floating-point numbers
 typedef union {
   double value;
   struct {
-    __uint32_t lsw;
-    __uint32_t msw;
+    unsigned int lsw;
+    unsigned int msw;
   } parts;
 } ieee_double_shape_type;
 
+// Constant representing a large number
 static const double huge_floor = 1.0e300;
 
+// Function to compute the floor of a double-precision number
 double floor_double(double x) {
-  __int32_t i0, i1, j0;
-  __uint32_t i, j;
-  // Extract the parts of the double and initialize variables
+  int i0, i1, j0;
+  unsigned int i, j;
   ieee_double_shape_type ew_u;
+
   ew_u.value = x;
   i0 = ew_u.parts.msw;
   i1 = ew_u.parts.lsw;
-
+  
   j0 = ((i0 >> 20) & 0x7ff) - 0x3ff;
   if (j0 < 20) {
     if (j0 < 0) {
@@ -51,7 +51,7 @@ double floor_double(double x) {
     else
       return x;
   } else {
-    i = ((__uint32_t)(0xffffffff)) >> (j0 - 20);
+    i = ((unsigned int)(0xffffffff)) >> (j0 - 20);
     if ((i1 & i) == 0)
       return x;
     if (huge_floor + x > 0.0) {
@@ -59,7 +59,7 @@ double floor_double(double x) {
         if (j0 == 20)
           i0 += 1;
         else {
-          j = i1 + (1 << (52 - j0));
+          j = i1 + (1U << (52 - j0));
           if (j < i1)
             i0 += 1;
           i1 = j;
@@ -68,6 +68,7 @@ double floor_double(double x) {
       i1 &= (~i);
     }
   }
+
   ieee_double_shape_type iw_u;
   iw_u.parts.msw = i0;
   iw_u.parts.lsw = i1;
@@ -76,31 +77,29 @@ double floor_double(double x) {
   return x;
 }
 
+// Function to check if a double-precision number is infinite
 int isinf_double(double x) {
-  __int32_t hx, lx;
-  // Extract the parts of the double and initialize variables
+  int hx, lx;
   ieee_double_shape_type ew_u;
+
   ew_u.value = x;
   hx = ew_u.parts.msw;
   lx = ew_u.parts.lsw;
 
   hx &= 0x7fffffff;
-  hx |= (__uint32_t)(lx | (-lx)) >> 31;
+  hx |= (unsigned int)(lx | (-lx)) >> 31;
   hx = 0x7ff00000 - hx;
-  return 1 - (int)((__uint32_t)(hx | (-hx)) >> 31);
+  return 1 - (int)((unsigned int)(hx | (-hx)) >> 31);
 }
 
+// Main function to test the floor_double function
 int main() {
-  double x = -1.0 / 0.0; // -INF
+  double x = -1.0 / 0.0; // Initialized with -INF represented deterministically
   double res = floor_double(x);
 
-  // x is +-0 or -inf, result shall be -inf.
-  if (!isinf_double(res)) {
-    printf("Error: Floor function failed for -INF\n");
-    assert(0);
-    return 1;
-  }
+  // Asserting that the result is infinite as expected
+  assert(isinf_double(res));
+  printf("Test passed, floor of -INF is -INF.\n");
 
-  printf("Test passed.\n");
   return 0;
 }

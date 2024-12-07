@@ -1,25 +1,39 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <assert.h>
+#include <math.h>
 
-typedef int __int32_t;
-typedef unsigned int __uint32_t;
+// Function to handle a reach error
+void reach_error() {
+    fprintf(stderr, "Error in reach_error: expected outcome not achieved.\n");
+    abort();
+}
 
+// Type definitions using standard int types
+typedef int32_t __int32_t;
+typedef uint32_t __uint32_t;
+
+// Union for IEEE float shape type
 typedef union {
     float value;
     __uint32_t word;
 } ieee_float_shape_type;
 
+// Absolute value function for floats
 float fabs_float(float x) {
     __uint32_t ix;
     ieee_float_shape_type gf_u;
     gf_u.value = x;
     ix = gf_u.word;
+    
     ieee_float_shape_type sf_u;
     sf_u.word = ix & 0x7fffffff;
     x = sf_u.value;
+    
     return x;
 }
 
+// Constant values
 static const float atanhi_atan[] = {
     4.6364760399e-01,
     7.8539812565e-01,
@@ -40,40 +54,36 @@ static const float aT_atan[] = {
     4.9768779427e-02, -3.6531571299e-02, 1.6285819933e-02,
 };
 
-static const float one_atan = 1.0, huge_atan = 1.0e30,
-                   pi_o_4 = 7.8539818525e-01, pi_o_2 = 1.5707963705e+00,
-                   pi = 3.1415927410e+00;
+static const float one_atan = 1.0f, huge_atan = 1.0e30f,
+                   pi_o_4 = 7.8539818525e-01f, pi_o_2 = 1.5707963705e+00f,
+                   pi = 3.1415927410e+00f;
 
+// Function to calculate arctangent of a float
 float atan_float(float x) {
     float w, s1, s2, z;
     __int32_t ix, hx, id;
-    
+
     ieee_float_shape_type gf_u;
     gf_u.value = x;
     hx = gf_u.word;
+
     ix = hx & 0x7fffffff;
-
+    
     if (ix >= 0x50800000) {
-        if (ix > 0x7f800000L)
-            return x + x;
-        if (hx > 0)
-            return atanhi_atan[3] + atanlo_atan[3];
-        else
-            return -atanhi_atan[3] - atanlo_atan[3];
+        if (ix > 0x7f800000L) return x + x;
+        if (hx > 0) return atanhi_atan[3] + atanlo_atan[3];
+        else return -atanhi_atan[3] - atanlo_atan[3];
     }
-
+    
     if (ix < 0x3ee00000) {
-        if (ix < 0x31000000) {
-            if (huge_atan + x > one_atan)
-                return x;
-        }
+        if (ix < 0x31000000 && huge_atan + x > one_atan) return x;
         id = -1;
     } else {
         x = fabs_float(x);
         if (ix < 0x3f980000) {
             if (ix < 0x3f300000) {
                 id = 0;
-                x = ((float)2.0 * x - one_atan) / ((float)2.0 + x);
+                x = (2.0f * x - one_atan) / (2.0f + x);
             } else {
                 id = 1;
                 x = (x - one_atan) / (x + one_atan);
@@ -81,10 +91,10 @@ float atan_float(float x) {
         } else {
             if (ix < 0x401c0000) {
                 id = 2;
-                x = (x - (float)1.5) / (one_atan + (float)1.5 * x);
+                x = (x - 1.5f) / (one_atan + 1.5f * x);
             } else {
                 id = 3;
-                x = -(float)1.0 / x;
+                x = -1.0f / x;
             }
         }
     }
@@ -92,131 +102,120 @@ float atan_float(float x) {
     z = x * x;
     w = z * z;
 
-    s1 = z * (aT_atan[0] + w * (aT_atan[2] + w * (aT_atan[4] + w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
-    s2 = w * (aT_atan[1] + w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
-
-    if (id < 0)
-        return x - x * (s1 + s2);
+    s1 = z * (aT_atan[0] +
+              w * (aT_atan[2] +
+                   w * (aT_atan[4] +
+                        w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
+    s2 = w * (aT_atan[1] +
+              w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
+    if (id < 0) return x - x * (s1 + s2);
     else {
         z = atanhi_atan[id] - ((x * (s1 + s2) - atanlo_atan[id]) - x);
         return (hx < 0) ? -z : z;
     }
 }
 
-static const float tiny_atan2 = 1.0e-30, zero_atan2 = 0.0,
-                   pi_lo_atan2 = -8.7422776573e-08;
+static const float tiny_atan2 = 1.0e-30f, zero_atan2 = 0.0f,
+                   pi_lo_atan2 = -8.7422776573e-08f;
 
+// Function to compute atan2 for floats
 float __ieee754_atan2f(float y, float x) {
     float z;
     __int32_t k, m, hx, hy, ix, iy;
 
-    ieee_float_shape_type gf_u;
-    gf_u.value = x;
-    hx = gf_u.word;
+    ieee_float_shape_type gf_u_x;
+    gf_u_x.value = x;
+    hx = gf_u_x.word;
     ix = hx & 0x7fffffff;
 
-    gf_u.value = y;
-    hy = gf_u.word;
+    ieee_float_shape_type gf_u_y;
+    gf_u_y.value = y;
+    hy = gf_u_y.word;
     iy = hy & 0x7fffffff;
 
-    if ((ix > 0x7f800000L) || (iy > 0x7f800000L))
-        return x + y;
-
-    if (hx == 0x3f800000)
-        return atan_float(y);
-
+    if ((ix > 0x7f800000L) || (iy > 0x7f800000L)) return x + y;
+  
+    if (hx == 0x3f800000) return atan_float(y);
+  
     m = ((hy >> 31) & 1) | ((hx >> 30) & 2);
-
+  
     if (iy == 0) {
         switch (m) {
             case 0:
-            case 1:
-                return y;
-            case 2:
-                return pi + tiny_atan2;
-            case 3:
-                return -pi - tiny_atan2;
+            case 1: return y;
+            case 2: return pi + tiny_atan2;
+            case 3: return -pi - tiny_atan2;
         }
     }
-
-    if (ix == 0)
-        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
-
+  
+    if (ix == 0) return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
+  
     if (ix == 0x7f800000L) {
         if (iy == 0x7f800000L) {
             switch (m) {
-                case 0:
-                    return pi_o_4 + tiny_atan2;
-                case 1:
-                    return -pi_o_4 - tiny_atan2;
-                case 2:
-                    return (float)3.0 * pi_o_4 + tiny_atan2;
-                case 3:
-                    return (float)-3.0 * pi_o_4 - tiny_atan2;
+                case 0: return pi_o_4 + tiny_atan2;
+                case 1: return -pi_o_4 - tiny_atan2;
+                case 2: return (3.0f * pi_o_4) + tiny_atan2;
+                case 3: return (-3.0f * pi_o_4) - tiny_atan2;
             }
         } else {
             switch (m) {
-                case 0:
-                    return zero_atan2;
-                case 1:
-                    return -zero_atan2;
-                case 2:
-                    return pi + tiny_atan2;
-                case 3:
-                    return -pi - tiny_atan2;
+                case 0: return zero_atan2;
+                case 1: return -zero_atan2;
+                case 2: return pi + tiny_atan2;
+                case 3: return -pi - tiny_atan2;
             }
         }
     }
-
-    if (iy == 0x7f800000L)
-        return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
-
+  
+    if (iy == 0x7f800000L) return (hy < 0) ? -pi_o_2 - tiny_atan2 : pi_o_2 + tiny_atan2;
+  
     k = (iy - ix) >> 23;
-    if (k > 60)
-        z = pi_o_2 + (float)0.5 * pi_lo_atan2;
-    else if (hx < 0 && k < -60)
-        z = 0.0;
-    else
-        z = atan_float(fabs_float(y / x));
-
+    if (k > 60) z = pi_o_2 + (0.5f * pi_lo_atan2);
+    else if (hx < 0 && k < -60) z = 0.0f;
+    else z = atan_float(fabs_float(y / x));
+  
     switch (m) {
-        case 0:
-            return z;
+        case 0: return z;
         case 1: {
             __uint32_t zh;
             ieee_float_shape_type gf_u;
             gf_u.value = z;
             zh = gf_u.word;
+            
             ieee_float_shape_type sf_u;
             sf_u.word = zh ^ 0x80000000;
             z = sf_u.value;
-        }
+            
             return z;
-        case 2:
-            return pi - (z - pi_lo_atan2);
-        default:
-            return (z - pi_lo_atan2) - pi;
+        }
+        case 2: return pi - (z - pi_lo_atan2);
+        default: return (z - pi_lo_atan2) - pi;
     }
 }
 
+// Function to determine the sign bit of a float value
 int __signbit_float(float x) {
     __uint32_t w;
-
     ieee_float_shape_type gf_u;
     gf_u.value = x;
     w = gf_u.word;
-
+    
     return (w & 0x80000000) != 0;
 }
 
+// Main function to test the atan2f requirement
 int main() {
     float x = 0.0f;
     float y = -0.0f;
     float res = __ieee754_atan2f(y, x);
 
     // x is +0, y is -0, the result shall be -0
-    assert(res == -0.0f && __signbit_float(res) == 1);
+    if (!(res == -0.0f && __signbit_float(res) == 1)) {
+        reach_error();
+        return 1;
+    }
 
-    printf("Test passed successfully\n");
+    printf("Test passed: atan2f(-0.0, 0.0) yields -0.0\n");
     return 0;
 }

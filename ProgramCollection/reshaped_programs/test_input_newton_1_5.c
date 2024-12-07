@@ -30,40 +30,34 @@
 void reach_error() { assert(0); }
 
 void assume_abort_if_not(int cond) {
-  if (!cond) {
-    printf("Aborting due to assumption failure\n");
-    abort();
-  }
+    if (!cond) { abort(); }
 }
 
 float f(float x) {
-  return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+    return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
 }
 
 float fp(float x) {
-  return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
+    return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
 }
 
 int main() {
-  // Deterministically defining the input value instead of using a nondet function
-  float IN = 0.5f; // Example deterministic value
+    // Using fixed deterministic input
+    float IN = 0.5f;  // As an example value within the expected range (-1.0f, 1.0f)
+    assume_abort_if_not(IN > -VAL && IN < VAL);
 
-  // Ensuring the input is within the specified range
-  assume_abort_if_not(IN > -VAL && IN < VAL);
-  
-  // Perform Newton's method or similar iteration
-  float x = IN - f(IN)/fp(IN);
-#if ITERATIONS > 1 
-  x = x - f(x)/fp(x);
+    float x = IN - f(IN) / fp(IN);
+#if ITERATIONS > 1
+    x = x - f(x) / fp(x);
 #if ITERATIONS > 2
-  x = x - f(x)/fp(x);
-#endif 
+    x = x - f(x) / fp(x);
+#endif
 #endif
 
-  // Verification: ensuring the result is below a certain value
-  if (!(x < 0.1)) {
-    reach_error();
-  }
+    if (!(x < 0.1)) {
+        reach_error();
+    }
 
-  return 0;
+    printf("Computation completed, x = %f\n", x);
+    return 0;
 }

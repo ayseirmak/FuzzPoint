@@ -1,0 +1,229 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <math.h>
+#include <assert.h>
+
+typedef int32_t __int32_t;
+typedef uint32_t __uint32_t;
+
+/* A union which permits us to convert between a double and two 32 bit
+   ints.  */
+typedef union {
+  double value;
+  struct {
+    __uint32_t lsw;
+    __uint32_t msw;
+  } parts;
+} ieee_double_shape_type;
+
+static const double one_sqrt = 1.0, tiny_sqrt = 1.0e-300;
+
+double __ieee754_sqrt(double x) {
+  double z;
+  __int32_t sign = 0x80000000;
+  __uint32_t r, t1, s1, ix1, q1;
+  __int32_t ix0, s0, q, m, t, i;
+
+  ieee_double_shape_type ew_u;
+  ew_u.value = x;
+  ix0 = ew_u.parts.msw;
+  ix1 = ew_u.parts.lsw;
+
+  if ((ix0 & 0x7ff00000) == 0x7ff00000) {
+    return x * x + x;
+  }
+
+  if (ix0 <= 0) {
+    if (((ix0 & (~sign)) | ix1) == 0)
+      return x;
+    else if (ix0 < 0)
+      return (x - x) / (x - x);
+  }
+
+  m = (ix0 >> 20);
+  if (m == 0) {
+    while (ix0 == 0) {
+      m -= 21;
+      ix0 |= (ix1 >> 11);
+      ix1 <<= 21;
+    }
+    for (i = 0; (ix0 & 0x00100000) == 0; i++)
+      ix0 <<= 1;
+    m -= i - 1;
+    ix0 |= (ix1 >> (32 - i));
+    ix1 <<= i;
+  }
+  m -= 1023;
+  ix0 = (ix0 & 0x000fffff) | 0x00100000;
+  if (m & 1) {
+    ix0 += ix0 + ((ix1 & sign) >> 31);
+    ix1 += ix1;
+  }
+  m >>= 1;
+
+  ix0 += ix0 + ((ix1 & sign) >> 31);
+  ix1 += ix1;
+  q = q1 = s0 = s1 = 0;
+  r = 0x00200000;
+
+  while (r != 0) {
+    t = s0 + r;
+    if (t <= ix0) {
+      s0 = t + r;
+      ix0 -= t;
+      q += r;
+    }
+    ix0 += ix0 + ((ix1 & sign) >> 31);
+    ix1 += ix1;
+    r >>= 1;
+  }
+
+  r = sign;
+  while (r != 0) {
+    t1 = s1 + r;
+    t = s0;
+    if ((t < ix0) || ((t == ix0) && (t1 <= ix1))) {
+      s1 = t1 + r;
+      if (((t1 & sign) == sign) && (s1 & sign) == 0)
+        s0 += 1;
+      ix0 -= t;
+      if (ix1 < t1)
+        ix0 -= 1;
+      ix1 -= t1;
+      q1 += r;
+    }
+    ix0 += ix0 + ((ix1 & sign) >> 31);
+    ix1 += ix1;
+    r >>= 1;
+  }
+  if ((ix0 | ix1) != 0) {
+    z = one_sqrt - tiny_sqrt;
+    if (z >= one_sqrt) {
+      z = one_sqrt + tiny_sqrt;
+      if (q1 == (__uint32_t)0xffffffff) {
+        q1 = 0;
+        q += 1;
+      } else if (z > one_sqrt) {
+        if (q1 == (__uint32_t)0xfffffffe)
+          q += 1;
+        q1 += 2;
+      } else
+        q1 += (q1 & 1);
+    }
+  }
+  ix0 = (q >> 1) + 0x3fe00000;
+  ix1 = q1 >> 1;
+  if ((q & 1) == 1)
+    ix1 |= sign;
+  ix0 += (m << 20);
+
+  ieee_double_shape_type iw_u;
+  iw_u.parts.msw = ix0;
+  iw_u.parts.lsw = ix1;
+  z = iw_u.value;
+  
+  return z;
+}
+
+double fabs_double(double x) {
+  __uint32_t high;
+  ieee_double_shape_type gh_u;
+  gh_u.value = x;
+  high = gh_u.parts.msw;
+
+  ieee_double_shape_type sh_u;
+  sh_u.value = x;
+  sh_u.parts.msw = (high & 0x7fffffff);
+  x = sh_u.value;
+
+  return x;
+}
+
+static const double one_asin = 1.0,
+                    huge_asin = 1.0e+300,
+                    pio2_hi_asin = 1.57079632679489655800e+00,
+                    pio2_lo_asin = 6.12323399573676603587e-17,
+                    pio4_hi_asin = 0.785398163397448278999e+00,
+                    pS0_asin = 0.166666666666666657415,
+                    pS1_asin = -0.325565818622400915405,
+                    pS2_asin = 0.201212532134862931581,
+                    pS3_asin = -0.0400555344506794114027,
+                    pS4_asin = 0.00079153499428981432176,
+                    pS5_asin = 0.000034793310759602116757,
+                    qS1_asin = -2.40339491173441421878,
+                    qS2_asin = 2.02094576023350569471,
+                    qS3_asin = -0.688283971605453293030,
+                    qS4_asin = 0.07703815055590193552791;
+
+double __ieee754_asin(double x) {
+  double t, w, p, q, c, r, s;
+  __int32_t hx, ix;
+  
+  ieee_double_shape_type gh_u;
+  gh_u.value = x;
+  hx = gh_u.parts.msw;
+  ix = hx & 0x7fffffff;
+
+  if (ix >= 0x3ff00000) {
+    __uint32_t lx;
+    ieee_double_shape_type gl_u;
+    gl_u.value = x;
+    lx = gl_u.parts.lsw;
+
+    if (((ix - 0x3ff00000) | lx) == 0)
+      return x * pio2_hi_asin + x * pio2_lo_asin;
+    return (x - x) / (x - x);
+  } else if (ix < 0x3fe00000) {
+    if (ix < 0x3e400000) {
+      if (huge_asin + x > one_asin)
+        return x;
+    } else {
+      t = x * x;
+      p = t * (pS0_asin +
+               t * (pS1_asin +
+                    t * (pS2_asin +
+                         t * (pS3_asin + t * (pS4_asin + t * pS5_asin)))));
+      q = one_asin +
+          t * (qS1_asin + t * (qS2_asin + t * (qS3_asin + t * qS4_asin)));
+      w = p / q;
+      return x + x * w;
+    }
+  }
+
+  w = one_asin - fabs_double(x);
+  t = w * 0.5;
+  p = t *
+      (pS0_asin +
+       t * (pS1_asin +
+            t * (pS2_asin + t * (pS3_asin + t * (pS4_asin + t * pS5_asin)))));
+  q = one_asin +
+      t * (qS1_asin + t * (qS2_asin + t * (qS3_asin + t * qS4_asin)));
+  s = __ieee754_sqrt(t);
+  if (ix >= 0x3FEF3333) {
+    w = p / q;
+    t = pio2_hi_asin - (2.0 * (s + s * w) - pio2_lo_asin);
+  } else {
+    w = s;
+    ieee_double_shape_type sl_u;
+    sl_u.value = w;
+    sl_u.parts.lsw = 0;
+    w = sl_u.value;
+    c = (t - w * w) / (s + w);
+    r = p / q;
+    p = 2.0 * s * r - (pio2_lo_asin - 2.0 * c);
+    q = pio4_hi_asin - 2.0 * w;
+    t = pio4_hi_asin - (p - q);
+  }
+  
+  return hx > 0 ? t : -t;
+}
+
+int main() {
+  double x = -0.0;
+  double res = __ieee754_asin(x);
+
+  // x is -0, the result should be x
+  assert(res == x);
+
+  return 0;
+}

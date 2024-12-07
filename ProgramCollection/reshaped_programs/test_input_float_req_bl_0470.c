@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <math.h>
-#include <assert.h>
+#include <math.h> // For NAN constant and isnan function
 
 typedef int __int32_t;
 typedef unsigned int __uint32_t;
@@ -10,7 +9,7 @@ typedef union {
   __uint32_t word;
 } ieee_float_shape_type;
 
-// NaN check for floats
+// Nan check for floats
 int isnan_float(float x) { return x != x; }
 
 static const float one_sqrt = 1.0, tiny_sqrt = 1.0e-30;
@@ -161,14 +160,21 @@ float __ieee754_acosf(float x) {
 }
 
 int main() {
-  // Fixed input value
-  float x = 0.0f / 0.0f; // NAN
+
+  /*
+   * REQ-BL-0480:
+   * The acos and acosf procedures shall return NAN, if the argument x is NAN
+   */
+
+  float x = NAN;
   float res = __ieee754_acosf(x);
 
-  // Verify that the result is NAN
-  assert(isnan_float(res));
+  // x is NAN, the result shall be NAN
+  if (!isnan_float(res)) {
+    printf("Error: Expected NAN, but got %f\n", res);
+    return 1;
+  }
 
-  printf("Test passed: acosf(NAN) returns NAN as expected.");
-  
+  printf("Test passed: Result is NAN as expected.\n");
   return 0;
 }

@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
 
-// Approximates sqrt(1+x)
+// APPROXIMATES sqroot(1+x)
+
 #define NR 3
 
 #if NR == 1
@@ -22,27 +23,29 @@
 #define VAL 1.5f
 #endif
 
-void reach_error() { assert(0); }
+void reach_error() {
+    assert(0);
+}
+
+void assume_abort_if_not(int cond) {
+    if (!cond) {
+        printf("Assumption failed, aborting.\n");
+        abort();
+    }
+}
 
 int main() {
-    // Using a fixed value for `IN` to replace the non-deterministic input
-    float IN = 0.5f; // Assuming a fixed input within the specified range [0.0, 1.0)
+    // Instead of using __VERIFIER_nondet_float(), initialize with a fixed value within the defined range.
+    float IN = 0.5f;  // Example value, should be 0 <= IN < 1
 
-    // Ensure the input is within the valid range
-    if (IN < 0.0f || IN >= 1.0f) {
-        printf("Input out of range.\n");
-        return -1;
-    }
+    assume_abort_if_not(IN >= 0.0f && IN < 1.0f);
 
     float x = IN;
-  
-    float result = 
-        1.0f + 0.5f*x - 0.125f*x*x + 0.0625f*x*x*x - 0.0390625f*x*x*x*x;
+
+    float result = 1.0f + 0.5f*x - 0.125f*x*x + 0.0625f*x*x*x - 0.0390625f*x*x*x*x;
 
     if (!(result >= 0.0f && result < VAL)) {
         reach_error();
-    } else {
-        printf("Result is within the acceptable range.\n");
     }
 
     return 0;

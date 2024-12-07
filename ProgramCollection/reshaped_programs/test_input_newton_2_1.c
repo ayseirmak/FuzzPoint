@@ -1,54 +1,52 @@
 #include <assert.h>
 #include <stdio.h>
 
-void reach_error() {
-    assert(0);
-}
+// Fixed value chosen deterministically for demonstration purposes
+#define DETERMINISTIC_INPUT 0.1f
 
-void assume_abort_if_not(int cond) {
-    if (!cond) {
-        printf("Assumption failed, aborting.\n");
-        abort();
-    }
-}
+#define NR 1
+
+#if NR == 1
+#define VAL 0.2f
+#elif NR == 2
+#define VAL 0.4f
+#elif NR == 3
+#define VAL 0.6f
+#elif NR == 4
+#define VAL 0.8f
+#elif NR == 5
+#define VAL 1.0f
+#elif NR == 6
+#define VAL 1.2f
+#elif NR == 7
+#define VAL 1.4f
+#elif NR == 8
+#define VAL 2.0f
+#endif
+
+#define ITERATIONS 2
+
+#if !(ITERATIONS >= 1 && ITERATIONS <= 3)
+#error Number of iterations must be between 1 and 3
+#endif 
 
 float f(float x) {
-    return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+    return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
 }
 
 float fp(float x) {
-    return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
+    return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
 }
 
 int main() {
-    #define NR 1
-    #if NR == 1
-    #define VAL 0.2f
-    #elif NR == 2
-    #define VAL 0.4f
-    #elif NR == 3
-    #define VAL 0.6f
-    #elif NR == 4
-    #define VAL 0.8f
-    #elif NR == 5
-    #define VAL 1.0f
-    #elif NR == 6
-    #define VAL 1.2f
-    #elif NR == 7
-    #define VAL 1.4f
-    #elif NR == 8
-    #define VAL 2.0f
-    #endif
+    // Use a deterministic value for IN
+    float IN = DETERMINISTIC_INPUT;
 
-    #define ITERATIONS 2
-
-    #if !(ITERATIONS >= 1 && ITERATIONS <= 3)
-    #error Number of iterations must be between 1 and 3
-    #endif
-
-    // Deterministic and fixed input value (example: 0.1f within valid range)
-    float IN = 0.1f;
-    assume_abort_if_not(IN > -VAL && IN < VAL);
+    // Ensure input range is correct
+    if (IN <= -VAL || IN >= VAL) {
+        fprintf(stderr, "Input out of valid range\n");
+        return 1;
+    }
 
     float x = IN - f(IN) / fp(IN);
 #if ITERATIONS > 1 
@@ -58,9 +56,12 @@ int main() {
 #endif 
 #endif
 
+    // Check condition and handle potential error
     if (!(x < 0.1)) {
-        reach_error();
+        fprintf(stderr, "Error: x is not less than 0.1\n");
+        assert(0); // Replacing reach_error
     }
 
+    printf("Execution successful; x: %f\n", x);
     return 0;
 }

@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include <assert.h>
+#include <stdio.h>
 
-// APPROXIMATES sqrt(1+x)
+// APPROXIMATES sqroot(1+x)
 #define NR 2
 
 #if NR == 1
@@ -22,32 +22,31 @@
 #define VAL 1.5f
 #endif
 
+void assume_abort_if_not(int cond) {
+  if (!cond) {
+    printf("Assumption failed, aborting.\n");
+  }
+}
+
 void reach_error() {
-    printf("Error: Result out of expected range.\n");
-    assert(0); // Simulate the reach_error condition
+  assert(0);
 }
 
 int main() {
-    // Deterministic input: replace nondeterministic input with a fixed value
-    float IN = 0.5f;  // Example fixed value (can be between 0.0f and 1.0f)
+  // Using a fixed deterministic input within the given range [0.0, 1.0)
+  float IN = 0.5f; 
+  assume_abort_if_not(IN >= 0.0f && IN < 1.0f);
 
-    // Precondition
-    if (!(IN >= 0.0f && IN < 1.0f)) {
-        printf("Invalid input. IN must be in the range [0.0, 1.0).\n");
-        return 1;  // Exit if input is invalid
-    }
+  float x = IN;
+  
+  float result = 
+    1.0f + 0.5f*x - 0.125f*x*x + 0.0625f*x*x*x - 0.0390625f*x*x*x*x;
 
-    float x = IN;
-    float result = 
-        1.0f + 0.5f * x - 0.125f * x * x + 0.0625f * x * x * x -
-        0.0390625f * x * x * x * x;
-    
-    // Post-condition and result check
-    if (!(result >= 0.0f && result < VAL)) {
-        reach_error();
-    } else {
-        printf("Result is within the expected range: %.6f\n", result);
-    }
+  if(!(result >= 0.0f && result < VAL)) {
+    reach_error();
+  } else {
+    printf("Computation successful: result = %f\n", result);
+  }
 
-    return 0;
+  return 0;
 }

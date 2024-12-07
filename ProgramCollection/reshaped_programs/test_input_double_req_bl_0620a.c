@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include <math.h>
-#include <stdint.h>
+#include <stdlib.h>
+#include <assert.h>
 
-typedef int32_t __int32_t;
-typedef uint32_t __uint32_t;
+typedef int __int32_t;
+typedef unsigned int __uint32_t;
 
 /* A union which permits us to convert between a double and two 32-bit ints. */
 typedef union {
@@ -14,17 +14,17 @@ typedef union {
     } parts;
 } ieee_double_shape_type;
 
-/* Function to get the absolute value of a double */
 double fabs_double(double x) {
     __uint32_t high;
     ieee_double_shape_type gh_u;
     gh_u.value = x;
     high = gh_u.parts.msw;
     gh_u.parts.msw = (high & 0x7fffffff);
-    return gh_u.value;
+    x = gh_u.value;
+    return x;
 }
 
-/* Constants for the atan function */
+// Preprocessed code for the function lips/newlib/math/s_atan.c
 static const double atanhi_atan[] = {
     4.63647609000806093515e-01,
     7.85398163397448278999e-01,
@@ -52,13 +52,14 @@ static const double one_atan = 1.0, pi_o_4 = 7.8539816339744827900E-01,
                     pi_o_2 = 1.5707963267948965580E+00,
                     pi = 3.1415926535897931160E+00, huge_atan = 1.0e300;
 
-/* Function to calculate atan */
 double atan_double(double x) {
     double w, s1, s2, z;
     __int32_t ix, hx, id;
+
     ieee_double_shape_type gh_u;
     gh_u.value = x;
     hx = gh_u.parts.msw;
+    
     ix = hx & 0x7fffffff;
     if (ix >= 0x44100000) {
         __uint32_t low;
@@ -102,12 +103,9 @@ double atan_double(double x) {
     z = x * x;
     w = z * z;
 
-    s1 = z * (aT_atan[0] +
-              w * (aT_atan[2] +
-                   w * (aT_atan[4] +
-                        w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
-    s2 = w * (aT_atan[1] +
-              w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
+    s1 = z * (aT_atan[0] + w * (aT_atan[2] + w * (aT_atan[4] + w * (aT_atan[6] + w * (aT_atan[8] + w * aT_atan[10])))));
+    s2 = w * (aT_atan[1] + w * (aT_atan[3] + w * (aT_atan[5] + w * (aT_atan[7] + w * aT_atan[9]))));
+    
     if (id < 0)
         return x - x * (s1 + s2);
     else {
@@ -116,7 +114,6 @@ double atan_double(double x) {
     }
 }
 
-/* Function to check the sign of a double */
 int __signbit_double(double x) {
     __uint32_t msw;
     ieee_double_shape_type gh_u;
@@ -126,17 +123,13 @@ int __signbit_double(double x) {
 }
 
 int main() {
-    /* Fixed deterministic input for testing */
     double x = -0.0;
     double res = atan_double(x);
 
-    /* Check if the result is -0 */
-    if (res == -0.0 && __signbit_double(res) == 1) {
-        printf("Test passed, result is -0.0 as expected.\n");
-    } else {
-        printf("Error: Test failed, result is not -0.0 as expected.\n");
-        return 1;
-    }
+    // x is -0, the result shall be -0
+    assert(res == -0.0 && __signbit_double(res) == 1);
 
+    printf("Test passed: atan(-0.0) = -0.0\n");
+    
     return 0;
 }

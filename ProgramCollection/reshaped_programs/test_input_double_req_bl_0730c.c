@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <assert.h>  // Use standard assertions instead of custom verifier functions
+#include <assert.h>
+#include <math.h>
 
 typedef int __int32_t;
 typedef unsigned int __uint32_t;
@@ -24,8 +25,8 @@ double __ieee754_sqrt(double x) {
 
   ieee_double_shape_type ew_u;
   ew_u.value = (x);
-  (ix0) = ew_u.parts.msw;
-  (ix1) = ew_u.parts.lsw;
+  ix0 = ew_u.parts.msw;
+  ix1 = ew_u.parts.lsw;
 
   if ((ix0 & 0x7ff00000) == 0x7ff00000) {
     return x * x + x;
@@ -119,8 +120,8 @@ double __ieee754_sqrt(double x) {
   ieee_double_shape_type iw_u;
   iw_u.parts.msw = (ix0);
   iw_u.parts.lsw = (ix1);
-  (z) = iw_u.value;
-  
+  z = iw_u.value;
+
   return z;
 }
 
@@ -129,18 +130,25 @@ int __signbit_double(double x) {
 
   ieee_double_shape_type gh_u;
   gh_u.value = (x);
-  (msw) = gh_u.parts.msw;
+  msw = gh_u.parts.msw;
 
   return (msw & 0x80000000) != 0;
+}
+
+void reach_error() {
+  printf("Error reached\n");
+  assert(0 && "reach_error");
 }
 
 int main() {
   double x = 0.0;
   double res = __ieee754_sqrt(x);
 
-  // Check if the result is 0.0 and not negative
-  assert(res == 0.0 && __signbit_double(res) == 0);
+  // x  -0, the result shall be -0
+  if (!(res == 0.0 && __signbit_double(res) == 0)) {
+    reach_error();
+    return 1;
+  }
 
-  printf("All checks passed.\n");
   return 0;
 }

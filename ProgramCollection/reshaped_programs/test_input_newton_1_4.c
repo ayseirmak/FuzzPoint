@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <stdlib.h>
 
 #define NR 4
 
@@ -32,33 +33,32 @@ void reach_error() {
 }
 
 void assume_abort_if_not(int cond) {
-    if (!cond) { 
-        fprintf(stderr, "Assumption failed, program aborted.\n");
+    if (!cond) {
         abort();
     }
 }
 
 float f(float x) {
-    return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+    return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
 }
 
 float fp(float x) {
-    return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
+    return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
 }
 
 int main() {
-    // Using a fixed, deterministic input instead of a nondeterministic value
-    float IN = 0.5f;  // This is a chosen value expected to be within the range (-VAL, VAL)
+    // Replacing non-deterministic inputs with deterministic fixed values
+    float IN = 0.7f; // Deterministic input within range (-VAL, VAL)
     assume_abort_if_not(IN > -VAL && IN < VAL);
 
-    float x = IN - f(IN)/fp(IN);
-
-    #if ITERATIONS > 1 
-    x = x - f(x)/fp(x);
-    #if ITERATIONS > 2
-    x = x - f(x)/fp(x);
-    #endif 
-    #endif
+    float x = IN - f(IN) / fp(IN);
+    
+#if ITERATIONS > 1 
+    x = x - f(x) / fp(x);
+#if ITERATIONS > 2
+    x = x - f(x) / fp(x);
+#endif 
+#endif
 
     if (!(x < 0.1)) {
         reach_error();

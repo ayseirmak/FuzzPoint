@@ -1,7 +1,17 @@
 #include <assert.h>
 #include <stdio.h>
 
-// Define the VAL according to the NR macro
+void reach_error() { 
+    assert(0);
+}
+
+void assume_abort_if_not(int cond) {
+    if (!cond) {
+        printf("Assumption failed, aborting...\n");
+        abort();
+    }
+}
+
 #define NR 7
 
 #if NR == 1
@@ -28,44 +38,34 @@
 #error Number of iterations must be between 1 and 3
 #endif 
 
-void reach_error() {
-    assert(0);
-}
-
-void assume_abort_if_not(int cond) {
-    if (!cond) {
-        printf("Aborted due to failed assumption.\n");
-        // Simulate abort behavior
-        assert(0);
-    }
-}
-
 float f(float x) {
-    return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + 
-           (x * x * x * x * x * x * x) / 5040.0f;
+    return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
 }
 
 float fp(float x) {
-    return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + 
-           (x * x * x * x * x * x) / 720.0f;
+    return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
 }
 
 int main() {
-    // Replaced the non-deterministic input with a fixed value
-    float IN = 1.0f;  // Example value; should be within (-VAL, VAL)
+    // Using a fixed deterministic input instead of nondeterministic
+    float IN = 0.1f;  // Example fixed input value within allowed range
     assume_abort_if_not(IN > -VAL && IN < VAL);
 
     float x = IN - f(IN) / fp(IN);
-#if ITERATIONS > 1
+    
+    #if ITERATIONS > 1 
     x = x - f(x) / fp(x);
-#if ITERATIONS > 2
-    x = x - f(x) / fp(x);
-#endif 
-#endif
+    
+        #if ITERATIONS > 2
+        x = x - f(x) / fp(x);
+        #endif 
+    #endif
 
-    if (!(x < 0.1)) {
+    if (!(x < 0.1))
+    {
         reach_error();
     }
 
+    printf("Program completed successfully.\n");
     return 0;
 }

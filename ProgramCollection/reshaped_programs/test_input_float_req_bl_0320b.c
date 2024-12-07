@@ -1,45 +1,33 @@
-#include <stdio.h>
-#include <stdint.h>
-#include <assert.h>
+#include <stdio.h>  // For using printf
+#include <assert.h> // For using assertions
 
-typedef int32_t __int32_t;
-typedef uint32_t __uint32_t;
+typedef int __int32_t;
+typedef unsigned int __uint32_t;
 
 typedef union {
   float value;
   __uint32_t word;
 } ieee_float_shape_type;
 
-/* Macros and constants */
-static const float huge_floor = 1.0e30;
-static const float two25_scalbn = 3.355443200e+07;
-static const float twom25_scalbn = 2.9802322388e-08;
-static const float huge_scalbn = 1.0e+30;
-static const float tiny_scalbn = 1.0e-30;
-
-/* Function prototypes */
-float floor_float(float x);
-float copysign_float(float x, float y);
-float scalbn_float(float x, int n);
-float fabs_float(float x);
-__int32_t __kernel_rem_pio2f(float *x, float *y, int e0, int nx, int prec, const __int32_t *ipio2);
-__int32_t __ieee754_rem_pio2f(float x, float *y);
-float __kernel_sinf(float x, float y, int iy);
-float __kernel_cosf(float x, float y);
-float cos_float(float x);
-void reach_error();
+/* Get a 32 bit int from a float.  */
+/* Set a float from a 32 bit int.  */
+/* Macros to avoid undefined behaviour that can arise if the amount
+   of a shift is exactly equal to the size of the shifted operand.  */
+static const float huge_floor = 1.0e30f;
 
 float floor_float(float x) {
   __int32_t i0, j0;
   __uint32_t i, ix;
-  ieee_float_shape_type g;
-  g.value = x;
-  i0 = g.word;
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (x);
+    (i0) = gf_u.word;
+  } while (0);
   ix = (i0 & 0x7fffffff);
   j0 = (ix >> 23) - 0x7f;
   if (j0 < 23) {
     if (j0 < 0) {
-      if (huge_floor + x > (float)0.0) {
+      if (huge_floor + x > 0.0f) {
         if (i0 >= 0) {
           i0 = 0;
         } else if (!((ix) == 0)) {
@@ -50,7 +38,7 @@ float floor_float(float x) {
       i = (0x007fffff) >> j0;
       if ((i0 & i) == 0)
         return x;
-      if (huge_floor + x > (float)0.0) {
+      if (huge_floor + x > 0.0f) {
         if (i0 < 0)
           i0 += (0x00800000) >> j0;
         i0 &= (~i);
@@ -62,29 +50,50 @@ float floor_float(float x) {
     else
       return x;
   }
-  ieee_float_shape_type s;
-  s.word = i0;
-  return s.value;
+  do {
+    ieee_float_shape_type sf_u;
+    sf_u.word = (i0);
+    (x) = sf_u.value;
+  } while (0);
+  return x;
 }
+
+// Check for NaN
+int isnan_float(float x) { return x != x; }
 
 float copysign_float(float x, float y) {
   __uint32_t ix, iy;
-  ieee_float_shape_type g;
-  g.value = x;
-  ix = g.word;
-  g.value = y;
-  iy = g.word;
-  ieee_float_shape_type s;
-  s.word = ((ix & 0x7fffffff) | (iy & 0x80000000));
-  return s.value;
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (x);
+    (ix) = gf_u.word;
+  } while (0);
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (y);
+    (iy) = gf_u.word;
+  } while (0);
+  do {
+    ieee_float_shape_type sf_u;
+    sf_u.word = ((ix & 0x7fffffff) | (iy & 0x80000000));
+    (x) = sf_u.value;
+  } while (0);
+  return x;
 }
+
+static const float two25_scalbn = 3.355443200e+07f,
+                   twom25_scalbn = 2.9802322388e-08f, huge_scalbn = 1.0e+30f,
+                   tiny_scalbn = 1.0e-30f;
 
 float scalbn_float(float x, int n) {
   __int32_t k, ix;
   __uint32_t hx;
-  ieee_float_shape_type g;
-  g.value = x;
-  ix = g.word;
+
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (x);
+    (ix) = gf_u.word;
+  } while (0);
   hx = ix & 0x7fffffff;
   k = hx >> 23;
   if (((hx) == 0))
@@ -93,8 +102,11 @@ float scalbn_float(float x, int n) {
     return x + x;
   if (((hx) < 0x00800000L)) {
     x *= two25_scalbn;
-    g.value = x;
-    ix = g.word;
+    do {
+      ieee_float_shape_type gf_u;
+      gf_u.value = (x);
+      (ix) = gf_u.word;
+    } while (0);
     k = ((ix & 0x7f800000) >> 23) - 25;
     if (n < -50000)
       return tiny_scalbn * x;
@@ -103,9 +115,12 @@ float scalbn_float(float x, int n) {
   if (k > (0x7f7fffffL >> 23))
     return huge_scalbn * copysign_float(huge_scalbn, x);
   if (k > 0) {
-    ieee_float_shape_type s;
-    s.word = ((ix & 0x807fffff) | (k << 23));
-    return s.value;
+    do {
+      ieee_float_shape_type sf_u;
+      sf_u.word = ((ix & 0x807fffff) | (k << 23));
+      (x) = sf_u.value;
+    } while (0);
+    return x;
   }
   if (k < -22) {
     if (n > 50000)
@@ -114,27 +129,44 @@ float scalbn_float(float x, int n) {
       return tiny_scalbn * copysign_float(tiny_scalbn, x);
   }
   k += 25;
-  ieee_float_shape_type s;
-  s.word = ((ix & 0x807fffff) | (k << 23));
-  return s.value * twom25_scalbn;
+  do {
+    ieee_float_shape_type sf_u;
+    sf_u.word = ((ix & 0x807fffff) | (k << 23));
+    (x) = sf_u.value;
+  } while (0);
+  return x * twom25_scalbn;
 }
-
 float fabs_float(float x) {
   __uint32_t ix;
-  ieee_float_shape_type g;
-  g.value = x;
-  ix = g.word;
-  ieee_float_shape_type s;
-  s.word = (ix & 0x7fffffff);
-  return s.value;
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (x);
+    (ix) = gf_u.word;
+  } while (0);
+  do {
+    ieee_float_shape_type sf_u;
+    sf_u.word = (ix & 0x7fffffff);
+    (x) = sf_u.value;
+  } while (0);
+  return x;
 }
 
-/* Constants for kernel_rem_pio2f and other functions */
-static const int init_jk_krempio[] = {4, 7, 9};
-static const float PIo2_krempio[] = { 1.5703125000e+00, 4.5776367188e-04, 2.5987625122e-05, 7.5437128544e-08, 6.0026650317e-11, 7.3896444519e-13, 5.3845816694e-15, 5.6378512969e-18, 8.3009228831e-20, 3.2756352257e-22, 6.3331015649e-25 };
-static const float zero_krempio = 0.0, one_krempio = 1.0, two8_krempio = 2.5600000000e+02, twon8_krempio = 3.9062500000e-03;
+extern float scalbn_float(float x, int n);
 
-int __kernel_rem_pio2f(float *x, float *y, int e0, int nx, int prec, const __int32_t *ipio2) {
+static const int init_jk_krempio[] = {4, 7, 9};
+
+static const float PIo2_krempio[] = {
+    1.5703125000e+00f, 4.5776367188e-04f, 2.5987625122e-05f, 7.5437128544e-08f,
+    6.0026650317e-11f, 7.3896444519e-13f, 5.3845816694e-15f, 5.6378512969e-18f,
+    8.3009228831e-20f, 3.2756352257e-22f, 6.3331015649e-25f,
+};
+
+static const float zero_krempio = 0.0f, one_krempio = 1.0f,
+                   two8_krempio = 2.5600000000e+02f,
+                   twon8_krempio = 3.9062500000e-03f;
+
+int __kernel_rem_pio2f(float *x, float *y, int e0, int nx, int prec,
+                       const __int32_t *ipio2) {
   __int32_t jz, jx, jv, jp, jk, carry, n, iq[20], i, j, k, m, q0, ih;
   float z, fw, f[20], fq[20], q[20];
 
@@ -143,7 +175,8 @@ int __kernel_rem_pio2f(float *x, float *y, int e0, int nx, int prec, const __int
 
   jx = nx - 1;
   jv = (e0 - 3) / 8;
-  if (jv < 0) jv = 0;
+  if (jv < 0)
+    jv = 0;
   q0 = e0 - 8 * (jv + 1);
 
   j = jv - jx;
@@ -152,7 +185,7 @@ int __kernel_rem_pio2f(float *x, float *y, int e0, int nx, int prec, const __int
     f[i] = (j < 0) ? zero_krempio : (float)ipio2[j];
 
   for (i = 0; i <= jk; i++) {
-    for (j = 0, fw = 0.0; j <= jx; j++)
+    for (j = 0, fw = 0.0f; j <= jx; j++)
       fw += x[j] * f[jx + i - j];
     q[i] = fw;
   }
@@ -167,7 +200,7 @@ recompute:
   }
 
   z = scalbn_float(z, (int)q0);
-  z -= (float)8.0 * floor_float(z * (float)0.125);
+  z -= 8.0f * floor_float(z * 0.125f);
   n = (__int32_t)z;
   z -= (float)n;
   ih = 0;
@@ -178,7 +211,7 @@ recompute:
     ih = iq[jz - 1] >> (7 - q0);
   } else if (q0 == 0)
     ih = iq[jz - 1] >> 8;
-  else if (z >= (float)0.5)
+  else if (z >= 0.5f)
     ih = 2;
 
   if (ih > 0) {
@@ -221,7 +254,7 @@ recompute:
 
       for (i = jz + 1; i <= jz + k; i++) {
         f[jx + i] = (float)ipio2[jv + i];
-        for (j = 0, fw = 0.0; j <= jx; j++)
+        for (j = 0, fw = 0.0f; j <= jx; j++)
           fw += x[j] * f[jx + i - j];
         q[i] = fw;
       }
@@ -230,7 +263,7 @@ recompute:
     }
   }
 
-  if (z == (float)0.0) {
+  if (z == 0.0f) {
     jz -= 1;
     q0 -= 8;
     while (iq[jz] == 0) {
@@ -256,54 +289,50 @@ recompute:
   }
 
   for (i = jz; i >= 0; i--) {
-    for (fw = 0.0, k = 0; k <= jp && k <= jz - i; k++)
+    for (fw = 0.0f, k = 0; k <= jp && k <= jz - i; k++)
       fw += PIo2_krempio[k] * q[i + k];
     fq[jz - i] = fw;
   }
 
   switch (prec) {
-    case 0: {
-      fw = 0.0;
-      for (i = jz; i >= 0; i--)
-        fw += fq[i];
-      y[0] = (ih == 0) ? fw : -fw;
-      break;
+  case 0:
+    fw = 0.0f;
+    for (i = jz; i >= 0; i--)
+      fw += fq[i];
+    y[0] = (ih == 0) ? fw : -fw;
+    break;
+  case 1:
+  case 2:
+    fw = 0.0f;
+    for (i = jz; i >= 0; i--)
+      fw += fq[i];
+    y[0] = (ih == 0) ? fw : -fw;
+    fw = fq[0] - fw;
+    for (i = 1; i <= jz; i++)
+      fw += fq[i];
+    y[1] = (ih == 0) ? fw : -fw;
+    break;
+  case 3:
+    for (i = jz; i > 0; i--) {
+      fw = fq[i - 1] + fq[i];
+      fq[i] += fq[i - 1] - fw;
+      fq[i - 1] = fw;
     }
-    case 1:
-    case 2: {
-      fw = 0.0;
-      for (i = jz; i >= 0; i--)
-        fw += fq[i];
-      y[0] = (ih == 0) ? fw : -fw;
-      fw = fq[0] - fw;
-      for (i = 1; i <= jz; i++)
-        fw += fq[i];
-      y[1] = (ih == 0) ? fw : -fw;
-      break;
+    for (i = jz; i > 1; i--) {
+      fw = fq[i - 1] + fq[i];
+      fq[i] += fq[i - 1] - fw;
+      fq[i - 1] = fw;
     }
-    case 3: {
-      for (i = jz; i > 0; i--) {
-        fw = fq[i - 1] + fq[i];
-        fq[i] += fq[i - 1] - fw;
-        fq[i - 1] = fw;
-      }
-      for (i = jz; i > 1; i--) {
-        fw = fq[i - 1] + fq[i];
-        fq[i] += fq[i - 1] - fw;
-        fq[i - 1] = fw;
-      }
-      for (fw = 0.0, i = jz; i >= 2; i--)
-        fw += fq[i];
-      if (ih == 0) {
-        y[0] = fq[0];
-        y[1] = fq[1];
-        y[2] = fw;
-      } else {
-        y[0] = -fq[0];
-        y[1] = -fq[1];
-        y[2] = -fw;
-      }
-      break;
+    for (fw = 0.0f, i = jz; i >= 2; i--)
+      fw += fq[i];
+    if (ih == 0) {
+      y[0] = fq[0];
+      y[1] = fq[1];
+      y[2] = fw;
+    } else {
+      y[0] = -fq[0];
+      y[1] = -fq[1];
+      y[2] = -fw;
     }
   }
   return n & 7;
@@ -335,10 +364,17 @@ static const __int32_t npio2_hw_rempio[] = {
     0x41a35c00, 0x41afed00, 0x41bc7e00, 0x41c90f00, 0x41d5a000, 0x41e23100,
     0x41eec200, 0x41fb5300, 0x4203f200, 0x420a3a00, 0x42108300, 0x4216cb00,
     0x421d1400, 0x42235c00, 0x4229a500, 0x422fed00, 0x42363600, 0x423c7e00,
-    0x4242c700, 0x42490f00
-};
+    0x4242c700, 0x42490f00};
 
-static const float zero_rempio = 0.0000000000e+00, half_rempio = 5.0000000000e-01, two8_rempio = 2.5600000000e+02, invpio2_rempio = 6.3661980629e-01, pio2_1_rempio = 1.5707855225e+00, pio2_1t_rempio = 1.0804334124e-05, pio2_2_rempio = 1.0804273188e-05, pio2_2t_rempio = 6.0770999344e-11, pio2_3_rempio = 6.0770943833e-11, pio2_3t_rempio = 6.1232342629e-17;
+static const float zero_rempio = 0.0f, half_rempio = 0.5f,
+                   two8_rempio = 2.5600000000e+02f,
+                   invpio2_rempio = 6.3661980629e-01f,
+                   pio2_1_rempio = 1.5707855225e+00f,
+                   pio2_1t_rempio = 1.0804334124e-05f,
+                   pio2_2_rempio = 1.0804273188e-05f,
+                   pio2_2t_rempio = 6.0770999344e-11f,
+                   pio2_3_rempio = 6.0770943833e-11f,
+                   pio2_3t_rempio = 6.1232342629e-17f;
 
 __int32_t __ieee754_rem_pio2f(float x, float *y) {
   float z, w, t, r, fn;
@@ -346,9 +382,11 @@ __int32_t __ieee754_rem_pio2f(float x, float *y) {
   __int32_t i, j, n, ix, hx;
   int e0, nx;
 
-  ieee_float_shape_type g;
-  g.value = x;
-  hx = g.word;
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (x);
+    (hx) = gf_u.word;
+  } while (0);
   ix = hx & 0x7fffffff;
   if (ix <= 0x3f490fd8) {
     y[0] = x;
@@ -386,28 +424,30 @@ __int32_t __ieee754_rem_pio2f(float x, float *y) {
     fn = (float)n;
     r = t - fn * pio2_1_rempio;
     w = fn * pio2_1t_rempio;
-    
     if (n < 32 && (ix & 0xffffff00) != npio2_hw_rempio[n - 1]) {
       y[0] = r - w;
     } else {
       __uint32_t high;
       j = ix >> 23;
       y[0] = r - w;
-      ieee_float_shape_type h;
-      h.value = y[0];
-      high = h.word;
+      do {
+        ieee_float_shape_type gf_u;
+        gf_u.value = (y[0]);
+        (high) = gf_u.word;
+      } while (0);
       i = j - ((high >> 23) & 0xff);
-      
       if (i > 8) {
         t = r;
         w = fn * pio2_2_rempio;
         r = t - w;
         w = fn * pio2_2t_rempio - ((t - r) - w);
         y[0] = r - w;
-        h.value = y[0];
-        high = h.word;
+        do {
+          ieee_float_shape_type gf_u;
+          gf_u.value = (y[0]);
+          (high) = gf_u.word;
+        } while (0);
         i = j - ((high >> 23) & 0xff);
-        
         if (i > 25) {
           t = r;
           w = fn * pio2_3_rempio;
@@ -432,150 +472,135 @@ __int32_t __ieee754_rem_pio2f(float x, float *y) {
   }
 
   e0 = (int)((ix >> 23) - 134);
-  ieee_float_shape_type s;
-  s.word = (ix - ((__int32_t)e0 << 23));
-  z = s.value;
-  
+  do {
+    ieee_float_shape_type sf_u;
+    sf_u.word = (ix - ((__int32_t)e0 << 23));
+    (z) = sf_u.value;
+  } while (0);
   for (i = 0; i < 2; i++) {
     tx[i] = (float)((__int32_t)(z));
     z = (z - tx[i]) * two8_rempio;
   }
-  
   tx[2] = z;
   nx = 3;
-  
   while (tx[nx - 1] == zero_rempio)
     nx--;
-    
   n = __kernel_rem_pio2f(tx, y, e0, nx, 2, two_over_pi_rempio);
-  
   if (hx < 0) {
     y[0] = -y[0];
     y[1] = -y[1];
     return -n;
   }
-  
   return n;
 }
 
-static const float half_ksin = 5.0000000000e-01;
-static const float S1_ksin = -1.6666667163e-01;
-static const float S2_ksin = 8.3333337680e-03;
-static const float S3_ksin = -1.9841270114e-04;
-static const float S4_ksin = 2.7557314297e-06;
-static const float S5_ksin = -2.5050759689e-08;
-static const float S6_ksin = 1.5896910177e-10;
+static const float half_ksin = 0.5f, S1_ksin = -1.6666667163e-01f,
+                   S2_ksin = 8.3333337680e-03f, S3_ksin = -1.9841270114e-04f,
+                   S4_ksin = 2.7557314297e-06f, S5_ksin = -2.5050759689e-08f,
+                   S6_ksin = 1.5896910177e-10f;
 
 float __kernel_sinf(float x, float y, int iy) {
   float z, r, v;
   __int32_t ix;
-  ieee_float_shape_type g;
-  g.value = x;
-  ix = g.word;
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (x);
+    (ix) = gf_u.word;
+  } while (0);
   ix &= 0x7fffffff;
-  
   if (ix < 0x32000000) {
     if ((int)x == 0)
       return x;
   }
-  
   z = x * x;
   v = z * x;
   r = S2_ksin + z * (S3_ksin + z * (S4_ksin + z * (S5_ksin + z * S6_ksin)));
-  
   if (iy == 0)
     return x + v * (S1_ksin + z * r);
   else
     return x - ((z * (half_ksin * y - v * r) - y) - v * S1_ksin);
 }
 
-static const float one_kcos = 1.0000000000e+00;
-static const float C1_kcos = 4.1666667908e-02;
-static const float C2_kcos = -1.3888889225e-03;
-static const float C3_kcos = 2.4801587642e-05;
-static const float C4_kcos = -2.7557314297e-07;
-static const float C5_kcos = 2.0875723372e-09;
-static const float C6_kcos = -1.1359647598e-11;
+static const float one_kcos = 1.0000000000e+00f, C1_kcos = 4.1666667908e-02f,
+                   C2_kcos = -1.3888889225e-03f, C3_kcos = 2.4801587642e-05f,
+                   C4_kcos = -2.7557314297e-07f, C5_kcos = 2.0875723372e-09f,
+                   C6_kcos = -1.1359647598e-11f;
 
 float __kernel_cosf(float x, float y) {
   float a, hz, z, r, qx;
   __int32_t ix;
-  ieee_float_shape_type g;
-  g.value = x;
-  ix = g.word;
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (x);
+    (ix) = gf_u.word;
+  } while (0);
   ix &= 0x7fffffff;
-  
   if (ix < 0x32000000) {
     if (((int)x) == 0)
       return one_kcos;
   }
-  
   z = x * x;
-  r = z * (C1_kcos + z * (C2_kcos + z * (C3_kcos + z * (C4_kcos + z * (C5_kcos + z * C6_kcos)))));
-  
+  r = z * (C1_kcos +
+           z * (C2_kcos +
+                z * (C3_kcos + z * (C4_kcos + z * (C5_kcos + z * C6_kcos)))));
   if (ix < 0x3e99999a)
-    return one_kcos - ((float)0.5 * z - (z * r - x * y));
+    return one_kcos - ((0.5f * z - (z * r - x * y)));
   else {
     if (ix > 0x3f480000) {
-      qx = (float)0.28125;
+      qx = 0.28125f;
     } else {
-      ieee_float_shape_type s;
-      s.word = (ix - 0x01000000);
-      qx = s.value;
+      do {
+        ieee_float_shape_type sf_u;
+        sf_u.word = (ix - 0x01000000);
+        (qx) = sf_u.value;
+      } while (0);
     }
-    hz = (float)0.5 * z - qx;
+    hz = 0.5f * z - qx;
     a = one_kcos - qx;
     return a - (hz - (z * r - x * y));
   }
 }
 
 float cos_float(float x) {
-  float y[2] = {0.0f, 0.0f};
-  float z = 0.0;
+  float y[2], z = 0.0f;
   __int32_t n, ix;
-  ieee_float_shape_type g;
-  g.value = x;
-  ix = g.word;
+
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (x);
+    (ix) = gf_u.word;
+  } while (0);
 
   ix &= 0x7fffffff;
-  
   if (ix <= 0x3f490fd8)
     return __kernel_cosf(x, z);
+
   else if (!((ix) < 0x7f800000L))
     return x - x;
+
   else {
     n = __ieee754_rem_pio2f(x, y);
     switch (n & 3) {
-      case 0: 
-        return __kernel_cosf(y[0], y[1]);
-      case 1:
-        return -__kernel_sinf(y[0], y[1], 1);
-      case 2:
-        return -__kernel_cosf(y[0], y[1]);
-      default:
-        return __kernel_sinf(y[0], y[1], 1);
+    case 0:
+      return __kernel_cosf(y[0], y[1]);
+    case 1:
+      return -__kernel_sinf(y[0], y[1], 1);
+    case 2:
+      return -__kernel_cosf(y[0], y[1]);
+    default:
+      return __kernel_sinf(y[0], y[1], 1);
     }
   }
 }
 
-void reach_error() {
-  printf("Assertion failed!\n");
-}
-
 int main() {
-  /* 
-   * REQ-BL-0320//GTD-TR-01-BL-0015, GTD-TR-01-BL-0026/T
-   * The cos and cosf procedures shall return 1.0 if the argument is +-0. 
-   */
   float x = -0.0f;
   float res = cos_float(x);
 
   // x is +-0, the result shall be 1.0
   if (res != 1.0f) {
-    reach_error();
-    return 1;
+    printf("Error: cos_float(%f) returned %f, expected 1.0\n", x, res);
+    assert(0);
   }
-  
-  printf("Test passed, cos(-0.0) = %f\n", res);
   return 0;
 }

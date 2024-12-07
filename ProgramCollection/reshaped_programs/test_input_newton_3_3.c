@@ -1,52 +1,75 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
 
-// Define constants directly instead of using a nondeterministic input
+// Define deterministic input value
+#define IN_VALUE 0.3f
+
+// Let's keep using VAL from existing logic for simplicity
+#define NR 3
+
+#if NR == 1
+#define VAL 0.2f
+#elif NR == 2
+#define VAL 0.4f
+#elif NR == 3
 #define VAL 0.6f
-#define PREDEFINED_IN 0.05f  // Deterministic input
+#elif NR == 4
+#define VAL 0.8f
+#elif NR == 5
+#define VAL 1.0f
+#elif NR == 6
+#define VAL 1.2f
+#elif NR == 7
+#define VAL 1.4f
+#elif NR == 8
+#define VAL 2.0f
+#endif
+
 #define ITERATIONS 3
 
-// Ensure iterations are within the specified range
 #if !(ITERATIONS >= 1 && ITERATIONS <= 3)
 #error Number of iterations must be between 1 and 3
-#endif 
+#endif
 
-// Function to emulate assuming a condition
-void assume_abort_if_not(int cond) {
-  if (!cond) {
-    printf("Condition failed, aborting.\n");
-    abort();
-  }
+void reach_error() { 
+    assert(0); 
 }
 
-// Mathematical function approximations
+void assume_abort_if_not(int cond) {
+    if (!cond) {
+        abort();
+    }
+}
+
 float f(float x) {
-  return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
+    return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
 }
 
 float fp(float x) {
-  return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
+    return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
 }
 
 int main() {
-  // Use a predetermined, constant input value
-  float IN = PREDEFINED_IN;
-  assume_abort_if_not(IN > -VAL && IN < VAL);
+    // Fixed deterministic input
+    float IN = IN_VALUE;
+    assume_abort_if_not(IN > -VAL && IN < VAL);
 
-  float x = IN - f(IN) / fp(IN);
-
-#if ITERATIONS > 1
-  x = x - f(x) / fp(x);
+    // Calculate `x` using the deterministic verified float
+    float x = IN - f(IN)/fp(IN);
+#if ITERATIONS > 1 
+    x = x - f(x)/fp(x);
 #if ITERATIONS > 2
-  x = x - f(x) / fp(x);
+    x = x - f(x)/fp(x);
 #endif 
 #endif
 
-  // Validate the final value of x
-  if (!(x < 0.1)) {
-    printf("Reach error triggered.\n");
-    assert(0);  // Trigger assertion failure to indicate error
-  }
+    if (!(x < 0.1)) {
+        reach_error();
+    }
 
-  return 0;
+    // Print the result and state, primarily for debug purposes
+    printf("Calculated x: %f\n", x);
+
+    return 0;
 }

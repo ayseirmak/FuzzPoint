@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <math.h>
-#include <float.h>
+#include <stdint.h>
+#include <math.h>  // For isnan function
 
 typedef int __int32_t;
 typedef unsigned int __uint32_t;
@@ -10,42 +10,45 @@ typedef union {
   __uint32_t word;
 } ieee_float_shape_type;
 
-static const float one_fmod = 1.0, Zero_fmod[] = {0.0, -0.0};
+static const float one_fmod = 1.0, Zero_fmod[] = {
+                                       0.0,
+                                       -0.0,
+};
 
 float fmod_float(float x, float y) {
   __int32_t n, hx, hy, hz, ix, iy, sx, i;
 
-  ieee_float_shape_type gf_u;
-  gf_u.value = x;
-  hx = gf_u.word;
-
-  gf_u.value = y;
-  hy = gf_u.word;
-
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (x);
+    (hx) = gf_u.word;
+  } while (0);
+  do {
+    ieee_float_shape_type gf_u;
+    gf_u.value = (y);
+    (hy) = gf_u.word;
+  } while (0);
   sx = hx & 0x80000000;
   hx ^= sx;
   hy &= 0x7fffffff;
 
-  if ((hy == 0) || !(hx < 0x7f800000L) || (hy > 0x7f800000L))
-    return (x * y) / (x * y);  // Generate NaN
+  if (((hy) == 0) || !((hx) < 0x7f800000L) || ((hy) > 0x7f800000L))
+    return (x * y) / (x * y);
   if (hx < hy)
     return x;
   if (hx == hy)
     return Zero_fmod[(__uint32_t)sx >> 31];
-
-  if (hx < 0x00800000L) {
+  if (((hx) < 0x00800000L)) {
     for (ix = -126, i = (hx << 8); i > 0; i <<= 1)
       ix -= 1;
-  } else {
+  } else
     ix = (hx >> 23) - 127;
-  }
 
-  if (hy < 0x00800000L) {
+  if (((hy) < 0x00800000L)) {
     for (iy = -126, i = (hy << 8); i >= 0; i <<= 1)
       iy -= 1;
-  } else {
+  } else
     iy = (hy >> 23) - 127;
-  }
 
   if (ix >= -126)
     hx = 0x00800000 | (0x007fffff & hx);
@@ -53,14 +56,12 @@ float fmod_float(float x, float y) {
     n = -126 - ix;
     hx = hx << n;
   }
-
   if (iy >= -126)
     hy = 0x00800000 | (0x007fffff & hy);
   else {
     n = -126 - iy;
     hy = hy << n;
   }
-
   n = ix - iy;
   while (n--) {
     hz = hx - hy;
@@ -76,48 +77,53 @@ float fmod_float(float x, float y) {
   if (hz >= 0) {
     hx = hz;
   }
-  
+
   if (hx == 0)
     return Zero_fmod[(__uint32_t)sx >> 31];
-
   while (hx < 0x00800000) {
     hx = hx + hx;
     iy -= 1;
   }
-
   if (iy >= -126) {
     hx = ((hx - 0x00800000) | ((iy + 127) << 23));
-    ieee_float_shape_type sf_u;
-    sf_u.word = (hx | sx);
-    x = sf_u.value;
+    do {
+      ieee_float_shape_type sf_u;
+      sf_u.word = (hx | sx);
+      (x) = sf_u.value;
+    } while (0);
   } else {
     n = -126 - iy;
     hx >>= n;
-    ieee_float_shape_type sf_u;
-    sf_u.word = (hx | sx);
-    x = sf_u.value;
+    do {
+      ieee_float_shape_type sf_u;
+      sf_u.word = (hx | sx);
+      (x) = sf_u.value;
+    } while (0);
     x *= one_fmod;
   }
-
   return x;
 }
 
 // nan check for floats
-int isnan_float(float x) {
-  return x != x;
-}
+int isnan_float(float x) { return x != x; }
 
 int main() {
-  float x = INFINITY;  // Set x as positive infinity
-  float y = 3.14159f;  // Replace nondeterministic input with a fixed value
+
+  /* REQ-BL-1121:
+   * The fmod and fmodf procedures shall return NaN , if the argument x is
+   * +-Inf.
+   */
+
+  float x = 1.0f / 0.0f; // INF
+  float y = 3.14f; // Fixed value for deterministic behavior
   float res = fmod_float(x, y);
 
-  // Check if result is NaN
+  // y is a fixed value, x is +inf, the result shall be NAN
   if (!isnan_float(res)) {
-    printf("Error: Test failed. Expected NaN.\n");
+    printf("Error: Expected NaN\n");
     return 1;
   }
 
-  printf("Test passed. Result is NaN as expected.\n");
+  printf("Success: Result is NaN as expected\n");
   return 0;
 }

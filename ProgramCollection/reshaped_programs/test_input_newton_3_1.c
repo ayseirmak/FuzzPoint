@@ -1,6 +1,20 @@
-#include <stdio.h>
 #include <assert.h>
+#include <stdio.h>
 
+// Error handling function
+void reach_error() { 
+    printf("Error: Assertion failed.\n"); 
+    assert(0); 
+}
+
+// Replacement for the `assume_abort_if_not` function
+void assume_abort_if_not(int cond) {
+    if (!cond) {
+        abort();
+    }
+}
+
+// Macro definitions
 #define NR 1
 
 #if NR == 1
@@ -27,38 +41,32 @@
 #error Number of iterations must be between 1 and 3
 #endif 
 
+// Function declarations
 float f(float x) {
-    return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
+    return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
 }
 
 float fp(float x) {
-    return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
+    return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
 }
 
 int main() {
-    // Use a fixed deterministic input within the defined range
-    float IN = 0.1f;
-    
-    // Ensure the input is within the correct range
-    if (!(IN > -VAL && IN < VAL)) {
-        printf("Input assumption not met!\n");
-        return 1;
-    }
+    // Fixed deterministic input replacing the nondeterministic function call
+    float IN = 0.15f; 
+    assume_abort_if_not(IN > -VAL && IN < VAL);
 
-    // Perform the calculations
-    float x = IN - f(IN) / fp(IN);
+    // Newton's method for refinement
+    float x = IN - f(IN)/fp(IN);
 #if ITERATIONS > 1 
-    x = x - f(x) / fp(x);
+    x = x - f(x)/fp(x);
 #if ITERATIONS > 2
-    x = x - f(x) / fp(x);
+    x = x - f(x)/fp(x);
 #endif 
 #endif
 
-    // Verify the condition
+    // Assertion check
     if (!(x < 0.1)) {
-        printf("Reach error: Assertion failed!\n");
-    } else {
-        printf("Calculation successful: x = %f\n", x);
+        reach_error();
     }
 
     return 0;

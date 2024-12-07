@@ -1,15 +1,5 @@
-#include <stdio.h>
 #include <assert.h>
 
-// Function to simulate the 'reach_error' function, replacing verification-specific functionality
-void reach_error() {
-    assert(0);
-}
-
-// Predefined constant, representing a deterministic input
-#define FIXED_INPUT 0.5f  // Example fixed input within the range [0.0f, 1.0f)
-
-// Use this to select the VAL value as per original program's preprocessor directives
 #define NR 1
 
 #if NR == 1
@@ -30,28 +20,26 @@ void reach_error() {
 #define VAL 1.5f
 #endif
 
+void reach_error() {
+    assert(0);
+}
+
+void assume_abort_if_not(int cond) {
+    if (!cond) { abort(); }
+}
+
 int main() {
-    // Deterministic input with explicitly defined input value in place of non-deterministic behavior
-    float IN = FIXED_INPUT;
-    
-    // Sure the input meets the conditions, else static handling; not aborting dynamically here.
-    if (!(IN >= 0.0f && IN < 1.0f)) {
-        printf("Error: Input is out of acceptable range\n");
-        return 1;
-    }
+    // Fixed deterministic input for IN
+    float IN = 0.5f; // Value chosen between 0.0f and 1.0f for IN
+
+    assume_abort_if_not(IN >= 0.0f && IN < 1.0f); // Safety assumption
 
     float x = IN;
-    
-    float result = 
-        1.0f + 0.5f*x - 0.125f*x*x + 0.0625f*x*x*x - 0.0390625f*x*x*x*x;
+    float result = 1.0f + 0.5f*x - 0.125f*x*x + 0.0625f*x*x*x - 0.0390625f*x*x*x*x;
 
-    // Check condition and print message instead of triggering reach_error
     if (!(result >= 0.0f && result < VAL)) {
-        printf("Reach error: Result is out of acceptable range\n");
-        return 1;
+        reach_error();
     }
-    
-    printf("Execution completed successfully: Result = %f\n", result);
-    
+
     return 0;
 }

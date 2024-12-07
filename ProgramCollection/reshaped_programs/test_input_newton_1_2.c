@@ -1,5 +1,17 @@
-#include <assert.h>
 #include <stdio.h>
+#include <assert.h>
+#include <math.h>
+
+void reach_error() { 
+    assert(0); 
+}
+
+void assume_abort_if_not(int cond) {
+    if (!cond) {
+        printf("Aborted due to unmet assumption.\n");
+        abort();
+    }
+}
 
 #define NR 2
 
@@ -25,39 +37,33 @@
 
 #if !(ITERATIONS >= 1 && ITERATIONS <= 3)
 #error Number of iterations must be between 1 and 3
-#endif 
+#endif
 
 float f(float x) {
-    return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
+    return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
 }
 
 float fp(float x) {
-    return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
+    return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
 }
 
 int main() {
-    // Deterministic input
-    float IN = 0.3f;
+    // Fixed input value to ensure deterministic behavior
+    float IN = 0.3f;  // Example input value within the range (-VAL, VAL)
     
-    // Ensure IN is within the assumed range
-    if (!(IN > -VAL && IN < VAL)) {
-        printf("Input assumption violated, terminating program.\n");
-        return 0;
-    }
+    assume_abort_if_not(IN > -VAL && IN < VAL);
 
-    float x = IN - f(IN) / fp(IN);
-    
-#if ITERATIONS > 1
-    x = x - f(x) / fp(x);
+    float x = IN - f(IN)/fp(IN);
+#if ITERATIONS > 1 
+    x = x - f(x)/fp(x);
 #if ITERATIONS > 2
-    x = x - f(x) / fp(x);
+    x = x - f(x)/fp(x);
+#endif 
 #endif
-#endif
-    
+
     if (!(x < 0.1)) {
-        assert(0); // reach_error equivalent
+        reach_error();
     }
 
-    printf("Program completed successfully.\n");
     return 0;
 }

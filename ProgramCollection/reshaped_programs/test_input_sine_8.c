@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <assert.h>
 
-// Define HALFPI as a constant as no dynamic input is allowed
 #define HALFPI 1.57079632679f
-
-// Define NR and VAL based on the original program's conditions
 #define NR 8
+
 #if NR == 1
-#define VAL 0.99
+#define VAL 0.99f
 #elif NR == 2
 #define VAL 1.0f
 #elif NR == 3
@@ -24,33 +22,28 @@
 #define VAL 2.0f
 #endif
 
-// Function to simulate the reach_error behavior
-void reach_error() {
-    printf("Error: Assertion failed\n");
-    assert(0);
+void reach_error() { assert(0); }
+void assume_abort_if_not(int cond) {
+    if (!cond) { 
+        printf("Assumption failed, aborting.\n");
+        abort();
+    }
 }
 
 int main() {
-    // Initialize IN with a deterministic value within the allowed range
-    float IN = 1.0f;
+    // Fixed input value for deterministic behavior
+    float IN = 1.0f;  // A chosen value within -HALFPI to HALFPI for testing
 
-    // Check the assumption as a condition before proceeding
-    if (!(IN > -HALFPI && IN < HALFPI)) {
-        printf("Assumption not met\n");
-        return 0;
-    }
+    assume_abort_if_not(IN > -HALFPI && IN < HALFPI);
 
     float x = IN;
-    
-    // Compute the mathematical result
-    float result = x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+    float result = x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
 
-    // Check the result using assert to ensure it is within the range
     if (!(result <= VAL && result >= -VAL)) {
         reach_error();
     }
 
-    // Print the result for verification purposes
-    printf("Result: %f\n", result);
+    printf("Computation was successful without reaching error.\n");
+
     return 0;
 }

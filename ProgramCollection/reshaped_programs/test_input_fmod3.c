@@ -1,38 +1,50 @@
-#include <math.h>
 #include <stdio.h>
-#include <stdbool.h>
+#include <math.h>
 #include <assert.h>
 
-void reach_error() { 
-    assert(0); 
+// This function simulates the behavior of the non-deterministic input
+double fixed_input_double() {
+    return 1.0; // Fixed deterministic input
 }
 
-void __VERIFIER_assert(int cond) { 
-    if (!cond) { 
+void assume_abort_if_not(int cond) {
+    if (!cond) {
+        printf("Aborting due to assumption failure.\n");
+        abort();
+    }
+}
+
+void reach_error() {
+    assert(0);
+}
+
+void __VERIFIER_assert(int cond) {
+    if (!cond) {
+        printf("Error reached: Assertion failed.\n");
         reach_error();
-    } 
-    return; 
+        abort();
+    }
 }
 
 int main() {
-    // Deterministic value for 'a' (must not be 0 and not NaN)
-    double a = 1.0;  // Example value that meets the conditions
+    // Instead of nondeterministic input, use a fixed deterministic input
+    double a = fixed_input_double();
 
-    // Removed assume_abort_if_not because 'a' is already valid by choice
+    // Check the constraints on 'a'
+    assume_abort_if_not(!isnan(a));
+    assume_abort_if_not(a != 0.0);
 
+    // Check and assert properties related to zero modulus operation
     double plus_zero = 0.0;
     double plus_zero_mod = fmod(plus_zero, a);
-    bool plus_zero_mod_sign = signbit(plus_zero);
-
+    _Bool plus_zero_mod_sign = signbit(plus_zero);
     __VERIFIER_assert((plus_zero_mod == 0.0) && !plus_zero_mod_sign);
 
     double minus_zero = -0.0;
     double minus_zero_mod = fmod(minus_zero, a);
-    bool minus_zero_mod_sign = signbit(minus_zero);
-
+    _Bool minus_zero_mod_sign = signbit(minus_zero);
     __VERIFIER_assert((minus_zero_mod == 0.0) && minus_zero_mod_sign);
 
-    printf("Assertions passed without errors.\n");
-
+    printf("Program completed successfully without error.\n");
     return 0;
 }

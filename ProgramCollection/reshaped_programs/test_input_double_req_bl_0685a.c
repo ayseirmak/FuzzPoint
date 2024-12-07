@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdint.h>
 #include <assert.h>
 
-typedef int32_t __int32_t;
-typedef uint32_t __uint32_t; 
+typedef int __int32_t;
+typedef unsigned int __uint32_t;
 
+/* A union which permits us to convert between a double and two 32 bit ints. */
 typedef union {
     double value;
     struct {
@@ -19,11 +19,11 @@ double fabs_double(double x) {
     ieee_double_shape_type gh_u;
     gh_u.value = x;
     high = gh_u.parts.msw;
-
     ieee_double_shape_type sh_u;
     sh_u.value = x;
     sh_u.parts.msw = high & 0x7fffffff;
-    return sh_u.value;
+    x = sh_u.value;
+    return x;
 }
 
 static const double atanhi_atan[] = {
@@ -41,17 +41,22 @@ static const double atanlo_atan[] = {
 };
 
 static const double aT_atan[] = {
-    3.33333333333329318027e-01, -1.99999999998764832476e-01,
-    1.42857142725034663711e-01, -1.11111104054623557880e-01,
-    9.09088713343650656196e-02, -7.69187620504482999495e-02,
-    6.66107313738753120669e-02, -5.83357013379057348645e-02,
-    4.97687799461593236017e-02, -3.65315727442169155270e-02,
+    3.33333333333329318027e-01,
+    -1.99999999998764832476e-01,
+    1.42857142725034663711e-01,
+    -1.11111104054623557880e-01,
+    9.09088713343650656196e-02,
+    -7.69187620504482999495e-02,
+    6.66107313738753120669e-02,
+    -5.83357013379057348645e-02,
+    4.97687799461593236017e-02,
+    -3.65315727442169155270e-02,
     1.62858201153657823623e-02,
 };
 
 static const double one_atan = 1.0, pi_o_4 = 7.8539816339744827900E-01,
-    pi_o_2 = 1.5707963267948965580E+00,
-    pi = 3.1415926535897931160E+00, huge_atan = 1.0e300;
+                    pi_o_2 = 1.5707963267948965580E+00,
+                    pi = 3.1415926535897931160E+00, huge_atan = 1.0e300;
 
 double atan_double(double x) {
     double w, s1, s2, z;
@@ -61,13 +66,11 @@ double atan_double(double x) {
     gh_u.value = x;
     hx = gh_u.parts.msw;
     ix = hx & 0x7fffffff;
-
     if (ix >= 0x44100000) {
         __uint32_t low;
         ieee_double_shape_type gl_u;
         gl_u.value = x;
         low = gl_u.parts.lsw;
-
         if (ix > 0x7ff00000 || (ix == 0x7ff00000 && (low != 0)))
             return x + x;
         if (hx > 0)
@@ -120,25 +123,22 @@ double atan_double(double x) {
 }
 
 static const double tiny_atan2 = 1.0e-300, zero_atan2 = 0.0,
-    pi_lo_atan2 = 1.2246467991473531772E-16;
+                    pi_lo_atan2 = 1.2246467991473531772E-16;
 
 double __ieee754_atan2(double y, double x) {
     double z;
     __int32_t k, m, hx, hy, ix, iy;
     __uint32_t lx, ly;
 
-    ieee_double_shape_type ew_u_x;
-    ew_u_x.value = x;
-    hx = ew_u_x.parts.msw;
-    lx = ew_u_x.parts.lsw;
+    ieee_double_shape_type ew_u;
+    ew_u.value = x;
+    hx = ew_u.parts.msw;
+    lx = ew_u.parts.lsw;
     ix = hx & 0x7fffffff;
-
-    ieee_double_shape_type ew_u_y;
-    ew_u_y.value = y;
-    hy = ew_u_y.parts.msw;
-    ly = ew_u_y.parts.lsw;
+    ew_u.value = y;
+    hy = ew_u.parts.msw;
+    ly = ew_u.parts.lsw;
     iy = hy & 0x7fffffff;
-
     if (((ix | ((lx | -lx) >> 31)) > 0x7ff00000) ||
         ((iy | ((ly | -ly) >> 31)) > 0x7ff00000))
         return x + y;
@@ -148,13 +148,13 @@ double __ieee754_atan2(double y, double x) {
 
     if ((iy | ly) == 0) {
         switch (m) {
-            case 0:
-            case 1:
-                return y;
-            case 2:
-                return pi + tiny_atan2;
-            case 3:
-                return -pi - tiny_atan2;
+        case 0:
+        case 1:
+            return y;
+        case 2:
+            return pi + tiny_atan2;
+        case 3:
+            return -pi - tiny_atan2;
         }
     }
 
@@ -164,25 +164,25 @@ double __ieee754_atan2(double y, double x) {
     if (ix == 0x7ff00000) {
         if (iy == 0x7ff00000) {
             switch (m) {
-                case 0:
-                    return pi_o_4 + tiny_atan2;
-                case 1:
-                    return -pi_o_4 - tiny_atan2;
-                case 2:
-                    return 3.0 * pi_o_4 + tiny_atan2;
-                case 3:
-                    return -3.0 * pi_o_4 - tiny_atan2;
+            case 0:
+                return pi_o_4 + tiny_atan2;
+            case 1:
+                return -pi_o_4 - tiny_atan2;
+            case 2:
+                return 3.0 * pi_o_4 + tiny_atan2;
+            case 3:
+                return -3.0 * pi_o_4 - tiny_atan2;
             }
         } else {
             switch (m) {
-                case 0:
-                    return zero_atan2;
-                case 1:
-                    return -zero_atan2;
-                case 2:
-                    return pi + tiny_atan2;
-                case 3:
-                    return -pi - tiny_atan2;
+            case 0:
+                return zero_atan2;
+            case 1:
+                return -zero_atan2;
+            case 2:
+                return pi + tiny_atan2;
+            case 3:
+                return -pi - tiny_atan2;
             }
         }
     }
@@ -198,24 +198,23 @@ double __ieee754_atan2(double y, double x) {
     else
         z = atan_double(fabs_double(y / x));
     switch (m) {
-        case 0:
-            return z;
-        case 1: {
-            __uint32_t zh;
-            ieee_double_shape_type gh_u;
-            gh_u.value = z;
-            zh = gh_u.parts.msw;
-
-            ieee_double_shape_type sh_u;
-            sh_u.value = z;
-            sh_u.parts.msw = zh ^ 0x80000000;
-            z = sh_u.value;
-        }
-            return z;
-        case 2:
-            return pi - (z - pi_lo_atan2);
-        default:
-            return (z - pi_lo_atan2) - pi;
+    case 0:
+        return z;
+    case 1: {
+        __uint32_t zh;
+        ieee_double_shape_type gh_u;
+        gh_u.value = z;
+        zh = gh_u.parts.msw;
+        ieee_double_shape_type sh_u;
+        sh_u.value = z;
+        sh_u.parts.msw = zh ^ 0x80000000;
+        z = sh_u.value;
+        return z;
+    }
+    case 2:
+        return pi - (z - pi_lo_atan2);
+    default:
+        return (z - pi_lo_atan2) - pi;
     }
 }
 
@@ -225,7 +224,7 @@ int main() {
 
     double res = __ieee754_atan2(y, x);
 
-    assert(res == 3 * pi_o_4); // If the condition fails, the program will terminate.
-    
+    // x is -inf, y is +inf, the result shall be +3pi/4
+    assert(res == 3 * pi_o_4);
     return 0;
 }

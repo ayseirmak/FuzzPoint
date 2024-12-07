@@ -1,17 +1,13 @@
 #include <stdio.h>
-#include <assert.h>
+#include <math.h>
 
-typedef unsigned int __uint32_t;
+// Replaces the custom assertion error handling with standard error handling
+void reach_error() {
+    printf("Reach error occurred.\n");
+    abort();  // Using standard abort to terminate the program if an error is reached
+}
 
-typedef union {
-    double value;
-    struct {
-        __uint32_t lsw;
-        __uint32_t msw;
-    } parts;
-} ieee_double_shape_type;
-
-// NaN check for doubles
+// Nan check for doubles
 int isnan_double(double x) {
     return x != x;
 }
@@ -19,15 +15,25 @@ int isnan_double(double x) {
 static const double huge_ceil = 1.0e300;
 
 double ceil_double(double x) {
-    int i0, i1, j0;
-    __uint32_t i, j;
+    unsigned int i0, i1;
+    int j0;
+    unsigned int i, j;
 
-    ieee_double_shape_type ew_u;
+    // Extract the double components
+    union {
+        double value;
+        struct {
+            unsigned int lsw;
+            unsigned int msw;
+        } parts;
+    } ew_u;
+
     ew_u.value = x;
     i0 = ew_u.parts.msw;
     i1 = ew_u.parts.lsw;
 
     j0 = ((i0 >> 20) & 0x7ff) - 0x3ff;
+
     if (j0 < 20) {
         if (j0 < 0) {
             if (huge_ceil + x > 0.0) {
@@ -56,7 +62,7 @@ double ceil_double(double x) {
         else
             return x;
     } else {
-        i = ((__uint32_t)(0xffffffff)) >> (j0 - 20);
+        i = ((unsigned int) (0xffffffff)) >> (j0 - 20);
         if ((i1 & i) == 0)
             return x;
         if (huge_ceil + x > 0.0) {
@@ -74,10 +80,18 @@ double ceil_double(double x) {
         }
     }
 
-    ieee_double_shape_type iw_u;
-    iw_u.parts.msw = i0;
-    iw_u.parts.lsw = i1;
-    x = iw_u.value;
+    // Convert back to double
+    union {
+        double value;
+        struct {
+            unsigned int lsw;
+            unsigned int msw;
+        } parts;
+    } result_u;
+
+    result_u.parts.msw = i0;
+    result_u.parts.lsw = i1;
+    x = result_u.value;
 
     return x;
 }
@@ -87,9 +101,11 @@ int main() {
     double res = ceil_double(x);
 
     // x is -0, the result shall be x
-    assert(res == x);
+    if (res != x) {
+        reach_error();
+        return 1;
+    }
 
-    printf("Test passed: res = %f, x = %f\n", res, x);
-
+    printf("Test passed.\n");
     return 0;
 }

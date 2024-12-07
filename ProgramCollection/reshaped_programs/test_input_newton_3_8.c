@@ -1,9 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
 
 #define NR 8
 
-// Defines a fixed value based on NR
 #if NR == 1
 #define VAL 0.2f
 #elif NR == 2
@@ -28,42 +28,41 @@
 #error Number of iterations must be between 1 and 3
 #endif 
 
-// Function f defined as per original logic
-float f(float x)
-{
-  return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+void reach_error() { assert(0); }
+
+void assume_abort_if_not(int cond) {
+  if (!cond) { abort(); }
 }
 
-// Function fp defined as per original logic
-float fp(float x)
-{
-  return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
+float f(float x) {
+  return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
 }
 
-// Function to report error, replacing reach_error
-void report_error() {
-    printf("Error: Assertion failed!\n");
-    assert(0);
+float fp(float x) {
+  return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
 }
 
-int main()
-{
-    // Static deterministic input replacing nondeterministic function
-    float IN = 1.5f; // A fixed deterministic input
-    assert(IN > -VAL && IN < VAL); // Replacing assume_abort_if_not
+int main() {
+  // Using a fixed deterministic input instead of non-deterministic input
+  float IN = 1.0f;  // Ensure this value is within the defined constraints
 
-    float x = IN - f(IN)/fp(IN);
+  // Validate that the initial condition is within bounds
+  assume_abort_if_not(IN > -VAL && IN < VAL);
+
+  // Perform the iterations as per the existing logic
+  float x = IN - f(IN) / fp(IN);
 #if ITERATIONS > 1 
-    x = x - f(x)/fp(x);
+  x = x - f(x) / fp(x);
 #if ITERATIONS > 2
-    x = x - f(x)/fp(x);
+  x = x - f(x) / fp(x);
 #endif 
 #endif
 
-    // Checking condition and reporting error if necessary
-    if(!(x < 0.1)) {
-        report_error();
-    }
+  // Verify that the resultant x satisfies the condition
+  if (!(x < 0.1)) {
+    reach_error();
+  }
 
-    return 0;
+  printf("Final x after iterations: %f\n", x);
+  return 0;
 }

@@ -1,54 +1,48 @@
 #include <stdio.h>
 #include <assert.h>
 
-typedef unsigned int __uint32_t;
-
+// Structure for interpreting the parts of a double
 typedef union {
   double value;
   struct {
-    __uint32_t lsw;
-    __uint32_t msw;
+    unsigned int lsw;
+    unsigned int msw;
   } parts;
 } ieee_double_shape_type;
 
+// Function to check if a double is negative
 int __signbit_double(double x) {
-  __uint32_t msw;
-
+  unsigned int msw;
   ieee_double_shape_type gh_u;
   gh_u.value = x;
   msw = gh_u.parts.msw;
-
+  
   return (msw & 0x80000000) != 0;
 }
 
+// Function to return the absolute value of a double
 double fabs_double(double x) {
-  __uint32_t high;
+  unsigned int high;
   ieee_double_shape_type gh_u;
   gh_u.value = x;
   high = gh_u.parts.msw;
-
+  
   ieee_double_shape_type sh_u;
   sh_u.value = x;
-  sh_u.parts.msw = (high & 0x7fffffff);
+  sh_u.parts.msw = high & 0x7fffffff;
   x = sh_u.value;
-
+  
   return x;
 }
 
-void reach_error() {
-  // Report error, as assert failed
-  printf("Assertion failed in double_req_bl_1011b.c at line 3: reach_error\n");
-}
-
 int main() {
+  // Deterministic input value
   double x = -0.0;
   double res = fabs_double(x);
 
-  // x is +-0, result shall be +0
-  if (!(res == 0.0 && __signbit_double(res) == 0)) {
-    reach_error();
-    return 1;
-  }
+  // Requirement: fabs() should return +0 if input is +-0
+  assert(res == 0.0 && __signbit_double(res) == 0);
 
+  printf("Test passed: fabs_double(-0.0) = %f\n", res);
   return 0;
 }

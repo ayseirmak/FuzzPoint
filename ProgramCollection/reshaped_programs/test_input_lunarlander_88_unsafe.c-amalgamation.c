@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <float.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <string.h>
+#include <assert.h>
+
+#define MAX(X,Y) ((X) > (Y) ? (X) : (Y))
+#define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
+#define CLIP(X,L) (MAX(MIN(X,L), -L))
+
+static const float tensor_q_net_0_weight[64][8] = {
+    {0.21815462410449981689f, 0.23126253485679626465f, -0.14049024879932403564f, 0.39555677771568298340f, 0.38167867064476013184f, 0.29623535275459289551f, -0.11851222068071365356f, 0.38335996866226196289f},
+    // ... (rest of the weight matrix omitted for brevity)
+};
+
+static const float tensor_q_net_0_bias[64] = {
+    0.12845531105995178223f, 0.41714116930961608887f, 0.14017663896083831787f, // ... (rest of the bias array omitted for brevity)
+};
+
+static const float tensor_q_net_2_weight[64][64] = {
+    {0.039809726178646087646f, -0.050762739032506942749f, -0.19122810661792755127f, // ... (rest of the weight matrix omitted for brevity)
+};
+
+static const float tensor_q_net_2_bias[64] = {
+    0.10505031049251556396f, -0.051322553306818008423f, // ... (rest of the bias array omitted for brevity)
+};
+
+static const float tensor_q_net_4_weight[4][64] = {
+    {-0.17162241041660308838f, -0.080019518733024597168f, // ... (rest of the weight matrix omitted for brevity)
+};
+
+static const float tensor_q_net_4_bias[4] = {0.058722577989101409912f, -0.026569778099656105042f, // ... (rest of the bias array omitted for brevity)
+};
+
+void node_Flatten_0(const float tensor_input[1][8], float tensor_7[1][8]) {
+    memcpy(tensor_7, tensor_input, sizeof(float) * 8);
+}
+
+void node_Gemm_1(const float tensor_7[1][8], const float tensor_q_net_0_weight[64][8], const float tensor_q_net_0_bias[64], float tensor_8[1][64]) {
+    for (int r = 0; r < 1; r++)
+        for (int c = 0; c < 64; c++) {
+            float ABrc = 0;
+            for (int i = 0; i < 8; i++) {
+                ABrc += tensor_7[r][i] * tensor_q_net_0_weight[c][i];
+            }
+            tensor_8[r][c] = ABrc + tensor_q_net_0_bias[c];
+        }
+}
+
+void node_Relu_2(const float tensor_8[1][64], float tensor_9[1][64]) {
+    for (int i = 0; i < 64; i++) {
+        tensor_9[0][i] = MAX(0, tensor_8[0][i]);
+    }
+}
+
+void node_Gemm_3(const float tensor_9[1][64], const float tensor_q_net_2_weight[64][64], const float tensor_q_net_2_bias[64], float tensor_10[1][64]) {
+    for (int r = 0; r < 1; r++)
+        for (int c = 0; c < 64; c++) {
+            float ABrc = 0;
+            for (int i = 0; i < 64; i++) {
+                ABrc += tensor_9[0][i] * tensor_q_net_2_weight[c][i];
+            }
+            tensor_10[0][c] = ABrc + tensor_q_net_2_bias[c];
+        }
+}
+
+void node_Relu_4(const float tensor_10[1][64], float tensor_11[1][64]) {
+    for (int i = 0; i < 64; i++) {
+        tensor_11[0][i] = MAX(0, tensor_10[0][i]);
+    }
+}
+
+void node_Gemm_5(const float tensor_11[1][64], const float tensor_q_net_4_weight[4][64], const float tensor_q_net_4_bias[4], float tensor_output[1][4]) {
+    for (int r = 0; r < 1; r++)
+        for (int c = 0; c < 4; c++) {
+            float ABrc = 0;
+            for (int i = 0; i < 64; i++) {
+                ABrc += tensor_11[r][i] * tensor_q_net_4_weight[c][i];
+            }
+            tensor_output[r][c] = ABrc + tensor_q_net_4_bias[c];
+        }
+}
+
+void entry(const float tensor_input[1][8], float tensor_output[1][4]) {
+    union tensor_union_0 {
+        float tensor_7[1][8];
+        float tensor_9[1][64];
+        float tensor_11[1][64];
+    } tu0;
+
+    union tensor_union_1 {
+        float tensor_8[1][64];
+        float tensor_10[1][64];
+    } tu1;
+
+    node_Flatten_0(tensor_input, tu0.tensor_7);
+    node_Gemm_1(tu0.tensor_7, tensor_q_net_0_weight, tensor_q_net_0_bias, tu1.tensor_8);
+    node_Relu_2(tu1.tensor_8, tu0.tensor_9);
+    node_Gemm_3(tu0.tensor_9, tensor_q_net_2_weight, tensor_q_net_2_bias, tu1.tensor_10);
+    node_Relu_4(tu1.tensor_10, tu0.tensor_11);
+    node_Gemm_5(tu0.tensor_11, tensor_q_net_4_weight, tensor_q_net_4_bias, tensor_output);
+}
+
+int main() {
+    float tensor_input[1][8] = {
+        {-0.685, 0.075, 0.026, -0.031, 0.085, -0.058, 0.0, 1.0}
+    };
+    float tensor_output[1][4];
+
+    entry(tensor_input, tensor_output);
+
+    assert(!(tensor_output[0][2] <= tensor_output[0][3]));
+
+    printf("Assertion passed.\n");
+    return 0;
+}

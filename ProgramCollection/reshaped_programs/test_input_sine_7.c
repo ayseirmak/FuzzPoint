@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <assert.h>
+#include <stdlib.h>
 
 #define HALFPI 1.57079632679f
 #define NR 7
 
 #if NR == 1
-#define VAL 0.99
+#define VAL 0.99f
 #elif NR == 2
 #define VAL 1.0f
 #elif NR == 3
@@ -27,26 +28,27 @@ void reach_error() {
 }
 
 void assume_abort_if_not(int cond) {
-    if (!cond) {
-        printf("Aborting due to failed assumption.\n");
+    if(!cond) {
         abort();
     }
 }
 
 int main() {
-    // Initialize IN with a deterministic value within the specified range.
-    float IN = 1.0f;
+    // Define a fixed deterministic input value
+    float IN = 1.0f; // Example value within -HALFPI and HALFPI
 
-    // Ensure IN is within the deterministic range using assume_abort_if_not
+    // Check the assumption
     assume_abort_if_not(IN > -HALFPI && IN < HALFPI);
 
+    // Perform the computations
     float x = IN;
-    float result = x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+    float result = x - (x*x*x) / 6.0f + (x*x*x*x*x) / 120.0f + (x*x*x*x*x*x*x) / 5040.0f;
 
+    // Validate the computed result
     if (!(result <= VAL && result >= -VAL)) {
         reach_error();
     }
 
-    printf("Calculation completed successfully: result = %f\n", result);
+    // Since there's no output requirement, simply return
     return 0;
 }

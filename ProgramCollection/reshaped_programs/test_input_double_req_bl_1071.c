@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include <assert.h>
 
 typedef unsigned int __uint32_t;
@@ -11,15 +12,14 @@ typedef union {
   } parts;
 } ieee_double_shape_type;
 
-// NaN check for doubles
 int isnan_double(double x) { return x != x; }
 
 double trunc_double(double x) {
   int signbit;
-  unsigned int msw;
+  int msw;
   unsigned int lsw;
   int exponent_less_1023;
-
+  
   ieee_double_shape_type ew_u;
   ew_u.value = x;
   msw = ew_u.parts.msw;
@@ -27,7 +27,7 @@ double trunc_double(double x) {
 
   signbit = msw & 0x80000000;
   exponent_less_1023 = ((msw & 0x7ff00000) >> 20) - 1023;
-
+  
   if (exponent_less_1023 < 20) {
     if (exponent_less_1023 < 0) {
       ieee_double_shape_type iw_u;
@@ -50,16 +50,15 @@ double trunc_double(double x) {
     iw_u.parts.lsw = lsw & ~(0xffffffffu >> (exponent_less_1023 - 20));
     x = iw_u.value;
   }
+  
   return x;
 }
 
 int main() {
-  // REQ-BL-1071: The trunc and truncf procedures shall return NaN, if the argument x is NaN.
-  double x = 0.0 / 0.0; // NaN
-
+  double x = NAN;  // Using the standard NAN from math.h
   double res = trunc_double(x);
 
-  // x is NaN, the result shall be NaN
+  // Asserting that the result is still NaN since input is NaN
   assert(isnan_double(res));
 
   return 0;

@@ -2,24 +2,24 @@
 #include <stdlib.h>
 #include <assert.h>
 
-void reach_error() { 
-    assert(0 && "Reach error condition"); 
-}
+void reach_error() { assert(0); }
+void custom_assert(int cond) { if (!(cond)) { reach_error(); abort(); } return; }
 
 int main() {
     long double x = 1.0 / 7.0;
     long long res = 0;
+    int i = 1;
 
-    for (int i = 1; x != 0; i++) {
+    // Calculate the fractional digits for 1/7, multiplied and added to 'res'
+    while (x != 0) {
         res += ((int)(x * 10) % 10) * (i * 10);
         x = (x * 10) - (int)(x * 10);
+        i++;
     }
 
-    assert(res == 67050);
-    if (res != 67050) {
-        reach_error();
-        abort();
-    }
+    // Assert that the calculated res equals 67050
+    custom_assert(res == 67050);
 
+    printf("Result: %lld\n", res); // Optional: Print result for verification
     return 0;
 }

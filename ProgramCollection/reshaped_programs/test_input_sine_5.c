@@ -4,8 +4,9 @@
 #define HALFPI 1.57079632679f
 #define NR 5
 
+// Define VAL based on NR value
 #if NR == 1
-#define VAL 0.99
+#define VAL 0.99f
 #elif NR == 2
 #define VAL 1.0f
 #elif NR == 3
@@ -20,31 +21,36 @@
 #define VAL 1.5f
 #elif NR == 8
 #define VAL 2.0f
+#else
+#error "Unsupported NR value."
 #endif
 
-void reach_error() {
-    assert(0);
+void reach_error() { 
+    printf("Reach error has been triggered.\n");
 }
 
 void assume_abort_if_not(int cond) {
-    if (!cond) {
-        printf("Assume failed, aborting.\n");
-        assert(0);
+    if(!cond) {
+        printf("Aborting due to assumption failure.\n");
+        abort();
     }
 }
 
 int main() {
-    // Instead of using __VERIFIER_nondet_float(), we provide a fixed float.
-    float IN = 0.5f;  // Example deterministic input within the range (-HALFPI, HALFPI)
+    // Deterministic input value
+    float IN = 1.0f; // Replace this value as needed within the range (-HALFPI, HALFPI)
     assume_abort_if_not(IN > -HALFPI && IN < HALFPI);
 
     float x = IN;
-    float result = x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
 
-    if (!(result <= VAL && result >= -VAL)) {
+    // Calculating the series result
+    float result = x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+
+    // Check the result within bounds
+    if(!(result <= VAL && result >= -VAL)) {
         reach_error();
     } else {
-        printf("Result is within the expected range: %f\n", result);
+        printf("Computation was successful. Result is within bounds.\n");
     }
 
     return 0;

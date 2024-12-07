@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <assert.h>
 
+void reach_error() { 
+    assert(0); 
+}
+
+void assume_abort_if_not(int cond) {
+    if(!cond) {
+        abort();
+    }
+}
+
 #define NR 3
 
 #if NR == 1
@@ -27,37 +37,31 @@
 #error Number of iterations must be between 1 and 3
 #endif 
 
-// Functions for computation
 float f(float x) {
-  return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
+    return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
 }
 
 float fp(float x) {
-  return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
+    return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
 }
 
 int main() {
-  // Fixed input value within the range (-VAL, VAL)
-  float IN = 0.5f; // Example fixed value; must be updated within the range -VAL to VAL
+    float IN = 0.5f;  // Replaced __VERIFIER_nondet_float() with a fixed value for deterministic input.
+    assume_abort_if_not(IN > -VAL && IN < VAL);
 
-  if (!(IN > -VAL && IN < VAL)) {
-    printf("Input is out of the expected range.\n");
-    return 1;
-  }
-
-  float x = IN - f(IN)/fp(IN);
+    float x = IN - f(IN)/fp(IN);
 #if ITERATIONS > 1 
-  x = x - f(x)/fp(x);
+    x = x - f(x)/fp(x);
 #if ITERATIONS > 2
-  x = x - f(x)/fp(x);
+    x = x - f(x)/fp(x);
 #endif 
 #endif
 
-  if (!(x < 0.1)) {
-    printf("Error: x is not less than 0.1\n");
-  } else {
-    printf("Success: x is less than 0.1\n");
-  }
+    if(!(x < 0.1f)) {
+        reach_error();
+    } else {
+        printf("Program completed without reaching error.\n");
+    }
 
-  return 0;
+    return 0;
 }

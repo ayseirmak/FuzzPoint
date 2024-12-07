@@ -1,39 +1,42 @@
 #include <stdio.h>
-#include <math.h>
+#include <stdint.h>
 #include <assert.h>
-
-typedef unsigned int __uint32_t;
 
 typedef union {
   float value;
-  __uint32_t word;
+  uint32_t word;
 } ieee_float_shape_type;
 
-int isnan_float(float x) { return x != x; }
+int isnan_float(float x) {
+  return x != x;
+}
 
 float fabs_float(float x) {
-  __uint32_t ix;
+  uint32_t ix;
   ieee_float_shape_type gf_u;
   gf_u.value = x;
   ix = gf_u.word;
 
   ieee_float_shape_type sf_u;
-  sf_u.word = (ix & 0x7fffffff);
+  sf_u.word = ix & 0x7fffffff;
   x = sf_u.value;
 
   return x;
 }
 
 int main() {
-  // The fabs and fabsf procedures shall return NaN if the argument x is NaN.
-
-  float x = NAN; // Fixed value representing NaN
+  // Assigning NAN to x
+  float x = 0.0f / 0.0f;
   float res = fabs_float(x);
 
-  // x is NaN; result should also be NaN
+  // Assert that if x is NaN, result should also be NaN
   assert(isnan_float(res));
 
-  printf("Test passed: fabs_float(NaN) produces NaN as expected.\n");
+  // If the assertion fails, print an error message
+  if (!isnan_float(res)) {
+    printf("Error: Result is not NaN as expected.\n");
+    return 1;
+  }
 
   return 0;
 }

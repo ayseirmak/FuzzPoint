@@ -1,8 +1,8 @@
-#include <assert.h>
 #include <stdio.h>
+#include <assert.h>
 
+// Constants
 #define NR 8
-
 #if NR == 1
 #define VAL 0.2f
 #elif NR == 2
@@ -27,46 +27,37 @@
 #error Number of iterations must be between 1 and 3
 #endif 
 
-void abort_program() {
-    printf("Aborting program...\n");
-    abort();
-}
-
-void reach_error() { 
-    assert(0); 
-}
-
-void assume_abort_if_not(int cond) {
-    if (!cond) {
-        abort_program();
-    }
-}
-
+// Function to be tested
 float f(float x) {
-    return x - (x * x * x) / 6.0f + (x * x * x * x * x) / 120.0f + (x * x * x * x * x * x * x) / 5040.0f;
+  return x - (x*x*x)/6.0f + (x*x*x*x*x)/120.0f + (x*x*x*x*x*x*x)/5040.0f;
 }
 
 float fp(float x) {
-    return 1 - (x * x) / 2.0f + (x * x * x * x) / 24.0f + (x * x * x * x * x * x) / 720.0f;
+  return 1 - (x*x)/2.0f + (x*x*x*x)/24.0f + (x*x*x*x*x*x)/720.0f;
+}
+
+void reach_error() {
+  assert(0);
 }
 
 int main() {
-    float IN = 1.5f; // Deterministic input value
-    assume_abort_if_not(IN > -VAL && IN < VAL);
+  // Deterministic input
+  float IN = 1.0f; // Choose a fixed test input value that satisfies the condition
+  assert(IN > -VAL && IN < VAL);
 
-    float x = IN - f(IN) / fp(IN);
+  float x = IN - f(IN)/fp(IN);
 #if ITERATIONS > 1 
-    x = x - f(x) / fp(x);
+  x = x - f(x)/fp(x);
 #if ITERATIONS > 2
-    x = x - f(x) / fp(x);
+  x = x - f(x)/fp(x);
 #endif 
 #endif
 
-    if (!(x < 0.1)) {
-        reach_error(); // This will trigger an assertion failure
-    }
+  if (!(x < 0.1f)) {
+    reach_error();
+  }
 
-    printf("Program completed successfully with final x = %.5f\n", x);
+  printf("Program completed without reaching error.\n");
 
-    return 0;
+  return 0;
 }
