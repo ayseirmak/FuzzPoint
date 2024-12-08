@@ -49,11 +49,14 @@ def extract_c_files_with_floats(clone_dir):
             if file.endswith(".c"):
                 file_path = os.path.join('./',root, file)
                 # Check for floating-point operations
-                with open(file_path, "r") as f:
-                    content = f.read()
-                if  pattern.search(content):
-                    if "int main()" in content:
-                        c_files.append(file_path)
+                try:
+                    with open(file_path, "r") as f:
+                        content = f.read()
+                    if  pattern.search(content):
+                        if "int main()" in content:
+                            c_files.append(file_path)
+                except UnicodeDecodeError as e:
+                    print("hata")
     print(f"Found {len(c_files)} C files with floating-point operations.")
     
     with open(file_text_path, "w") as f:
@@ -116,7 +119,7 @@ def compile_and_test(file_path):
                 err = comp_res.stderr.decode()
                 err = err.replace(file_path, "")
                 with open(COMP_ERR_log, "a") as comp_error_file:
-                    comp_error_file.write(f"Program: {file_path}\nError: {err}\n\n")
+                    comp_error_file.write(f"Program: {file_path}\nError: {err}\n")
                 return False
             else:
                 results["comp"] += 1
@@ -127,7 +130,7 @@ def compile_and_test(file_path):
             err = e.stderr.decode()
             err = err.replace(file_path, "")
             with open(COMP_ERR_log, "a") as comp_error_file:
-                comp_error_file.write(f"Program: {file_path}\nError: {err}\n\n")
+                comp_error_file.write(f"Program: {file_path}\nError: {err}\n")
             return False
             
 
@@ -172,10 +175,10 @@ def compile_and_test(file_path):
     if errors:
         with open(DET_ERR_log, "a") as detail_error_file:
             detail_error_file.write(f"Program: {file_path}\n")
-            detail_error_file.write(f"Error: {', '.join(errors)} \n\n")
+            detail_error_file.write(f"Error: {', '.join(errors)} \n")
     if results["comp"] == 3:
         with open(COMP_ERR_log, "a") as comp_error_file:
-                comp_error_file.write(f"Program: {file_path}\nCompiled successfully\n\n")
+                comp_error_file.write(f"Program: {file_path}\nCompiled successfully\n")
     
     snt = {key: value for key, value in results.items() if key != "comp"}
     # Check if all sanitizers have a value of 0
@@ -190,7 +193,7 @@ def compile_and_test(file_path):
     if failed_sanitizers:
         with open(SAN_ERR_log, "a") as sanitizer_error_file:
                 sanitizer_error_file.write(f"Program: {file_path}\n")
-                sanitizer_error_file.write(f"Error: {', '.join(failed_sanitizers)} \n\n")
+                sanitizer_error_file.write(f"Error: {', '.join(failed_sanitizers)} \n")
         print(f"{file_path} failed due to: {', '.join(failed_sanitizers)}")
     return False
             
@@ -256,8 +259,12 @@ def main():
 if __name__ == "__main__":
     #path = '/home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_double_req_bl_1252b.c'
     #compile_and_test(path)
-    
-    main()
+    CLONE_DIR = "ex"
+    c_files = extract_c_files_with_floats(CLONE_DIR)
+
+    #main()
+
+
 
     '''
     with open('c_files_list.txt', 'r') as file:
