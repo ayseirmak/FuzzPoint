@@ -1,0 +1,51 @@
+#include <complex.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+// Declare complex numbers with fixed volatile values
+volatile _Complex float f1 = 1.1f + 2.2f*I;
+volatile _Complex float f2 = 3.3f + 4.4f*I;
+volatile _Complex float f3 = 5.5f + 6.6f*I;
+volatile _Complex float f4 = 7.7f + 8.8f*I;
+volatile _Complex float f5 = 9.9f + 10.1f*I;
+volatile _Complex double d1 = 1.1 + 2.2*I;
+volatile _Complex double d2 = 3.3 + 4.4*I;
+volatile _Complex double d3 = 5.5 + 6.6*I;
+volatile _Complex double d4 = 7.7 + 8.8*I;
+volatile _Complex double d5 = 9.9 + 10.1*I;
+volatile _Complex long double ld1 = 1.1L + 2.2L*I;
+volatile _Complex long double ld2 = 3.3L + 4.4L*I;
+volatile _Complex long double ld3 = 5.5L + 6.6L*I;
+volatile _Complex long double ld4 = 7.7L + 8.8L*I;
+volatile _Complex long double ld5 = 9.9L + 10.1L*I;
+
+void abort_program(void) {
+    printf("Program aborted due to incorrect value.\n");
+    abort();
+}
+
+void check_float(int a, _Complex float a1, _Complex float a2, _Complex float a3, _Complex float a4, _Complex float a5) {
+    if (a1 != f1 || a2 != f2 || a3 != f3 || a4 != f4 || a5 != f5) {
+        abort_program();
+    }
+}
+
+void check_double(int a, _Complex double a1, _Complex double a2, _Complex double a3, _Complex double a4, _Complex double a5) {
+    if (a1 != d1 || a2 != d2 || a3 != d3 || a4 != d4 || a5 != d5) {
+        abort_program();
+    }
+}
+
+void check_long_double(int a, _Complex long double a1, _Complex long double a2, _Complex long double a3, _Complex long double a4, _Complex long double a5) {
+    if (a1 != ld1 || a2 != ld2 || a3 != ld3 || a4 != ld4 || a5 != ld5) {
+        abort_program();
+    }
+}
+
+int main(void) {
+    check_float(0, f1, f2, f3, f4, f5);
+    check_double(0, d1, d2, d3, d4, d5);
+    check_long_double(0, ld1, ld2, ld3, ld4, ld5);
+    printf("All checks passed successfully.\n");
+    return 0;
+}

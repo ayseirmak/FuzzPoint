@@ -1,0 +1,150 @@
+Program: reshaped_programs/test_input_d91ab04e7f9250bb175795fe7cad90abc4d67e58.c
+Error:  
+Program: reshaped_programs/test_input_11263cc249aa54d2c79e37b51cbeb90ad319372e.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-underflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_11263cc249aa54d2c79e37b51cbeb90ad319372e+0xa2486) (BuildId: 8836c21144d6a982edf4a432ed42432ae3ce4bc6) in __asan_memcpy 
+Program: reshaped_programs/test_input_b93726bc79de05dbc597ef16e4fc040c781eb993.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-underflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_b93726bc79de05dbc597ef16e4fc040c781eb993+0xa1486) (BuildId: e89e523c1c714a88fee741817741391d44e2b58c) in __asan_memcpy 
+Program: reshaped_programs/test_input_8183a64b124aaf42c806c34a406899e8bac12866.c
+Error:  
+Program: reshaped_programs/test_input_09642ba5fb8197067c7db1fc269e628248b086ad.c
+Error:  
+Program: reshaped_programs/test_input_d8feef318367fcab1494a59cf83b8fb256cdfeef.c
+Error:  
+Program: reshaped_programs/test_input_a005c2de1408d9c65709c00226a1ea750899d6fa.c
+Error:  
+Program: reshaped_programs/test_input_22d61a9d70f0345fbbca231b1c0c12479f8e11a3.c
+Error: test_input_22d61a9d70f0345fbbca231b1c0c12479f8e11a3: :85: void testA(void): Assertion `(x.k != sA.k) == (((v + a) % 15) != r)' failed.
+ 
+Program: reshaped_programs/test_input_43ec28ed253e27832661ac09147a182b4d8a20af.c
+Error: SUMMARY: AddressSanitizer: global-buffer-overflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_43ec28ed253e27832661ac09147a182b4d8a20af+0xdcbb5) (BuildId: 5676da3ef917fdef8b56774c3e5a9dd23c438478) in main 
+Program: reshaped_programs/test_input_d1bbafca6fd966abd980b6e24fc8fadf61a1feb6.c
+Error: SUMMARY: AddressSanitizer: SEGV (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_d1bbafca6fd966abd980b6e24fc8fadf61a1feb6+0xdca5a) (BuildId: d81d0c75e040383481264f80ed56665d8ae4c304) in main, SUMMARY: MemorySanitizer: SEGV (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_d1bbafca6fd966abd980b6e24fc8fadf61a1feb6+0xa559d) (BuildId: be55535b5eaa28e23219a7c3e14be3f2db9612dc) in main, SUMMARY: UndefinedBehaviorSanitizer: SEGV (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_d1bbafca6fd966abd980b6e24fc8fadf61a1feb6+0x2f248) (BuildId: 3b65d5170780152f4e076455ff3777983e3c493a) in main 
+Program: reshaped_programs/test_input_687d8af1284a95229e2603bec35dbbc2618580c8.c
+Error: test_input_687d8af1284a95229e2603bec35dbbc2618580c8: :52: int main(void): Assertion `d[i] == expected_result[i]' failed.
+ 
+Program: reshaped_programs/test_input_b9876a18b7b0ead6523288af58d17ab414498bb6.c
+Error:  
+Program: reshaped_programs/test_input_3330bfdd581d0235f61d9c3854f2fb707ed2465b.c
+Error: SUMMARY: AddressSanitizer: global-buffer-overflow test_input_3330bfdd581d0235f61d9c3854f2fb707ed2465b.c in callee_af7, SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :115:5 in 
+Program: reshaped_programs/test_input_daafc57fd56471058928a589ea5dac28fb9fc32b.c
+Error:  
+Program: reshaped_programs/test_input_c76d4ad15eadbf295fcb16c2f0271d371904b70c.c
+Error:  
+Program: reshaped_programs/test_input_1db769855fa745f5afe35965c11052d896f4837a.c
+Error:  
+Program: reshaped_programs/test_input_8a2493dce813874a845aa2dc0555f51833b10fa3.c
+Error: test_input_8a2493dce813874a845aa2dc0555f51833b10fa3: :68: void testA(void): Assertion `x.i == sA.i && x.j == sA.j && x.k == sA.k && ((((v + a) & mask) % 15) == r)' failed.
+ 
+Program: reshaped_programs/test_input_d8061419f63fa860fa17fc320e06ba577ab98760.c
+Error:  
+Program: reshaped_programs/test_input_4c634c41d311ff91aea4d85728e247cd15b9f8a2.c
+Error: test_input_4c634c41d311ff91aea4d85728e247cd15b9f8a2: :18: int main(void): Assertion `!__builtin_types_compatible_p (typeof(hot), int)' failed.
+ 
+Program: reshaped_programs/test_input_2affadbeca56f845aaa99a8f36843625f3868495.c
+Error:  
+Program: reshaped_programs/test_input_844e5ce6f9f3b9fb3919520ddd64b59dc88f4616.c
+Error:  
+Program: reshaped_programs/test_input_0e12a590b64ee983d5a7cf7c735a12a01b2fcba6.c
+Error:  
+Program: reshaped_programs/test_input_372dd19bca0a886a255537f453d5f96eab0a30d8.c
+Error:  
+Program: reshaped_programs/test_input_26b86c16e8c21c522faa2183ebb1b8be3174e19b.c
+Error: SUMMARY: AddressSanitizer: SEGV string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:416, SUMMARY: MemorySanitizer: SEGV string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:416, SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :53:13 in 
+Program: reshaped_programs/test_input_7ff70b4bee47ac3802cd4f9bd54da76c2b6b9c2f.c
+Error: test_input_7ff70b4bee47ac3802cd4f9bd54da76c2b6b9c2f: :72: int main(void): Assertion `x.i == aStruct.i && x.j == aStruct.j && aStruct.k == r && x.l == aStruct.l' failed.
+ 
+Program: reshaped_programs/test_input_5ff0008fa810bba97d1749937f884fcbbae31cb4.c
+Error:  
+Program: reshaped_programs/test_input_17b425c068ab95b0282ee1afc7f7fd6c2deda1de.c
+Error:  
+Program: reshaped_programs/test_input_99b8b628054f3b9d9139c95468238d43802506ed.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-overflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_99b8b628054f3b9d9139c95468238d43802506ed+0x8b8e6) (BuildId: 5a014ad88b8cc2b20ef0b0ed9c9ea79cea4bb7ab) in strcpy 
+Program: reshaped_programs/test_input_61275021fe5d22b742d6f6716fdaba4ef7a6b87a.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-overflow asan_interceptors.cpp.o in printf_common(void*, char const*, __va_list_tag*) 
+Program: reshaped_programs/test_input_06b4558b1cdf8fc7cafd6f03de9e36b70bc57236.c
+Error:  
+Program: reshaped_programs/test_input_14424e60f5fdb7916daa8c4d1d47801355186baa.c
+Error:  
+Program: reshaped_programs/test_input_b561907a4448c94b2e9d8ab1631a417676b4f963.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-underflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_b561907a4448c94b2e9d8ab1631a417676b4f963+0xa2486) (BuildId: e0747588b910fbf659ee8221097bc234fd57b87c) in __asan_memcpy 
+Program: reshaped_programs/test_input_36ebd039c2405e68048de2b482e0758ba57eedbe.c
+Error:  
+Program: reshaped_programs/test_input_02cdcdb7fade891707e87ab1df3f3255c1a33101.c
+Error:  
+Program: reshaped_programs/test_input_9839445409cc3968d3f9e22d4f6348ca4f24363e.c
+Error: test_input_9839445409cc3968d3f9e22d4f6348ca4f24363e: :50: int main(void): Assertion `d[0] == -60.0 && d[1] == -20.0 && d[2] == 10.0 && d[3] == 0.0' failed.
+ 
+Program: reshaped_programs/test_input_503c26e1c48208c16e3aa72c411ffb1905530b04.c
+Error: test_input_503c26e1c48208c16e3aa72c411ffb1905530b04: :50: int main(void): Assertion `d[0] == -20 && d[1] == -10 && d[2] == 118 && d[3] == 118' failed.
+ 
+Program: reshaped_programs/test_input_3316a70ae5ecd40c8ab2d9a0822c757ef11afe7c.c
+Error:  
+Program: reshaped_programs/test_input_42a33e7842c84f77f73424244e662423292a7732.c
+Error: test_input_42a33e7842c84f77f73424244e662423292a7732: :24: int main(void): Assertion `sizeof(int[5]) == sizeof(int*) && "Array decay to pointer check"' failed.
+ 
+Program: reshaped_programs/test_input_df26ec6786c57895a4dfd69c40de54fbb18ccdb0.c
+Error: SUMMARY: AddressSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_df26ec6786c57895a4dfd69c40de54fbb18ccdb0+0xdc09c) (BuildId: e8fa48e2c100f7d4db5013482133416575f64494) in main, SUMMARY: MemorySanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_df26ec6786c57895a4dfd69c40de54fbb18ccdb0+0xa4fa4) (BuildId: 11d90430fa0e1aad8db553da0be7ded879a90318) in main, SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :71:25 in 
+Program: reshaped_programs/test_input_e5f32ba6cc660a6ecccf2bd63fd0f40651e39fb3.c
+Error:  
+Program: reshaped_programs/test_input_6aeb014989c14555049305eacdb98dc62a83d672.c
+Error:  
+Program: reshaped_programs/test_input_2a4c246c3bfb6c5a78ce16a14165b8f78803411b.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-overflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_2a4c246c3bfb6c5a78ce16a14165b8f78803411b+0x8b8e6) (BuildId: 89e07e6a512fa4ee49b2f7049ab6ad5b045da847) in strcpy 
+Program: reshaped_programs/test_input_34a203b6555bbf3fe984872624efddfaed61425c.c
+Error:  
+Program: reshaped_programs/test_input_62b1adc454918edb9d6a1b49a2b9324e588d01c2.c
+Error: SUMMARY: AddressSanitizer: bad-free (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_62b1adc454918edb9d6a1b49a2b9324e588d01c2+0xa0eb2) (BuildId: a1639f98d5632553e0bc38479277a00e458dab55) in free, free(): invalid pointer
+ 
+Program: reshaped_programs/test_input_8b4fae1f632abd8fa33dce1040c1747a59bd94d4.c
+Error: test_input_8b4fae1f632abd8fa33dce1040c1747a59bd94d4: :94: int main(): Assertion `((struct S *)((char *)&s + sizeof(int)))->i == 2' failed.
+ 
+Program: reshaped_programs/test_input_0053b5ec04bbbc0045c0d2cb52def195e714b266.c
+Error: , SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :15:31 in 
+Program: reshaped_programs/test_input_ef88d6d53c9c62b5d5d9acdf827d4c5330c976dc.c
+Error:  
+Program: reshaped_programs/test_input_21d5fba50d03569e9aad6e185709abd63d01b0d9.c
+Error:  
+Program: reshaped_programs/test_input_726083627723798e61ecf10426c8f0cca456e926.c
+Error: test_input_726083627723798e61ecf10426c8f0cca456e926: :99: unsigned char callee_af7(float, double, et7, int, struct gt7, long *, long long): Assertion `96636.982442 == ap7' failed.
+ 
+Program: reshaped_programs/test_input_744bec38527cd4ed250e29a8f3775a5bb91a8dc2.c
+Error: test_input_744bec38527cd4ed250e29a8f3775a5bb91a8dc2: :69: void testA(void): Assertion `x.i == sA.i && x.j == sA.j && x.k == sA.k && x.l == sA.l && ((((v + a) & mask) % 15) & mask) == r' failed.
+ 
+Program: reshaped_programs/test_input_259d3323de67456d60f04980927a1ca4a1b59847.c
+Error: test_input_259d3323de67456d60f04980927a1ca4a1b59847: :51: int main(void): Assertion `d[0] == 0 && d[1] == 118 && d[2] == 118 && d[3] == 118' failed.
+ 
+Program: reshaped_programs/test_input_4ac008fa59c3530107853adfb77dd7f40a36feea.c
+Error:  
+Program: reshaped_programs/test_input_9e2673c519bc27fc3efe258dfd8ffe62d6d0e142.c
+Error:  
+Program: reshaped_programs/test_input_3c2b1eddf9de613544b6292b54774ea3296f6c88.c
+Error: test_input_3c2b1eddf9de613544b6292b54774ea3296f6c88: :68: void testA(void): Assertion `(x.i == sA.i && x.j == sA.j && x.k == sA.k && x.l == sA.l && ((((v + a) & mask) % 15) & mask) == r)' failed.
+ 
+Program: reshaped_programs/test_input_188950ecfecdd3ef1e9f17acc40401b0bb9990ac.c
+Error: SUMMARY: AddressSanitizer: SEGV (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_188950ecfecdd3ef1e9f17acc40401b0bb9990ac+0xb8130) (BuildId: 732cb787cd28b25abb512c423a9c23bebdaea2af) in __sanitizer::internal_strlen(char const*),  
+Program: reshaped_programs/test_input_949f659ed75b8f37ce199d7b29ecc6d1583f0b98.c
+Error: test_input_949f659ed75b8f37ce199d7b29ecc6d1583f0b98: :105: void test_float_to_integer(): Assertion `f2u((float)((~0U) >> 1)) == ((~0U) >> 1)' failed.
+ 
+Program: reshaped_programs/test_input_a4f22d99b77b745562e1810c1f14b6919a25ff70.c
+Error:  
+Program: reshaped_programs/test_input_8ada14bffeec834539c769ab9a0b655519bccd6f.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-underflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_8ada14bffeec834539c769ab9a0b655519bccd6f+0xa3486) (BuildId: 2ea34bbfd0111b3da6b888b90528e33231e6a118) in __asan_memcpy 
+Program: reshaped_programs/test_input_d19280130f8b36f2fff7a9289e3c96c8fb9e8e03.c
+Error:  
+Program: reshaped_programs/test_input_f8b06312c1b8211eb3b73e9f7931d69928075c39.c
+Error: SUMMARY: AddressSanitizer: SEGV (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_f8b06312c1b8211eb3b73e9f7931d69928075c39+0xdc565) (BuildId: e14c9023cfc700905a32d5ca858c305533ee5a47) in g, SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_f8b06312c1b8211eb3b73e9f7931d69928075c39+0xa4927) (BuildId: 9c9ee18660353165b121d49f41028c09e034a15b) in g, SUMMARY: UndefinedBehaviorSanitizer: SEGV (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_f8b06312c1b8211eb3b73e9f7931d69928075c39+0x2e125) (BuildId: 448d692997307c31e1ecec0092dbde443ae32a9a) in g 
+Program: reshaped_programs/test_input_e9edc27eec0c233b44d3fe28346e8c14fd6401f3.c
+Error: SUMMARY: AddressSanitizer: global-buffer-overflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_e9edc27eec0c233b44d3fe28346e8c14fd6401f3+0xe2fc0) (BuildId: 7c738f6a0ea176e10005a17d3d341a609828bafd) in myprintf 
+Program: reshaped_programs/test_input_98c9fed4c6ae10d7d40f21f1ac596a47f15b3ee0.c
+Error: test_input_98c9fed4c6ae10d7d40f21f1ac596a47f15b3ee0: :34: void testA(void): Assertion `x.i == sA.i && x.j == sA.j && sA.k == r && x.l == sA.l && ((v + a) & mask) == r' failed.
+ 
+Program: reshaped_programs/test_input_2bcdc72f13abf1b4a31184664f915a65d1c7dac9.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-overflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_2bcdc72f13abf1b4a31184664f915a65d1c7dac9+0xdc2ae) (BuildId: 735513b947350672c963405a940716e1cf79cef8) in foo,  
+Program: reshaped_programs/test_input_fe621dcf3db7699ed2dedc39bf28a736535b34a0.c
+Error:  
+Program: reshaped_programs/test_input_34d96c20fcca112737a4b63fe7365d6cabecdc1a.c
+Error:  
+Program: reshaped_programs/test_input_8c418da1df47e850915aae714936419f718cff6e.c
+Error:  
+Program: reshaped_programs/test_input_7ce5bf182f668ad3938b32786c38d32019d4683e.c
+Error: SUMMARY: AddressSanitizer: global-buffer-overflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_7ce5bf182f668ad3938b32786c38d32019d4683e+0xde26c) (BuildId: 076d74092d92047eafafda281d26a8be9eedd571) in myprintf 

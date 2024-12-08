@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <complex.h>
+#include <stdlib.h>
+#include <assert.h>
+
+volatile _Complex float f1 = 1.1f + 2.2if;
+volatile _Complex float f2 = 3.3f + 4.4if;
+volatile _Complex float f3 = 5.5f + 6.6if;
+volatile _Complex float f4 = 7.7f + 8.8if;
+volatile _Complex float f5 = 9.9f + 10.1if;
+
+volatile _Complex double d1 = 1.1 + 2.2i;
+volatile _Complex double d2 = 3.3 + 4.4i;
+volatile _Complex double d3 = 5.5 + 6.6i;
+volatile _Complex double d4 = 7.7 + 8.8i;
+volatile _Complex double d5 = 9.9 + 10.1i;
+
+volatile _Complex long double ld1 = 1.1L + 2.2iL;
+volatile _Complex long double ld2 = 3.3L + 4.4iL;
+volatile _Complex long double ld3 = 5.5L + 6.6iL;
+volatile _Complex long double ld4 = 7.7L + 8.8iL;
+volatile _Complex long double ld5 = 9.9L + 10.1iL;
+
+void check_float(int unused, volatile _Complex float a1, volatile _Complex float a2, 
+                 volatile _Complex float a3, volatile _Complex float a4, volatile _Complex float a5) {
+    assert(a1 == f1 && a2 == f2 && a3 == f3 && a4 == f4 && a5 == f5);
+}
+
+void check_double(int unused, volatile _Complex double a1, volatile _Complex double a2, 
+                  volatile _Complex double a3, volatile _Complex double a4, volatile _Complex double a5) {
+    assert(a1 == d1 && a2 == d2 && a3 == d3 && a4 == d4 && a5 == d5);
+}
+
+void check_long_double(int unused, volatile _Complex long double a1, volatile _Complex long double a2, 
+                       volatile _Complex long double a3, volatile _Complex long double a4, volatile _Complex long double a5) {
+    assert(a1 == ld1 && a2 == ld2 && a3 == ld3 && a4 == ld4 && a5 == ld5);
+}
+
+int main(void) {
+    check_float(0, f1, f2, f3, f4, f5);
+    check_double(0, d1, d2, d3, d4, d5);
+    check_long_double(0, ld1, ld2, ld3, ld4, ld5);
+
+    printf("All checks passed.\n");
+    return 0;
+}

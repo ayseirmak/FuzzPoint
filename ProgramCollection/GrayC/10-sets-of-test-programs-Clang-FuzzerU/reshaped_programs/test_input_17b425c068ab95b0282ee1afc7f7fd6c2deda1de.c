@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <string.h> // For memcpy
+#include <stdlib.h> // For abort
+
+struct S {
+    double a, b, *c;
+    unsigned long d;
+};
+
+void foo(struct S *x, const struct S *y) {
+    const unsigned long n = y->d + 1;
+    const double m = 0.25 * (y->b - y->a);
+    unsigned long i;
+    for (i = 0; i < n; ++i) {
+        x->c[i] = y->c[i] + i * m;
+    }
+}
+
+int main(void) {
+    struct S x, y;
+    double c[4] = {10, 20, 30, 40};
+    double d[4];
+    double e[4] = {118, 118, 118, 118};
+
+    y.a = 10.0;
+    y.b = 6.0;
+    y.c = c;
+    x.c = d;
+
+    y.d = 3;
+    memcpy(d, e, sizeof(d));
+    foo(&x, &y);
+    if (d[0] != 0 || d[1] != 20 || d[2] != 10 || d[3] != -10) {
+        abort();
+    }
+
+    y.d = 2;
+    memcpy(d, e, sizeof(d));
+    foo(&x, &y);
+    if (d[0] != 60 || d[1] != 20 || d[2] != -10 || d[3] != 118) {
+        abort();
+    }
+
+    y.d = 1;
+    memcpy(d, e, sizeof(d));
+    foo(&x, &y);
+    if (d[0] != -20 || d[1] != -10 || d[2] != 118 || d[3] != 118) {
+        abort();
+    }
+
+    y.d = 0;
+    memcpy(d, e, sizeof(d));
+    foo(&x, &y);
+    if (d[0] != 0 || d[1] != 118 || d[2] != 118 || d[3] != 118) {
+        abort();
+    }
+
+    printf("Program completed successfully.\n");
+    return 0;
+}

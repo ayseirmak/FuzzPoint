@@ -53,7 +53,7 @@ def extract_c_files_with_floats(clone_dir):
                     with open(file_path, "r") as f:
                         content = f.read()
                     if  pattern.search(content):
-                        if "int main()" in content:
+                        if re.search(r'\bint\s+main\s*\(', content, re.DOTALL):
                             c_files.append(file_path)
                 except UnicodeDecodeError as e:
                     print("hata")
@@ -219,8 +219,8 @@ def main():
         c_files = file.readlines()
     c_files = [line.strip() for line in c_files]
     
-    #os.makedirs(OUTPUT_DIR, exist_ok=True)
-    #os.makedirs(CLEAR_DIR, exist_ok=True)
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(CLEAR_DIR, exist_ok=True)
 
     
     # Reshaping with gpt
@@ -235,7 +235,7 @@ def main():
     
     gpt = GPTProgramGenerator(OpenAI(api_key=key))
     
-    for c_file in c_files[500:]:
+    for c_file in c_files[5:]:
         reshaped_file = reshape_file(gpt, c_file, OUTPUT_DIR)
         print(f"Reshaped file saved to {reshaped_file}")
         if compile_and_test(reshaped_file):
@@ -259,10 +259,11 @@ def main():
 if __name__ == "__main__":
     #path = '/home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_double_req_bl_1252b.c'
     #compile_and_test(path)
-    CLONE_DIR = "ex"
-    c_files = extract_c_files_with_floats(CLONE_DIR)
+    
+    #CLONE_DIR = "/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/10-sets-of-test-programs-Clang-FuzzerU"
+    #c_files = extract_c_files_with_floats(CLONE_DIR)
 
-    #main()
+    main()
 
 
 

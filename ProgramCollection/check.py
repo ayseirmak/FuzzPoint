@@ -1,8 +1,8 @@
 import os
 
 # Paths
-text_file_path = '/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/compilation_error.log'
-folder_x_path = '/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/clear_programs'
+text_file_path = '/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/GrayC/10-sets-of-test-programs-Clang-FuzzerU/compilation_error.log'
+folder_x_path = '/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/GrayC/10-sets-of-test-programs-Clang-FuzzerU/clear_programs'
 
 # Read the text file
 with open(text_file_path, 'r') as file:
@@ -29,8 +29,8 @@ print(found_programs)
 print(len(found_programs))
 
 # List all files in the directory
-folder_path = "/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/clear_programs"
-folder_path2 = "/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs"
+folder_path = "/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/GrayC/10-sets-of-test-programs-Clang-FuzzerU/clear_programs"
+folder_path2 = "/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/GrayC/10-sets-of-test-programs-Clang-FuzzerU/reshaped_programs"
 num_files = len([f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))])
 
 print(f"Number of files: {num_files}")
