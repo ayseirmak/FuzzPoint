@@ -5,13 +5,17 @@ clang vrs:  Ubuntu clang version 14.0.0
 git clone https://github.com/ayseirmak/FloatingPoint_and_CompilerTesting.git
 ##### Environment setup ####
 
-a_irmak@node:~$sudo apt update
+a_irmak@node:~$ sudo apt update
+
 a_irmak@node:~$ python3 --version
 Python 3.10.12
 
 a_irmak@node:~$ sudo apt install python3-pip
+
 a_irmak@node:~$ pip install python-dotenv
+
 a_irmak@node:~$ pip install openai
+
 a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ sudo apt-get install clang
 
 ##### Run Program (pipeline.py) ####
@@ -24,17 +28,19 @@ git push origin main
 
 
 a_irmak@node:~$ sudo apt-get install p7zip-full
+
 a_irmak@node:~$ mkdir ex
+
 a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ wget https://zenodo.org/records/7978251/files/10-sets-of-test-programs-Csmith.zip?download=1
+
 a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ 7z x 10-sets-of-test-programs-Csmith.zip?download=1 -oex
+
 a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ ./extract_recursive.sh ex
 
 
-###################################################
-# 10-sets-of-test-programs-Clang-FuzzerU.zip      #
-# md5:0df929dab2373aba8df13e91a6327703 	318.9 MB  #
-###################################################
 
+10-sets-of-test-programs-Clang-FuzzerU.zip 
+md5:0df929dab2373aba8df13e91a6327703 	318.9 MB
 
 10-sets-of-test-programs-Csmith.zip
 md5:a606c61d10656938331433536919697d 	6.7 GB
