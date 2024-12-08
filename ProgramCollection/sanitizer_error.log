@@ -31,3 +31,24 @@ Error: Memory Sanitizer
 Program: reshaped_programs/test_input_poly_32_32_32_thresh_1_safe.c-amalgamation.c
 Error: Address Sanitizer, Undefined Behavior Sanitizer, Memory Sanitizer 
 
+Program: reshaped_programs/test_input_lunarlander_62_unsafe.c-amalgamation.c
+Error: Memory Sanitizer 
+
+Program: reshaped_programs/test_input_lunarlander_14_unsafe.c-amalgamation.c
+Error: Memory Sanitizer 
+
+Program: reshaped_programs/test_input_vdp_8_unsafe.c-amalgamation.c
+Error: Memory Sanitizer 
+
+Program: reshaped_programs/test_input_poly_128_thresh_5_unsafe.c-amalgamation.c
+Error: Address Sanitizer 
+
+Program: reshaped_programs/test_input_cartpole_38_safe.c-amalgamation.c
+Error: Memory Sanitizer 
+
+Program: reshaped_programs/test_input_lunarlander_20_unsafe.c-amalgamation.c
+Error: Memory Sanitizer 
+
+Program: reshaped_programs/test_input_robot_3_safe.c-amalgamation.c
+Error: Memory Sanitizer 
+

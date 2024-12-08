@@ -154,3 +154,245 @@ Program: reshaped_programs/test_input_lunarlander_92_safe.c-amalgamation.c
 Error: test_input_lunarlander_92_safe-amalgamation: :28: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][2])' failed.
  
 
+Program: reshaped_programs/test_input_cartpole_63_safe.c-amalgamation.c
+Error:  
+
+Program: reshaped_programs/test_input_poly_4_4_4_4_thresh_3_unsafe.c-amalgamation.c
+Error: test_input_poly_4_4_4_4_thresh_3_unsafe-amalgamation: :66: int main(): Assertion `diff <= 0.11688163966029908497435220934074f' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_85_safe.c-amalgamation.c
+Error: test_input_cartpole_85_safe-amalgamation: :147: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_54_safe.c-amalgamation.c
+Error: test_input_cartpole_54_safe-amalgamation: :99: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_82_safe.c-amalgamation.c
+Error: test_input_cartpole_82_safe-amalgamation: :17: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_poly_64_64_thresh_0_safe.c-amalgamation.c
+Error: test_input_poly_64_64_thresh_0_safe-amalgamation: :45: int main(): Assertion `diff <= 0.21464848596885094265009103354731f' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_15_safe.c-amalgamation.c
+Error: test_input_cartpole_15_safe-amalgamation: :150: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_69_safe.c-amalgamation.c
+Error: test_input_cartpole_69_safe-amalgamation: :102: int main(): Assertion `!(tensor_output[0][1] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_24_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_24_unsafe-amalgamation: :98: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_82_safe.c-amalgamation.c
+Error: test_input_lunarlander_82_safe-amalgamation: :17: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][2])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_43_safe.c-amalgamation.c
+Error: test_input_cartpole_43_safe-amalgamation: :157: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_78_safe.c-amalgamation.c
+Error: test_input_cartpole_78_safe-amalgamation: :156: int main(): Assertion `!(tensor_output[0][1] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_50_safe.c-amalgamation.c
+Error: test_input_cartpole_50_safe-amalgamation: :167: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_93_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_93_unsafe-amalgamation: :92: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_poly_64_64_64_thresh_3_unsafe.c-amalgamation.c
+Error: test_input_poly_64_64_64_thresh_3_unsafe-amalgamation: :48: int main(): Assertion `diff <= threshold' failed.
+ 
+
+Program: reshaped_programs/test_input_softmax_7_unsafe.c-amalgamation.c
+Error: test_input_softmax_7_unsafe-amalgamation: :45: int main(): Assertion `sum == 1.0f' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_62_unsafe.c-amalgamation.c
+Error: SUMMARY: MemorySanitizer: use-of-uninitialized-value test_input_lunarlander_62_unsafe.c-amalgamation.c in assert 
+
+Program: reshaped_programs/test_input_cartpole_31_safe.c-amalgamation.c
+Error: test_input_cartpole_31_safe-amalgamation: :45: int main(): Assertion `tensor_output[0][1] > tensor_output[0][0]' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_90b_safe.c-amalgamation.c
+Error: test_input_lunarlander_90b_safe-amalgamation: :153: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][2])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_14_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_14_unsafe-amalgamation: :27: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][0])' failed.
+, SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_lunarlander_14_unsafe-amalgamation+0xa43f4) (BuildId: e762f49be943e7b2977be5bece13023ef0c4c8cf) in main 
+
+Program: reshaped_programs/test_input_vdp_8_unsafe.c-amalgamation.c
+Error: SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_vdp_8_unsafe-amalgamation+0xa4673) (BuildId: 5052b9ac3dd5993cb39b9292793b7fcd049657af) in main 
+
+Program: reshaped_programs/test_input_cartpole_93_safe.c-amalgamation.c
+Error: test_input_cartpole_93_safe-amalgamation: :102: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_98_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_98_unsafe-amalgamation: :127: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_38_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_38_unsafe-amalgamation: :112: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_sqrt_6_unsafe.c-amalgamation.c
+Error: test_input_sqrt_6_unsafe-amalgamation: :23: int main(): Assertion `islessequal(r, SQRT_CHECK_ERROR)' failed.
+ 
+
+Program: reshaped_programs/test_input_tanh_1_unsafe.c-amalgamation.c
+Error: test_input_tanh_1_unsafe-amalgamation: :17: int main(): Assertion `isgreaterequal(y, 1.0f)' failed.
+ 
+
+Program: reshaped_programs/test_input_sin_3_unsafe.c-amalgamation.c
+Error: test_input_sin_3_unsafe-amalgamation: :33: int main(): Assertion `islessequal(error, SIN_CHECK_ERROR)' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_95_safe.c-amalgamation.c
+Error: test_input_cartpole_95_safe-amalgamation: :158: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_poly_128_thresh_5_unsafe.c-amalgamation.c
+Error: SUMMARY: AddressSanitizer: stack-buffer-overflow (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_poly_128_thresh_5_unsafe-amalgamation+0xdc502) (BuildId: 819c7730ff541241ca0974439ec419b724c113e9) in k2c_dense 
+
+Program: reshaped_programs/test_input_cartpole_32_safe.c-amalgamation.c
+Error: test_input_cartpole_32_safe-amalgamation: :120: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_poly_16_16_16_16_thresh_1_safe.c-amalgamation.c
+Error: test_input_poly_16_16_16_16_thresh_1_safe-amalgamation: :63: int main(): Assertion `islessequal(diff, 0.05662714750494854301088989094912f)' failed.
+ 
+
+Program: reshaped_programs/test_input_exp_5_unsafe.c-amalgamation.c
+Error: test_input_exp_5_unsafe-amalgamation: :19: int main(): Assertion `z <= EXP_CHECK_ERROR' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_83_safe.c-amalgamation.c
+Error: test_input_lunarlander_83_safe-amalgamation: :99: int main(): Assertion `!((tensor_output[0][3] <= tensor_output[0][2]))' failed.
+ 
+
+Program: reshaped_programs/test_input_logistic_1_unsafe.c-amalgamation.c
+Error: test_input_logistic_1_unsafe-amalgamation: :19: int main(): Assertion `isgreaterequal(y, 1.0f)' failed.
+ 
+
+Program: reshaped_programs/test_input_poly_32_32_32_thresh_5_unsafe.c-amalgamation.c
+Error: test_input_poly_32_32_32_thresh_5_unsafe-amalgamation: :58: int main(): Assertion `islessequal(diff, 0.00341257687551916183935496998651f)' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_67_safe.c-amalgamation.c
+Error: test_input_lunarlander_67_safe-amalgamation: :20: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][2])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_91_safe.c-amalgamation.c
+Error: test_input_lunarlander_91_safe-amalgamation: :116: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][2])' failed.
+ 
+
+Program: reshaped_programs/test_input_poly_64_64_64_thresh_0_safe.c-amalgamation.c
+Error: test_input_poly_64_64_64_thresh_0_safe-amalgamation: :37: int main(): Assertion `diff <= 0.06770055283541486709061101779478f' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_43_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_43_unsafe-amalgamation: :26: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_13_safe.c-amalgamation.c
+Error: test_input_cartpole_13_safe-amalgamation: :166: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_softmax_13_unsafe.c-amalgamation.c
+Error: test_input_softmax_13_unsafe-amalgamation: :47: int main(): Assertion `isgreaterequal(y[2], y[3])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_26_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_26_unsafe-amalgamation: :136: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_38_safe.c-amalgamation.c
+Error: test_input_cartpole_38_safe-amalgamation: :15: void assert_custom(_Bool): Assertion `condition' failed.
+, SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_cartpole_38_safe-amalgamation+0xa4413) (BuildId: 0fe27509a679836658922a2e04d080dbc700fdd3) in assert_custom 
+
+Program: reshaped_programs/test_input_cartpole_72_safe.c-amalgamation.c
+Error: test_input_cartpole_72_safe-amalgamation: :126: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_76_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_76_unsafe-amalgamation: :140: int main(): Assertion `!((tensor_output[0][2] <= tensor_output[0][3]))' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_54_safe.c-amalgamation.c
+Error: test_input_lunarlander_54_safe-amalgamation: :86: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][2])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_90_safe.c-amalgamation.c
+Error: test_input_lunarlander_90_safe-amalgamation: :146: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][2])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_20_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_20_unsafe-amalgamation: :87: int main(): Assertion `!(tensor_output[0][3] <= tensor_output[0][0])' failed.
+, SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_lunarlander_20_unsafe-amalgamation+0xa5610) (BuildId: 05c49fbde8744b04b8c111adfd16d9bcb7c85c9b) in main 
+
+Program: reshaped_programs/test_input_robot_3_safe.c-amalgamation.c
+Error: SUMMARY: MemorySanitizer: use-of-uninitialized-value (/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_robot_3_safe-amalgamation+0xa43b8) (BuildId: 632295f9f7b2f4249a4efa24b2a80e89259892a6) in main 
+
+Program: reshaped_programs/test_input_cartpole_17_safe.c-amalgamation.c
+Error: test_input_cartpole_17_safe-amalgamation: :160: int main(): Assertion `tensor_output[0][0] > tensor_output[0][1]' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_51_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_51_unsafe-amalgamation: :92: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_49_safe.c-amalgamation.c
+Error: test_input_cartpole_49_safe-amalgamation: :158: int main(): Assertion `!(tensor_output[0][1] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_58_safe.c-amalgamation.c
+Error: test_input_cartpole_58_safe-amalgamation: :124: int main(): Assertion `!(tensor_output[0][1] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_5_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_5_unsafe-amalgamation: :170: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_26_safe.c-amalgamation.c
+Error: test_input_lunarlander_26_safe-amalgamation: :112: int main(): Assertion `tensor_output[0][2] > tensor_output[0][3]' failed.
+ 
+
+Program: reshaped_programs/test_input_lunarlander_34_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_34_unsafe-amalgamation: :132: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_poly_8_8_8_8_thresh_4_unsafe.c-amalgamation.c
+Error:  
+
+Program: reshaped_programs/test_input_lunarlander_49_unsafe.c-amalgamation.c
+Error: test_input_lunarlander_49_unsafe-amalgamation: :18: int main(): Assertion `!(tensor_output[0][2] <= tensor_output[0][3])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_1_safe.c-amalgamation.c
+Error: test_input_cartpole_1_safe-amalgamation: :151: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+
+Program: reshaped_programs/test_input_sqrt_4_unsafe.c-amalgamation.c
+Error: test_input_sqrt_4_unsafe-amalgamation: :26: int main(): Assertion `isgreaterequal(derivative, d1)' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_51_safe.c-amalgamation.c
+Error: test_input_cartpole_51_safe-amalgamation: :125: int main(): Assertion `!(tensor_output[0][1] <= tensor_output[0][0])' failed.
+ 
+
+Program: reshaped_programs/test_input_cartpole_16_safe.c-amalgamation.c
+Error: test_input_cartpole_16_safe-amalgamation: :158: int main(): Assertion `!(tensor_output[0][0] <= tensor_output[0][1])' failed.
+ 
+

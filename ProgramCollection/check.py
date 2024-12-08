@@ -1,7 +1,7 @@
 import os
 
 # Paths
-text_file_path = '/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/detail_error.log'
+text_file_path = '/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/compilation_error.log'
 folder_x_path = '/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/clear_programs'
 
 # Read the text file
