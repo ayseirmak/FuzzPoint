@@ -1,6 +1,7 @@
 OS: UBUNTU22-64-STD   
 python vrs: Python 3.10.12   
 clang vrs:  Ubuntu clang version 14.0.0   
+Total = 375 + 302 = 677
 
 git clone https://github.com/ayseirmak/FloatingPoint_and_CompilerTesting.git
 
