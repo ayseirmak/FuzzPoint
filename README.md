@@ -3,7 +3,8 @@ python vrs: Python 3.10.12
 clang vrs:  Ubuntu clang version 14.0.0
 
 git clone https://github.com/ayseirmak/FloatingPoint_and_CompilerTesting.git
-##### Environment setup ####
+
+### Environment setup 
 
 a_irmak@node:~$ sudo apt update
 
@@ -18,15 +19,15 @@ a_irmak@node:~$ pip install openai
 
 a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ sudo apt-get install clang
 
-##### Run Program (pipeline.py) ####
+**#####Run Program (pipeline.py)####**
 
-##### Push Git Repo ####
+## Push Git Repo
 git status
 git add <modified folder and files>
 git commit -m <commit>
 git push origin main
 
-
+## Extract GrayC Files
 a_irmak@node:~$ sudo apt-get install p7zip-full
 
 a_irmak@node:~$ mkdir ex
@@ -38,8 +39,9 @@ a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ 7z x 10-sets
 a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ ./extract_recursive.sh ex
 
 
+## GrayC File List
 
-10-sets-of-test-programs-Clang-FuzzerU.zip 
+10-sets-of-test-programs-Clang-FuzzerU.zip
 md5:0df929dab2373aba8df13e91a6327703 	318.9 MB
 
 10-sets-of-test-programs-Csmith.zip
