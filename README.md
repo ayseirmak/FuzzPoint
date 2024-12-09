@@ -45,7 +45,7 @@ md5:0df929dab2373aba8df13e91a6327703 	318.9 MB
 10-sets-of-test-programs-Csmith.zip
 md5:a606c61d10656938331433536919697d 	6.7 GB
 
-10-sets-of-test-programs-Grammarinator.zip
+10-sets-of-test-programs-Grammarinator.zip --> not normal programs grammer particles
 md5:fc299211fddf0898e53ba60b82aeaad2 	485.9 MB
 
 10-sets-of-test-programs-GrayC-aggressive.zip
