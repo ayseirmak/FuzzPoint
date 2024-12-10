@@ -1,0 +1,10 @@
+Program: reshaped_programs/test_input_internal_fabs_double.c
+Error: test_input_internal_fabs_double: :67: int main(): Assertion `isinf(x) == 1' failed.
+ 
+Program: reshaped_programs/test_input_long_double_unnormal_cast.c
+Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :30:5 in 
+Program: reshaped_programs/test_input_internal_fabs_float.c
+Error: test_input_internal_fabs_float: :64: int main(): Assertion `isinf(x) == 1' failed.
+ 
+Program: reshaped_programs/test_input_memcpy_and_use_as_bitvector_float.c
+Error:  
