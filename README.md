@@ -42,28 +42,28 @@ a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ ./extract_re
 
 ## GrayC File List
 
-10-sets-of-test-programs-Clang-FuzzerU.zip
+10-sets-of-test-programs-Clang-FuzzerU.zip --> ** 544 Float Files** 
 md5:0df929dab2373aba8df13e91a6327703 	318.9 MB
 
-10-sets-of-test-programs-Csmith.zip
+10-sets-of-test-programs-Csmith.zip  
 md5:a606c61d10656938331433536919697d 	6.7 GB
 
-10-sets-of-test-programs-Grammarinator.zip --> not normal programs grammer particles
+10-sets-of-test-programs-Grammarinator.zip --> not normal programs grammer particles  
 md5:fc299211fddf0898e53ba60b82aeaad2 	485.9 MB
 
-10-sets-of-test-programs-GrayC-aggressive.zip
+10-sets-of-test-programs-GrayC-aggressive.zip  --> ** 47008 Float Files**
 md5:14f3741bf918294ada0e8f81dd377112 	1.0 GB	
 
-10-sets-of-test-programs-GrayC-Fragments-Fuzzing-U.zip
+10-sets-of-test-programs-GrayC-Fragments-Fuzzing-U.zip  --> ** 45017 Float Files** --> include csmith.h
 md5:98546ff9bc2140210dbe84b890bf1ad4 	1.7 GB	 
 
-10-sets-of-test-programs-GrayC-No-Coverage-GuidanceU.zip
-md5:9f1a4a06ad495b1d2ed1c6257342e24c 	1.2 GB	 
+10-sets-of-test-programs-GrayC-No-Coverage-GuidanceU.zip  
+md5:9f1a4a06ad495b1d2ed1c6257342e24c 	1.2 GB	 --> ** 44345 Float Files **
 
-10-sets-of-test-programs-PolyGlotU.zip
+10-sets-of-test-programs-PolyGlotU.zip  
 md5:2a92a69b12fea7d068a3995b01555128 	67.0 MB	
 
-10-sets-of-test-programs-RegExpMutatorU.zip
+10-sets-of-test-programs-RegExpMutatorU.zip  
 md5:83f9ae92cfe0334b757d222b740fa8ed 	214.6 MB
 
 
