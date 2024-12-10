@@ -3,6 +3,7 @@ import sys
 from time import time
 from shlex import quote
 import random
+import datetime
 
 from Parser import Parser
 
@@ -12,7 +13,7 @@ from dotenv import load_dotenv
 
 
 def generate_filename(selected_file: str) -> str:
-    return "test_input_" + selected_file
+    return f"test_input_{selected_file}"
 
 
 def write_to_file(file: str, content: str):
@@ -41,14 +42,15 @@ class GPTProgramGenerator:
     def __init__(self, client: OpenAI):
         self.client = client
         self.system_prompt = """
-        Your task is to convert given C programs to normal programs and meet specific requirements. All programs must adhere strictly to the following guidelines:
+        Your task is to convert given **floating point C programs** to **floating point normal programs** and meet specific requirements. All programs must adhere strictly to the following guidelines:
         1. **ARM Compatibility**: Ensure the code can run on ARM architecture without any architecture-specific incompatibilities.
         2. **No Reading Operations**: Exclude any code that uses functions like `scanf`, file I/O, or similar input mechanisms.
         3. **No Time Functions or Randomness**: Avoid using time-based functions (e.g., `time()`, `gettimeofday()`) or randomness (`rand()`, `srand()`). Outputs must not rely on any non-deterministic behavior.
-        4. **No Uninitialized or Undeclared Variables**: Initialize and declare all variables explicitly before use.
+        4. **No Uninitialized or Undeclared Variables**: Initialize and declare all variables explicitly before use, ensure the fixed values preserve the intent and logic of the original program and if they affects floating-point operations the initialization values should be chosen to reflect typical use cases or edge cases relevant to the computation.
         5. **Deterministic Inputs**: Replace any dynamic or nondeterministic inputs with fixed values defined directly within the program.
         6. **Standard Compliance**: Replace custom verifier functions or non-standard libraries with standard C constructs (e.g., assertions, logging with `printf`).
-        Your output must maintain functional equivalence to the original program within the specified constraints.
+        7. **Return Value 0 **:The program should include return 0; statement at the end of main function. Return 0 to indicate successful execution or a condition passed.
+        Your output must maintain functional equivalence and float opeartions to the original program within the specified constraints. It should be correctly compilable without syntax errors.
         """
         self.history = []
         
