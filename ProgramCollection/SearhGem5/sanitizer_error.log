@@ -1,0 +1,8 @@
+Program: reshaped_programs/test_input_2003-08-11-VaListArg.c
+Error: Address Sanitizer 
+Program: reshaped_programs/test_input_pr36343.c
+Error: Address Sanitizer, Undefined Behavior Sanitizer, Memory Sanitizer 
+Program: reshaped_programs/test_input_20040709-2.c
+Error: Undefined Behavior Sanitizer 
+Program: reshaped_programs/test_input_2006-01-23-UnionInit.c
+Error: Address Sanitizer 

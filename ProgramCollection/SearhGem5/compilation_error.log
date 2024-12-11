@@ -1,0 +1,338 @@
+Program: reshaped_programs/test_input_930603-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr58574.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr44942.c
+Compiled successfully
+Program: reshaped_programs/test_input_20030216-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20020411-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20000223-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr42691.c
+Compiled successfully
+Program: reshaped_programs/test_input_cmpsf-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr29156.c
+Compiled successfully
+Program: reshaped_programs/test_input_00178.c
+Compiled successfully
+Program: reshaped_programs/test_input_loop-8.c
+Compiled successfully
+Program: reshaped_programs/test_input_20020213-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_2003-10-12-GlobalVarInitializers.c
+Compiled successfully
+Program: reshaped_programs/test_input_990829-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_961223-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_2003-05-21-UnionTest.c
+Compiled successfully
+Program: reshaped_programs/test_input_941021-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20020321-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20080529-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20000605-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_2003-08-11-VaListArg.c
+Compiled successfully
+Program: reshaped_programs/test_input_20000731-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_2006-12-01-float_varg.c
+Compiled successfully
+Program: reshaped_programs/test_input_20041113-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20011217-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr23941.c
+Compiled successfully
+Program: reshaped_programs/test_input_complex-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_930930-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_00174.c
+Compiled successfully
+Program: reshaped_programs/test_input_960405-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_990117-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_va-arg-16.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr79354.c
+Compiled successfully
+Program: reshaped_programs/test_input_2003-05-07-VarArgs.c
+Compiled successfully
+Program: reshaped_programs/test_input_930614-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_980709-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_product_numbers_program.c
+Compiled successfully
+Program: reshaped_programs/test_input_00113.c
+Compiled successfully
+Program: reshaped_programs/test_input_980604-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_990127-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_2002-05-02-ManyArguments.c
+Compiled successfully
+Program: reshaped_programs/test_input_memset-3.c
+Compiled successfully
+Program: reshaped_programs/test_input_va-arg-pack-1.c
+Error: :122:35: error: use of unknown builtin '__builtin_va_arg_pack' [-Wimplicit-function-declaration]
+        return foo1(x, foo3(), 5, __builtin_va_arg_pack());
+                                  ^
+:122:35: note: did you mean '__builtin_va_start'?
+:30:5: note: '__builtin_va_start' declared here
+    va_start(ap, y);
+    ^
+/usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h:17:29: note: expanded from macro 'va_start'
+#define va_start(ap, param) __builtin_va_start(ap, param)
+                            ^
+1 error generated.
+
+Program: reshaped_programs/test_input_00175.c
+Compiled successfully
+Program: reshaped_programs/test_input_nest-stdar-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr44683.c
+Compiled successfully
+Program: reshaped_programs/test_input_conversion.c
+Compiled successfully
+Program: reshaped_programs/test_input_struct-aliasing-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_FloatPrecision.c
+Compiled successfully
+Program: reshaped_programs/test_input_00195.c
+Compiled successfully
+Program: reshaped_programs/test_input_20001121-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_va-arg-trap-1.c
+Error: :11:5: error: 'va_start' used in function with fixed args
+    va_start(ap, 0);  // Removed variable arguments (argc) as we are not using input
+    ^
+/usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h:17:29: note: expanded from macro 'va_start'
+#define va_start(ap, param) __builtin_va_start(ap, param)
+                            ^
+1 error generated.
+
+Program: reshaped_programs/test_input_loop-ivopts-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_stdarg-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_strncmp-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_builtin-types-compatible-p.c
+Compiled successfully
+Program: reshaped_programs/test_input_921113-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_strcpy-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_divide_numbers_program1.c
+Compiled successfully
+Program: reshaped_programs/test_input_va-arg-26.c
+Compiled successfully
+Program: reshaped_programs/test_input_2009-04-16-BitfieldInitialization.c
+Compiled successfully
+Program: reshaped_programs/test_input_StructModifyTest.c
+Compiled successfully
+Program: reshaped_programs/test_input_00119.c
+Compiled successfully
+Program: reshaped_programs/test_input_00123.c
+Compiled successfully
+Program: reshaped_programs/test_input_20010605-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_regstack-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20071030-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20000603-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr36343.c
+Compiled successfully
+Program: reshaped_programs/test_input_20040709-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_960513-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20040831-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20020225-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_20031214-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_990413-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_memset-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_921208-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20020413-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_2008-01-07-LongDouble.c
+Compiled successfully
+Program: reshaped_programs/test_input_20080117-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20020227-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_uint64_to_float.c
+Compiled successfully
+Program: reshaped_programs/test_input_20100708-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_complex-3.c
+Compiled successfully
+Program: reshaped_programs/test_input_00140.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr47538.c
+Compiled successfully
+Program: reshaped_programs/test_input_ipa-sra-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_va-arg-15.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr49218.c
+Compiled successfully
+Program: reshaped_programs/test_input_930818-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_cbrt.c
+Error: :7:8: error: conflicting types for 'cbrtl'
+double cbrtl(double x) {
+       ^
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:152:1: note: previous declaration is here
+__MATHCALL_VEC (cbrt,, (_Mdouble_ __x));
+^
+/usr/include/math.h:280:3: note: expanded from macro '__MATHCALL_VEC'
+  __MATHCALL (function, suffix, args)
+  ^
+/usr/include/math.h:287:3: note: expanded from macro '__MATHCALL'
+  __MATHDECL (_Mdouble_,function,suffix, args)
+  ^
+/usr/include/math.h:289:3: note: expanded from macro '__MATHDECL'
+  __MATHDECL_1(type, function,suffix, args); \
+  ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/math.h:297:15: note: expanded from macro '__MATHDECL_1_IMPL'
+  extern type __MATH_PRECNAME(function,suffix) args __THROW
+              ^
+/usr/include/math.h:394:35: note: expanded from macro '__MATH_PRECNAME'
+#  define __MATH_PRECNAME(name,r) name##l##r
+                                  ^
+<scratch space>:277:1: note: expanded from here
+cbrtl
+^
+1 error generated.
+
+Program: reshaped_programs/test_input_pr39228.c
+Compiled successfully
+Program: reshaped_programs/test_input_20001017-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_comp-goto-1.c
+Error: :95:57: error: operand of type 'void' where arithmetic or pointer type is required
+        *(reg_t *) (((char *) regs) + s1) = *(uint32 *) (error_handler ());
+                                                        ^~~~~~~~~~~~~~~~~~
+1 error generated.
+
+Program: reshaped_programs/test_input_2004-02-02-NegativeZero.c
+Compiled successfully
+Program: reshaped_programs/test_input_2003-05-21-UnionBitfields.c
+Error: :21:24: error: use of undeclared identifier 'INFINITY'
+    double testValue = INFINITY;  // Change to a specific value to test other cases
+                       ^
+1 error generated.
+
+Program: reshaped_programs/test_input_strcmp-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr35456.c
+Compiled successfully
+Program: reshaped_programs/test_input_test_indvars.c
+Compiled successfully
+Program: reshaped_programs/test_input_991019-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_va-arg-12.c
+Compiled successfully
+Program: reshaped_programs/test_input_2006-01-23-UnionInit.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr44468.c
+Compiled successfully
+Program: reshaped_programs/test_input_struct-ret-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_bigstack.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr42248.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr29798.c
+Compiled successfully
+Program: reshaped_programs/test_input_20050121-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_va-arg-18.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr23324.c
+Compiled successfully
+Program: reshaped_programs/test_input_20040208-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_ms_struct-bitfield.c
+Compiled successfully
+Program: reshaped_programs/test_input_20030910-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20080502-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20040709-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_921112-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_callargs.c
+Compiled successfully
+Program: reshaped_programs/test_input_complex-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_2003-08-05-CastFPToUint.c
+Compiled successfully
+Program: reshaped_programs/test_input_20081103-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_stdarg-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_980205.c
+Compiled successfully
+Program: reshaped_programs/test_input_20020314-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_20060420-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_2002-05-02-ArgumentTest.c
+Compiled successfully
+Program: reshaped_programs/test_input_991228-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_2007-01-04-KNR-Args.c
+Compiled successfully
+Program: reshaped_programs/test_input_align-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_960512-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_stdarg-3.c
+Compiled successfully
+Program: reshaped_programs/test_input_2003-05-23-TransparentUnion.c
+Compiled successfully
+Program: reshaped_programs/test_input_va-arg-17.c
+Compiled successfully
+Program: reshaped_programs/test_input_float-floor.c
+Compiled successfully
+Program: reshaped_programs/test_input_991030-1.c
+Compiled successfully
+Program: reshaped_programs/test_input_memset-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_casts.c
+Compiled successfully
+Program: reshaped_programs/test_input_memcpy-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_pr15262-2.c
+Compiled successfully
+Program: reshaped_programs/test_input_2009-12-07-StructReturn.c
+Compiled successfully
+Program: reshaped_programs/test_input_product_numbers.c
+Compiled successfully
+Program: reshaped_programs/test_input_pointer_arithmetic.c
+Compiled successfully
+Program: reshaped_programs/test_input_matrixTranspose.c
+Compiled successfully
+Program: reshaped_programs/test_input_complex-7.c
+Compiled successfully
