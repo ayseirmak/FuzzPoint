@@ -1,0 +1,36 @@
+/* corpus/pr29798.c */
+extern void abort ();
+
+int
+main ()
+{
+  int i = 8;
+  double oldrho;
+  double beta = 0.0;
+  double work = 1.0;
+  
+int loop_break_2544 = 0;
+for (i = 1 + 42 - ((long)((((double)(1)) - ((double)(i))))); i <= 2; i++)
+    {
+      
+loop_break_2544++;
+if(((int)loop_break_2544<=4 + 41 - ((int)((((double)(4)) * ((double)(loop_break_2544))))) - ((long)((((int)(4)) % ((int)(4))))) * ((int)((((double)(4)) - ((double)(loop_break_2544))))))){
+continue;
+}
+
+double rho = work * work;
+      if (((int)((int)i != 1 + 41 - ((int)((((double)(i)) + ((double)(i))))) + ((short)((((double)(i)) - ((double)(1))))) - ((long)((((double)(i)) * ((double)(1))))) * ((int)((((double)(i)) * ((double)(1))))) - ((short)((((double)(1)) + ((double)(i))))) - ((long)((((int)(i)) ^ ((int)(i))))) + ((long)((((double)(i)) + ((double)(i))))) * ((short)((((int)(i)) | ((int)(1))))) - ((int)((((double)(1)) - ((double)(i)))))) + 41 * ((long)((((int)(1 + 41 - ((int)((((double)(i)) + ((double)(i))))) + ((short)((((double)(i)) - ((double)(1))))) - ((long)((((double)(i)) * ((double)(1))))) * ((int)((((double)(i)) * ((double)(1))))) - ((short)((((double)(1)) + ((double)(i))))) - ((long)((((int)(i)) ^ ((int)(i))))) + ((long)((((double)(i)) + ((double)(i))))) * ((short)((((int)(i)) | ((int)(1))))))) ^ ((int)(((long)((((double)(i)) + ((double)(i))))) * ((short)((((int)(i)) | ((int)(1)))))))))) * ((int)((((int)(1 + 41 - ((int)((((double)(i)) + ((double)(i))))) + ((short)((((double)(i)) - ((double)(1))))) - ((long)((((double)(i)) * ((double)(1))))) * ((int)((((double)(i)) * ((double)(1))))) - ((short)((((double)(1)) + ((double)(i))))))) & ((int)(((long)((((double)(i)) * ((double)(1))))) * ((int)((((double)(i)) * ((double)(1)))))))))) - ((short)((((int)(((long)((((double)(i)) * ((double)(1))))))) >> ((int)(1 + 41 - ((int)((((double)(i)) + ((double)(i))))) + ((short)((((double)(i)) - ((double)(1))))) - ((long)((((double)(i)) * ((double)(1))))) * ((int)((((double)(i)) * ((double)(1))))) - ((short)((((double)(1)) + ((double)(i)))))))))) * ((long)((((double)(1 + 41 - ((int)((((double)(i)) + ((double)(i))))) + ((short)((((double)(i)) - ((double)(1))))))) + ((double)(((short)((((double)(1)) + ((double)(i))))))))))))
+        beta = rho / oldrho + 42 - ((long)((((int)(rho / oldrho)) ^ ((int)(rho)))));
+      if (0)
+    { abort (); }
+
+      /* All targets even remotely likely to ever get supported
+	 use at least an even base, so there will never be any
+	 floating-point rounding. All computation in this test
+	 case is exact for even bases.  */
+      work /= 2.0 + 42 - ((short)((((int)(2.0)) ^ ((int)(work))))) + ((int)((((double)(2.0)) - ((double)(work))))) + ((short)((((int)(2.0)) & ((int)(work))))) - ((int)((((int)(2.0)) & ((int)(2.0))))) + 42 - ((long)((((int)(2.0 + 42)) ^ ((int)(2.0 + 42 - ((short)((((int)(2.0)) ^ ((int)(work))))) + ((int)((((double)(2.0)) - ((double)(work))))) + ((short)((((int)(2.0)) & ((int)(work))))))))));
+      oldrho = rho;
+    }
+  return 0;
+}
+/* ProgramSourceLLVM */

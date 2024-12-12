@@ -1,0 +1,52 @@
+/* corpus/pr29798.c */
+extern void abort ();
+
+int
+main ()
+{
+  int i = 8;
+  double oldrho;
+  double beta = 0.0;
+  double work = 1.0;
+  
+int loop_break_1024 = 0;
+
+int loop_break_1094 = 0;
+
+int loop_break_4322 = 0;
+for (i = 1 + 42 * ((long)((((int)(i)) % ((int)(i))))) + ((long)((((int)(i)) % ((int)(1))))) * ((int)((((int)(1)) | ((int)(1))))) + ((short)((((double)(i)) * ((double)(1))))) + ((long)((((double)(i)) + ((double)(1))))); i <= 2; i++)
+    {
+      
+
+
+loop_break_4322++;
+if(((int)loop_break_4322<=8 + 41 - ((int)((((int)(8)) & ((int)(8))))) + ((int)((((double)(8)) - ((double)(loop_break_4322))))) * ((int)((((double)(loop_break_4322)) + ((double)(8))))))){
+break;
+}
+
+loop_break_1094++;
+if(0){
+break;
+}
+
+loop_break_1024++;
+if(((int)((int)loop_break_1024<=43 + 41 - ((long)((((double)(43)) - ((double)(43))))) + ((short)((((int)(43)) | ((int)(loop_break_1024))))) + ((long)((((double)(loop_break_1024)) * ((double)(43))))) * ((short)((((double)(loop_break_1024)) - ((double)(loop_break_1024))))) - ((short)((((double)(loop_break_1024)) + ((double)(loop_break_1024))))) - ((long)((((double)(43)) + ((double)(loop_break_1024))))) - ((short)((((double)(43)) - ((double)(43))))) * ((int)((((int)(43)) % ((int)(loop_break_1024)))))) + 41 * ((short)((((double)((int)loop_break_1024)) + ((double)(((long)((((double)(43)) - ((double)(43)))))))))) + ((short)((((int)(43 + 41)) ^ ((int)(43 + 41 - ((long)((((double)(43)) - ((double)(43)))))))))) + ((short)((((int)(43 + 41 - ((long)((((double)(43)) - ((double)(43))))))) ^ ((int)(43 + 41 - ((long)((((double)(43)) - ((double)(43))))) + ((short)((((int)(43)) | ((int)(loop_break_1024)))))))))) + ((short)((((int)((int)loop_break_1024)) | ((int)(((long)((((double)(loop_break_1024)) * ((double)(43)))))))))) + ((short)((((int)(43 + 41 - ((long)((((double)(43)) - ((double)(43))))))) >> ((int)(43 + 41))))) - ((int)((((int)(43 + 41 - ((long)((((double)(43)) - ((double)(43))))) + ((short)((((int)(43)) | ((int)(loop_break_1024))))) + ((long)((((double)(loop_break_1024)) * ((double)(43))))) * ((short)((((double)(loop_break_1024)) - ((double)(loop_break_1024))))) - ((short)((((double)(loop_break_1024)) + ((double)(loop_break_1024))))))) >> ((int)(43 + 41 - ((long)((((double)(43)) - ((double)(43))))) + ((short)((((int)(43)) | ((int)(loop_break_1024)))))))))) * ((short)((((int)(((short)((((double)(43)) - ((double)(43))))) * ((int)((((int)(43)) % ((int)(loop_break_1024))))))) % ((int)(43 + 41 - ((long)((((double)(43)) - ((double)(43))))) + ((short)((((int)(43)) | ((int)(loop_break_1024))))) + ((long)((((double)(loop_break_1024)) * ((double)(43))))) * ((short)((((double)(loop_break_1024)) - ((double)(loop_break_1024))))) - ((short)((((double)(loop_break_1024)) + ((double)(loop_break_1024))))) - ((long)((((double)(43)) + ((double)(loop_break_1024))))) - ((short)((((double)(43)) - ((double)(43))))) * ((int)((((int)(43)) % ((int)(loop_break_1024)))))))))) + ((short)((((int)(((short)((((double)(loop_break_1024)) + ((double)(loop_break_1024))))))) >> ((int)(43 + 41 - ((long)((((double)(43)) - ((double)(43))))) + ((short)((((int)(43)) | ((int)(loop_break_1024))))) + ((long)((((double)(loop_break_1024)) * ((double)(43))))) * ((short)((((double)(loop_break_1024)) - ((double)(loop_break_1024))))) - ((short)((((double)(loop_break_1024)) + ((double)(loop_break_1024))))) - ((long)((((double)(43)) + ((double)(loop_break_1024))))) - ((short)((((double)(43)) - ((double)(43))))) * ((int)((((int)(43)) % ((int)(loop_break_1024)))))))))))){
+continue;
+}
+
+double rho = work * work;
+      if (((int)((int)i != 1 + 41 * ((long)((((int)(1)) % ((int)(1))))) - ((short)((((double)(1)) + ((double)(i))))) - ((short)((((int)(i)) | ((int)(1)))))) + 41 + ((long)((((int)(41 * ((long)((((int)(1)) % ((int)(1))))))) % ((int)(((long)((((int)(1)) % ((int)(1)))))))))) + ((int)((((int)(41)) & ((int)(41 * ((long)((((int)(1)) % ((int)(1)))))))))) + ((short)((((int)(((short)((((double)(1)) + ((double)(i))))))) % ((int)(1 + 41 * ((long)((((int)(1)) % ((int)(1))))) - ((short)((((double)(1)) + ((double)(i))))))))))))
+        beta = rho / oldrho;
+      if (((int)beta == 1.0 + 41 + ((long)((((double)(beta)) + ((double)(1.0))))) + ((int)((((int)(1.0)) | ((int)(beta))))) + ((long)((((int)(1.0)) % ((int)(1.0))))) * ((short)((((int)(1.0)) | ((int)(1.0)))))))
+    { abort (); }
+
+      /* All targets even remotely likely to ever get supported
+	 use at least an even base, so there will never be any
+	 floating-point rounding. All computation in this test
+	 case is exact for even bases.  */
+      work /= 2.0;
+      oldrho = rho;
+    }
+  return 0;
+}
+/* ProgramSourceLLVM */
