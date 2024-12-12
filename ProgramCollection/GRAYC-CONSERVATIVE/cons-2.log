@@ -1,0 +1,28 @@
+testcaseDir:=grayc-24-set-2-seg-11
+hour:=11
+A_s 11 > 1767
+Segment 11 >	3819
+Segment 12 >	2035
+Segment 13 >	2156
+Segment 14 >	2145
+Segment 15 >	2132
+Segment 16 >	1920
+Segment 17 >	1711
+Segment 18 >	1648
+Segment 19 >	1628
+Segment 20 >	1648
+Segment 21 >	1631
+Segment 22 >	1655
+Segment 23 >	1505
+Segment 0 >	1515
+Segment 1 >	1455
+Segment 2 >	1407
+Segment 3 >	1330
+Segment 4 >	1391
+Segment 5 >	1357
+Segment 6 >	1049
+Segment 7 >	1782
+Segment 8 >	1713
+Segment 9 >	1606
+Segment 10 >	1543
+Total >	41781
