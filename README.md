@@ -12,7 +12,9 @@ a_irmak@node:~$ python3 --version
 a_irmak@node:~$ sudo apt install python3-pip  
 a_irmak@node:~$ pip install python-dotenv  
 a_irmak@node:~$ pip install openai  
-a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ sudo apt-get install clang
+a_irmak@node:~/FloatingPoint_and_CompilerTesting/ProgramCollection$ sudo apt-get install clang  
+a_irmak@node:~$ sudo apt install default-jdk  
+a_irmak@node:~$ export PATH=$PATH:/usr/lib/jvm/java-11-openjdk-amd64/bin  
 
 **#####Run Program (pipeline.py)####**
 
