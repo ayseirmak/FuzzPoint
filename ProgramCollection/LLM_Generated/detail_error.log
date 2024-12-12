@@ -1,0 +1,38 @@
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729536132.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729535885.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729535874.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729536185.c
+Error: Error: Compilation timed out after 10 seconds. 
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729536050.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729535897.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729536038.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729536218.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729535864.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729535992.c
+Error: , SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :46:13 in 
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729535943.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/EdgeCase_Programs/test_input_1729536250.c
+Error:  
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542229.c
+Error: SUMMARY: AddressSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542229+0xdc466) (BuildId: b01d466e10c3f6c2a6c68066963eb50a633b2bbc) in relaxed_floating_point_example, SUMMARY: MemorySanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542229+0xa4dd4) (BuildId: beae523011f0821b136d446f6da7116b905b49c2) in relaxed_floating_point_example, SUMMARY: UndefinedBehaviorSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542229+0x2ee08) (BuildId: cb5dff6c77294acc74f932efdbe8a4621b7e670c) in relaxed_floating_point_example 
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542170.c
+Error: SUMMARY: AddressSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542170+0xdc959) (BuildId: 4c74600b560f0716fc2327c48c266eb8ac2cabfa) in edge_case_operations, SUMMARY: MemorySanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542170+0xa4719) (BuildId: 4c082a8bec1d219a859ed9e26687deb766cc5c72) in edge_case_operations, SUMMARY: UndefinedBehaviorSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542170+0x2d032) (BuildId: 53d1dc170ad7bc74698d48427d0f39ea2078e794) in edge_case_operations 
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542192.c
+Error: SUMMARY: AddressSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542192+0xdc176) (BuildId: a65a3f7a2fd7c1970306510e923ca11d77e93cad) in denormalized_example, SUMMARY: MemorySanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542192+0xa4789) (BuildId: 75d5db6c863397e44a07ab47cfe46c1e626caa1a) in denormalized_example, SUMMARY: UndefinedBehaviorSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542192+0x2e03c) (BuildId: 3fe93949c37fe9075a17e8ad2779a4cc3de5d3aa) in denormalized_example 
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542208.c
+Error: SUMMARY: AddressSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542208+0xdc1cf) (BuildId: 04c95bcce5f3f24d6fdb1ccef1e9f0f9fdbdc562) in floating_point_conditions_and_trap, SUMMARY: MemorySanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542208+0xa4972) (BuildId: ae77d0f4f752f00bda390af0835f1da417bced83) in floating_point_conditions_and_trap, SUMMARY: UndefinedBehaviorSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542208+0x2cefa) (BuildId: 7237dce848c375240488a575b89d7ec413c495c3) in floating_point_conditions_and_trap 
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542179.c
+Error: SUMMARY: AddressSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542179+0xdc1b1) (BuildId: feaff47cf649efa2721033ef18e5c6f0ffefc37e) in perform_edge_case_operations, SUMMARY: MemorySanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542179+0xa4834) (BuildId: 371a2465f1b0df991134dac89c1eebf72ea0e92a) in perform_edge_case_operations, SUMMARY: UndefinedBehaviorSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542179+0x2ced0) (BuildId: 2cffe59a58ab407f7cb009ba5a2f02081713a7af) in perform_edge_case_operations 
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542158.c
+Error: SUMMARY: AddressSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542158+0xdc171) (BuildId: 5cf2595b0a61cc9b4cd104e07b99381682d81a6e) in perform_critical_operation, SUMMARY: MemorySanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542158+0xa4744) (BuildId: 567651a88b5c93f94658a2a99915d8adec362023) in perform_critical_operation, SUMMARY: UndefinedBehaviorSanitizer: FPE (/users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Custom_Programs/test_input_1729542158+0x2ce40) (BuildId: 073b99982d6f88ea92a08c0f809feb6f20fd9ab4) in perform_critical_operation 
+Program: /users/a_irmak/FloatingPoint_and_CompilerTesting/Program_Generation_GPT4o/llm/Random_Programs/test_input_1729544205.c
+Error: SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior :23:21 in 
