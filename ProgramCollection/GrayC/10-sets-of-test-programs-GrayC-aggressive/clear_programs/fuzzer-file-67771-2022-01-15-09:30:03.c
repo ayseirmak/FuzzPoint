@@ -1,0 +1,57 @@
+/* corpus/00175.c */
+/* Taken from: https://github.com/c-testsuite/c-testsuite */
+#include <stdio.h>
+
+void charfunc(char a)
+{
+   printf("char: %c\n", a);
+}
+
+void intfunc(int a)
+{
+   printf("int: %d\n", a);
+}
+
+void floatfunc(float a)
+{
+   printf("float: %f\n", a);
+}
+
+int main()
+{
+   charfunc('a');
+   charfunc((0x86));
+   charfunc(((4.3)));
+
+   intfunc('a');
+   intfunc((-(99)));
+   intfunc(((4.5)));
+
+   floatfunc('a');
+   floatfunc((-(-100)));
+   floatfunc(((6.5)));
+
+   /* printf("%c %d %f\n", 'a', 'b', 'c'); */
+   /* printf("%c %d %f\n", 97, 98, 99); */
+   /* printf("%c %d %f\n", 97.0, 98.0, 99.0); */
+
+   char b = (0x25777B);
+   char c = ((7.1));
+
+   printf("%d %d\n", b, c);
+
+   int d = 'a';
+   int e = ((7.6));
+
+   printf("%d %d\n", d, e);
+
+   float f = 'a';
+   float g = (0xBF75);
+
+   printf("%f %f\n", f, g);
+
+   return ((134217728));
+}
+
+/* vim: set expandtab ts=4 sw=3 sts=3 tw=80 :*/
+/* ProgramSourceWild */

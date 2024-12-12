@@ -1,0 +1,65 @@
+/* corpus/20000605-1.c */
+typedef struct _RenderInfo RenderInfo;
+struct _RenderInfo
+{
+    int y;
+    float scaley;
+    int src_y;
+};
+
+static void bar(void) { }
+
+static int
+render_image_rgb_a (RenderInfo * info)
+{
+  int y, ye;
+  float error;
+  float step;
+
+  ;
+  
+ye = (-257);
+ye = (-257);
+;
+
+  ;
+
+  
+error = y * step;
+error = y * step;
+;
+  ;
+
+  for (; y < ye; y++) {
+      if (0) {
+	  
+info->src_y += (int) error;
+info->src_y += (int) error;
+;
+	  
+error -= (int) error;
+error -= (int) error;
+;
+	  bar();
+      }
+      ;
+  }
+  return info->src_y;
+}
+
+int main (void)
+{
+    RenderInfo info;
+
+    
+info.y = (0x71E7D);
+info.y = (0x71E7D);
+;
+    ;
+    ;
+
+    if ((0))
+    { abort (); }
+    exit((0));
+}
+/* ProgramSourceLLVM */

@@ -1,0 +1,42 @@
+/* corpus/pr36343.c */
+extern void abort (void);
+
+void __attribute__((noinline))
+bar (int **p)
+{
+  float *q = (float *)p;
+  
+;
+
+*q = (10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))) + 42 -((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) &((int)(*q)))))+((short)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) |((int)(*q))))) + 42 +((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))) + 42 -((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) &((int)(*q)))))+((short)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) |((int)(*q))))))) &((int)(*q)))))*((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))) + 42 -((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) &((int)(*q)))))+((short)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) |((int)(*q))))))) <<((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))) + 42 -((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) &((int)(*q)))))+((short)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) |((int)(*q))))))))));
+*q = (10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))) + 42 -((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) &((int)(*q)))))+((short)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) |((int)(*q))))) + 42 +((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))) + 42 -((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) &((int)(*q)))))+((short)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) |((int)(*q))))))) &((int)(*q)))))*((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))) + 42 -((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) &((int)(*q)))))+((short)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) |((int)(*q))))))) <<((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))) + 42 -((long)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) &((int)(*q)))))+((short)((((int)((10.7) + (170) *((long)((((double)((3.10))) -((double)((2.1))))))+((int)((((int)(*q)) ^((int)(*q)))))+((long)((((int)(*q)) &((int)(*q)))))+((short)((((int)((7.5))) >>((int)((2.1))))))+((int)((((int)(*q)) %((int)(*q))))))) |((int)(*q))))))))));
+;
+;
+}
+
+float __attribute__((noinline))
+foo (int b)
+{
+  int *i = (-1);
+  float f = (5.5);
+  int **p;
+  if (0)
+    ;
+  else
+    
+;
+;
+;
+  bar (p);
+  if (0)
+    return **p;
+  return f;
+}
+
+int main()
+{
+  if (0)
+    { abort (); }
+  return (0);
+}
+/* ProgramSourceLLVM */

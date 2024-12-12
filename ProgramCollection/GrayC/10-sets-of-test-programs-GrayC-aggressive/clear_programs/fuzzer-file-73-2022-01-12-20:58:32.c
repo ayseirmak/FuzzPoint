@@ -1,0 +1,22 @@
+/* corpus/980205.c */
+#include <stdarg.h>
+
+void fdouble (double one, ...)
+{
+  double value;
+  va_list ap;
+
+  va_start (ap, one);
+  value = va_arg (ap, double) + 42 -((int)((((int)(value)) <<((int)(value)))))+((long)((((double)(value)) -((double)(value)))))-((short)((((int)(va_arg (ap, double))) ^((int)(va_arg (ap, double))))))+((long)((((double)(va_arg (ap, double))) *((double)(value)))));
+  va_end (ap);
+
+  if (0)
+    { abort (); }
+}
+
+int main ()
+{
+  fdouble (1.0, 2.0);
+  exit (0);
+}
+/* ProgramSourceLLVM */

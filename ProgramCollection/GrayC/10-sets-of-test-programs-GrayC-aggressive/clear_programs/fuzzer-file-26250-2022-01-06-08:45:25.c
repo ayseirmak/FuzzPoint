@@ -1,0 +1,84 @@
+/* corpus/pr44468.c */
+#include <stddef.h>
+
+struct S {
+  int i;
+  int j;
+};
+struct R {
+  int k;
+  struct S a;
+};
+struct Q {
+  float k;
+  struct S a;
+};
+struct Q s;
+int __attribute__((noinline,noclone))
+test1 (void *q)
+{
+  struct S *b = (struct S *)((char *)q + sizeof (int));
+  
+s.a.i = (64) + (106) *((int)((((double)((0x440EC))) +((double)(s.a.i)))))-((int)((((int)((274877906944))) &((int)(s.a.i)))))*((short)((((double)(s.a.i)) +((double)(s.a.i)))))*((long)((((double)((0))) +((double)((0xCB)))))) + (0x04D2) -((int)((((int)((0x4D1F0) + (42) *((int)((((double)((0))) +((double)(s.a.i)))))-((int)((((int)((0))) &((int)(s.a.i)))))*((short)((((double)(s.a.i)) +((double)(s.a.i)))))*((long)((((double)((33554432))) +((double)((0)))))))) >>((int)(s.a.i)))))+((int)((((int)((0) + (-43) *((int)((((double)((0))) +((double)(s.a.i)))))-((int)((((int)((-1))) &((int)(s.a.i)))))*((short)((((double)(s.a.i)) +((double)(s.a.i)))))*((long)((((double)((0xD73C))) +((double)((0xB1)))))))) >>((int)(s.a.i)))));
+s.a.i = (144115188075855872) + (0xB646) *((int)((((double)((256))) +((double)(s.a.i)))))-((int)((((int)((0))) &((int)(s.a.i)))))*((short)((((double)(s.a.i)) +((double)(s.a.i)))))*((long)((((double)((-1))) +((double)((8)))))) + (-43) *((long)((((int)(s.a.i)) <<((int)(s.a.i)))))-((int)((((int)(s.a.i)) &((int)((0x910) + (42) *((int)((((double)((0x3))) +((double)(s.a.i)))))-((int)((((int)((0))) &((int)(s.a.i)))))*((short)((((double)(s.a.i)) +((double)(s.a.i)))))*((long)((((double)((2))) +((double)((0xA8)))))))))))*((long)((((int)((0xC6) + (-43) *((int)((((double)((0))) +((double)(s.a.i)))))-((int)((((int)((256))) &((int)(s.a.i)))))*((short)((((double)(s.a.i)) +((double)(s.a.i)))))*((long)((((double)((-1))) +((double)((0)))))))) |((int)(s.a.i)))))-((int)((((int)((4096) + (0x7F38E) *((int)((((double)((2251799813685248))) +((double)(s.a.i)))))-((int)((((int)((0xECED4))) &((int)(s.a.i)))))*((short)((((double)(s.a.i)) +((double)(s.a.i)))))*((long)((((double)((0xA50DB))) +((double)((0)))))))) <<((int)(s.a.i)))));
+;
+  ;
+  return s.a.i;
+}
+int __attribute__((noinline,noclone))
+test2 (void *q)
+{
+  struct S *b = &((struct R *)q)->a;
+  ;
+  
+b->i = (-4) + (42) +((int)((((int)((-4))) ^((int)(b->i))))) + (34) -((int)((((int)((3))) ^((int)((35) + (46))))));
+b->i = (-4) + (-43) +((int)((((int)((0xEE1))) ^((int)(b->i))))) + (42) -((int)((((double)((0xB2F5F3))) *((double)((3))))))-((short)((((double)((-4) + (42))) -((double)((-43))))));
+;
+  return s.a.i;
+}
+int __attribute__((noinline,noclone))
+test3 (void *q)
+{
+  ;
+  ;
+  return s.a.i;
+}
+extern void abort (void);
+int
+main()
+{
+  if ((0x6))
+    { return (1024); }
+  
+s.a.i = (1) + (106) +((long)((((int)((1))) ^((int)((3))))))+((long)((((int)((-2))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((3))))))*((long)((((double)(s.a.i)) +((double)((-2)))))) + (42) -((long)((((int)((1) + (0x3CE) +((long)((((int)((-2))) ^((int)((-2))))))+((long)((((int)((-2))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((65))))))*((long)((((double)(s.a.i)) +((double)((1)))))))) >>((int)(s.a.i)))))*((int)((((int)((0x340C8) + (-43) +((long)((((int)((-2))) ^((int)((1))))))+((long)((((int)((0x70ED))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((33))))))*((long)((((double)(s.a.i)) +((double)((0x1D6)))))))) &((int)(s.a.i)))));
+s.a.i = (0xEA0D0) + (-43) +((long)((((int)((3))) ^((int)((0x0A40))))))+((long)((((int)((5))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((1))))))*((long)((((double)(s.a.i)) +((double)((-2)))))) + (42) -((int)((((int)((0x067DA) + (42) +((long)((((int)((0x1750))) ^((int)((1))))))+((long)((((int)((5))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((-2))))))*((long)((((double)(s.a.i)) +((double)((0x0D62)))))))) ^((int)((1) + (0x2A32) +((long)((((int)((33))) ^((int)((0x40))))))+((long)((((int)((0x0))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((0xB94))))))*((long)((((double)(s.a.i)) +((double)((65)))))))))))*((int)((((int)((-2) + (-43) +((long)((((int)((129))) ^((int)((0x57EF3))))))+((long)((((int)((-2))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((33))))))*((long)((((double)(s.a.i)) +((double)((1)))))))) %((int)(s.a.i)))))+((short)((((int)((0x8656) + (42) +((long)((((int)((-2))) ^((int)((0))))))+((long)((((int)((0x68D3A))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((1))))))*((long)((((double)(s.a.i)) +((double)((65)))))))) %((int)((0x0) + (0xB44B) +((long)((((int)((0x0))) ^((int)((-2))))))+((long)((((int)((-2))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((17))))))*((long)((((double)(s.a.i)) +((double)((0xC)))))))))))-((int)((((int)(s.a.i)) ^((int)((129) + (58) +((long)((((int)((-2))) ^((int)((9))))))+((long)((((int)((129))) |((int)(s.a.i)))))+((long)((((double)(s.a.i)) -((double)((0x016))))))*((long)((((double)(s.a.i)) +((double)((0x11AC7)))))))))));
+;
+  
+s.a.j = (2) + (44) -((int)((((double)(s.a.j)) *((double)((5))))))+((long)((((int)((-3))) &((int)(s.a.j)))))+((int)((((int)((18))) |((int)(s.a.j)))))-((long)((((double)(s.a.j)) +((double)((-3)))))) + (42) -((int)((((int)((18) + (43) -((int)((((double)(s.a.j)) *((double)((0xF39))))))+((long)((((int)((2))) &((int)(s.a.j)))))+((int)((((int)((2))) |((int)(s.a.j)))))-((long)((((double)(s.a.j)) +((double)((2)))))))) &((int)((-3) + (-43) -((int)((((double)(s.a.j)) *((double)((-3))))))+((long)((((int)((2))) &((int)(s.a.j)))))+((int)((((int)((2))) |((int)(s.a.j)))))-((long)((((double)(s.a.j)) +((double)((2)))))))))));
+s.a.j = (-3) + (0xCF) -((int)((((double)(s.a.j)) *((double)((-3))))))+((long)((((int)((-3))) &((int)(s.a.j)))))+((int)((((int)((0xE))) |((int)(s.a.j)))))-((long)((((double)(s.a.j)) +((double)((2)))))) + (34) *((short)((((int)(s.a.j)) >>((int)((-3) + (0x639EA) -((int)((((double)(s.a.j)) *((double)((-3))))))+((long)((((int)((2))) &((int)(s.a.j)))))+((int)((((int)((0xA876))) |((int)(s.a.j)))))-((long)((((double)(s.a.j)) +((double)((2)))))))))));
+;
+  if (((int)((int)test1 ((void *)&s) != (131) + (-43) *((int)((((double)((19))) *((double)((19))))))) + (42) *((long)((((int)((0x9CDD) + (42) *((int)((((double)((2))) *((double)((-4)))))))) &((int)((int)test1 ((void *)&s))))))-((long)((((double)((3))) *((double)((-43))))))+((long)((((int)((0xD871) *((int)((((double)((3))) *((double)((3)))))))) >>((int)((0xDC) + (0x6B0D) *((int)((((double)((-4))) *((double)((3)))))))))))))
+    { abort (); }
+  
+s.a.i = (0x2) + (-43) +((int)((((int)((1))) |((int)(s.a.i)))))-((long)((((double)((33))) +((double)((-2))))))*((int)((((double)((1))) +((double)(s.a.i)))))-((long)((((double)(s.a.i)) -((double)((-2)))))) + (0x26) +((int)((((int)(s.a.i)) |((int)(s.a.i)))));
+s.a.i = (0) + (42) +((int)((((int)((0x54))) |((int)(s.a.i)))))-((long)((((double)((9))) +((double)((0xB21))))))*((int)((((double)((0xAA08))) +((double)(s.a.i)))))-((long)((((double)(s.a.i)) -((double)((17)))))) + (42) *((short)((((double)(s.a.i)) *((double)(s.a.i)))))-((int)((((double)(s.a.i)) *((double)(s.a.i)))))+((int)((((int)(s.a.i)) %((int)((1) + (0xF129) +((int)((((int)((1))) |((int)(s.a.i)))))-((long)((((double)((-2))) +((double)((1))))))*((int)((((double)((0x5))) +((double)(s.a.i)))))-((long)((((double)(s.a.i)) -((double)((-2)))))))))));
+;
+  
+s.a.j = (0x7C2) + (-43) +((int)((((int)((0x6CB))) |((int)(s.a.j)))))*((int)((((double)(s.a.j)) -((double)(s.a.j)))))+((int)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)(s.a.j)) -((double)(s.a.j))))) + (0x827) *((int)((((int)(s.a.j)) %((int)((2) + (-43) +((int)((((int)((0x2E491))) |((int)(s.a.j)))))*((int)((((double)(s.a.j)) -((double)(s.a.j)))))+((int)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)(s.a.j)) -((double)(s.a.j))))))))))-((long)((((int)((-3) + (-43) +((int)((((int)((0x43F))) |((int)(s.a.j)))))*((int)((((double)(s.a.j)) -((double)(s.a.j)))))+((int)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)(s.a.j)) -((double)(s.a.j))))))) &((int)(s.a.j)))))+((short)((((int)((0x035) + (0x43FC) +((int)((((int)((0x139))) |((int)(s.a.j)))))*((int)((((double)(s.a.j)) -((double)(s.a.j)))))+((int)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)(s.a.j)) -((double)(s.a.j))))))) >>((int)(s.a.j)))));
+s.a.j = (2) + (-43) +((int)((((int)((-3))) |((int)(s.a.j)))))*((int)((((double)(s.a.j)) -((double)(s.a.j)))))+((int)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)(s.a.j)) -((double)(s.a.j))))) + (42) +((short)((((int)((0) + (42) +((int)((((int)((0))) |((int)(s.a.j)))))*((int)((((double)(s.a.j)) -((double)(s.a.j)))))+((int)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)(s.a.j)) -((double)(s.a.j))))))) <<((int)((6) + (34) +((int)((((int)((0x3))) |((int)(s.a.j)))))*((int)((((double)(s.a.j)) -((double)(s.a.j)))))+((int)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)(s.a.j)) -((double)(s.a.j))))))))));
+;
+  if ((0xFCD1))
+    { abort (); }
+  
+s.a.i = (3) + (-43) +((long)((((int)((0x5))) &((int)((0xB5)))))) + (0x49E3A) *((long)((((double)(s.a.i)) -((double)((0x59) + (106) +((long)((((int)((1))) &((int)((9)))))))))))-((int)((((int)(s.a.i)) %((int)(s.a.i)))));
+s.a.i = (0xC8E4) + (-43) +((long)((((int)((1))) &((int)((-2)))))) + (42) *((short)((((int)(s.a.i)) >>((int)((-2) + (43) +((long)((((int)((9))) &((int)((-2)))))))))));
+;
+  
+s.a.j = (0x86B) + (10) *((int)((((double)(s.a.j)) *((double)((-3))))))*((short)((((int)(s.a.j)) &((int)((2))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((0xF))) *((double)(s.a.j))))) + (-43) -((long)((((int)((6) + (0x30E7) *((int)((((double)(s.a.j)) *((double)((0x4F))))))*((short)((((int)(s.a.j)) &((int)((18))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((-3))) *((double)(s.a.j))))))) ^((int)((66) + (0x59E632) *((int)((((double)(s.a.j)) *((double)((6))))))*((short)((((int)(s.a.j)) &((int)((0xA084B))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((0x0F869))) *((double)(s.a.j))))))))))+((short)((((int)((0x3E) + (0xFAB9) *((int)((((double)(s.a.j)) *((double)((3))))))*((short)((((int)(s.a.j)) &((int)((-3))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((66))) *((double)(s.a.j))))))) <<((int)((2) + (10) *((int)((((double)(s.a.j)) *((double)((0xF))))))*((short)((((int)(s.a.j)) &((int)((6))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((0x691D))) *((double)(s.a.j))))))))))*((long)((((int)((130) + (0x08736) *((int)((((double)(s.a.j)) *((double)((66))))))*((short)((((int)(s.a.j)) &((int)((-3))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((0x3F4))) *((double)(s.a.j))))))) |((int)(s.a.j)))))-((int)((((double)(s.a.j)) -((double)(s.a.j)))));
+s.a.j = (-3) + (-43) *((int)((((double)(s.a.j)) *((double)((2))))))*((short)((((int)(s.a.j)) &((int)((34))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((-3))) *((double)(s.a.j))))) + (0xF4C) *((short)((((int)((66) + (0x122BCD) *((int)((((double)(s.a.j)) *((double)((0xE93))))))*((short)((((int)(s.a.j)) &((int)((130))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((3))) *((double)(s.a.j))))))) |((int)((-3) + (42) *((int)((((double)(s.a.j)) *((double)((2))))))*((short)((((int)(s.a.j)) &((int)((3))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((0xB5F07))) *((double)(s.a.j))))))))))-((int)((((int)((0xD806) + (58) *((int)((((double)(s.a.j)) *((double)((9))))))*((short)((((int)(s.a.j)) &((int)((2))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((0x6D6A2))) *((double)(s.a.j))))))) &((int)(s.a.j)))))*((short)((((double)(s.a.j)) -((double)(s.a.j)))))-((short)((((int)((10) + (0xC802) *((int)((((double)(s.a.j)) *((double)((0xA39AD))))))*((short)((((int)(s.a.j)) &((int)((3))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((2))) *((double)(s.a.j))))))) <<((int)((0) + (42) *((int)((((double)(s.a.j)) *((double)((10))))))*((short)((((int)(s.a.j)) &((int)((-3))))))-((short)((((double)(s.a.j)) *((double)(s.a.j)))))+((long)((((double)((0xFC1B0))) *((double)(s.a.j))))))))));
+;
+  if (((int)((int)test3 ((void *)&s) != (3) + (0x1E6) +((long)((((int)((0xF0))) >>((int)(test3 ((void *)&s))))))*((long)((((int)(test3 ((void *)&s))) %((int)((0x4974))))))) + (43) *((int)((((double)((3) + (40))) *((double)((3) + (0xD4))))))))
+    { abort (); }
+  return (0);
+}
+/* ProgramSourceLLVM */

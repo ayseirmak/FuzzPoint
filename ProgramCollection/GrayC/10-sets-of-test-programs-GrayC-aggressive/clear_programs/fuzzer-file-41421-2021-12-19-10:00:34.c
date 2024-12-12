@@ -1,0 +1,42 @@
+/* corpus/20020213-1.c */
+/* PR c/5681
+   This testcase failed on IA-32 at -O0, because safe_from_p
+   incorrectly assumed it is safe to first write into a.a2 b-1
+   and then read the original value from it.  */
+
+int bar (float);
+
+struct A {
+  float a1;
+  int a2;
+} a;
+
+int b;
+
+void foo (void)
+{
+  ;
+  
+
+a.a2 = a.a2 < b - (((-74))) ? a.a2 : b - (((67))) + (-(-44)) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((73))) ? a.a2 : b - (((0xCB))))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((40))) ? a.a2 : b - (((-4))))))))+((int)((((int)(a.a2)) <<((int)(a.a2))))) + (-(0x54834)) *((long)((((int)(a.a2)) ^((int)(a.a2 < b - ((-(10))) ? a.a2 : b - ((-(1))) + (0xCF) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((0x4))) ? a.a2 : b - ((0x1BFE6)))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((-10))) ? a.a2 : b - ((-(20))))))))+((int)((((int)(a.a2)) <<((int)(a.a2)))))))))) + (0x22) -((short)((((int)(a.a2)) %((int)(a.a2)))))-((long)((((int)(a.a2 < b - (((201))) ? a.a2 : b - (((3))) + (-(171)) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((0xEADAC))) ? a.a2 : b - (((0x9D83))))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((0x5))) ? a.a2 : b - (((2))))))))+((int)((((int)(a.a2)) <<((int)(a.a2))))) + (-(0x55738)) *((long)((((int)(a.a2)) ^((int)(a.a2 < b - ((-(0x3F8985))) ? a.a2 : b - ((-(4))) + (0xCF) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((-9))) ? a.a2 : b - ((0x1BFE6)))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((-10))) ? a.a2 : b - ((-(12))))))))+((int)((((int)(a.a2)) <<((int)(a.a2)))))))))))) |((int)(a.a2)))))*((int)((((int)(a.a2 < b - (((0xC8AD30))) ? a.a2 : b - (((67))) + (-(63)) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((0xACC245))) ? a.a2 : b - (((0x3))))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((12))) ? a.a2 : b - (((3))))))))+((int)((((int)(a.a2)) <<((int)(a.a2))))) + (-(-44)) *((long)((((int)(a.a2)) ^((int)(a.a2 < b - ((-(2))) ? a.a2 : b - ((-(-5))) + (0xCF) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((-9))) ? a.a2 : b - ((0x1BFE6)))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((13))) ? a.a2 : b - ((-(0x6780))))))))+((int)((((int)(a.a2)) <<((int)(a.a2)))))))))))) %((int)(a.a2)))))-((long)((((int)(a.a2 < b - (((78))) ? a.a2 : b - (((11))) + (-(-44)) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((73))) ? a.a2 : b - (((1))))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((-9))) ? a.a2 : b - (((7))))))))+((int)((((int)(a.a2)) <<((int)(a.a2))))) + (-(43)) *((long)((((int)(a.a2)) ^((int)(a.a2 < b - ((-(-11))) ? a.a2 : b - ((-(4))) + (0xCF) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((40))) ? a.a2 : b - ((0x1BFE6)))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((0x94))) ? a.a2 : b - ((-(0x08B))))))))+((int)((((int)(a.a2)) <<((int)(a.a2)))))))))))) >>((int)(a.a2)))));
+a.a2 = a.a2 < b - (((-74))) ? a.a2 : b - (((67))) + (-(-44)) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((73))) ? a.a2 : b - (((0xCB))))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((40))) ? a.a2 : b - (((-4))))))))+((int)((((int)(a.a2)) <<((int)(a.a2))))) + (-(0x54834)) *((long)((((int)(a.a2)) ^((int)(a.a2 < b - ((-(10))) ? a.a2 : b - ((-(1))) + (0xCF) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((0x4))) ? a.a2 : b - ((0x1BFE6)))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((-10))) ? a.a2 : b - ((-(20))))))))+((int)((((int)(a.a2)) <<((int)(a.a2)))))))))) + (0x22) -((short)((((int)(a.a2)) %((int)(a.a2)))))-((long)((((int)(a.a2 < b - (((201))) ? a.a2 : b - (((3))) + (-(171)) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((0xEADAC))) ? a.a2 : b - (((0x9D83))))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((0x5))) ? a.a2 : b - (((2))))))))+((int)((((int)(a.a2)) <<((int)(a.a2))))) + (-(0x55738)) *((long)((((int)(a.a2)) ^((int)(a.a2 < b - ((-(0x3F8985))) ? a.a2 : b - ((-(4))) + (0xCF) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((-9))) ? a.a2 : b - ((0x1BFE6)))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((-10))) ? a.a2 : b - ((-(12))))))))+((int)((((int)(a.a2)) <<((int)(a.a2)))))))))))) |((int)(a.a2)))))*((int)((((int)(a.a2 < b - (((0xC8AD30))) ? a.a2 : b - (((67))) + (-(63)) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((0xACC245))) ? a.a2 : b - (((0x3))))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((12))) ? a.a2 : b - (((3))))))))+((int)((((int)(a.a2)) <<((int)(a.a2))))) + (-(-44)) *((long)((((int)(a.a2)) ^((int)(a.a2 < b - ((-(2))) ? a.a2 : b - ((-(-5))) + (0xCF) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((-9))) ? a.a2 : b - ((0x1BFE6)))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((13))) ? a.a2 : b - ((-(0x6780))))))))+((int)((((int)(a.a2)) <<((int)(a.a2)))))))))))) %((int)(a.a2)))))-((long)((((int)(a.a2 < b - (((78))) ? a.a2 : b - (((11))) + (-(-44)) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((73))) ? a.a2 : b - (((1))))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((-9))) ? a.a2 : b - (((7))))))))+((int)((((int)(a.a2)) <<((int)(a.a2))))) + (-(43)) *((long)((((int)(a.a2)) ^((int)(a.a2 < b - ((-(-11))) ? a.a2 : b - ((-(4))) + (0xCF) +((long)((((double)(a.a2)) +((double)(a.a2)))))+((int)((((double)(a.a2 < b - (((40))) ? a.a2 : b - ((0x1BFE6)))) +((double)(a.a2)))))-((short)((((int)(a.a2)) ^((int)(a.a2)))))+((short)((((int)(a.a2)) <<((int)(a.a2 < b - (((0x94))) ? a.a2 : b - ((-(0x08B))))))))+((int)((((int)(a.a2)) <<((int)(a.a2)))))))))))) >>((int)(a.a2)))));
+;
+;
+;
+  if (0)
+    { abort (); }
+}
+
+int bar (float x)
+{
+  return ((-(3298)));
+}
+
+int main()
+{
+  ;
+  ;
+  foo ();
+  return (((1152921521786720256)));
+}
+/* ProgramSourceLLVM */

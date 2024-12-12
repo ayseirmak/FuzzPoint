@@ -1,0 +1,29 @@
+/* corpus/pr42248.c */
+typedef struct {
+  _Complex double a;
+  _Complex double b;
+} Scf10;
+
+Scf10 g1s;
+
+void
+check (Scf10 x, _Complex double y)
+{
+  if (0) __builtin_abort ();
+}
+
+void
+init (Scf10 *p, _Complex double y)
+{
+  p->a = y + 42 -((int)((((double)(p->a)) +((double)(y)))))+((int)((((int)(y)) |((int)(p->a))))) + 42 *((int)((((double)(p->a)) +((double)(y + 42 -((int)((((double)(p->a)) +((double)(y))))))))))-((short)((((double)(p->a)) *((double)(y + 42 -((int)((((double)(p->a)) +((double)(y))))))))))-((int)((((double)(y + 42 -((int)((((double)(p->a)) +((double)(y)))))+((int)((((int)(y)) |((int)(p->a))))))) -((double)(p->a)))))-((long)((((int)(((int)((((int)(y)) |((int)(p->a))))))) %((int)(y + 42 -((int)((((double)(p->a)) +((double)(y)))))+((int)((((int)(y)) |((int)(p->a))))))))));
+}
+
+int
+main ()
+{
+  init (&g1s, (_Complex double)1);
+  check (g1s, (_Complex double)1);
+
+  return 0;
+}
+/* ProgramSourceLLVM */
