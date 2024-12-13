@@ -1,7 +1,7 @@
 OS: UBUNTU22-64-STD   
 python vrs: Python 3.10.12   
 clang vrs:  Ubuntu clang version 14.0.0   
-Total = 375 + 302 = 677
+**Total: 13357**
 
 git clone https://github.com/ayseirmak/FloatingPoint_and_CompilerTesting.git
 
@@ -66,11 +66,11 @@ md5:83f9ae92cfe0334b757d222b740fa8ed 	214.6 MB
 | Grayc-FuzzerU    | YES   | YES   | 302   |
 | GrayC-Aggressive | NO    | YES   | 5915    |
 | GrayC-No-Coverage| NO    | YES    | 4105    |
+| GrayC-Conservative| NO    | YES    | 2404    |
 | KLEE| YES    | YES    | 52    |
 | Search-Gem5| YES    | YES    | 124    |
 | SoSy-Lab-2024| YES    | YES    | 375    |
 | LLM-Generated| YES    | YES    | 80    |
 
-Total: 10953
-
+**Total: 13357**
 
