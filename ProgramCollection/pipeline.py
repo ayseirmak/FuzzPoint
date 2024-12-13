@@ -43,9 +43,8 @@ def clone_repository(repo_url, clone_dir):
 # Step 2: Extract C files with floating-point operations
 def extract_c_files_with_floats(clone_dir):
     file_text_path = "c_files_list.txt"
-    pattern = re.compile(r'\b(float|double|long double)\b\s+\w+\s*(=\s*[^;]*)?;')
+    pattern = re.compile(r'\b(float|double|long double)\b\s')
     c_files = []
-    b_files = []
     for root, _, files in os.walk(clone_dir):
         for file in files:
             if file.endswith(".c"):
@@ -64,10 +63,7 @@ def extract_c_files_with_floats(clone_dir):
                         print("pattern match")
                         if re.search(r'\bint\s+main\s*\(', content, re.DOTALL):
                             print("int match")
-                            name = os.path.basename(file_path)
-                            if name not in b_files:
-                                b_files.append(name)
-                                c_files.append(file_path)
+                            c_files.append(file_path)
                 except UnicodeDecodeError as e:
                     print(e)
     print(f"Found {len(c_files)} C files with floating-point operations.")
@@ -128,7 +124,7 @@ def compile_and_test(file_path):
         try:
             comp_res = subprocess.run(compile_cmd.split(), check=True, stderr=subprocess.PIPE,timeout=EXECUTION_TIMEOUT)
             if comp_res.stderr:
-                err = comp_res.stderr.decode()
+                err = comp_res.stderr.decode('utf-8', errors='replace')
                 err = err.replace(file_path, "")
                 if "error:" in err:
                     print(f"Compiler Error: {comp_res.stderr}")
@@ -143,7 +139,7 @@ def compile_and_test(file_path):
                 print(f"Compiled {file_path} successfully.")            
         except subprocess.CalledProcessError as e:
             print(f"Compiler Error: {e.stderr}")
-            err = e.stderr.decode()
+            err = e.stderr.decode('utf-8', errors='replace')
             err = err.replace(file_path, "")
             with open(COMP_ERR_log, "a") as comp_error_file:
                 comp_error_file.write(f"Program: {file_path}\nError: {err}\n")
@@ -154,9 +150,9 @@ def compile_and_test(file_path):
             san_result = subprocess.run([binary_path], stderr=subprocess.PIPE, check=True)
 
             if san_result.stderr:
-                err = san_result.stderr.decode()  
+                err = san_result.stderr.decode('utf-8', errors='replace')  
                 err = err.replace(file_path, "") 
-                if detect_sanitizer(san_result.stderr.decode(), name):
+                if detect_sanitizer(san_result.stderr.decode('utf-8', errors='replace'), name):
                         results[name] += 1
                         if "SUMMARY:" in err:
                             lines = err.splitlines()
@@ -175,9 +171,9 @@ def compile_and_test(file_path):
             if err not in errors:
                     errors.append(err)
         except subprocess.CalledProcessError as e:
-            err = e.stderr.decode()
+            err = e.stderr.decode('utf-8', errors='replace')
             err = err.replace(file_path, "")
-            if detect_sanitizer(e.stderr.decode(), name):
+            if detect_sanitizer(e.stderr.decode('utf-8', errors='replace'), name):
                 results[name] += 1
                 if "SUMMARY:" in err:
                     lines = err.splitlines()
@@ -277,7 +273,7 @@ def compile_and_test2(file_path):
             comp_res = subprocess.run(compile_cmd.split(), check=True, stderr=subprocess.PIPE)
             # if it give runtime error not exception catch it
             if comp_res.stderr:
-                err = comp_res.stderr.decode()
+                err = comp_res.stderr.decode('utf-8', errors='replace')
                 err = err.replace(file_path, "")
                 #if it only give warning just okay with it
                 if "error:" in err:
@@ -292,7 +288,7 @@ def compile_and_test2(file_path):
                 results["comp"] += 1
                 print(f"Program: {file_path} compiled successfully - {name}.")            
         except subprocess.CalledProcessError as e:
-            err = e.stderr.decode()
+            err = e.stderr.decode('utf-8', errors='replace')
             err = err.replace(file_path, "")
             print(f"Compiler Error: {e.stderr}")
             with open(COMP_ERR_log, "a") as comp_error_file:
@@ -303,9 +299,9 @@ def compile_and_test2(file_path):
         try:    
             san_result = subprocess.run([binary_path], stderr=subprocess.PIPE, check=True, timeout=EXECUTION_TIMEOUT)
             if san_result.stderr:
-                err = san_result.stderr.decode()  
+                err = san_result.stderr.decode('utf-8', errors='replace')  
                 err = err.replace(file_path, "") 
-                if detect_sanitizer(san_result.stderr.decode(), name):
+                if detect_sanitizer(san_result.stderr.decode('utf-8', errors='replace'), name):
                         results[name] += 1
                         if "SUMMARY:" in err:
                             lines = err.splitlines()
@@ -324,9 +320,9 @@ def compile_and_test2(file_path):
             if err not in errors:
                     errors.append(err)
         except subprocess.CalledProcessError as e:
-            err = e.stderr.decode()
+            err = e.stderr.decode('utf-8', errors='replace')
             err = err.replace(file_path, "")
-            if detect_sanitizer(e.stderr.decode(), name):
+            if detect_sanitizer(e.stderr.decode('utf-8', errors='replace'), name):
                 results[name] += 1
                 if "SUMMARY:" in err:
                     lines = err.splitlines()
@@ -372,9 +368,9 @@ def main2(c_path):
     c_files = [line.strip() for line in c_files]
     print(len(c_files))
     CLEAR_DIR2 = "clear_programs2"
-    os.makedirs(CLEAR_DIR2, exist_ok=True)
+    #os.makedirs(CLEAR_DIR2, exist_ok=True)
 
-    for c_file in c_files:
+    for c_file in c_files[1210:]:
         print(c_files.index(c_file))
         if compile_and_test2(c_file):
             print(f"{c_file} passed all sanitizers.")
@@ -393,7 +389,7 @@ if __name__ == "__main__":
     #path = '/home/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/reshaped_programs/test_input_double_req_bl_1252b.c'
     #compile_and_test(path)
     
-    #CLONE_DIR = "/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/10-sets-of-test-programs-GrayC-No-Coverage-GuidanceU"
+    #CLONE_DIR = "/users/a_irmak/FloatingPoint_and_CompilerTesting/ProgramCollection/GRAYC-CONSERVATIVE"
     #c_files = extract_c_files_with_floats(CLONE_DIR)
    
     #main()
