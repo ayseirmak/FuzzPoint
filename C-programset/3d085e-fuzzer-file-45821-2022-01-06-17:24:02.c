@@ -1,0 +1,96 @@
+/* corpus/pr44468.c */
+#include <stddef.h>
+
+struct S {
+  int i;
+  int j;
+};
+struct R {
+  int k;
+  struct S a;
+};
+struct Q {
+  float k;
+  struct S a;
+};
+struct Q s;
+int __attribute__((noinline,noclone))
+test1 (void *q)
+{
+  struct S *b = (struct S *)((char *)q + sizeof (int));
+  ;
+  ;
+  return s.a.i;
+}
+int __attribute__((noinline,noclone))
+test2 (void *q)
+{
+  struct S *b = &((struct R *)q)->a;
+  ;
+  
+
+
+b->i = 3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))) + 42 *((int)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) &((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))));
+b->i = 3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))) + 42 *((int)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) &((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))));
+;
+;
+;
+
+
+b->i = 3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))) + 42 -((int)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) %((int)(b->i)))))-((int)((((int)(b->i)) ^((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))))-((short)((((int)(b->i)) %((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))))*((long)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) >>((int)(b->i)))));
+b->i = 3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))) + 42 -((int)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) %((int)(b->i)))))-((int)((((int)(b->i)) ^((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))))-((short)((((int)(b->i)) %((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))))*((long)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) >>((int)(b->i)))));
+;
+
+b->i = 3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))) + 42 *((int)((((int)(b->i)) &((int)(b->i)))))*((int)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) %((int)(b->i)))))+((short)((((int)(b->i)) >>((int)(b->i)))))+((int)((((int)(b->i)) &((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))))*((int)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) &((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))));
+b->i = 3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))) + 42 *((int)((((int)(b->i)) &((int)(b->i)))))*((int)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) %((int)(b->i)))))+((short)((((int)(b->i)) >>((int)(b->i)))))+((int)((((int)(b->i)) &((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))))*((int)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))) &((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))) + 42 +((int)((((double)(b->i)) +((double)(3)))))*((short)((((int)(3 + 42 +((int)((((int)(3)) ^((int)(b->i))))))) |((int)(((int)((((int)(3)) ^((int)(b->i))))))))))-((long)((((int)(3)) ^((int)(3 + 42)))))*((long)((((double)(((int)((((int)(3)) ^((int)(b->i))))))) *((double)(3 + 42))))))))));
+;
+;
+;
+  return s.a.i;
+}
+int __attribute__((noinline,noclone))
+test3 (void *q)
+{
+  ;
+  
+;
+
+
+((struct S *)((char *)q + sizeof (int)))->i = 3 + 42 -((short)((((int)(3)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) >>((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))+((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3))))) + 42 -((short)((((int)(3 + 42 -((short)((((int)(3)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) >>((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))+((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3))))))) <<((int)(((struct S *)((char *)q + sizeof (int)))->i)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3 + 42 -((short)((((int)(3)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) >>((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))+((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3))))))))))+((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) %((int)(3 + 42 -((short)((((int)(3)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) >>((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))+((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))))))) + 42 *((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))));
+((struct S *)((char *)q + sizeof (int)))->i = 3 + 42 -((short)((((int)(3)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) >>((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))+((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3))))) + 42 -((short)((((int)(3 + 42 -((short)((((int)(3)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) >>((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))+((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3))))))) <<((int)(((struct S *)((char *)q + sizeof (int)))->i)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3 + 42 -((short)((((int)(3)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) >>((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))+((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3))))))))))+((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) %((int)(3 + 42 -((short)((((int)(3)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) <<((int)(3)))))-((int)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) >>((int)(((struct S *)((char *)q + sizeof (int)))->i)))))*((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))+((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) ^((int)(3)))))))))) + 42 *((long)((((int)(((struct S *)((char *)q + sizeof (int)))->i)) &((int)(((struct S *)((char *)q + sizeof (int)))->i)))));
+;
+;
+;
+;
+  return s.a.i;
+}
+extern void abort (void);
+int
+main()
+{
+  if (0)
+    { return 0; }
+  ;
+  
+;
+
+;
+;
+;
+;
+  if (0)
+    { abort (); }
+  ;
+  ;
+  if (0)
+    { abort (); }
+  
+;
+;
+;
+  ;
+  if (0)
+    { abort (); }
+  return 0;
+}
+/* ProgramSourceLLVM */

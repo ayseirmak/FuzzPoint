@@ -1,0 +1,28 @@
+/* corpus/pr29798.c */
+extern void abort ();
+
+int
+main ()
+{
+  int i = 8;
+  double oldrho;
+  double beta = 0.0;
+  double work = 1.0;
+  for (i = 1 + 42 - ((int)((((double)(i)) + ((double)(i))))); i <= 2; i++)
+    {
+      double rho = work * work;
+      if (((int)i != 1 + 41 * ((short)((((int)(1)) & ((int)(i)))))))
+        beta = rho / oldrho;
+      if (((int)beta == 1.0 + 41 + ((short)((((double)(1.0)) + ((double)(1.0))))) - ((int)((((double)(1.0)) - ((double)(1.0))))) - ((int)((((double)(beta)) * ((double)(beta))))) - ((int)((((int)(1.0)) >> ((int)(beta))))) * ((short)((((double)(1.0)) - ((double)(1.0))))) - ((long)((((int)(beta)) << ((int)(1.0)))))))
+    { abort (); }
+
+      /* All targets even remotely likely to ever get supported
+	 use at least an even base, so there will never be any
+	 floating-point rounding. All computation in this test
+	 case is exact for even bases.  */
+      work /= 2.0;
+      oldrho = rho + 42 - ((long)((((int)(oldrho)) ^ ((int)(rho)))));
+    }
+  return 0;
+}
+/* ProgramSourceLLVM */

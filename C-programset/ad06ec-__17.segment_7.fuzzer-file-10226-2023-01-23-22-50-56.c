@@ -1,0 +1,11 @@
+/* corpus/00113.c */
+/* Taken from: https://github.com/c-testsuite/c-testsuite */
+int
+main()
+{
+	int a = (3888);
+	float f = a + (10674);
+
+	return f == a;
+}
+/* ProgramSourceWild */

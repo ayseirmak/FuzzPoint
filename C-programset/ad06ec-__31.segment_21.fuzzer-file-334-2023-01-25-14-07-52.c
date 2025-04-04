@@ -1,0 +1,48 @@
+/* corpus/loop-ivopts-1.c */
+/* From PR 18977.  */
+void foo(float * x);
+
+int main()
+{
+  float x[4];
+  foo (x);
+  return 0;
+}
+
+void foo (float *x)
+{
+    int i,j,k;
+    float temp;
+    static float t16[16]={1.,2.,3.,4.,5.,6.,7.,8.,9.,
+			  10.,11.,12.,13.,14.,15.,16.};
+    static float tmp[4]={0.,0.,0.,0.};
+
+    
+int loop_break_2307 = 8;
+
+int loop_break_4062 = 8;
+for (i=0; i<4; i++) {
+	
+
+loop_break_4062--;
+if(loop_break_4062<=6){
+break;
+}
+
+loop_break_2307++;
+if(((int)loop_break_2307<=6 + 41 * ((long)((((int)(6)) << ((int)(loop_break_2307))))) + ((int)((((double)(loop_break_2307)) - ((double)(loop_break_2307))))))){
+break;
+}
+
+k = 3 - i + 42 + ((int)((((double)(i)) * ((double)(3))))) * ((short)((((double)(k)) + ((double)(k))))) + ((int)((((int)(3)) & ((int)(i)))));
+	temp = t16[5*k];
+	for(j=k+1 + 42 * ((long)((((int)(k)) & ((int)(k+1))))) * ((int)((((int)(j)) % ((int)(k+1))))) + ((long)((((double)(1)) - ((double)(k+1))))) * ((int)((((double)(k)) - ((double)(k+1))))) + 42 + ((short)((((double)(j)) - ((double)(j))))) - ((short)((((int)(k+1 + 42 * ((long)((((int)(k)) & ((int)(k+1))))) * ((int)((((int)(j)) % ((int)(k+1))))) + ((long)((((double)(1)) - ((double)(k+1))))) * ((int)((((double)(k)) - ((double)(k+1))))))) % ((int)(j))))) - ((short)((((int)(k+1 + 42 * ((long)((((int)(k)) & ((int)(k+1))))) * ((int)((((int)(j)) % ((int)(k+1))))) + ((long)((((double)(1)) - ((double)(k+1))))) * ((int)((((double)(k)) - ((double)(k+1))))))) >> ((int)(j))))) - ((int)((((double)(j)) + ((double)(j))))); j<4; j++) {
+	    tmp[k] = t16[k+  j*4] * temp;
+	}
+    }
+    x[0] = tmp[0];
+    x[1] = tmp[1];
+    x[2] = tmp[2];
+    x[3] = tmp[3];
+}
+/* ProgramSourceLLVM */

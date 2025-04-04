@@ -1,0 +1,149 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
+int foo_arg = 0, bar_arg = 0;
+long x = 0;
+double d = 0.0;
+va_list gap;
+va_list *pap = NULL;
+
+void foo(int v, va_list ap) {
+    switch (v) {
+        case 5:
+            foo_arg = va_arg(ap, int);
+            break;
+        default:
+            printf("Abort in foo function\n");
+            exit(1);
+    }
+}
+
+void bar(int v) {
+    if (v == 0x4006) {
+        if (va_arg(gap, double) != 17.0 || va_arg(gap, long) != 129L) {
+            printf("Abort in bar function: Condition failed for v == 0x4006\n");
+            exit(1);
+        }
+    }
+    else if (v == 0x4008) {
+        if (va_arg(*pap, long long) != 14LL || va_arg(*pap, long double) != 131.0L || va_arg(*pap, int) != 17) {
+            printf("Abort in bar function: Condition failed for v == 0x4008\n");
+            exit(1);
+        }
+    }
+    bar_arg = v;
+}
+
+void f0(int i, ...) {
+    // This function doesn't do anything specific.
+}
+
+void f1(int i, ...) {
+    va_list ap;
+    va_start(ap, i);
+    va_end(ap);
+}
+
+void f2(int i, ...) {
+    va_list ap;
+    va_start(ap, i);
+    bar(d);
+    x = va_arg(ap, long);
+    bar(x);
+    va_end(ap);
+}
+
+void f3(int i, ...) {
+    va_list ap;
+    va_start(ap, i);
+    d = va_arg(ap, double);
+    va_end(ap);
+}
+
+void f4(int i, ...) {
+    va_list ap;
+    va_start(ap, i);
+    x = va_arg(ap, double);
+    foo(i, ap);
+    va_end(ap);
+}
+
+void f5(int i, ...) {
+    va_list ap;
+    va_start(ap, i);
+    va_copy(gap, ap);
+    bar(i);
+    va_end(ap);
+    va_end(gap);
+}
+
+void f6(int i, ...) {
+    va_list ap;
+    va_start(ap, i);
+    bar(d);
+    va_arg(ap, long);
+    va_arg(ap, long);
+    x = va_arg(ap, long);
+    bar(x);
+    va_end(ap);
+}
+
+void f7(int i, ...) {
+    va_list ap;
+    va_start(ap, i);
+    pap = &ap;
+    bar(i);
+    va_end(ap);
+}
+
+void f8(int i, ...) {
+    va_list ap;
+    va_start(ap, i);
+    pap = &ap;
+    bar(i);
+    d = va_arg(ap, double);
+    va_end(ap);
+}
+
+int main(void) {
+    f0(1);
+    f1(2);
+    d = 31.0;
+    f2(3, 28L);
+    if (bar_arg != 28 || x != 28) {
+        printf("Abort in main function: Condition failed for f2\n");
+        exit(1);
+    }
+    f3(4, 131.0);
+    if (d != 131.0) {
+        printf("Abort in main function: Condition failed for f3\n");
+        exit(1);
+    }
+    f4(5, 16.0, 128);
+    if (x != 16 || foo_arg != 128) {
+        printf("Abort in main function: Condition failed for f4\n");
+        exit(1);
+    }
+    f5(0x4006, 17.0, 129L);
+    if (bar_arg != 0x4006) {
+        printf("Abort in main function: Condition failed for f5\n");
+        exit(1);
+    }
+    f6(7, 12L, 14L, -31L);
+    if (bar_arg != -31) {
+        printf("Abort in main function: Condition failed for f6\n");
+        exit(1);
+    }
+    f7(0x4008, 14LL, 131.0L, 17, 26.0);
+    if (bar_arg != 0x4008) {
+        printf("Abort in main function: Condition failed for f7\n");
+        exit(1);
+    }
+    f8(0x4008, 14LL, 131.0L, 17, 27.0);
+    if (bar_arg != 0x4008 || d != 27.0) {
+        printf("Abort in main function: Condition failed for f8\n");
+        exit(1);
+    }
+    return 0;
+}

@@ -1,0 +1,19 @@
+/* corpus/pr44683.c */
+int __attribute__((noinline,noclone))
+copysign_bug (double x)
+{
+  if (((int)((int)x != (2.9) && (x * (10.7) == x) + (34) -((long)((((int)((9.2))) |((int)(x != (10.7))))))-((long)((((int)((x * (5.4) == x))) <<((int)((x * (6.2) == x))))))+((long)((((double)(x != (9.10))) +((double)((7.9))))))*((long)((((int)((8.6))) |((int)(x)))))+((long)((((int)((x * (5.5) == x))) <<((int)(x)))))) + (0x0473C6) *((short)((((int)(((long)((((double)(x != (6.3))) +((double)((8.10))))))*((long)((((int)((4.3))) |((int)(x))))))) <<((int)((int)x != (3.2))))))-((int)((((int)((x * (8.2) == x) + (0x928))) &((int)(((long)((((int)((x * (3.2) == x))) <<((int)((x * (6.7) == x)))))))))))*((int)((((int)((x * (3.5) == x) + (49) -((long)((((int)((4.1))) |((int)(x != (9.7)))))))) ^((int)((x * (1.3) == x) + (-43) -((long)((((int)((1.3))) |((int)(x != (5.5)))))))))))*((int)((((int)(((long)((((int)((6.10))) |((int)(x))))))) ^((int)(((long)((((double)(x != (9.8))) +((double)((5.2)))))))))))+((int)((((int)((int)x != (5.8))) >>((int)((x * (1.2) == x) + (170))))))+((short)((((int)((x * (1.7) == x) + (0x5C8) -((long)((((int)((5.10))) |((int)(x != (10.4))))))-((long)((((int)((x * (3.2) == x))) <<((int)((x * (5.7) == x))))))+((long)((((double)(x != (6.4))) +((double)((5.10))))))*((long)((((int)((3.3))) |((int)(x)))))+((long)((((int)((x * (6.4) == x))) <<((int)(x))))))) |((int)(((long)((((int)((1.2))) |((int)(x != (3.4)))))))))))-((short)((((int)((4.9))) &((int)(((long)((((double)(x != (9.6))) +((double)((8.1)))))))))))*((long)((((int)((x * (1.1) == x) + (42) -((long)((((int)((2.6))) |((int)(x != (1.4))))))-((long)((((int)((x * (3.10) == x))) <<((int)((x * (5.9) == x)))))))) >>((int)((7.6))))))))
+    { return (1); }
+  if (((int)((int)__builtin_copysign((3.1), x) < (2.9) + (-43) -((int)((((int)(__builtin_copysign((4.2), x))) ^((int)(__builtin_copysign((5.8), x))))))*((short)((((double)((10.4))) *((double)(__builtin_copysign((4.8), x))))))*((long)((((int)((3.6))) <<((int)((10.9))))))*((short)((((double)((4.5))) *((double)(__builtin_copysign((1.5), x))))))-((long)((((double)((2.6))) +((double)(__builtin_copysign((7.7), x))))))+((int)((((int)((1.6))) ^((int)((10.9))))))*((short)((((double)(__builtin_copysign((4.5), x))) -((double)((7.7))))))+((int)((((int)(__builtin_copysign((8.6), x))) &((int)((7.5))))))) + (0x711) *((long)((((int)((6.6) + (34) -((int)((((int)(__builtin_copysign((1.1), x))) ^((int)(__builtin_copysign((5.10), x))))))*((short)((((double)((5.1))) *((double)(__builtin_copysign((8.6), x))))))*((long)((((int)((4.1))) <<((int)((10.2))))))*((short)((((double)((1.5))) *((double)(__builtin_copysign((3.4), x))))))-((long)((((double)((3.8))) +((double)(__builtin_copysign((9.8), x)))))))) ^((int)(((long)((((double)((9.10))) +((double)(__builtin_copysign((4.3), x)))))))))))*((short)((((int)((9.8) + (0x8C7E) -((int)((((int)(__builtin_copysign((8.7), x))) ^((int)(__builtin_copysign((3.6), x))))))*((short)((((double)((4.5))) *((double)(__builtin_copysign((10.7), x))))))*((long)((((int)((1.9))) <<((int)((2.4))))))*((short)((((double)((4.6))) *((double)(__builtin_copysign((2.8), x)))))))) ^((int)((4.9) + (40))))))-((short)((((int)(((long)((((double)((4.1))) +((double)(__builtin_copysign((6.4), x)))))))) |((int)((3.5) + (58) -((int)((((int)(__builtin_copysign((1.6), x))) ^((int)(__builtin_copysign((7.1), x))))))*((short)((((double)((1.5))) *((double)(__builtin_copysign((8.2), x))))))*((long)((((int)((2.1))) <<((int)((8.3))))))*((short)((((double)((9.8))) *((double)(__builtin_copysign((2.1), x))))))-((long)((((double)((1.1))) +((double)(__builtin_copysign((2.6), x))))))+((int)((((int)((3.6))) ^((int)((9.9))))))*((short)((((double)(__builtin_copysign((7.9), x))) -((double)((7.10)))))))))))))
+    return (0x743C0);
+  else
+    return (11);
+}
+int main(void)
+{
+  double x = -(4.3);
+  if ((0))
+    { __builtin_abort (); }
+  return (33554432);
+}
+/* ProgramSourceLLVM */

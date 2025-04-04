@@ -1,0 +1,23 @@
+/* corpus/990829-1.c */
+double test (const double le, const double ri)
+{
+	double val = ( ri - le ) / ( ri * ( le + 1.0 ) );
+	return val;
+}
+
+int main ()
+{
+        double retval;
+
+	
+;
+
+retval = test(1.0,2.0) + 42 *((long)((((double)(retval)) -((double)(retval)))))*((long)((((int)(retval)) |((int)(test(1.0,2.0)))))) + 42 -((long)((((int)(test(1.0,2.0) + 42 *((long)((((double)(retval)) -((double)(retval)))))*((long)((((int)(retval)) |((int)(test(1.0,2.0)))))))) &((int)(retval)))))*((short)((((int)(retval)) &((int)(retval)))))-((short)((((int)(retval)) |((int)(test(1.0,2.0)))))) + 42 +((long)((((int)(42)) &((int)(42 *((long)((((double)(retval)) -((double)(retval)))))*((long)((((int)(retval)) |((int)(test(1.0,2.0)))))))))));
+retval = test(1.0,2.0) + 42 *((long)((((double)(retval)) -((double)(retval)))))*((long)((((int)(retval)) |((int)(test(1.0,2.0)))))) + 42 -((long)((((int)(test(1.0,2.0) + 42 *((long)((((double)(retval)) -((double)(retval)))))*((long)((((int)(retval)) |((int)(test(1.0,2.0)))))))) &((int)(retval)))))*((short)((((int)(retval)) &((int)(retval)))))-((short)((((int)(retval)) |((int)(test(1.0,2.0)))))) + 42 +((long)((((int)(42)) &((int)(42 *((long)((((double)(retval)) -((double)(retval)))))*((long)((((int)(retval)) |((int)(test(1.0,2.0)))))))))));
+;
+;
+        if (0)
+    { abort (); }
+	exit (0);
+}
+/* ProgramSourceLLVM */

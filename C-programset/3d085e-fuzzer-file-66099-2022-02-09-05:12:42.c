@@ -1,0 +1,41 @@
+/* corpus/va-arg-trap-1.c */
+/* Undefined behavior from a call to va_arg with a type other than
+   that of the argument passed (in particular, with a type such as
+   "float" that can never be the type of an argument passed through
+   "...") does not appear until after the va_list expression is
+   evaluated.  PR 38483.  */
+/* Origin: Joseph Myers <joseph@codesourcery.com> */
+
+#include <stdarg.h>
+
+extern void exit (int);
+extern void abort (void);
+
+va_list ap;
+float f;
+
+va_list *
+foo (void)
+{
+  exit ((512));
+  return &ap;
+}
+
+void
+bar (int i, ...)
+{
+  va_start (ap, i);
+  
+f = va_arg (*foo (), float) + (0xD59B2A) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))) + (82) *((int)((((int)(va_arg (*foo (), float) + (-43) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float)))))))) ^((int)(va_arg (*foo (), float) + (46) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float)))))))))))-((long)((((int)(f)) >>((int)((-43))))))-((int)((((double)(f)) *((double)(f)))))+((short)((((int)(va_arg (*foo (), float))) &((int)(va_arg (*foo (), float) + (42) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))))))) + (-43) *((long)((((int)((170))) ^((int)(((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float)))))))))))*((short)((((int)(va_arg (*foo (), float) + (-43) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))) + (170) *((int)((((int)(va_arg (*foo (), float) + (58) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float)))))))) ^((int)(va_arg (*foo (), float) + (-43) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float)))))))))))-((long)((((int)(f)) >>((int)((42))))))-((int)((((double)(f)) *((double)(f))))))) %((int)(va_arg (*foo (), float) + (34) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))) + (58) *((int)((((int)(va_arg (*foo (), float) + (58) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float)))))))) ^((int)(va_arg (*foo (), float) + (0x30F24) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float)))))))))))-((long)((((int)(f)) >>((int)((42)))))))))));
+f = va_arg (*foo (), float) + (42) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))) + (10) -((int)((((int)(((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float)))))))) ^((int)(va_arg (*foo (), float))))))-((long)((((int)(va_arg (*foo (), float) + (170) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))))) &((int)(f)))))+((short)((((int)(((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float)))))))) >>((int)(va_arg (*foo (), float))))))*((short)((((int)((-43))) ^((int)(((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))))))))-((long)((((int)(((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))))) &((int)(((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))))))) + (0xCF) *((int)((((int)(va_arg (*foo (), float) + (-43) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float)))))))) |((int)(va_arg (*foo (), float))))))*((int)((((int)(va_arg (*foo (), float) + (58) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float)))))))) ^((int)(((short)((((int)(((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float)))))))) >>((int)(va_arg (*foo (), float))))))*((short)((((int)((52))) ^((int)(((int)((((int)(f)) %((int)(va_arg (*foo (), float))))))))))))))))-((short)((((int)(va_arg (*foo (), float) + (170) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))) + (0xF73C) -((int)((((int)(((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float)))))))) ^((int)(va_arg (*foo (), float))))))-((long)((((int)(va_arg (*foo (), float) + (0x3904E) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))))) &((int)(f)))))+((short)((((int)(((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float)))))))) >>((int)(va_arg (*foo (), float))))))*((short)((((int)((42))) ^((int)(((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))))))))-((long)((((int)(((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))))) &((int)(((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))))))))) %((int)(((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))))))))-((long)((((int)(va_arg (*foo (), float) + (42) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))) + (0x19E998) -((int)((((int)(((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float)))))))) ^((int)(va_arg (*foo (), float))))))-((long)((((int)(va_arg (*foo (), float) + (-43) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))))) &((int)(f)))))+((short)((((int)(((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float)))))))) >>((int)(va_arg (*foo (), float))))))*((short)((((int)((0x24D))) ^((int)(((int)((((int)(f)) %((int)(va_arg (*foo (), float))))))))))))) |((int)(((long)((((int)(va_arg (*foo (), float) + (42) +((short)((((int)(va_arg (*foo (), float))) |((int)(va_arg (*foo (), float))))))-((long)((((int)(f)) ^((int)(va_arg (*foo (), float))))))*((long)((((int)(f)) >>((int)(va_arg (*foo (), float))))))-((int)((((int)(f)) %((int)(va_arg (*foo (), float)))))))) &((int)(f))))))))));
+;
+  va_end (ap);
+}
+
+int
+main (void)
+{
+  bar ((-2), (524288));
+  abort ();
+}
+/* ProgramSourceLLVM */

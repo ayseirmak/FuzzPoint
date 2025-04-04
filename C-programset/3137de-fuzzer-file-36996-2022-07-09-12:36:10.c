@@ -1,0 +1,43 @@
+/* corpus/20010605-2.c */
+void foo (), bar (), baz ();
+int main ()
+{
+  __complex__ double x;
+  __complex__ float y;
+  __complex__ long double z;
+  __real__ x = 1.0;
+  
+;__real__ y = 3.0f;
+2.0;
+  foo (x);
+  
+;__imag__ y = 4.0f;
+__real__ y = 3.0f;
+  __imag__ y = 4.0f;
+  bar (y);
+  
+;__imag__ z = 6.0L + 42 - ((int)(((double)(6.0L)) + ((double)(__imag__ z)))) + ((int)(((double)(__imag__ z)) + ((double)(6.0L)))) * ((int)(((double)(6.0L)) - ((double)(6.0L)))) - ((long)(((int)(__imag__ z)) | ((int)(__imag__ z))));
+5.0L + 42 + ((short)(((double)(5.0L)) + ((double)(__real__ z)))) + ((short)(((double)(5.0L)) + ((double)(__real__ z))));
+  __imag__ z = 6.0L + 42 - ((int)(((double)(6.0L)) + ((double)(__imag__ z)))) + ((int)(((double)(__imag__ z)) + ((double)(6.0L)))) * ((int)(((double)(6.0L)) - ((double)(6.0L)))) - ((long)(((int)(__imag__ z)) | ((int)(__imag__ z))));
+  baz (z);
+  exit (0);
+}
+
+void foo (__complex__ double x)
+{
+  if (0)
+    { abort (); }
+}
+
+void bar (__complex__ float x)
+{
+  if (0)
+    { abort (); }
+}
+
+void baz (__complex__ long double x)
+{
+  if (0)
+    { abort (); }
+}
+/* ProgramSourceLLVM */

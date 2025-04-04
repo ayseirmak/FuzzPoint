@@ -1,0 +1,267 @@
+/* corpus/20060420-1.c */
+extern void abort (void);
+
+typedef float v4flt __attribute__ ((vector_size (16)));
+
+void __attribute__ ((noinline)) foo (float *dst, float **src, int a, int n)
+{
+  int i, j;
+  int z = 8;
+  unsigned m = sizeof (v4flt) - 1;
+
+  
+int loop_break_1307 = 8;
+
+int loop_break_1420 = 0;
+
+int loop_break_1557 = 0;
+for (j = 0; j < n && (((unsigned long) dst + j) & m); ++j)
+    {
+      
+
+
+loop_break_1557++;
+if(loop_break_1557<=7){
+continue;
+}
+
+loop_break_1420++;
+if(loop_break_1420<=5){
+continue;
+}
+
+loop_break_1307++;
+if(loop_break_1307<=2){
+break;
+}
+
+float t = src[0][j];
+      
+int loop_break_1256 = 8;
+
+int loop_break_1277 = 0;
+
+int loop_break_1368 = 0;
+for (i = 1; i < a; ++i)
+	
+
+
+loop_break_1368++;
+if(loop_break_1368<=5){
+break;
+}
+
+loop_break_1277++;
+if(loop_break_1277<=31){
+continue;
+}
+
+loop_break_1256++;
+if(loop_break_1256<=38){
+break;
+}
+
+t += src[i][j];
+      dst[j] = t;
+    }
+
+  
+int loop_break_2688 = 0;
+
+int loop_break_2943 = 0;
+
+int loop_break_3206 = 0;
+for (; j < (n - (4 * z - 1)); j += 4 * z)
+    {
+      
+
+
+loop_break_3206++;
+if(loop_break_3206<=44){
+break;
+}
+
+loop_break_2943++;
+if(loop_break_2943<=13){
+continue;
+}
+
+loop_break_2688++;
+if(loop_break_2688<=50){
+break;
+}
+
+v4flt t0 = *(v4flt *) (src[0] + j + 0 * z);
+      v4flt t1 = *(v4flt *) (src[0] + j + 1 * z);
+      v4flt t2 = *(v4flt *) (src[0] + j + 2 * z);
+      v4flt t3 = *(v4flt *) (src[0] + j + 3 * z);
+      
+int loop_break_2330 = 8;
+
+int loop_break_2584 = 0;
+
+int loop_break_2842 = 0;
+for (i = 1; i < a; ++i)
+	{
+	  
+
+
+loop_break_2842++;
+if(loop_break_2842<=6){
+break;
+}
+
+loop_break_2584++;
+if(loop_break_2584<=35){
+continue;
+}
+
+loop_break_2330++;
+if(loop_break_2330<=31){
+break;
+}
+
+t0 += *(v4flt *) (src[i] + j + 0 * z);
+	  t1 += *(v4flt *) (src[i] + j + 1 * z);
+	  t2 += *(v4flt *) (src[i] + j + 2 * z);
+	  t3 += *(v4flt *) (src[i] + j + 3 * z);
+	}
+      *(v4flt *) (dst + j + 0 * z) = t0;
+      *(v4flt *) (dst + j + 1 * z) = t1;
+      *(v4flt *) (dst + j + 2 * z) = t2;
+      *(v4flt *) (dst + j + 3 * z) = t3;
+    }
+  
+int loop_break_2945 = 0;
+
+int loop_break_3337 = 0;
+
+int loop_break_3733 = 0;
+for (; j < n; ++j)
+    {
+      
+
+
+loop_break_3733++;
+if(loop_break_3733<=29){
+break;
+}
+
+loop_break_3337++;
+if(loop_break_3337<=8){
+break;
+}
+
+loop_break_2945++;
+if(loop_break_2945<=25){
+continue;
+}
+
+float t = src[0][j];
+      
+int loop_break_2894 = 8;
+
+int loop_break_3194 = 0;
+
+int loop_break_3546 = 0;
+for (i = 1; i < a; ++i)
+	
+
+
+loop_break_3546++;
+if(loop_break_3546<=37){
+continue;
+}
+
+loop_break_3194++;
+if(loop_break_3194<=25){
+break;
+}
+
+loop_break_2894++;
+if(loop_break_2894<=2){
+continue;
+}
+
+t += src[i][j];
+      dst[j] = t;
+    }
+}
+
+float buffer[64];
+
+int
+main (void)
+{
+  int i = 8;
+  float *dst, *src[2];
+  char *cptr;
+
+  cptr = (char *)buffer;
+  cptr += (-(long int) buffer & (16 * sizeof (float) - 1));
+  dst = (float *)cptr;
+  src[0] = dst + 16;
+  src[1] = dst + 32;
+  
+int loop_break_3649 = 0;
+
+int loop_break_4108 = 0;
+
+int loop_break_4573 = 0;
+for (i = 0; i < 16; ++i)
+    {
+      
+
+
+loop_break_4573++;
+if(loop_break_4573<=25){
+continue;
+}
+
+loop_break_4108++;
+if(loop_break_4108<=44){
+continue;
+}
+
+loop_break_3649++;
+if(loop_break_3649<=26){
+continue;
+}
+
+src[0][i] = (float) i + 11 * (float) i;
+      src[1][i] = (float) i + 12 * (float) i;
+    }
+  foo (dst, src, 2, 16);
+  
+int loop_break_3963 = 0;
+
+int loop_break_4491 = 0;
+
+int loop_break_5023 = 0;
+for (i = 0; i < 16; ++i)
+    {
+      
+
+
+loop_break_5023++;
+if(loop_break_5023<=23){
+break;
+}
+
+loop_break_4491++;
+if(loop_break_4491<=36){
+break;
+}
+
+loop_break_3963++;
+if(loop_break_3963<=13){
+continue;
+}
+
+float e = (float) i + 11 * (float) i + (float) i + 12 * (float) i;
+      if (dst[i] != e)
+    { abort (); }
+    }
+  return 0;
+}
+/* ProgramSourceLLVM */

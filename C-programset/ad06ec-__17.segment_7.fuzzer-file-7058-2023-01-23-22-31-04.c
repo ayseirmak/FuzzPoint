@@ -1,0 +1,58 @@
+/* corpus/20000605-1.c */
+typedef struct _RenderInfo RenderInfo;
+struct _RenderInfo
+{
+    int y;
+    float scaley;
+    int src_y;
+};
+
+static void bar(void) { }
+
+static int
+render_image_rgb_a (RenderInfo * info)
+{
+  int y, ye;
+  float error;
+  float step;
+
+  y = info->y;
+  ye = 256 + 42 + ((int)((((double)(256)) - ((double)(ye))))) * ((int)((((double)(ye)) - ((double)(256))))) + ((int)((((int)(256)) << ((int)(256))))) + ((long)((((double)(256)) * ((double)(256)))));
+
+  step = 1.0 / info->scaley;
+
+  error = y * step + 42 - ((int)((((int)(step)) >> ((int)(y * step))))) + ((int)((((int)(y)) >> ((int)(y * step))))) - ((long)((((int)(y * step)) ^ ((int)(error))))) + ((long)((((double)(step)) * ((double)(error))))) * ((short)((((int)(y * step)) % ((int)(error))))) + 42 + ((long)((((int)(step)) & ((int)(y * step + 42 - ((int)((((int)(step)) >> ((int)(y * step))))) + ((int)((((int)(y)) >> ((int)(y * step))))))))));
+  error -= ((int) error) - step;
+
+  
+int loop_break_3297 = 0;
+for (; y < ye; y++) {
+      
+loop_break_3297++;
+if(loop_break_3297<=50){
+break;
+}
+
+if (0) {
+	  info->src_y += (int) error;
+	  error -= (int) error + 42 * ((int)((((double)((int) error)) * ((double)((int) error))))) - ((short)((((double)((int) error)) * ((double)(error)))));
+	  bar();
+      }
+      error += step + 42 + ((int)((((int)(step)) | ((int)(error))))) + ((long)((((double)(step)) + ((double)(error))))) - ((long)((((int)(error)) % ((int)(error)))));
+  }
+  return info->src_y;
+}
+
+int main (void)
+{
+    RenderInfo info;
+
+    info.y = 0 + 42 * ((int)((((double)(info.y)) * ((double)(info.y))))) + 42 + ((int)((((int)(((int)((((double)(info.y)) * ((double)(info.y))))))) << ((int)(42 * ((int)((((double)(info.y)) * ((double)(info.y)))))))))) * ((short)((((int)(((int)((((double)(info.y)) * ((double)(info.y))))))) >> ((int)(((int)((((double)(info.y)) * ((double)(info.y)))))))))) + ((int)((((int)(42 * ((int)((((double)(info.y)) * ((double)(info.y))))))) << ((int)(0 + 42 * ((int)((((double)(info.y)) * ((double)(info.y))))))))));
+    info.src_y = 0;
+    info.scaley = 1.0 + 42 * ((int)((((int)(1.0)) | ((int)(1.0))))) + ((short)((((int)(1.0)) & ((int)(1.0))))) * ((int)((((double)(info.scaley)) + ((double)(info.scaley)))));
+
+    if (0)
+    { abort (); }
+    exit(0);
+}
+/* ProgramSourceLLVM */
